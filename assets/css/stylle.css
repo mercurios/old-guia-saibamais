@@ -1,0 +1,350 @@
+
+@charset "utf-8";
+/* CSS Document */
+body{font-family: "arial"; background:url(../images/back_pagina.png); border-top:10px solid #5D5D5D; margin-top:0px}
+
+/*Nosso grid*/
+.1coluna{width:68px} .2coluna{width:154px} .3coluna{width:240px} .4coluna{width:326px} .5coluna{width:412px} .6coluna{width:498px} .7coluna{width:584px}
+.8coluna{width:670px} .9coluna{width:756px} .10coluna{width:842px} .11coluna{width:928px} .12coluna{width:1014px}
+
+
+#container{width:1014px; position:relative; margin:0 auto; margin-top:15px;  }
+#conteudo{position:relative; float:left; width:100%; }
+#area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
+#area_conteudo_esquerda{width:670px; position:relative; float:left; }
+#area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px;}
+.area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
+#area_conteudo_esquerda_pesquisa{width:774px; position:relative; float:left;  }
+#area_conteudo_direita_pesquisa{width:240px; position:relative; float:right; margin-right:0px; }
+
+
+/*css do topo*/
+
+/*topo*/
+#topo{width:1000px; height:150px; position:relative; float:left;}
+#logo{position:relative; float:left; margin-left:10px;}
+#campo_estado{position:relative; float:right; width:248px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
+#campo_estado img{position:relative; float:right; margin-top:7px; margin-left:5px; border:1px solid #e0e0e0 }
+#titulo_estado{position:relative; float:right; font-size:16px; color:#727575;}
+#link_estado a{position:relative; float:right;font-size:12px; color:#ffc001; text-decoration:none}
+#link_estado a:hover{ text-decoration:underline}
+input.placeholder {text-align: center;}
+#campo_pesquisa{position:relative; float:right; top:32px}
+#busca{position:relative; float:right; width:527px; height:41px; border: 3px solid #5c5c5c; background: #FFF}
+#busca img{position:relative; float:left; margin-top:5px; margin-left:10px; margin-right:10px; }
+#botao_busca{position:relative; float: right; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#fff; background-color:#5c5c5c; width:86px; height:100%; border:0; font-weight:bold;}
+#texto_busca{position:relative; float:left; width:385px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#5c5c5c; text-align: center}
+::-webkit-input-placeholder { /* WebKit browsers */
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+color: #adadad; 
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+color: #adadad; 
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+color: #adadad; 
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+color: #adadad; 
+}
+
+
+/*menu*/
+#menu{position:relative; float:left; width:100%; height:59px; z-index:1 ;}
+.link_menu{position:relative; float:left; height:100%;background-color:#0c4880; margin-right:1px}
+.link_menu img{position:relative; float:left; margin-top:14px; margin-left:11px; margin-right:10px}
+.link_menu a{text-decoration:none}
+.link_menu a h3{position:relative; float:left; color:#fff; font-size:16px; margin-top:20px; margin-right:12px; font-weight:100; font-style:none; text-decoration:none}
+.link_menu_ultimo{margin-right:0px}
+.link_menu_ultimo img{margin-right:9px; margin-left:9px}
+.v{ position:relative; float:left; background:#fff; width:5px; margin-right:6px}
+.menus{position:absolute; left:-999em ; float:left; height:266px; background-color:#0c4880; margin-top:63px; display:block}
+.menus a{ text-decoration:none}
+.link_menu:hover {height:110%}
+.link_menu:hover .menus {left:0px; top:auto;}
+.conteudo_menu{position:relative; float:left; margin-left:10px; margin-right:10px}
+.ou{position:relative; float:left; color:#fff; font-size:16px; font-weight:bold; margin-top:5px}
+.titulo_menu{ position:relative; float: left; margin-left:11px; font-size:22px; color:#fff; font-weight:bold; display:block; width:100%}
+.sub_menu{position:relative; float:left; margin-left:11px; margin-right:11px;}
+.sub_menu ul{position:relative; float:left; list-style:none; color:#fff; font-size:16px; margin-right:40px; margin-top:-10px; }
+.titulo_sub_menus{height:24px; padding-top:5px ;padding-left:5px; padding-right:5px; background:#ebebeb; color:#535353; font-weight:bold; margin-top:0px}
+.sub_menus a{ text-decoration:none; color:#fff;}
+.sub_menus a:hover{color:#CCC;}
+.sub_menu ul li{margin-bottom:3px; margin-left:-px; list-style:none; text-decoration:none}
+.titulo_rodape_menu{position:relative; float:left; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:15px; color:#fff;}
+.rodape_menu{position:relative; float:left; width:100%; height:42px; background-image:url(../images/back_rodape_menu.jpg); bottom:0px}
+.rodape_menu img{position:relative; float:right; margin-top:6px; margin-right:6px; margin-left:10px}
+.rodape_menu h2{position:relative; float:right}
+#menu_restaurantes{width:657px;}
+#menu_lanchonete{width:703px;}
+.link_menu:hover #menu_lanchonete{left:-178px; top:auto;}
+#menu_bebidas{width:707px;}
+.link_menu:hover #menu_bebidas {left:-287px; top:auto;}
+#menu_passeio{width:864px;}
+.link_menu:hover #menu_passeio {left:-350px; top:auto;}
+#menu_estadias{width:483px;}
+.link_menu:hover #menu_estadias {left:-169px; top:auto;}
+#menu_entretenimento{width:545px;}
+.link_menu:hover #menu_entretenimento {left:-366px; top:auto;}
+
+
+
+/*css do conteúdo*/
+#conteudo{position:relative; float:left; margin-top:30px}
+
+/*topo das páginas de anunciantes*/
+#topo_pagina_anunciante{background:url(../images/back_topo_pagina.jpg); position:relative; float:left; width:1000px; height:339px;}
+#redes_sociais_pagina{position:relative; float:left; width:307px; margin-top:210px; margin-right:10px; height:26px;}
+#redes_sociais_pagina ul{margin-top:0px}
+#redes_sociais_pagina ul li{ float:right; position: relative; list-style:none; height:26px; margin-left:5px}
+#logo_topo_pagina_anunciante{position:relative; float:left;  margin-top:0px; width:364px;}
+#logo_topo_pagina_anunciante img{position:relative; float:left; width:364px; height:265px; background:#fafafa;vertical-align:middle; text-align:center; border:1px solid #767676 }
+#logo_topo_pagina_anunciante h3{ font-size:30px; font-weight:100; color:#424242; margin-top:10px; height:64px; vertical-align:middle; text-align:center}
+#contatos_pagina{position:relative; float:left; margin-top:210px; color:#424242; margin-left:10px; width:307px;}
+.titulo_contatos_pagina{position:relative; float:left; font-size:16px; font-weight:bolder; margin-top:0px; margin-bottom:0px; width:72px;}
+.contatos_pagina{position:relative; float:left; width:100%; margin-bottom:5px;}
+
+#contatos_pagina h6{position:relative; float:left; font-size:16px; font-weight:100; width:73%; height:100%; vertical-align:middle; margin-top:0px; margin-bottom:0px ; margin-left:5px; }
+
+
+/*topo das áreas de chamadas*/
+.topo_area_categoria{position:relative; float:left; width:100%; height:31px; margin-bottom:27px; background: url(../iSmages/back_detalhes_claro.jpg); border-bottom:3px solid #0c4880; padding:3px}
+.icone_area_categoria{position:relative; float: left; margin-left:20px; margin-right:23px; }
+.titulo_area_categoria{position:relative; float:left; font-size:24px; padding-right:10px; font-weight:bold; color:#4c4c4c; top:-14px }
+
+/*rodape das áreas de chamadas*/
+.rodape_area_categoria{position:relative; float:left; width:100%; height:15px; background:url(../images/back_detalhes.jpg); margin-top:20px; margin-bottom:10px}
+.conteudo_rodape_pagina_categoria{position:relative; float:right;; margin-top:-9px }
+.conteudo_rodape_pagina_categoria:hover h4{color:#0c4880}
+.conteudo_rodape_pagina_categoria img{position:relative; float:right; margin:0 15}
+.conteudo_rodape_pagina_categoria h4{position:relative; float:right; border: 2px solid #ff8100; margin-left:-12px; margin-bottom:0; margin-top:3px; padding:2px 5px 2px 20px; font-size:14px; font-weight:bold; color:#444444; background:#fff }
+.rodape_area_categoria a{ text-decoration:none}
+
+/*topo das áreas das páginas*/
+.topo_area_pagina{position:relative; float:left; width:100%; height:30px; margin-bottom:12px; background-image:url(../images/back_topo_area_categoria3.jpg); background-repeat:repeat-x; vertical-align:middle;}
+.icone_area_pagina{position:relative; float: left; margin-left:10px; padding-left:5px; padding-right:5px; background:#fff}
+.titulo_area_pagina{position:relative; float:left; font-size:24px; padding-right:6px; font-weight:bold; color:#4c4c4c; background:#fff; top:-16px }
+
+/*css das chamadas pequenas*/
+.chamada_pequena{position:relative; float:left; width:326px; height:74px; margin-bottom:18px;}
+.chamada_pequena img{position:relative; float: left; width:99px; margin-right:7px; }
+.chamada_pequena p{position:relative; float:left; width: 219px; text-align:left; font-size:14px; text-decoration:none; margin-top:0px; }
+.chamada_pequena a{color:#454545; text-decoration: none;}
+.chamada_pequena:hover img{border-bottom:3px solid #ff8100; }
+.chamada_pequena:hover p{font-weight:bold;}
+
+/*css das chamadas médias*/
+
+.central{margin-left:10px; margin-right:10px}
+.central{margin-left:10px; margin-right:10px}
+.esquerda{float:left}
+.direita{float:right}
+
+.chamada_media{position:relative; float: left; width:154px; height:245px; margin-right:18px}
+.chamada_media a{position:relative; float:left;  font-size:13px; text-decoration:none; color:#454545;}
+.chamada_media a p{position:relative; float:left; text-align:left; text-decoration: none; margin-top:-5px}
+.chamada_media a h2{position:relative; float:left; font-weight:bold; font-size:14px; margin-top:6px}
+.chamada_media a:hover h2{color:#ff8100;  }
+.chamada_media a:hover p{ font-weight:bold}
+.chamada_media:hover img{ opacity:0.5}
+.chamada_media img{ width:100%}
+
+
+
+/*css das chamadas grandes*/
+.chamada_grande{position:relative; margin-bottom:39px; margin-top:0px}
+.chamada_grande img{height:237px; width:326px}
+
+/*css das chamadas com caption*/
+.chamada_imagem{position:relative; float:left; width:154px; height:168px; margin-bottom:18px}
+.chamada_imagem img{width:100%; height:100% }
+.chamada_imagem p{
+	position:absolute;
+	bottom:-16px;
+	left:0px;
+	display:none;
+	text-align: left;
+	background-color:#ff8100;
+	font-family: 'arial';
+	font-size:13px;
+	color:white;
+	font-weight:bold;
+	width:40px;
+	height:96%;
+	padding-top:7px;
+}
+.chamada_imagem p a{color:#fff; text-decoration:none;}
+.direita{float:right}
+
+/*css da descrição das páginas*/
+#descricao_pagina{position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px;}
+.texto_pagina{position:relative; float:left;  width:100%; text-align:justify; font-size:14px; color:#424242;}
+
+/*css do endereço das páginas*/
+#endereco_pagina{ position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px}
+.texto_pagina{position:relative; float:left;  width:100%; text-align:justify; font-size:14px; color:#424242; margin-top:0px}
+
+/*css da forma de pagamento*/
+#formas_pagamento{position:relative; float:left; width:315px; margin-bottom:30px;}
+.icone_esquerda{position:relative; float: left; margin-right: 13px; margin-bottom:10px}
+.icone_direita{position:relative; float: right; margin-bottom:10px}
+.icone_grande_esquerda{position:relative; float: left; margin-right: 12px; margin-bottom:10px}
+.icone_grande_direita{position:relative; float: right; margin-bottom:10px}
+
+/*css de adapitado*/
+#adaptado{position:relative; float:left; width:315px; margin-bottom:30px;}
+
+/*css de extras*/
+#extras{position:relative; float:left; width:315px; margin-bottom:30px;}
+
+/*css de frase do dia*/
+#frase_do_dia{position:relative; float:left; width:326px; margin-bottom:30px; border-bottom:10px; }
+#frase_do_dia p{position:relative; float: left; width:100%; text-align: left; margin-top:0px; margin-left:7px; font-size:14px; font-weight:bold; color:#4d4d4d; }
+#frase_do_dia p span{position:relative; float:right; marginn-top:20px; margin-right:7px; margin-bottom:0px; text-align:right; font-style:italic;}
+
+/*css do funcionamento das páginas*/
+#funcionamento_pagina{ position:relative; float:left; width:313px; margin-bottom:30px; margin-top:0px; color:#242424;}
+.funcionamento_pagina_semana{position:relative; float:left; list-style:none;  font-size:14px; margin-left:0px; margin-bottom:0px; margin-top:0px; width:100%;}
+.funcionamento_pagina_semana h4{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px;}
+.funcionamento_pagina_semana p{position:relative; float:right; width:208px; margin-top:0px; margin-bottom:0px; margin-right:0px}
+
+/*css do cardapio*/
+#cardapio{position:relative; float:left; width:666px;color:#242424;; margin-bottom:30px}
+.pratos_cardapio{position:relative; float:left; width:100%; height:85px;  background:url(../images/back_detalhes_claro_claro.jpg)}
+.pratos_cardapio_esquerda{position:relative; float:left; width:380px; height:100%; padding-left:10px;}
+.pratos_cardapio_esquerda h4{position:relative; float:left; margin-top:10px; margin-bottom:5px; width:100%; font-size:16px; font-weight:bold; }
+.pratos_cardapio_esquerda p{position:relative; float:left; margin-top:2px; font-size:12px;}
+.pratos_cardapio_direita{position:relative; float:right; width:266px; height:100%}
+.preco_cardapio{position:relative; float:right; width:84px; height:40px;  margin:10px auto;}
+.preco_cardapio h5{position:relative; font-size:12px; font-weight:bold; margin-top:0px; margin-bottom:0px; text-align:center; }
+.preco_cardapio p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
+
+.conteudo_cardapio{position:relative; float:left; width:666px; overflow:hidden; height:710px; margin-top:5px; }
+#pratos_cardapio{ position:relative; float:left; width:100%; overflow:hidden; height:100%; border:2px solid #4d4d4d}
+#cardapio {display: inline-block; width: 666px; }
+#abas {display: inline-block; width: 666px; height: 40px; margin: 7px 10px 0 10px; padding: 0; overflow: hidden; vertical-align: bottom;}
+#abas a {display: inline-block; font-size: 12px; font-weight: bold; color: #666; text-decoration: none; padding: 12px 26px 12px 26px; margin: 0 5px 0 0; background-color: #f0f0f0;}
+#abas a:hover {background-color: #999; color: #fff; }
+#abas a.selected {background: #242424; color: #fff; font-size: 14px}
+#conteudo_cardapio {display: inline-block; width: 666px; margin: 0; padding: 0; border: 1px solid #ccc;}
+#conteudo_cardapio li {display: inline-block; width: 666px;  padding: 0; }
+
+
+/*css das acomodações*/
+#acomodacoes{position:relative; float:left; width:666px;color:#242424;; margin-bottom:30px}
+.quartos_acomodacoes{position:relative; float:left; width:100%; height:85px;  background:url(../images/back_detalhes_claro_claro.jpg)}
+.tipo_quarto_esquerda{position:relative; float:left; width:380px; height:100%; padding-left:10px;}
+.tipo_quarto_esquerda h4{position:relative; float:left; margin-top:10px; margin-bottom:5px; width:100%; font-size:16px; font-weight:bold; }
+.tipo_quarto_esquerda p{position:relative; float:left; margin-top:2px; font-size:12px;}
+.tipo_quarto_direita{position:relative; float:right; width:266px; height:100%}
+.preco_quarto{position:relative; float:right; width:84px; height:40px;  margin:10px auto;}
+.preco_quarto h5{position:relative; font-size:12px; font-weight:bold; margin-top:0px; margin-bottom:0px; text-align:center; }
+.preco_quarto p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
+
+.conteudo_acomodacoes{position:relative; float:left; width:666px; overflow:hidden; height:710px; margin-top:5px; }
+#pratos_cardapio{ position:relative; float:left; width:100%; overflow:hidden; height:100%; border:2px solid #4d4d4d}
+#cardapio {display: inline-block; width: 666px; }
+#abas {display: inline-block; width: 666px; height: 40px; margin: 7px 10px 0 10px; padding: 0; overflow: hidden; vertical-align: bottom;}
+#abas a {display: inline-block; font-size: 12px; font-weight: bold; color: #666; text-decoration: none; padding: 12px 26px 12px 26px; margin: 0 5px 0 0; background-color: #f0f0f0;}
+#conteudo_cardapio {display: inline-block; width: 666px; margin: 0; padding: 0; border: 1px solid #ccc;}
+#conteudo_cardapio li {display: inline-block; width: 666px;  padding: 0; }			
+
+	
+/*css de Filmes e peças*/
+#cinema{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:0px; border:1px solid red;}
+
+#teatro{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:0px; border:1px solid red;}
+.cartaz{position:relative; float:left; width:326px; border:1px solid #b4b4b4;; margin-left:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
+.cartaz img{position:relative; float:left; width:108px; margin-top:5px; margin-left:5px; margin-bottom:0px;}
+.cartaz h4{position:relative; float:right; width:198px; margin-right:4px; margin-bottom:0px; margin-top:7px; font-size:14px; font-weight:bold; }
+.cartaz p{position:relative; float:right; width:198px; margin-right:4px;; margin-top:10px; margin-bottom:0px; font-size:12px; text-align:justify; }
+.precos_teatro{position:relative; float:right; width:80%; margin-top:15px; margin-right:40px;  }
+.precos_teatro h3{position:relative; float:left; text-align:left; font-size:14px; margin-right:10px; margin-left:5px; margin-top:12px; margin-bottom:0px;}
+.tipo_entrada{position:relative; float:left; width:35%; margin-right:0px; margin-top:2px; margin-left:1%}
+.tipo_entrada h4{position:relative; width:100%; text-align:center; background:#e4e4e4; color:#242424; border:1px solid white; height:18px;; vertical-align:middle; margin-right:0px; margin-top:0px;}
+.tipo_entrada p{position:relative; text-align:center; width:100%; margin-right:0px; margin-top:2px; margin-bottom:2px; }
+.horarios_exibicao{position:relative; float:left;; margin-top:5px;}
+.horarios_exibicao h3{position:relative; float:left; width:100%; text-align:left; font-size:14px; margin-bottom:2px; margin-left:5px; margin-top:2px}
+.dia_exibicao{position:relative; float:left; width:46px; font-size:12px; font-weight:bold; color:#242424;; margin-bottom:5px }
+.dia_exibicao h4{position:relative; float:left; width:100%; height:20px; margin-top:0px; text-align:center; background:#e4e4e4; color:#242424; font-size:12px; border:1px solid #fff;}
+.dia_exibicao p{ position:relative; float:left; width:100%; text-align:center; margin-top:5px; margin-bottom:0px; font-size:12px;}
+.classificacao_indicativa{position:relative; float:right; width:100%; height:17px ; margin-top:6px; margin-bottom:0px; background:#242424; color:#fff }
+.classificacao_indicativa h4{position:relative; float:left; font-size:12px; width:20%; font-weight:bold; color:#fff; margin-top:0px; margin-bottom:0px; margin-left:10px}
+.classificacao_indicativa p{position:relative; float:left; width:15%; margin-right:0px; margin-top:0px; margin-left:3px; margin-bottom:0px; font-size:12px;}
+.classificacao_indicativa span{position:relative; float:left; margin-left:10px; margin-right:10px}
+
+/*css de album*/
+#album{position:relative; float:left; width:666px; margin-bottom:30px;}
+
+/*css de promoções*/
+#promocoes{position:relative; float:left; width:666px; height:182px; margin-bottom:30px;}
+.promocao{position:relative; float:left; width:90%; padding:5px;; margin-bottom:10px; background:url(../images/back_detalhes_claro_claro.jpg); border:1px solid red}
+.promocao img{position:relative; float:left; width:211px; height:176px; background:url(../images/back_detalhes_claro.jpg); margin-right:8px; margin-bottom:0px;}
+.promocao h3{position:relative; float:left; width:370px; margin-bottom:10px; margin-top:2px; font-size:16px; font-weight:bold; color:#242424; }
+.promocao p{position:relative; float:left; width:360px; height:100px; font-size:12px; margin-top:0px; margin-bottom:15px;; text-align:justify; }
+.promocao h4{position:relative; float:right; max-width:370px; margin-bottom:10px; margin-top:0px; font-size:14px; font-weight:bold; color:#424242; }
+.promocao h4 span{ font-weight:normal; margin-left:8px}
+
+/*Locais próximos*/ 
+.locais_proximos{position:relative; float:left; width:313px; height:71px; border:1px solid #d4d4d4; margin-bottom:10px; color:#424242; font-weight:bold; padding:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
+.locais_proximos img{position:relative; float:left; width:102px; height:71px; margin-right:6px; margin-bottom:0px}
+.locais_proximos h3{position:relative; float:left; font-size:16px; width:204px; margin-top:0px; margin-bottom:0px }
+.locais_proximos h5{position:relative; float:left; font-size:12px; margin-top:10px; margin-bottom:0px;}
+.locais_proximos h5 span{position:relative; margin-left:5px}
+
+/*outros css*/
+.linha_separatoria{position:relative; float:left; width:100%; height:1px; margin-top:7px; margin-bottom:7px; background: url(../images/linha_saparatoria.jpg)}
+
+/*Resultado da pesquisa de gastronomia*/
+.resultado_pesquisa{position:relative; float:left; width:238px; height:358px; margin-right:18px; margin-bottom:18px; border:1px solid #c4c4c4}
+.estabelecimento_resultado_pesquisa{position:relative; float:left; text-align:center; width:100%; height:41px; font-size:14px; font-weight:bold; color:#ce6f00; margin-top:4px; margin-bottom:4px; border-bottom:1px solid #c4c4c4; vertical-align:central}
+.estabelecimento_resultado_pesquisa h3{vertical-align:bottom; border:1px solid red}
+.local_resultado_pesquisa{position:relative; float:left; font-size:12px; color:#4c4c4c; padding:4px; margin-top:0px; margin-bottom:2px; width:97%; height:18px;}
+.resultado_pesquisa h4{position:relative; float:left; width:233px; font-size:12px; font-weight:bold; color:#fff; background:#565656; height:20px; padding-left:3%; padding-top:4px; margin-top:0px; margin-bottom:0px}
+.icone_resultado_da_pesquisa{position:relative; float:left;  margin-left:0px; margin-right:0px; margin-top:0px;  border-left:0px; margin-bottom:0px}
+.logo_resultado_pesquisa{position:relative; float:left; width:100%; height:146px; border-bottom::1px solid #c4c4c4; background:#F9F9F9}
+.especialidades_local{position:relative; float:left; font-size:12px; color:#242424; }
+.rodape_resultado_pesquisa{position:relative; float:left; width:100%; height:30px; background:#0c4a81; vertical-align:middle; margin-top:0px}
+.rodape_resultado_pesquisa img{position:relative; float:left; margin-left:16px; margin-top:3px;}
+.rodape_resultado_pesquisa h2{position:relative; float:left; margin-top:5px; margin-left:10px; font-size:17px; font-weight:bold; color:#fff; }
+
+
+/*Publicidade*/
+#publicidade_meio{position:relative; float:left; width:295px; height:510px; border:10px solid #f6f6f6; margin-bottom:30px;}
+#publicidade_inferior{position:relative; float:left; width:980px; height:170px; border:10px solid #f6f6f6}
+.publicidade_simples { position:relative; float:right; height: 100%; width: 100%;  }
+.publicidade_simples img {position:relative; float:right; background-color: #eee; height: 100%; width: 100%; }
+
+
+/*select*/
+select{background: ;
+    border:1px solid #c4c4c4;
+    font-size: 16px;
+	font-weight:bold;
+	color:#606060;
+    padding: 5px;
+    width: 100%;
+	margin-top:6px;
+	margin-bottom:6px;}
+.select{width:240px}
+.select h4{position:relative; float:left; font-size:16px; color:#606060; margin-top:0px; margin-bottom:0px; margin-left:100px}
+#topo_select_ordenar{position:relative; float:left; width:240px; height:78px; margin-bottom:10px; margin-top:55px; background:url(../images/colocar_em_ordem.jpg) }
+#topo_select_filtrar{position:relative; float:left; width:240px; height:78px; margin-bottom:10px; background:url(../images/quero_ver_apenas.jpg) }
+
+/*===================================================
+	CSS TASSIANO
+===================================================*/
+
+
+
+
+
+
+
+
+
+
+
