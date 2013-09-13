@@ -53,7 +53,7 @@ color: #adadad;
 
 
 /*menu*/
-#menu{position:relative; float:left; width:100%; height:59px; z-index:1 ;}
+#menu{position:relative; float:left; width:100%; height:59px; z-index:100000 ;}
 .link_menu{position:relative; float:left; height:100%;background-color:#0c4880; margin-right:1px}
 .link_menu img{position:relative; float:left; margin-top:14px; margin-left:11px; margin-right:10px}
 .link_menu a{text-decoration:none}
@@ -73,7 +73,7 @@ color: #adadad;
 .titulo_sub_menus{height:24px; padding-top:5px ;padding-left:5px; padding-right:5px; background:#ebebeb; color:#535353; font-weight:bold; margin-top:0px}
 .sub_menus a{ text-decoration:none; color:#fff;}
 .sub_menus a:hover{color:#CCC;}
-.sub_menu ul li{margin-bottom:3px; margin-left:-px; list-style:none; text-decoration:none}
+.sub_menu ul li{ margin-bottom:3px; margin-left:-60px; list-style:none; text-decoration:none}
 .titulo_rodape_menu{position:relative; float:left; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:15px; color:#fff;}
 .rodape_menu{position:relative; float:left; width:100%; height:42px; background-image:url(../images/back_rodape_menu.jpg); bottom:0px}
 .rodape_menu img{position:relative; float:right; margin-top:6px; margin-right:6px; margin-left:10px}
@@ -128,9 +128,15 @@ color: #adadad;
 .icone_area_pagina{position:relative; float: left; margin-left:10px; padding-left:5px; padding-right:5px; background:#fff}
 .titulo_area_pagina{position:relative; float:left; font-size:24px; padding-right:6px; font-weight:bold; color:#4c4c4c; background:#fff; top:-16px }
 
+
+/*css das divs gerais das chamadas*/
+.chamadas{position:relative; float:left; width:326px;}
+.chamada-horizontal{position:relative; float:left; width:670px; margin-top:18px}
+.chamada-horizontal .chamada_media:last-child{margin-right:0px}
+
 /*css das chamadas pequenas*/
 .chamada_pequena{position:relative; float:left; width:326px; height:74px; margin-bottom:18px;}
-.chamada_pequena img{position:relative; float: left; width:99px; margin-right:7px; }
+.chamada_pequena img{position:relative; float: left; width:99px; height:74px; margin-right:7px; }
 .chamada_pequena p{position:relative; float:left; width: 219px; text-align:left; font-size:14px; text-decoration:none; margin-top:0px; }
 .chamada_pequena a{color:#454545; text-decoration: none;}
 .chamada_pequena:hover img{border-bottom:3px solid #ff8100; }
