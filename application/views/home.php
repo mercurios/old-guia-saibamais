@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div id="publicidade_superior">
     
 </div><!-- Publicidade -->
