@@ -2,7 +2,7 @@
 
 
 $(document).ready(function (){
-	//for each description div...
+	/*for each description div...
 	$('.chamada_caption p').each(function(){
 		//...set the opacity to 0...
 		$(this).css('opacity', 0);
@@ -23,7 +23,7 @@ $(document).ready(function (){
 		//when mouse out of the wrapper div
 		//use fadeTo to hide the div
 		$(this).children('.chamada_caption p').stop().fadeTo(200, 0);
-	});
+	});*/
 	
 /*Inicialização do sllide de publicidade do meio*/
     $('.publicidade_simples').cycle({

@@ -166,25 +166,7 @@ color: #adadad;
 .chamada_grande img{height:237px; width:326px}
 
 /*css das chamadas com caption*/
-.chamada_imagem{position:relative; float:left; width:154px; height:168px; margin-bottom:18px}
-.chamada_imagem img{width:100%; height:100% }
-.chamada_imagem p{
-	position:absolute;
-	bottom:-16px;
-	left:0px;
-	display:none;
-	text-align: left;
-	background-color:#ff8100;
-	font-family: 'arial';
-	font-size:13px;
-	color:white;
-	font-weight:bold;
-	width:40px;
-	height:96%;
-	padding-top:7px;
-}
-.chamada_imagem p a{color:#fff; text-decoration:none;}
-.direita{float:right}
+
 
 /*css da descrição das páginas*/
 #descricao_pagina{position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px;}
@@ -383,8 +365,46 @@ span.cycle-pager-active {
 	color: #ff8100;
 }
 
+/* CHAMADAS CAPTIONS */ 
+.chamadas_sidebar {
+	width: 326px;
+	float: left;
+	margin: 0 0 20px 0;
+}
+.chamada-captions {
+	width: 154px;
+	height: 168px;
+	float: left;
+	margin: 0 3px 10px 3px;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.2s;
+}
 
+.chamada-captions span {
+	width: 134px;
+	height: 148px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background: #ff8100;
+	opacity: 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s; /* Firefox 4 */
+	-webkit-transition: all 0.3s; /* Safari and Chrome */
+	-o-transition: all 0.3s; /* Opera */
+}
 
+.chamada-captions:hover span {
+	opacity: 1;
+}
+
+.chamada-captions span a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #FFFFFF;
+}
 
 
 

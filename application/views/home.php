@@ -405,50 +405,65 @@
                 <h1 class="titulo_area_categoria">Entretenimento</h1>
             </div>
 
-			<div class="chamada_imagem esquerda" >
-                        <img src='http://placehold.it/154x168' />
-                        <p> <a href="" title="acesse a matéria">Dolphins sleep with only osdv
-                         fsdvsfvf sdvdfvd fvvvvvvv vvvfs d df df ne half of their brain.</a></p>
-                    </div>
-                    <div class="chamada_imagem direita">
-                        <img src="http://placehold.it/154x168" />
-                        <p> <a href="" title="acesse a matéria">Dolphins sleep with only osdv
-                         fsdvsfvf sdvdfvd fvvvvvvv vvvfs d df df ne half of their brain.</a></p>
-                    </div>
-                    <div class="chamada_imagem esquerda" >
-                        <img src='http://placehold.it/154x168' />
-                        <p> <a href="" title="acesse a matéria">Dolphins sleep with only osdv
-                         fsdvsfvf sdvdfvd fvvvvvvv vvvfs d df df ne half of their brain.</a></p>
-                    </div>
-                    <div class="chamada_imagem direita" >
-                        <img src='http://placehold.it/154x168' />
-                        <p> <a href="" title="acesse a matéria">Dolphins sleep with only osdv
-                         fsdvsfvf sdvdfvd fvvvvvvv vvvfs d df df ne half of their brain.</a></p>
-                    </div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
+            <div class="chamadas_sidebar">
+            	<div class="chamada-captions">
+	            	<img src="http://placekitten.com/154/168" alt="">
+
+	            	<span>
+	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+	             	</span>
+	            </div>
+
+	            <div class="chamada-captions">
+	            	<img src="http://placekitten.com/154/168" alt="">
+
+	            	<span>
+	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+	             	</span>
+	            </div>
+
+	            <div class="chamada-captions">
+	            	<img src="http://placekitten.com/154/168" alt="">
+
+	            	<span>
+	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+	             	</span>
+	            </div>
+
+	            <div class="chamada-captions">
+	            	<img src="http://placekitten.com/154/168" alt="">
+
+	            	<span>
+	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+	             	</span>
+	            </div>
+
+            </div>
+			
         </div><!-- /entretenimentos -->
 
         <!-- publicidade -->
         <div id="publicidade_meio">
             <div class="publicidade_simples">
-                    <img src="<?php echo base_url(); ?>/assets/images/5.jpg" alt="imagem do banner"/>
-                    <img src="<?php echo base_url(); ?>/assets/images/1.jpg" alt="imagem do banner" />
-                    <img src="<?php echo base_url(); ?>/assets/images/2.jpg" alt="imagem do banner"/>
+                <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+					<div class="item-slider">
+						<a href="#" title="">
+							<img src="http://placekitten.com/295/510" alt="Titulo da imagem" />
+						</a>
+					</div>
+
+					<div class="item-slider">
+						<a href="#" title="">
+							<img src="http://placekitten.com/g/295/510" alt="Titulo da imagem" />
+						</a>
+					</div>
+
+					<div class="item-slider">
+						<a href="#" title="">
+							<img src="http://placekitten.com/295/510" alt="Titulo da imagem" />
+						</a>
+					</div>
+				</div>
             </div>
         </div><!-- /publicidade -->
 
@@ -479,23 +494,23 @@
 </div><!-- /conteudo -->
 
 <div id="publicidade_inferior" class="publicidade">
-	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
-					<div class="item-slider" data-title="Titulo do slider preto">
-						<a href="#" title="">
-							<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
-						</a>
-					</div>
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<div class="item-slider">
+			<a href="#" title="">
+				<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
+			</a>
+		</div>
 
-					<div class="item-slider" data-title="Titulo do slider green">
-						<a href="#" title="">
-							<img src="http://placekitten.com/g/980/170" alt="Titulo da imagem" />
-						</a>
-					</div>
+		<div class="item-slider">
+			<a href="#" title="">
+				<img src="http://placekitten.com/g/980/170" alt="Titulo da imagem" />
+			</a>
+		</div>
 
-					<div class="item-slider" data-title="Titulo do slider red">
-						<a href="#" title="">
-							<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
-						</a>
-					</div>
-				</div>
+		<div class="item-slider">
+			<a href="#" title="">
+				<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
+			</a>
+		</div>
+	</div>
 </div><!-- /publicidade -->
