@@ -21,19 +21,19 @@
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 					<div class="item-slider" data-title="Titulo do slider preto">
 						<a href="#" title="">
-							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
+							<img src="http://placekitten.com/670/200" alt="Titulo da imagem" />
 						</a>
 					</div>
 
 					<div class="item-slider" data-title="Titulo do slider green">
 						<a href="#" title="">
-							<img src="http://placekitten.com/g/326/250" alt="Titulo da imagem" />
+							<img src="http://placekitten.com/g/670/200" alt="Titulo da imagem" />
 						</a>
 					</div>
 
 					<div class="item-slider" data-title="Titulo do slider red">
 						<a href="#" title="">
-							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
+							<img src="http://placekitten.com/670/200" alt="Titulo da imagem" />
 						</a>
 					</div>
 					<div class="cycle-overlay"></div>
