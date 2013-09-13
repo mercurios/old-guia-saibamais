@@ -42,7 +42,6 @@
 			</div><!-- /sliders -->
 
 			<!-- chamadas -->
-
 			<div class="chamada-horizontal">
 				<div class="chamada_media">
 					<a href="" title="">
@@ -438,8 +437,31 @@
 	             	</span>
 	            </div>
 
+	            <div class="chamada_pequena">
+					<a href="" title="">
+                        <img src="http://placekitten.com/99/77" alt="" class="img_chamada_pequena"/>
+                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
+					</a>
+				</div>
+				<div class="chamada_pequena">
+					<a href="" title="">
+                        <img src="http://placekitten.com/99/77" alt="" class="img_chamada_pequena"/>
+                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
+					</a>
+				</div>
+				<div class="chamada_pequena">
+					<a href="" title="">
+                        <img src="http://placekitten.com/99/77" alt="" class="img_chamada_pequena"/>
+                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
+					</a>
+				</div>
+				<div class="chamada_pequena">
+					<a href="" title="">
+                        <img src="http://placekitten.com/99/77" alt="" class="img_chamada_pequena"/>
+                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
+					</a>
+				</div>
             </div>
-			
         </div><!-- /entretenimentos -->
 
         <!-- publicidade -->
