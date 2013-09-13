@@ -8,7 +8,7 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .8coluna{width:670px} .9coluna{width:756px} .10coluna{width:842px} .11coluna{width:928px} .12coluna{width:1014px}
 
 
-#container{width:1014px; position:relative; margin:0 auto; margin-top:15px; border:1px solid red; }
+#container{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
 #conteudo{position:relative; float:left; width:1014px; }
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
 #area_conteudo_esquerda{width:670px; position:relative; float:left; }
@@ -132,7 +132,7 @@ color: #adadad;
 
 /*css das divs gerais das chamadas*/
 .chamadas{position:relative; float:left; width:326px;}
-.chamada-horizontal{position:relative; float:left; width:670px; margin-top:18px}
+.chamada-horizontal{position:relative; float:left; width:670px;}
 .chamada-horizontal .chamada_media:last-child{margin-right:0px}
 
 /*css das chamadas pequenas*/
@@ -280,7 +280,7 @@ color: #adadad;
 /*Locais próximos*/ 
 .locais_proximos{position:relative; float:left; width:313px; height:71px; border:1px solid #d4d4d4; margin-bottom:10px; color:#424242; font-weight:bold; padding:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
 .locais_proximos img{position:relative; float:left; width:102px; height:71px; margin-right:6px; margin-bottom:0px}
-.locais_proximos h3{position:relative; float:left; font-size:16px; width:204px; margin-top:0px; margin-bottom:0px }
+.locais_proximos h3{position:relative; float:left; font-schamada-horizontalize:16px; width:204px; margin-top:0px; margin-bottom:0px }
 .locais_proximos h5{position:relative; float:left; font-size:12px; margin-top:10px; margin-bottom:0px;}
 .locais_proximos h5 span{position:relative; margin-left:5px}
 
@@ -328,7 +328,7 @@ select{background: ;
 ===================================================*/
 .sliders-grande {
 	width: 670px;
-	height: 230px;
+	height: 235px;
 	overflow: hidden;
 }
 
@@ -369,16 +369,18 @@ span.cycle-pager-active {
 .chamadas_sidebar {
 	width: 326px;
 	float: left;
-	margin: 0 0 20px 0;
+	margin: 0;
 }
+.chamadas_sidebar .chamada-captions:nth-child(even){margin-right:0px}
 .chamada-captions {
 	width: 154px;
 	height: 168px;
 	float: left;
-	margin: 0 3px 10px 3px;
+	margin: 0 18px 18px 0;
 	overflow: hidden;
 	position: relative;
 	transition: all 0.2s;
+	margin-right:18px;
 }
 
 .chamada-captions span {
@@ -397,7 +399,7 @@ span.cycle-pager-active {
 }
 
 .chamada-captions:hover span {
-	opacity: 1;
+	opacity: 0.9;
 }
 
 .chamada-captions span a {

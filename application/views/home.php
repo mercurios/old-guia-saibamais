@@ -439,6 +439,22 @@
 	            </div>
 
             </div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
 			
         </div><!-- /entretenimentos -->
 
@@ -472,7 +488,32 @@
                 <img src="<?php echo base_url(); ?>/assets/images/icone_estadias.png" alt="icone" class="icone_area_categoria" />
                 <h1 class="titulo_area_categoria">Estadias</h1>
             </div>
-           
+			
+            <!-- sliders -->
+			<div class="sliders-medium direita">
+				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
+					<div class="item-slider" data-title="Titulo do slider preto">
+						<a href="#" title="">
+							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
+						</a>
+					</div>
+
+					<div class="item-slider" data-title="Titulo do slider green">
+						<a href="#" title="">
+							<img src="http://placekitten.com/g/326/250" alt="Titulo da imagem" />
+						</a>
+					</div>
+
+					<div class="item-slider" data-title="Titulo do slider red">
+						<a href="#" title="">
+							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
+						</a>
+					</div>
+					<div class="cycle-overlay"></div>
+					<div class="cycle-pager"></div>
+				</div>
+			</div><!-- /sliders -->
+            
             <div class="chamada_pequena esquerda">
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
