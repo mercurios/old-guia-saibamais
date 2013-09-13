@@ -1,5 +1,25 @@
-<div id="publicidade_superior">
+<div id="publicidade_superior" class="publicidade">
+ 	<div class="conteudo_publicidade">
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+            <div class="item-slider">
+                <a href="#" title="">
+                    <img src="http://placekitten.com/914/90" alt="Titulo da imagem" />
+                </a>
+            </div>
     
+            <div class="item-slider">
+                <a href="#" title="">
+                    <img src="http://placekitten.com/g/914/90" alt="Titulo da imagem" />
+                </a>
+            </div>
+    
+            <div class="item-slider">
+                <a href="#" title="">
+                    <img src="http://placekitten.com/914/90" alt="Titulo da imagem" />
+                </a>
+            </div>
+        </div>
+    </div>
 </div><!-- Publicidade -->
 
 <!-- Conteudo
@@ -555,5 +575,4 @@
 		</div>
 	</div>
 </div><!-- /publicidade -->
-=======
->>>>>>> 8b0edebead89fd0c4c1aa41acac81cebfda2d097
+
