@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="publicidade_superior">
     
 </div><!-- Publicidade -->
@@ -555,3 +556,5 @@
 		</div>
 	</div>
 </div><!-- /publicidade -->
+=======
+>>>>>>> 8b0edebead89fd0c4c1aa41acac81cebfda2d097
