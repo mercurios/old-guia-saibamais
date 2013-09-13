@@ -44,8 +44,11 @@ class Restaurante extends CI_Controller {
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
+		// Carrega o conteudo
+		$this->load->view('restaurante/inicial-restaurante');
+
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 

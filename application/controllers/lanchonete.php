@@ -44,8 +44,11 @@ class Lanchonete extends CI_Controller {
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
+		// Carrega o conteudo
+		$this->load->view('lanchonete/inicial-lanchonete');
+
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 

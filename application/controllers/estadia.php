@@ -42,8 +42,14 @@ class Estadia extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Carrega o header
 		$this->load->view('includes/header', $seo);
-		$this->load->view('estadia/listar');
+
+		// Carrega o conteudo
+		$this->load->view('estadia/inicial-estadia');
+
+		// Carrega o rodape
+		$this->load->view('includes/footer');
 	}
 
 	/* Detalhe da estadia

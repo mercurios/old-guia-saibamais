@@ -44,8 +44,11 @@ class Bebida extends CI_Controller {
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
+		// Carrega o conteudo
+		$this->load->view('bebida/inicial-bebida');
+
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 
