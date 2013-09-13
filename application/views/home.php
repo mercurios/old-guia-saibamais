@@ -122,19 +122,19 @@
 			<div class="chamadas esquerda">
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src='http://placehold.it/154x168' alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
@@ -217,19 +217,19 @@
 			<div class="chamadas direita">
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
@@ -314,19 +314,19 @@
 			<div class="chamadas esquerda">
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
 				<div class="chamada_pequena">
 					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
+                        <img src="http://placekitten.com/g/99/77" alt="" class="img_chamada_pequena"/>
                         <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
 					</a>
 				</div>
