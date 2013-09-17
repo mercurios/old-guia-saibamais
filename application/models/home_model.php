@@ -3,8 +3,9 @@
 class Home_model extends CI_Model
 {
     // Nome da Tabela
-    private $chamada = 'guia_chamadas';
-    private $frases = 'guia_frases';
+    private $chamada    = 'guia_chamadas';
+    private $frases     = 'guia_frases';
+    private $publicidade = 'guia_publicidades';
 
 
     // Método construtor
@@ -36,12 +37,40 @@ class Home_model extends CI_Model
             0 => "domingo"
         );
 
-        $hoje = $dia['wday'];
+        $hoje   = $dia['wday'];
         $diaext = $diasemana[$hoje];
 
         $this->db->where('dia_frase', $diaext);
-        return $this->db->get($this->frases)->result();
+        $result = $this->db->get($this->frases)->result();
+        return $result;
     }
+
+    // Publicidades
+    public function get_publicidade($pos, $pag)
+    {
+        // $pos = 'top' , 'conteudo' , 'sidebar' , 'bottom'
+        // $pag = 'home' , 'restaurantes' , 'lanchonetes' , 'bebidas' , 'lazer' , 'estadias' , 'entretenimento'    
+
+        $this->db->where('pos_publicidade', $pos);
+        $this->db->where('pag_publicidade', $pag);
+        $result = $this->db->get($this->publicidade)->result();
+
+        return $result;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -68,6 +68,15 @@ class Home extends CI_Controller {
 		// Frase do dia
 		$dados['frases_dia'] = $this->home->get_frase(getdate());
 
+		// Publicidade top
+		$dados['pub_top'] = $this->home->get_publicidade('top', 'home');
+
+		// Publicidade sidebar
+		$dados['pub_sidebar'] = $this->home->get_publicidade('sidebar', 'home');
+
+		// Publicidade bottom
+		$dados['pub_bottom'] = $this->home->get_publicidade('bottom', 'home');
+
 		// Carrega os views
 		$this->load->view('includes/header', $seo);
 		$this->load->view('home', $dados);
