@@ -474,7 +474,7 @@
                 <h1 class="titulo_area_categoria">Entretenimento</h1>
             </div>
 
-            <div class="chamadas_sidebar">
+            <div class="chamadas_sidebar_esquerda">
             	<div class="chamada-captions">
 	            	<img src="http://placekitten.com/154/168" alt="">
 
@@ -506,8 +506,16 @@
 	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
 	             	</span>
 	            </div>
+                <div class="chamada-captions-media">
+	            	<img src="http://placekitten.com/326/168" alt="">
+
+	            	<span>
+                    	<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+               		</span>
+	            </div>
 
             </div>
+            
             <div class="chamada_pequena esquerda">
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
@@ -521,22 +529,7 @@
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
             
-            <div class="chamada-horizontal">
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-			</div>
+           
             <div class="rodape_area_categoria">
 				<a href="<?php echo base_url('entretenimento'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Bebidas">
                     <div class="conteudo_rodape_pagina_categoria">
@@ -603,22 +596,7 @@
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
-            <div class="chamada-horizontal">
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-			</div>
+            
             
             <div class="chamada_pequena esquerda">
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
@@ -632,6 +610,7 @@
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
+            
             <div class="rodape_area_categoria">
 				<a href="<?php echo base_url('estadias'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Estadias">
                     <div class="conteudo_rodape_pagina_categoria">

@@ -304,11 +304,11 @@ color: #adadad;
 /*Publicidade*/
 #publicidade_superior{position:relative; float:left; margin-top:25px; margin-bottom:10px; width:100%; height:90px; background: url(../images/back_detalhes.jpg);}
 #publicidade_superior .conteudo_publicidade{position:relative;  margin-left:50px;}
-#publicidade_meio{position:relative; float:left; width:295px; height:510px; border:10px solid #f6f6f6; margin-bottom:30px;}
+#publicidade_meio{position:relative; float:left; width:295px; height:510px; border:10px solid #f6f6f6; margin-bottom:30px; background: url(../images/back_detalhes.jpg);}
 #publicidade_meio_index{position:relative; float:left; margin-top:5px; margin-bottom:40px; width:100%; height:70px; background: url(../images/back_detalhes.jpg);}
 #publicidade_meio_index .conteudo_publicidade{position:relative;  margin-left:25px;}
-#publicidade_inferior{position:relative; float:left; width:980px; height:170px; border:10px solid #f6f6f6}
-.publicidade_simples { position:relative; float:right; height: 100%; width: 100%;  }
+#publicidade_inferior{position:relative; float:left; width:980px; height:170px; border:10px solid #f6f6f6; background: url(../images/back_detalhes.jpg);}
+.publicidade_simples { position:relative; float:right; height: 100%; width: 100%; background: url(../images/back_detalhes.jpg); }
 .publicidade_simples img {position:relative; float:right; background-color: #eee; height: 100%; width: 100%; }
 
 
@@ -370,12 +370,17 @@ span.cycle-pager-active {
 }
 
 /* CHAMADAS CAPTIONS */ 
-.chamadas_sidebar {
+.chamadas_sidebar_esquerda {
 	width: 326px;
-	float: left;
-	margin: 0;
+	float: left;	
 }
-.chamadas_sidebar .chamada-captions:nth-child(even){margin-right:0px}
+
+.chamadas_sidebar_direita {
+	width: 326px;
+	float: right;
+}
+
+.chamadas_sidebar_esquerda .chamada-captions:nth-child(even){margin-right:0px}
 .chamada-captions {
 	width: 154px;
 	height: 168px;
@@ -385,6 +390,7 @@ span.cycle-pager-active {
 	position: relative;
 	transition: all 0.2s;
 	margin-right:18px;
+	
 }
 
 .chamada-captions span {
@@ -412,7 +418,80 @@ span.cycle-pager-active {
 	color: #FFFFFF;
 }
 
+.chamada-captions-grande {
+	width: 326px;
+	height: 354px;
+	float: left;
+	margin: 0 18px 18px 0;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.2s;
+	margin-right:18px;
+	
+}
 
+.chamada-captions-grande span {
+	width: 99%;
+	height: 99%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background: #ff8100;
+	opacity: 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s; /* Firefox 4 */
+	-webkit-transition: all 0.3s; /* Safari and Chrome */
+	-o-transition: all 0.3s; /* Opera */
+}
+
+.chamada-captions-grande:hover span {
+	opacity: 0.9;
+}
+
+.chamada-captions-grande span a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #FFFFFF;
+}
+
+
+.chamada-captions-media {
+	width: 326px;
+	height: 168px;
+	float: left;
+	margin: 0 18px 18px 0;
+	overflow: hidden;
+	position: relative;
+	transition: all 0.2s;
+	margin-right:18px;
+	
+}
+
+.chamada-captions-media span {
+	width: 99%;
+	height: 148px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	background: #ff8100;
+	opacity: 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s; /* Firefox 4 */
+	-webkit-transition: all 0.3s; /* Safari and Chrome */
+	-o-transition: all 0.3s; /* Opera */
+}
+
+.chamada-captions-media:hover span {
+	opacity: 0.9;
+}
+
+.chamada-captions-media span a {
+	text-decoration: none;
+	font-size: 13px;
+	color: #FFFFFF;
+}
 
 
 img{border:0px}
