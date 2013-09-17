@@ -97,15 +97,39 @@
 			</div>
 
 			<div class="rodape_area_categoria">
-				<a href="<?php echo base_url('restaurante'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre restaurantes">
+				<a href="<?php echo base_url('passeio-e-lazer'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Passeio e lazer">
                 	<div class="conteudo_rodape_pagina_categoria">
-						<h4>Acessar página de Restaurantes</h4>
+						<h4>Acessar página de Passeio e Lazer</h4>
                     	<img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
 					</div>
                 </a>
 			</div>
 		</div><!-- /conteudo Passeio e lazer -->
         
+         <!-- Publicidade -->
+        <div id="publicidade_meio_index" class="publicidade">
+            <div class="conteudo_publicidade">
+                <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+            
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/g/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+            
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Publicidade -->
         
 		<!-- conteudo restaurante -->
 		<div id="area_conteudo_home_restaurantes" class="area_conteudo_home">
@@ -195,7 +219,7 @@
 			</div>
 
 			<div class="rodape_area_categoria">
-				<a href="<?php echo base_url('restaurante'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre restaurantes">
+				<a href="<?php echo base_url('restaurantes'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre restaurantes">
                 	<div class="conteudo_rodape_pagina_categoria">
 						<h4>Acessar página de Restaurantes</h4>
                     	<img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
@@ -203,7 +227,7 @@
                 </a>
 			</div>
 		</div><!-- /conteudo restaurante -->
-
+		
 		<!-- conteudo lanchonete -->
 		<div id="area_conteudo_home_lanchonetes" class="area_conteudo_home">
 			<div class="topo_area_categoria">
@@ -290,7 +314,7 @@
 			</div><!-- /chamadas horizontais -->
 
 			<div class="rodape_area_categoria">
-				<a href="<?php echo base_url('lanchonete'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre lanchonetes">
+				<a href="<?php echo base_url('lanchonetes'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre lanchonetes">
                     <div class="conteudo_rodape_pagina_categoria">
                         <h4>Acessar página de Lanchonetes</h4>
                         <img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
@@ -298,6 +322,31 @@
                 </a>
 			</div>
 		</div><!-- /conteudo lanchonete -->
+        
+        <!-- Publicidade -->
+        <div id="publicidade_meio_index" class="publicidade">
+            <div class="conteudo_publicidade">
+                <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+            
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/g/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+            
+                    <div class="item-slider">
+                        <a href="#" title="">
+                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- Publicidade -->
 
 		<!-- conteudo bebidas -->
 		<div id="area_conteudo_home_bebidas" class="area_conteudo_home">
@@ -387,7 +436,7 @@
 			</div>
 
 			<div class="rodape_area_categoria">
-				<a href="<?php echo base_url('bebida'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Bebidas">
+				<a href="<?php echo base_url('bebidas'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Bebidas">
                     <div class="conteudo_rodape_pagina_categoria">
                         <h4>Acessar página de Bebidas</h4>
                         <img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
@@ -471,9 +520,30 @@
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+            
+            <div class="chamada-horizontal">
+				<div class="chamada_media">
+					<a href="" title="">
+						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
+						<h2>VIII passeio ciclistico do Recife</h2>
+						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					</a>
+				</div>
+				<div class="chamada_media">
+					<a href="" title="">
+						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
+						<h2>VIII passeio ciclistico do Recife</h2>
+						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					</a>
+				</div>
+			</div>
+            <div class="rodape_area_categoria">
+				<a href="<?php echo base_url('entretenimento'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Bebidas">
+                    <div class="conteudo_rodape_pagina_categoria">
+                        <h4>Acessar página de Entretenimento</h4>
+                        <img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
+                    </div>
+                </a>
 			</div>
 			
         </div><!-- /entretenimentos -->
@@ -533,6 +603,22 @@
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
+            <div class="chamada-horizontal">
+				<div class="chamada_media">
+					<a href="" title="">
+						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
+						<h2>VIII passeio ciclistico do Recife</h2>
+						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					</a>
+				</div>
+				<div class="chamada_media">
+					<a href="" title="">
+						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
+						<h2>VIII passeio ciclistico do Recife</h2>
+						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					</a>
+				</div>
+			</div>
             
             <div class="chamada_pequena esquerda">
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
@@ -546,11 +632,15 @@
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+            <div class="rodape_area_categoria">
+				<a href="<?php echo base_url('estadias'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Estadias">
+                    <div class="conteudo_rodape_pagina_categoria">
+                        <h4>Acessar página de Estadias</h4>
+                        <img src="<?php echo base_url(); ?>/assets/images/mais.png" alt=""/>
+                    </div>
+                </a>
 			</div>
-		</div>
+        </div>
 	</div><!-- /conteudo direita -->
 </div><!-- /conteudo -->
 

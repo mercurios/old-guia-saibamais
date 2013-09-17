@@ -53,9 +53,9 @@ color: #adadad;
 
 
 /*menu*/
-#menu{position:relative; float:left; width:100%; height:59px; z-index:100000;}
+#menu{position:relative; float:left; height:59px; z-index:100000;}
 #menu .link_menu:last-child{margin-right: 0px; border-right: 0px}
-.link_menu{position:relative; float:left; height:100%;background-color:#0c4880; border-right:1px solid white;}
+.link_menu{position:relative; float:left;height:100%;background-color:#0c4880; border-right:1px solid white;}
 .link_menu img{position:relative; float:left; margin-top:14px; margin-left:11px; margin-right:10px}
 .link_menu a{text-decoration:none}
 .link_menu a h3{position:relative; float:left; color:#fff; font-size:16px; margin-top:20px; margin-right:12px; font-weight:100; font-style:none; text-decoration:none}
@@ -132,7 +132,7 @@ color: #adadad;
 
 /*css das divs gerais das chamadas*/
 .chamadas{position:relative; float:left; width:326px;}
-.chamada-horizontal{position:relative; float:left; width:670px;}
+.chamada-horizontal{position:relative; float:left; width:100%;}
 .chamada-horizontal .chamada_media:last-child{margin-right:0px}
 
 /*css das chamadas pequenas*/
@@ -303,11 +303,14 @@ color: #adadad;
 
 /*Publicidade*/
 #publicidade_superior{position:relative; float:left; margin-top:25px; margin-bottom:10px; width:100%; height:90px; background: url(../images/back_detalhes.jpg);}
+#publicidade_superior .conteudo_publicidade{position:relative;  margin-left:50px;}
 #publicidade_meio{position:relative; float:left; width:295px; height:510px; border:10px solid #f6f6f6; margin-bottom:30px;}
+#publicidade_meio_index{position:relative; float:left; margin-top:5px; margin-bottom:40px; width:100%; height:70px; background: url(../images/back_detalhes.jpg);}
+#publicidade_meio_index .conteudo_publicidade{position:relative;  margin-left:25px;}
 #publicidade_inferior{position:relative; float:left; width:980px; height:170px; border:10px solid #f6f6f6}
 .publicidade_simples { position:relative; float:right; height: 100%; width: 100%;  }
 .publicidade_simples img {position:relative; float:right; background-color: #eee; height: 100%; width: 100%; }
-.conteudo_publicidade{position:relative;  margin-left:50px;}
+
 
 /*select*/
 select{background: ;
@@ -412,6 +415,6 @@ span.cycle-pager-active {
 
 
 
-
+img{border:0px}
 
 
