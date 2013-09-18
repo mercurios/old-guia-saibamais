@@ -18,7 +18,6 @@ class Home extends CI_Controller {
 
 	public function index()
 	{	
-
 		// Titulo da página
 		$seo['titulopag'] = "Guia Saiba Mais";
 
