@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Restaurante extends CI_Controller {
+class Restaurantes extends CI_Controller {
 
 	/**
 	 * Restaurante

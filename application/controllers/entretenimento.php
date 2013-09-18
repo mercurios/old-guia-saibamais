@@ -15,7 +15,7 @@ class Entretenimento extends CI_Controller {
 
 
 	public function index()
-	{	
+	{
 		// Titulo da página
 		$seo['titulopag'] = "Entretenimentos | Guia Saiba Mais";
 

@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 	/**
 	 * Página inicial
 	 *	Itens
-	 *	 - 
+	 *	 -
 	 */
 	public function __construct()
 	{
@@ -17,9 +17,9 @@ class Home extends CI_Controller {
 
 
 	public function index()
-	{	
+	{
 		// Titulo da página
-		$seo['titulopag'] = "Guia Saiba Mais";
+		$seo['titulopag'] = "Guia Saiba Mais | Fácil de lembrar, gostoso de navegar";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -34,47 +34,23 @@ class Home extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'Restaurantes | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'Guia Saiba Mais | Fácil de lembrar, gostoso de navegar', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
 			array('name' => 'og:url', 'content' => base_url('restaurante'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
-		// Chamadas pequena de restaurante
-		$dados['chamada_restaurante_pequena'] = $this->home->get_chamada('pequena', 'restaurante', 4);
-
-		// Chamadas media de restaurante
-		$dados['chamada_restaurante_media'] = $this->home->get_chamada('media', 'restaurante', 3);
-
-		// Chamadas pequena de lanchonete
-		$dados['chamada_lanchonete_pequena'] = $this->home->get_chamada('pequena', 'lanchonete', 4);
-
-		// Chamadas media de lanchonete
-		$dados['chamada_lanchonete_media'] = $this->home->get_chamada('media', 'lanchonete', 3);
-
-		// Chamadas pequena de bebida
-		$dados['chamada_bebida_pequena'] = $this->home->get_chamada('pequena', 'bebida', 4);
-
-		// Chamadas media de bebida
-		$dados['chamada_bebida_media'] = $this->home->get_chamada('media', 'bebida', 3);
-
-		// Chamadas pequena entretenimento
-		$dados['chamada_entretenimento_pequena'] = $this->home->get_chamada('pequena', 'entretenimento', 4);
-
-		// Chamadas pequena estadia
-		$dados['chamada_estadia_pequena'] = $this->home->get_chamada('pequena', 'estadia', 4);
-
-		// Frase do dia
-		$dados['frases_dia'] = $this->home->get_frase(getdate());
-
 		// Publicidade top
 		$dados['pub_top'] = $this->home->get_publicidade('top', 'home');
 
-		// Publicidade sidebar
-		$dados['pub_sidebar'] = $this->home->get_publicidade('sidebar', 'home');
+		// Chamadas Passeio e lazer Slider
+		$dados['lazer_slider'] = $this->home->get_chamada('slider', 'passeio-lazer', 4);
 
-		// Publicidade bottom
-		$dados['pub_bottom'] = $this->home->get_publicidade('bottom', 'home');
+		// Chamadas Passeio e lazer média
+		$dados['lazer_media'] = $this->home->get_chamada('media', 'passeio-lazer', 4);
+
+		// Frase do dia
+		$dados['frases_dia'] = $this->home->get_frase(getdate());
 
 		// Carrega os views
 		$this->load->view('includes/header', $seo);

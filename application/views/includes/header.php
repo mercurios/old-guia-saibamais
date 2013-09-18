@@ -46,7 +46,7 @@
             ================================================== -->
             <div id="menu" class="area_conteudo">
                 <div class="link_menu">
-                    <a href="<?php echo base_url('restaurante/'); ?>" title="">
+                    <a href="<?php echo base_url('restaurantes/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/prato.png" alt="Prato" />
                         <h3 class="">Restaurantes</h3>
                         <div class="v"></div>
@@ -56,16 +56,16 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por cozinha</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/africanas'); ?>" title="Veja os restaurantes que vendem comida(s) africana(s)">Africana</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/arabes'); ?>" title="Veja os restaurantes que vendem comida(s) árabe(s)">Árabe</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/brasileiras'); ?>" title="Veja os restaurantes que vendem comida(s) Brasileira(s)">Brasileira</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/europeias'); ?>" title="Veja os restaurantes que vendem comida(s) Europeia(s)">Europeia</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/italianas'); ?>" title="Veja os restaurantes que vendem comida(s) Italiana(s)">Italiana</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/latinas'); ?>" title="Veja os restaurantes que vendem comida(s) Latina(s)">Latina</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/orientais'); ?>" title="Veja os restaurantes que vendem comida(s) Oriental(is)">Oriental</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/africanas'); ?>" title="Veja os restaurantes que vendem comida(s) africana(s)">Africana</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/arabes'); ?>" title="Veja os restaurantes que vendem comida(s) árabe(s)">Árabe</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/brasileiras'); ?>" title="Veja os restaurantes que vendem comida(s) Brasileira(s)">Brasileira</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/europeias'); ?>" title="Veja os restaurantes que vendem comida(s) Europeia(s)">Europeia</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/italianas'); ?>" title="Veja os restaurantes que vendem comida(s) Italiana(s)">Italiana</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/latinas'); ?>" title="Veja os restaurantes que vendem comida(s) Latina(s)">Latina</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/orientais'); ?>" title="Veja os restaurantes que vendem comida(s) Oriental(is)">Oriental</a></li>
                             </ul>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/regionais'); ?>" title="Veja os restaurantes que vendem comida(s) Regional(is)">Regional</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/regionais'); ?>" title="Veja os restaurantes que vendem comida(s) Regional(is)">Regional</a></li>
                             </ul>
                         </div>
 
@@ -73,24 +73,24 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por tipo</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/carnes'); ?>" title="Veja os restaurantes que vendem Carne(s)">Carnes</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/crustaceos'); ?>" title="Veja os restaurantes que vendem Crustáceo(s)">Crustáceos / Moluscos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/especiais'); ?>" title="Veja os restaurantes que vendem comida(s) Light / Especial(is)">Light / Especiais</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/massas'); ?>" title="Veja os restaurantes que vendem Massa(s)">Massas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/naturais'); ?>" title="Veja os restaurantes que vendem comida(s) Natural(is)">Natural</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/peixes'); ?>" title="Veja os restaurantes que vendem Peixe(s)">Peixes</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/vegetais'); ?>" title="Veja os restaurantes que vendem Vegetal(is)">Vegetais</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/carnes'); ?>" title="Veja os restaurantes que vendem Carne(s)">Carnes</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/crustaceos'); ?>" title="Veja os restaurantes que vendem Crustáceo(s)">Crustáceos / Moluscos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/especiais'); ?>" title="Veja os restaurantes que vendem comida(s) Light / Especial(is)">Light / Especiais</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/massas'); ?>" title="Veja os restaurantes que vendem Massa(s)">Massas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/naturais'); ?>" title="Veja os restaurantes que vendem comida(s) Natural(is)">Natural</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/peixes'); ?>" title="Veja os restaurantes que vendem Peixe(s)">Peixes</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/vegetais'); ?>" title="Veja os restaurantes que vendem Vegetal(is)">Vegetais</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por serviço</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/alacartes'); ?>" title="Veja os restaurantes que vendem por À la carte">À la carte</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/delivery'); ?>" title="Veja os restaurantes que vendem por Delivery">Delivery</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/drive-thrur'); ?>" title="Veja os restaurantes que vendem por Drive-thrur">Drive-thrur</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/rodizios'); ?>" title="Veja os restaurantes que vendem por Rodizio">Rodizio</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('restaurante/categoria/self-service'); ?>" title="Veja os restaurantes que vendem por Self-serviçe">Self-serviçe</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/alacartes'); ?>" title="Veja os restaurantes que vendem por À la carte">À la carte</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/delivery'); ?>" title="Veja os restaurantes que vendem por Delivery">Delivery</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/drive-thrur'); ?>" title="Veja os restaurantes que vendem por Drive-thrur">Drive-thrur</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/rodizios'); ?>" title="Veja os restaurantes que vendem por Rodizio">Rodizio</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/self-service'); ?>" title="Veja os restaurantes que vendem por Self-serviçe">Self-serviçe</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">
