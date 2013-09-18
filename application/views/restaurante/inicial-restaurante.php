@@ -252,7 +252,7 @@
     <div id="area_conteudo_direita" class="area_conteudo">
     	<div id="filtrar_ordenar" class="direita">
 			<div id="filtrar_pesquisa" class="select">
-				<div id="topo_select_filtrar"></div>
+				<div id="topo_select_escolha"></div>
 				<select>
 					<option selected>No bairro</option>
 					<optgroup label="Recife">
