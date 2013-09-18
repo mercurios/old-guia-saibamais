@@ -11,7 +11,6 @@
 	                </a>
 	            </div>
 
-
         	<?php } } ?>
         </div>
     </div>
@@ -494,33 +493,24 @@
 	            </div>
 
             </div>
-<<<<<<< HEAD
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
+            <div class="chamada_pequena esquerda">
+				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
+				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+			</div>
 
-=======
-            
->>>>>>> b56bf3effcfa34cdc28d99444b82a91b359ebc56
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
-<<<<<<< HEAD
 			<div class="chamada-horizontal">
-=======
-<<<<<<< HEAD
-            
-           
-=======
+
 
             <div class="chamada-horizontal">
->>>>>>> b56bf3effcfa34cdc28d99444b82a91b359ebc56
+
 				<div class="chamada_media">
 					<a href="" title="">
 						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
@@ -536,12 +526,7 @@
 					</a>
 				</div>
 			</div>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 76f093e7ba0585ac7d99a44c32f55e016fff160d
->>>>>>> b56bf3effcfa34cdc28d99444b82a91b359ebc56
             <div class="rodape_area_categoria">
 				<a href="<?php echo base_url('entretenimento'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Bebidas">
                     <div class="conteudo_rodape_pagina_categoria">
@@ -608,15 +593,11 @@
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
-<<<<<<< HEAD
+
 			<div class="chamada-horizontal">
-=======
-<<<<<<< HEAD
-            
-            
-=======
+
             <div class="chamada-horizontal">
->>>>>>> b56bf3effcfa34cdc28d99444b82a91b359ebc56
+
 				<div class="chamada_media">
 					<a href="" title="">
 						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
@@ -633,7 +614,6 @@
 				</div>
 			</div>
 
->>>>>>> 76f093e7ba0585ac7d99a44c32f55e016fff160d
             <div class="chamada_pequena esquerda">
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
@@ -646,11 +626,7 @@
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
-<<<<<<< HEAD
 
-=======
-            
->>>>>>> b56bf3effcfa34cdc28d99444b82a91b359ebc56
             <div class="rodape_area_categoria">
 				<a href="<?php echo base_url('estadias'); ?>" title="Clique aqui e acesse uma página esclusiva com informações, matérias, promoções e outras coisas sobre Estadias">
                     <div class="conteudo_rodape_pagina_categoria">
