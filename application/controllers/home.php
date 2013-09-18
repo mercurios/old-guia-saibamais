@@ -24,7 +24,7 @@ class Home extends CI_Controller {
 		// Meta tags
 		$seo['meta'] = array(
 			array('name' => 'language', 'content' => 'pt-br'),
-			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'description', 'content' => 'Descrição do site'),
 			array('name' => 'keywords', 'content' => 'Key, key'),
 			array('name' => 'author', 'content' => 'Mercurios'),
 			array('name' => 'googlebot', 'content' => 'ALL'),
