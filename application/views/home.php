@@ -484,13 +484,7 @@
 	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
 	             	</span>
 	            </div>
-                <div class="chamada-captions-media">
-	            	<img src="http://placekitten.com/326/168" alt="">
-
-	            	<span>
-                    	<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-               		</span>
-	            </div>
+                
 
             </div>
             <div class="chamada_pequena esquerda">
@@ -505,8 +499,6 @@
 				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
 				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
 			</div>
-
-			<div class="chamada-horizontal">
 
 
             <div class="chamada-horizontal">
@@ -660,4 +652,6 @@
 		</div>
 	</div>
 </div><!-- /publicidade -->
+
+
 
