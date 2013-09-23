@@ -250,56 +250,55 @@
     </div> <!--Fim da área de conteúdo esquerda-->
     <!--Inicio da área de conteúdo direita-->
     <div id="area_conteudo_direita" class="area_conteudo">
-    	<div id="filtrar_ordenar" class="direita">
+    	<!--Inicio do campo de filtragem-->
+        <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_escolha"></div>
-				<select>
-					<option selected>No bairro</option>
-					<optgroup label="Recife">
-						<option>Boa Viagem</option>
-						<option>Boa vista</option>
-						<option>Espinheiro</option>
-						<option>Graças</option>
-						<option>Ilha do Leite</option>
-						<option>Madalena</option>
-						<option>Recife antigo</option>
-						<option>Torre</option>
-					</optgroup>
-				</select>
-				
-				<h4>ou</h4>
-				
-				<select>
-					<option selected>Que seja acessivel à:</option>
-					<option>Dallas Cowboys</option>
-					<option>New York Giants</option>
-					<option>Philadelphia Eagles</option>
-					<option>Washington Redskins</option>
-					<option>Dallas Cowboys</option>
-					<option>New York Giants</option>
-					<option>Philadelphia Eagles</option>
-					<option>Washington Redskins</option>
-				</select>
-				
-				<h4>ou</h4>
-				
-				<select>
-					<option selected>Por bairro</option>
-					<optgroup label="Recife">
-						<option>Dallas Cowboys</option>
-						<option>New York Giants</option>
-						<option>Philadelphia Eagles</option>
-						<option>Washington Redskins</option>
-						<option>Dallas Cowboys</option>
-						<option>New York Giants</option>
-						<option>Philadelphia Eagles</option>
-						<option>Washington Redskins</option>
-					</optgroup>
-				</select>
-				
+                    <select>
+                        <option selected>No bairro</option>
+                        <optgroup label="Recife">
+                            <option>Boa Viagem</option>
+                            <option>Boa vista</option>
+                            <option>Espinheiro</option>
+                            <option>Graças</option>
+                            <option>Ilha do Leite</option>
+                            <option>Madalena</option>
+                            <option>Recife antigo</option>
+                            <option>Torre</option>
+                        </optgroup>
+                    </select>
+                    
+                    <h4>ou</h4>
+                    
+                    <select>
+                        <option selected>Que seja acessivel à:</option>
+                        <option>Cegos</option>
+                        <option>Deficientes físicos</option>
+                        <option>Gestantes</option>
+                        <option>Idosos</option>
+                        <option>Obesos</option>
+                        <option>Surdos</option>
+                    </select>
+                    
+                    <h4>ou</h4>
+                    
+                    <select>
+                        <option selected>Por tipo</option>
+                            <option>Rodízios</option>
+                            <option>Self-services</option>
+                            <option>A la carte</option>
+                            <option>Washington Redskins</option>
+                            <option>Dallas Cowboys</option>
+                            <option>New York Giants</option>
+                            <option>Philadelphia Eagles</option>
+                            <option>Washington Redskins</option>
+                        </optgroup>
+                    </select>
+				</div>
 			</div>
-    	<!-- publicidade -->
-        <div id="publicidade_meio">
+            <!--Fim do campo de filtragem-->
+            <!-- publicidade -->
+            <div id="publicidade_meio">
             <div class="publicidade_simples">
                 <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
 					<div class="item-slider">
@@ -322,6 +321,11 @@
 				</div>
             </div>
         </div><!-- /publicidade -->
+        <div id="promocoes_semana">
+        	<div id="topo_promocoes_semana"></div>
+        </div>
+    	
+        
     </div><!--Fim da área de conteúdo direita-->
 </div><!-- /conteudo -->
 

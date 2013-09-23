@@ -11,8 +11,8 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 #container{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
 #conteudo{position:relative; float:left; width:1014px; margin-top:-50px; }
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
-#area_conteudo_esquerda{width:670px; position:relative; float:left; border:1px solid red }
-#area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px; border:1px solid red}
+#area_conteudo_esquerda{width:670px; position:relative; float:left; }
+#area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px; }
 .area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
 #area_conteudo_esquerda_pesquisa{width:774px; position:relative; float:left;  }
 #area_conteudo_direita_pesquisa{width:240px; position:relative; float:right; margin-right:0px; }
@@ -313,20 +313,29 @@ color: #adadad;
 
 
 /*select*/
-select{background: ;
+#filtrar_ordenar{position:relative; float:left; margin-bottom:25px;}
+select{background: #FFF4F4 ;
     border:1px solid #c4c4c4;
     font-size: 16px;
 	font-weight:bold;
 	color:#606060;
-    padding: 5px;
+    padding: 1px;
     width: 100%;
-	margin-top:6px;
-	margin-bottom:6px;}
+	margin-top:3px;
+	margin-bottom:3px;}
 .select{width:100%}
-.select h4{position:relative; float:left; font-size:16px; color:#606060; margin-top:0px; margin-bottom:0px; margin-left:100px}
+.select h4{position:relative; float:left; font-size:15px; color:#606060; margin-top:0px; margin-bottom:0px; margin-left:10px}
 #topo_select_ordenar{position:relative; float:left; width:240px; height:78px; margin-bottom:10px; margin-top:55px; background:url(../images/colocar_em_ordem.jpg) }
 #topo_select_filtrar{position:relative; float:left; width:240px; height:78px; margin-bottom:10px; background:url(../images/quero_ver_apenas.jpg) }
 #topo_select_escolha{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_restaurante.jpg); }
+
+/*Promoções da semana*/
+#promocoes_semana{position:relative; float:left; margin-top:20px}
+#topo_promocoes_semana{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/promocoes_da_semana.jpg) }
+
+
+
+
 /*===================================================
 	CSS TASSIANO
 ===================================================*/
@@ -497,3 +506,9 @@ span.cycle-pager-active {
 img{border:0px}
 
 
+/*Rodapé*/
+
+#rodape{position:relative; float:left; width:100%; margin-top:45px; margin-bottom:0px; background:#007bb7}
+#rodape_3{}
+#rodape_4{background:#252525}
+.h1_redape{ font-family:"Alte Haas Grotesk"; font-size:44px; font-weight:bold; color: #fff}
