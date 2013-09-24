@@ -2,56 +2,63 @@
             ================================================== -->
             <div id="rodape">
                 <div id="rodape_1"></div>
-                    <div id="rodape_2">
-                        <div class="rodape_2">
-                            <img src="" alt="icone"/>
+                <div id="rodape_2">
+                    <div class="rodape_2">
+                    	<div id="sac">
+                            <img src="<?php echo base_url(); ?>/assets/images/icone_telefone.png" alt="icone"/>
                             <h3>SAC</h3>
                             <h4>(81) 3028.0047</h4>
                         </div>
-                        <div class="rodape_2">
+                    </div>
+                    <div class="rodape_2">
+                    	<div id="anuncie">
                             <img src="" alt="icone"/>
                             <h3>Anuncie</h3>
                             <p>Veja aqui as vantagens de anunciar no guia.</p>
-                        </div>
-                        <div class="rodape_2">
+						</div>
+                    </div>
+                    <div class="rodape_2">
+                    	<div id="conheca_o_guia">
                             <img src="" alt="icone"/>
                             <h3>Conheça o guia</h3>
-                            <p>Veja </p>
+                            <p>Veja onde tem aquela comida que você procura, um lugar para você passear... </p>
                         </div>
                     </div>
-                    <div id="rodape_3">
-                    	<h1 class="h1_redape">O que se acha aqui?</h1>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                        <ul>
-                        	<li	class="titulo_li_rodape"></li>
-                            <li></li>
-                        </ul>
-                    </div>
-                    <div id="rodape_4">
-                    	<h1 class="h1_redape">Fique mais perto de nós!</h1>
-                    </div>
-                    <div id="rodape_5"></div>
+                </div>
+                <div id="rodape_3">
+                    <h1 class="h1_redape">O que se acha aqui?</h1>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                    <ul>
+                        <li	class="titulo_li_rodape"></li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div id="rodape_4">
+                    <h1 class="h1_redape">Fique mais perto de nós!</h1>
+                </div>
+                <div id="rodape_5"></div>
 			</div>
         </div>
+        
         
     	<!-- JavaScript
         ================================================== -->

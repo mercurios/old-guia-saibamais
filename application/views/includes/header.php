@@ -45,7 +45,7 @@
             <!-- Menu
             ================================================== -->
             <div id="menu" class="area_conteudo">
-                <div class="link_menu">
+                <div  id="restaurantes" class="link_menu">
                     <a href="<?php echo base_url('restaurantes/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/prato.png" alt="Prato" />
                         <h3 class="">Restaurantes</h3>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="link_menu">
+                <div id="lanchonetes" class="link_menu">
                     <a href="<?php echo base_url('lanchonete/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/lanche.png" alt="Prato" />
                         <h3 class="">Lanchonetes</h3>
@@ -158,7 +158,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="link_menu">
+                <div id="bebidas" class="link_menu">
                     <a href="<?php echo base_url('bebida/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/drink.png" alt="Prato" />
                         <h3 class="">Bebidas</h3>
@@ -217,7 +217,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="link_menu">
+                <div id="passeio_e_lazer" class="link_menu">
                     <a href="<?php echo base_url('lazer/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/bicicleta.png" alt="Prato" />
                         <h3 class="">Passeio e Lazer</h3>
@@ -281,7 +281,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="link_menu">
+                <div id="estadias" class="link_menu">
                     <a href="<?php echo base_url('estadia/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/cama.png" alt="Prato" />
                         <h3 class="">Estadias</h3>
@@ -329,7 +329,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="link_menu link_menu_ultimo">
+                <div id="entretenimento" class="link_menu link_menu_ultimo">
                     <a href="<?php echo base_url('entretenimento/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/mascaras.png" alt="Prato" />
                         <h3 class="">Entretenimento</h3>
