@@ -41,11 +41,44 @@ class Restaurantes extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Publicidade top
+		$dados['pub_top'] = $this->restaurante->get_publicidade('top', 'restaurante');
+
+		// Chamadas restaurantes pequena top
+		$dados['chamada_p_top'] = $this->restaurante->get_chamada('pequena', 'restaurante', 3);
+
+		// Chamadas restaurantes pequena top
+		$dados['chamada_p_bot'] = $this->restaurante->get_chamada('pequena', 'restaurante', 2, 3);
+
+		// Chamadas restaurantes Slider default
+		$dados['chamada_res_s'] = $this->restaurante->get_chamada('slider', 'restaurante', 3);
+
+		// Chamadas restaurantes média
+		$dados['chamada_res_m'] = $this->restaurante->get_chamada('media', 'restaurante', 4);
+
+		// Chamadas restaurantes Slider full
+		$dados['chamada_res_s_f'] = $this->restaurante->get_chamada('slider-full', 'restaurante', 3);
+
+		// Chamadas restaurantes média plus
+		$dados['chamada_res_m_p'] = $this->restaurante->get_chamada('media-plus', 'restaurante', 4);
+
+		// Chamadas restaurantes média Full
+		$dados['chamada_res_m_f'] = $this->restaurante->get_chamada('media-full', 'restaurante', 1);
+
+		// Publicidade conteudo bottom
+		$dados['pub_contentbot'] = $this->restaurante->get_publicidade('conteudo-bottom', 'restaurante');
+
+		// Chamadas restaurantes média
+		$dados['chamada_res_m_2'] = $this->restaurante->get_chamada('media', 'restaurante', 4, 4);
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('restaurante/inicial-restaurante');
+		$this->load->view('restaurante/inicial-restaurante', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');

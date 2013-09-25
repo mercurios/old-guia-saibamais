@@ -1,23 +1,16 @@
 <div id="publicidade_superior" class="publicidade">
  	<div class="conteudo_publicidade">
         <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
-            <div class="item-slider">
-                <a href="#" title="">
-                    <img src="http://placekitten.com/914/90" alt="Titulo da imagem" />
+            <?php
+        	if (isset($pub_top)) {
+        		foreach ($pub_top as $pubtop) {
+        	?>
+    		<div class="item-slider">
+                <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade; ?>" alt="Titulo da imagem" />
                 </a>
             </div>
-    
-            <div class="item-slider">
-                <a href="#" title="">
-                    <img src="http://placekitten.com/g/914/90" alt="Titulo da imagem" />
-                </a>
-            </div>
-    
-            <div class="item-slider">
-                <a href="#" title="">
-                    <img src="http://placekitten.com/914/90" alt="Titulo da imagem" />
-                </a>
-            </div>
+        	<?php } } ?>
         </div>
     </div>
 </div><!-- Publicidade -->
@@ -33,23 +26,21 @@
 	<div id="area_conteudo_esquerda" class="area_conteudo">
     	<div class="sliders-medium direita">
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
-					<div class="item-slider" data-title="Titulo do slider preto">
-						<a href="#" title="">
-							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
+					<?php
+					if (isset($chamada_res_s)) {
+						foreach ($chamada_res_s as $res_s) {
+					?>
+
+					<div class="item-slider" data-title="<?php echo $res_s->titulo_chamada; ?>">
+						<a href="<?php echo $res_s->link_chamada; ?>" title="<?php echo $res_s->titulo_chamada; ?>">
+							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_s->img_chamada; ?>&w=326&h=250" alt="<?php echo $res_s->titulo_chamada; ?>" />
 						</a>
 					</div>
 
-					<div class="item-slider" data-title="Titulo do slider green">
-						<a href="#" title="">
-							<img src="http://placekitten.com/g/326/250" alt="Titulo da imagem" />
-						</a>
-					</div>
-
-					<div class="item-slider" data-title="Titulo do slider red">
-						<a href="#" title="">
-							<img src="http://placekitten.com/326/250" alt="Titulo da imagem" />
-						</a>
-					</div>
+					<?php
+						}
+					}
+					?>
 					<div class="cycle-overlay"></div>
 					<div class="cycle-pager"></div>
 				</div>
@@ -57,194 +48,151 @@
 
 			<!-- chamadas -->
 			<div class="chamadas esquerda">
+				<?php
+				if (isset($chamada_p_top)) {
+					foreach ($chamada_p_top as $res_p_top) {
+				?>
+
 				<div class="chamada_pequena">
-					<a href="" title="">
-                        <img src='http://placehold.it/154x168' alt="" class="img_chamada_pequena"/>
-                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
+					<a href="<?php echo $res_p_top->link_chamada; ?>" title="<?php echo $res_p_top->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_p_top->img_chamada; ?>&w=99&h=77" alt="<?php echo $res_p_top->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                        <p><?php echo $res_p_top->desc_chamada; ?></p>
 					</a>
 				</div>
-				<div class="chamada_pequena">
-					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
-                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
-					</a>
-				</div>
-				<div class="chamada_pequena">
-					<a href="" title="">
-                        <img src="img/chamada.jpg" alt="" class="img_chamada_pequena"/>
-                        <p>Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</p>
-					</a>
-				</div>
+
+				<?php
+					}
+				}
+				?>
 			</div><!-- /chamadas -->
 
 			<div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_res_m)) {
+					foreach ($chamada_res_m as $res_m) {
+				?>
+
 				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					<a href="<?php echo $res_m->link_chamada; ?>" title="<?php echo $res_m->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $res_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<h2><?php echo $res_m->titulo_chamada; ?></h2>
+						<p><?php echo $res_m->desc_chamada; ?></p>
 					</a>
 				</div>
 
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
+				<?php
+					}
+				}
+				?>
 			</div>
 			<!-- sliders -->
 			<div class="sliders-grande direita">
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
-					<div class="item-slider" data-title="Titulo do slider preto">
-						<a href="#" title="">
-							<img src="http://placekitten.com/670/200" alt="Titulo da imagem" />
+				<?php
+					if (isset($chamada_res_s_f)) {
+						foreach ($chamada_res_s_f as $res_s_f) {
+					?>
+
+					<div class="item-slider" data-title="<?php echo $res_s_f->titulo_chamada; ?>">
+						<a href="<?php echo $res_s_f->link_chamada; ?>" title="<?php echo $res_s_f->titulo_chamada; ?>">
+							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_s_f->img_chamada; ?>&w=670&h=200" alt="<?php echo $res_s_f->titulo_chamada; ?>" />
 						</a>
 					</div>
 
-					<div class="item-slider" data-title="Titulo do slider green">
-						<a href="#" title="">
-							<img src="http://placekitten.com/g/670/200" alt="Titulo da imagem" />
-						</a>
-					</div>
-
-					<div class="item-slider" data-title="Titulo do slider red">
-						<a href="#" title="">
-							<img src="http://placekitten.com/670/200" alt="Titulo da imagem" />
-						</a>
-					</div>
+					<?php
+						}
+					}
+					?>
 					<div class="cycle-overlay"></div>
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
-            <div class="chamada_pequena esquerda">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
+            <?php
+			if (isset($chamada_p_bot)) {
+				foreach ($chamada_p_bot as $res_p_bot) {
+			?>
+			<div class="chamada_pequena">
+				<a href="<?php echo $res_p_bot->link_chamada; ?>" title="<?php echo $res_p_bot->titulo_chamada; ?>">
+					<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $res_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                    <p><?php echo $res_p_bot->desc_chamada; ?></p>
+				</a>
 			</div>
-            <div class="chamada_pequena direita">
-				<img src="<?php echo base_url(); ?>/assets/images/chamada.jpg" alt="" class="img_chamada_pequena"/>
-				<p><a href="" title="">Que tal conhecer o Alto da sé neste final de semana? Veja uma incrível paisagem e um lindo...</a></p>
-			</div>
+			<?php
+				}
+			}
+			?>
             <div class="chamadas_sidebar_esquerda">
-            	<div class="chamada-captions">
-	            	<img src="http://placekitten.com/154/168" alt="">
+        	<?php
+        	if (isset($chamada_res_m_p)) {
+        		foreach ($chamada_res_m_p as $res_m_p) {
+        	?>
 
-	            	<span>
-	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-	             	</span>
-	            </div>
+        	<div class="chamada-captions">
+        		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m_p->img_chamada; ?>&w=154&h=168" alt="<?php echo $res_m_p->titulo_chamada; ?>"/>
 
-	            <div class="chamada-captions">
-	            	<img src="http://placekitten.com/154/168" alt="">
+            	<span>
+            		<a href="<?php echo $res_m_p->link_chamada; ?>" title="<?php echo $res_m_p->titulo_chamada; ?>"><?php echo $res_m_p->titulo_chamada; ?></a>
+             	</span>
+            </div>
 
-	            	<span>
-	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-	             	</span>
-	            </div>
-
-	            <div class="chamada-captions">
-	            	<img src="http://placekitten.com/154/168" alt="">
-
-	            	<span>
-	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-	             	</span>
-	            </div>
-
-	            <div class="chamada-captions">
-	            	<img src="http://placekitten.com/154/168" alt="">
-
-	            	<span>
-	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
-	             	</span>
-	            </div>
-                              
+            <?php
+        		}
+        	}
+        	?>        
 			</div>
             <div class="chamadas_sidebar_direita">
-            	
+            	<?php
+	        	if (isset($chamada_res_m_f)) {
+	        		foreach ($chamada_res_m_f as $res_m_f) {
+	        	?>
             	<div class="chamada-captions-grande">
-	            	<img src="http://placekitten.com/326/354" alt="">
-
+            		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m_f->img_chamada; ?>&w=343&h=370" alt="<?php echo $res_m_f->titulo_chamada; ?>"/>
 	            	<span>
-	            		<a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a>
+	            		<a href="<?php echo $res_m_f->link_chamada; ?>" title="<?php echo $res_m_f->titulo_chamada; ?>"><?php echo $res_m_f->titulo_chamada; ?></a>
 	             	</span>
 	            </div>
-               
+	            <?php
+	        		}
+	        	}
+	        	?> 
             </div>
-            
-            
             
             <!-- Publicidade -->
         <div id="publicidade_meio_index" class="publicidade">
             <div class="conteudo_publicidade">
                 <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
-                    <div class="item-slider">
-                        <a href="#" title="">
-                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
-                        </a>
-                    </div>
-            
-                    <div class="item-slider">
-                        <a href="#" title="">
-                            <img src="http://placekitten.com/g/620/70" alt="Titulo da imagem" />
-                        </a>
-                    </div>
-            
-                    <div class="item-slider">
-                        <a href="#" title="">
-                            <img src="http://placekitten.com/620/70" alt="Titulo da imagem" />
-                        </a>
-                    </div>
+                    <?php
+		        	if (isset($pub_contentbot)) {
+		        		foreach ($pub_contentbot as $pubcontbottom) {
+		        	?>
+	        		<div class="item-slider">
+		                <a href="<?php echo $pubcontbottom->link_publicidade; ?>" title="" target="<?php echo ($pubcontbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+		                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubcontbottom->img_vd_publicidade; ?>" alt="Titulo da imagem" />
+		                </a>
+		            </div>
+		        	<?php } } ?>
                 </div>
             </div>
         </div><!-- Publicidade -->
             
             <div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_res_m_2)) {
+					foreach ($chamada_res_m_2 as $res_m) {
+				?>
+
 				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
+					<a href="<?php echo $res_m->link_chamada; ?>" title="<?php echo $res_m->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $res_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<h2><?php echo $res_m->titulo_chamada; ?></h2>
+						<p><?php echo $res_m->desc_chamada; ?></p>
 					</a>
 				</div>
 
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
-
-				<div class="chamada_media">
-					<a href="" title="">
-						<img src="<?php echo base_url(); ?>/assets/images/chamada_grande.jpg" alt="" class="img_chamada_media"/>
-						<h2>VIII passeio ciclistico do Recife</h2>
-						<p>Faça ja sua inscrição no VIII passeio ciclístico do Recife. Vá até uma das lojas Malibbu e leve...</p>
-					</a>
-				</div>
+				<?php
+					}
+				}
+				?>
 			</div>
             
     </div> <!--Fim da área de conteúdo esquerda-->
@@ -331,22 +279,15 @@
 
 <div id="publicidade_inferior" class="publicidade">
 	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<?php
+    	if (isset($pub_bottom)) {
+    		foreach ($pub_bottom as $pubbottom) {
+    	?>
 		<div class="item-slider">
-			<a href="#" title="">
-				<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
-			</a>
-		</div>
-
-		<div class="item-slider">
-			<a href="#" title="">
-				<img src="http://placekitten.com/g/980/170" alt="Titulo da imagem" />
-			</a>
-		</div>
-
-		<div class="item-slider">
-			<a href="#" title="">
-				<img src="http://placekitten.com/980/170" alt="Titulo da imagem" />
-			</a>
-		</div>
+            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+            	<img src="tim.php?src=<?php echo base_url('uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
+            </a>
+        </div>
+        <?php }} ?>
 	</div>
 </div><!-- /publicidade -->
