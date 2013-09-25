@@ -53,6 +53,37 @@ $('.chamada_imagem p').each(function(){
 		//use fadeTo to hide the div
 		$(this).children('.chamada_imagem p').stop().fadeTo(200, 0);
 	});
-	
+
+
+	// Ajax campo de pesquisa
+	function searchresults()
+	{
+		 alert("teste");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*Fim da inicialização*/
 });

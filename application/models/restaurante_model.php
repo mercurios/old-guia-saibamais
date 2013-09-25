@@ -3,7 +3,9 @@
 class Restaurante_model extends CI_Model
 {
     // Nome da Tabela
-    private $tabela   = 'guia_restaurantes';
+    private $tabela      = 'guia_restaurantes';
+    private $chamada     = 'guia_chamadas';
+    private $publicidade = 'guia_publicidades';
 
     // Método construtor
     public function __construct()
@@ -79,7 +81,24 @@ class Restaurante_model extends CI_Model
         return $this->db->get('guia_promocoes')->result();
     }
 
+    // Lista as chamadas
+    public function get_chamada($posicao, $categoria, $qnt, $offset = NULL)
+    {
+        $this->db->where('pos_chamada', $posicao);
+        $this->db->where('categoria_chamada', $categoria);
+        return $this->db->get($this->chamada, $qnt, $offset)->result();
+    }
 
+    // Publicidades
+    public function get_publicidade($pos, $pag)
+    {
+        // $pos = 'top' , 'conteudo' , 'sidebar' , 'bottom'
+        // $pag = 'home' , 'restaurantes' , 'lanchonetes' , 'bebidas' , 'lazer' , 'estadias' , 'entretenimento'    
 
+        $this->db->where('pos_publicidade', $pos);
+        $this->db->where('pag_publicidade', $pag);
+        $result = $this->db->get($this->publicidade)->result();
 
+        return $result;
+    }
 }
