@@ -372,12 +372,20 @@ select{background: #FFF4F4 ;
 #promocoes_semana{position:relative; float:left; margin-top:20px; margin-bottom:20px}
 #topo_promocoes_semana{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/promocoes_da_semana.jpg) }
 #conteudo_promocoes_semana{position:relative; float:left; width:100%;}
-#dia_promocoes_semana{position:relative; float:left; width:100%; height:67px; background:#f7f7f7; border:1px solid #e1e1e1; color:#606060; font-family:"alte_haas_groteskbold" }
+#dia_promocoes_semana{position:relative; float:left; width:100%; height:67px; margin-bottom:20px; background:#f7f7f7; border:1px solid #e1e1e1; color:#606060; font-family:"alte_haas_groteskbold" }
 #dia_promocoes_semana h4{position:relative; float:left; width:95%; font-size:18px; margin-top:3px; margin-bottom:3px; margin-left:8px; }
 #dia_promocoes_semana h2{position:relative; float:left; width:40%; font-size:32px; margin-left:8px; margin-top:0px; }
-#dia_promocoes_semana h6{position:relative; float:right; width:40%; font-size:12px; margin-right:8px; margin-top:14px; text-align:right }
-
-
+#dia_promocoes_semana h6{position:relative; float:right; width:40%; font-size:14px; margin-right:8px; margin-top:14px; text-align:right }
+#promocoes_promocoes_semana{position:relative; float:left; width:100%}
+#promocoes_promocoes_semana ul{position:relative; float:left; margin-left:0px; margin-bottom:7px; margin-top:7px; padding-bottom:7px; width:88%; border-bottom:1px solid #666}
+#promocoes_promocoes_semana ul:last-child{border-bottom:none}
+#promocoes_promocoes_semana ul a{ text-decoration:none; color:#606060}
+#promocoes_promocoes_semana ul li{position:relative; float:left; width:90%; list-style:none; font-size:14px; margin-left:-30px; margin-bottom:5px}
+#promocoes_promocoes_semana ul li span{font-size:12px; font-weight:bold}
+#mais_promocoes {position:relative; float:right; width:100%; height:35px; background:url(../images/back_detalhes_claro.jpg); }
+#mais_promocoes a{color:#606060; text-decoration:none}
+#mais_promocoes h4{position:relative; float:right; font-size:14px; font-weight:bold; margin-left:10px; margin-top:11px}
+#mais_promocoes img{position:relative; float:right; width:27px; margin-top:5px; margin-left:10px; margin-right:7px}
 
 
 /*===================================================
@@ -556,11 +564,11 @@ img{border:0px}
 #rodape_1{position:relative; float:left; width:100%; height:24px; background:url(../images/back_rodape_1.jpg)}
 #rodape_2{position:relative; float:left; width:100%; height:228px; color:#545454; background:#fafafa}
 #sac{width:255px; height:126px; background:#fff}
-#sac img{position:relative; float:left; margin-left:65px; margin-right:21px; margin-top:29px; margin-bottom:0px}
+#sac img{position:relative; float:left; margin-left:70px; margin-right:21px; margin-top:29px; margin-bottom:0px}
 #sac h3{position:relative; float:left; font-size:31px; font-weight:bold; margin-bottom:0px; margin-top:24px; }
 #sac h4{position:relative; float: left; font-size:24px; width:100%; margin-bottom:0px; margin-top:10px; text-align:center }
 #anuncie{width:315px; height:126px; background:#fff}
-#anuncie img{position:relative; float:left; margin-left:45px; margin-right:21px; margin-top:29px; margin-bottom:0px}
+#anuncie img{position:relative; float:left; margin-left:65px; margin-right:21px; margin-top:29px; margin-bottom:0px}
 #anuncie h3{position:relative; float:left; font-size:31px; font-weight:bold; margin-bottom:0px; margin-top:24px; }
 #anuncie p{position:relative; float: left; font-size:14px; width:97%; padding:5px; text-align:center; }
 #conheca_o_guia{width:332px; height:126px; background:#fff}

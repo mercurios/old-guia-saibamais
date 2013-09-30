@@ -277,8 +277,38 @@
                     <h2>Dia 10</h2>
                     <h6>Setembro de 2013</h6>
                 </div>
-                <div id="promocoes_promocoes_semana"></div>
-                <div id="mais_promocoes"></div>            
+                <div id="promocoes_promocoes_semana">
+                	<ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                    <ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                    <ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                    <ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                </div>
+                <div id="mais_promocoes">
+                	<a href="">
+                	   	<img src="assets/images/mais.png" alt=""/>
+						<h4>Veja mais promoções aqui</h4>
+                    </a>
+                </div>            
             </div>
         </div>
     	
