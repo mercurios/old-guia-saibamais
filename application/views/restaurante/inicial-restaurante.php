@@ -271,6 +271,15 @@
         </div><!-- /publicidade -->
         <div id="promocoes_semana">
         	<div id="topo_promocoes_semana"></div>
+            <div id="conteudo_promocoes_semana">
+            	<div id="dia_promocoes_semana">
+                	<h4>Segunda</h4>
+                    <h2>Dia 10</h2>
+                    <h6>Setembro de 2013</h6>
+                </div>
+                <div id="promocoes_promocoes_semana"></div>
+                <div id="mais_promocoes"></div>            
+            </div>
         </div>
     	
         

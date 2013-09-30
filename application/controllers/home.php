@@ -111,8 +111,8 @@ class Home extends CI_Controller {
 
 		// Carrega os views
 		$this->load->view('includes/header', $seo);
-		$this->load->view('home', $dados);
-		//$this->load->view('restaurante/inicial-restaurante', $dados);
+		//$this->load->view('home', $dados);
+		$this->load->view('restaurante/inicial-restaurante', $dados);
 		$this->load->view('includes/footer');
 	}
 }
