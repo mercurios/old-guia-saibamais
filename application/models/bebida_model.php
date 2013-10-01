@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Bebida_model extends CI_Model
+class bebida_model extends CI_Model
 {
     // Nome da Tabela
-    private $tabela   = 'guia_bebidas';
+    private $tabela      = 'guia_bebidas';
+    private $chamada     = 'guia_chamadas';
+    private $publicidade = 'guia_publicidades';
 
     // Método construtor
     public function __construct()
@@ -26,9 +28,9 @@ class Bebida_model extends CI_Model
     // Lista os bebidas por categoria
     public function search_bebidas($categoria)
     {   
-        $this->db->like('local_bebida',$categoria);
-        $this->db->or_like('tipo_extra_bebida',$categoria);
-        $this->db->or_like('tipo_bebida_bebida',$categoria);
+        $this->db->like('tipo_cozinha_bebida',$categoria);
+        $this->db->or_like('tipo_comida_bebida',$categoria);
+        $this->db->or_like('tipo_servico_bebida',$categoria);
         $query = $this->db->get($this->tabela)->result();
         return $query;
     }
@@ -79,7 +81,24 @@ class Bebida_model extends CI_Model
         return $this->db->get('guia_promocoes')->result();
     }
 
+    // Lista as chamadas
+    public function get_chamada($posicao, $categoria, $qnt, $offset = NULL)
+    {
+        $this->db->where('pos_chamada', $posicao);
+        $this->db->where('categoria_chamada', $categoria);
+        return $this->db->get($this->chamada, $qnt, $offset)->result();
+    }
 
+    // Publicidades
+    public function get_publicidade($pos, $pag)
+    {
+        // $pos = 'top' , 'conteudo' , 'sidebar' , 'bottom'
+        // $pag = 'home' , 'bebidas' , 'lanchonetes' , 'bebidas' , 'lazer' , 'estadias' , 'entretenimento'    
 
+        $this->db->where('pos_publicidade', $pos);
+        $this->db->where('pag_publicidade', $pag);
+        $result = $this->db->get($this->publicidade)->result();
 
+        return $result;
+    }
 }

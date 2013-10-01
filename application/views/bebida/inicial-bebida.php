@@ -27,13 +27,13 @@
     	<div class="sliders-medium direita">
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 					<?php
-					if (isset($chamada_res_s)) {
-						foreach ($chamada_res_s as $res_s) {
+					if (isset($chamada_beb_s)) {
+						foreach ($chamada_beb_s as $beb_s) {
 					?>
 
-					<div class="item-slider" data-title="<?php echo $res_s->titulo_chamada; ?>">
-						<a href="<?php echo $res_s->link_chamada; ?>" title="<?php echo $res_s->titulo_chamada; ?>">
-							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_s->img_chamada; ?>&w=326&h=250" alt="<?php echo $res_s->titulo_chamada; ?>" />
+					<div class="item-slider" data-title="<?php echo $beb_s->titulo_chamada; ?>">
+						<a href="<?php echo $beb_s->link_chamada; ?>" title="<?php echo $beb_s->titulo_chamada; ?>">
+							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_s->img_chamada; ?>&w=326&h=250" alt="<?php echo $beb_s->titulo_chamada; ?>" />
 						</a>
 					</div>
 
@@ -50,13 +50,13 @@
 			<div class="chamadas esquerda">
 				<?php
 				if (isset($chamada_p_top)) {
-					foreach ($chamada_p_top as $res_p_top) {
+					foreach ($chamada_p_top as $beb_p_top) {
 				?>
 
 				<div class="chamada_pequena">
-					<a href="<?php echo $res_p_top->link_chamada; ?>" title="<?php echo $res_p_top->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_p_top->img_chamada; ?>&w=99&h=77" alt="<?php echo $res_p_top->titulo_chamada; ?>" class="img_chamada_pequena"/>
-                        <p><?php echo $res_p_top->desc_chamada; ?></p>
+					<a href="<?php echo $beb_p_top->link_chamada; ?>" title="<?php echo $beb_p_top->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_top->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_top->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                        <p><?php echo $beb_p_top->desc_chamada; ?></p>
 					</a>
 				</div>
 
@@ -68,15 +68,15 @@
 
 			<div class="chamada-horizontal">
 				<?php
-				if (isset($chamada_res_m)) {
-					foreach ($chamada_res_m as $res_m) {
+				if (isset($chamada_beb_m)) {
+					foreach ($chamada_beb_m as $beb_m) {
 				?>
 
 				<div class="chamada_media">
-					<a href="<?php echo $res_m->link_chamada; ?>" title="<?php echo $res_m->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $res_m->titulo_chamada; ?>" class="img_chamada_media"/>
-						<h2><?php echo $res_m->titulo_chamada; ?></h2>
-						<p><?php echo $res_m->desc_chamada; ?></p>
+					<a href="<?php echo $beb_m->link_chamada; ?>" title="<?php echo $beb_m->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $beb_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<h2><?php echo $beb_m->titulo_chamada; ?></h2>
+						<p><?php echo $beb_m->desc_chamada; ?></p>
 					</a>
 				</div>
 
@@ -89,13 +89,13 @@
 			<div class="sliders-grande direita">
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 				<?php
-					if (isset($chamada_res_s_f)) {
-						foreach ($chamada_res_s_f as $res_s_f) {
+					if (isset($chamada_beb_s_f)) {
+						foreach ($chamada_beb_s_f as $beb_s_f) {
 					?>
 
-					<div class="item-slider" data-title="<?php echo $res_s_f->titulo_chamada; ?>">
-						<a href="<?php echo $res_s_f->link_chamada; ?>" title="<?php echo $res_s_f->titulo_chamada; ?>">
-							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_s_f->img_chamada; ?>&w=670&h=200" alt="<?php echo $res_s_f->titulo_chamada; ?>" />
+					<div class="item-slider" data-title="<?php echo $beb_s_f->titulo_chamada; ?>">
+						<a href="<?php echo $beb_s_f->link_chamada; ?>" title="<?php echo $beb_s_f->titulo_chamada; ?>">
+							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_s_f->img_chamada; ?>&w=670&h=200" alt="<?php echo $beb_s_f->titulo_chamada; ?>" />
 						</a>
 					</div>
 
@@ -109,12 +109,12 @@
 			</div><!-- /sliders -->
             <?php
 			if (isset($chamada_p_bot)) {
-				foreach ($chamada_p_bot as $res_p_bot) {
+				foreach ($chamada_p_bot as $beb_p_bot) {
 			?>
 			<div class="chamada_pequena">
-				<a href="<?php echo $res_p_bot->link_chamada; ?>" title="<?php echo $res_p_bot->titulo_chamada; ?>">
-					<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $res_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
-                    <p><?php echo $res_p_bot->desc_chamada; ?></p>
+				<a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
+					<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                    <p><?php echo $beb_p_bot->desc_chamada; ?></p>
 				</a>
 			</div>
 			<?php
@@ -123,15 +123,15 @@
 			?>
             <div class="chamadas_sidebar_esquerda">
         	<?php
-        	if (isset($chamada_res_m_p)) {
-        		foreach ($chamada_res_m_p as $res_m_p) {
+        	if (isset($chamada_beb_m_p)) {
+        		foreach ($chamada_beb_m_p as $beb_m_p) {
         	?>
 
         	<div class="chamada-captions">
-        		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m_p->img_chamada; ?>&w=154&h=168" alt="<?php echo $res_m_p->titulo_chamada; ?>"/>
+        		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_m_p->img_chamada; ?>&w=154&h=168" alt="<?php echo $beb_m_p->titulo_chamada; ?>"/>
 
             	<span>
-            		<a href="<?php echo $res_m_p->link_chamada; ?>" title="<?php echo $res_m_p->titulo_chamada; ?>"><?php echo $res_m_p->titulo_chamada; ?></a>
+            		<a href="<?php echo $beb_m_p->link_chamada; ?>" title="<?php echo $beb_m_p->titulo_chamada; ?>"><?php echo $beb_m_p->titulo_chamada; ?></a>
              	</span>
             </div>
 
@@ -142,13 +142,13 @@
 			</div>
             <div class="chamadas_sidebar_direita">
             	<?php
-	        	if (isset($chamada_res_m_f)) {
-	        		foreach ($chamada_res_m_f as $res_m_f) {
+	        	if (isset($chamada_beb_m_f)) {
+	        		foreach ($chamada_beb_m_f as $beb_m_f) {
 	        	?>
             	<div class="chamada-captions-grande">
-            		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m_f->img_chamada; ?>&w=343&h=370" alt="<?php echo $res_m_f->titulo_chamada; ?>"/>
+            		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_m_f->img_chamada; ?>&w=343&h=370" alt="<?php echo $beb_m_f->titulo_chamada; ?>"/>
 	            	<span>
-	            		<a href="<?php echo $res_m_f->link_chamada; ?>" title="<?php echo $res_m_f->titulo_chamada; ?>"><?php echo $res_m_f->titulo_chamada; ?></a>
+	            		<a href="<?php echo $beb_m_f->link_chamada; ?>" title="<?php echo $beb_m_f->titulo_chamada; ?>"><?php echo $beb_m_f->titulo_chamada; ?></a>
 	             	</span>
 	            </div>
 	            <?php
@@ -177,15 +177,15 @@
             
             <div class="chamada-horizontal">
 				<?php
-				if (isset($chamada_res_m_2)) {
-					foreach ($chamada_res_m_2 as $res_m) {
+				if (isset($chamada_beb_m_2)) {
+					foreach ($chamada_beb_m_2 as $beb_m) {
 				?>
 
 				<div class="chamada_media">
-					<a href="<?php echo $res_m->link_chamada; ?>" title="<?php echo $res_m->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $res_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $res_m->titulo_chamada; ?>" class="img_chamada_media"/>
-						<h2><?php echo $res_m->titulo_chamada; ?></h2>
-						<p><?php echo $res_m->desc_chamada; ?></p>
+					<a href="<?php echo $beb_m->link_chamada; ?>" title="<?php echo $beb_m->titulo_chamada; ?>">
+						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $beb_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<h2><?php echo $beb_m->titulo_chamada; ?></h2>
+						<p><?php echo $beb_m->desc_chamada; ?></p>
 					</a>
 				</div>
 

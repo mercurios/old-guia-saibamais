@@ -13,14 +13,14 @@ class Bebida extends CI_Controller {
 		parent::__construct();
 
 		// Carrega o model cinema
-		$this->load->model('bebida_model', 'bebida');
+		$this->load->model('Bebida_model', 'bebida');
 	}
 
 
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "Bebidas | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -41,16 +41,51 @@ class Bebida extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Publicidade top
+		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'bebida');
+
+		// Chamadas bebidas pequena top
+		$dados['chamada_p_top'] = $this->bebida->get_chamada('pequena', 'bebida', 3);
+
+		// Chamadas bebidas pequena top
+		$dados['chamada_p_bot'] = $this->bebida->get_chamada('pequena', 'bebida', 2, 3);
+
+		// Chamadas bebidas Slider default
+		$dados['chamada_beb_s'] = $this->bebida->get_chamada('slider', 'bebida', 3);
+
+		// Chamadas bebidas média
+		$dados['chamada_beb_m'] = $this->bebida->get_chamada('media', 'bebida', 4);
+
+		// Chamadas bebidas Slider full
+		$dados['chamada_beb_s_f'] = $this->bebida->get_chamada('slider-full', 'bebida', 3);
+
+		// Chamadas bebidas média plus
+		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media-plus', 'bebida', 4);
+
+		// Chamadas bebidas média Full
+		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media-full', 'bebida', 1);
+
+		// Publicidade conteudo bottom
+		$dados['pub_contentbot'] = $this->bebida->get_publicidade('conteudo-bottom', 'bebida');
+
+		// Chamadas bebidas média
+		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
+
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->bebida->get_publicidade('sidebar', 'bebida');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('bebida/inicial-bebida');
+		$this->load->view('bebida/inicial-bebida', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
-
 
 	/* Lista bebidas
 	=========================================================== */
