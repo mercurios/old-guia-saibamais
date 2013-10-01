@@ -74,6 +74,9 @@ class Restaurantes extends CI_Controller {
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
 
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->restaurante->get_publicidade('sidebar', 'restaurante');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
@@ -83,7 +86,6 @@ class Restaurantes extends CI_Controller {
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
-
 
 	/* Lista restaurantes
 	=========================================================== */

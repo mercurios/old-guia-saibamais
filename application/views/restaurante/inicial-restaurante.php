@@ -249,23 +249,16 @@
             <div id="publicidade_meio">
             <div class="publicidade_simples">
                 <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
-					<div class="item-slider">
-						<a href="#" title="">
-							<img src="http://placekitten.com/295/510" alt="Titulo da imagem" />
-						</a>
-					</div>
-
-					<div class="item-slider">
-						<a href="#" title="">
-							<img src="http://placekitten.com/g/295/510" alt="Titulo da imagem" />
-						</a>
-					</div>
-
-					<div class="item-slider">
-						<a href="#" title="">
-							<img src="http://placekitten.com/295/510" alt="Titulo da imagem" />
-						</a>
-					</div>
+				<?php
+		    	if (isset($pub_sidebar)) {
+		    		foreach ($pub_sidebar as $pubsidebar) {
+		    	?>
+				<div class="item-slider">
+		            <a href="<?php echo $pubsidebar->link_publicidade; ?>" title="<?php echo $pubsidebar->titulo_publicidade; ?>" target="<?php echo ($pubsidebar->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+		            	<img src="tim.php?src=<?php echo base_url('uploads/publicidades') . '/' . $pubsidebar->img_vd_publicidade; ?>&w=306&h=510" alt="<?php echo $pubsidebar->titulo_publicidade; ?>"/>
+		            </a>
+		        </div>
+		        <?php }} ?>
 				</div>
             </div>
         </div><!-- /publicidade -->
