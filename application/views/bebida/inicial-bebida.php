@@ -3,7 +3,7 @@
         <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
             <?php
         	if (isset($pub_top)) {
-        		foreach ($pub_top as $pubtop) {
+        		foreach ($pub_top as $pubtop) { 
         	?>
     		<div class="item-slider">
                 <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
