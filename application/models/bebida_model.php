@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class bebida_model extends CI_Model
+class bebida_model extends CI_Model 
 {
     // Nome da Tabela
     private $tabela      = 'guia_bebidas';
@@ -28,9 +28,9 @@ class bebida_model extends CI_Model
     // Lista os bebidas por categoria
     public function search_bebidas($categoria)
     {   
-        $this->db->like('tipo_cozinha_bebida',$categoria);
-        $this->db->or_like('tipo_comida_bebida',$categoria);
-        $this->db->or_like('tipo_servico_bebida',$categoria);
+        $this->db->like('tipo_extra_bebida',$categoria);
+        $this->db->or_like('local_bebida',$categoria);
+        $this->db->or_like('tipo_bebida_bebida',$categoria);
         $query = $this->db->get($this->tabela)->result();
         return $query;
     }

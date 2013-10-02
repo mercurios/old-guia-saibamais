@@ -16,7 +16,6 @@ class Bebida extends CI_Controller {
 		$this->load->model('Bebida_model', 'bebida');
 	}
 
-
 	public function index()
 	{	
 		// Titulo da página
@@ -91,7 +90,7 @@ class Bebida extends CI_Controller {
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
-		$_categoria = $this->uri->segment(3);
+		$_categoria = $this->uri->segment(3); 
 
 		if (isset($_categoria)) {
 			$dados['bebidas'] = $this->bebida->search_bebidas($_categoria);
@@ -214,6 +213,3 @@ class Bebida extends CI_Controller {
 		}
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
