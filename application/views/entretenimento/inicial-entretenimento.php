@@ -3,7 +3,11 @@
         <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
             <?php
         	if (isset($pub_top)) {
+<<<<<<< HEAD
+        		foreach ($pub_top as $pubtop) { 
+=======
         		foreach ($pub_top as $pubtop) {
+>>>>>>> 3400b7c7abb7fa7017bfa48d46276a626c56287e
         	?>
     		<div class="item-slider">
                 <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
@@ -19,8 +23,13 @@
 ================================================== -->
 <div id="conteudo" class="">
 	<div class="topo_area_categoria">
+<<<<<<< HEAD
+		<img src="<?php echo base_url(); ?>/assets/images/icone_bebidas_laranja.png" class="icone_area_categoria" alt="icone" />
+		<h1 class="titulo_area_categoria">Bebidas</h1>
+=======
 		<img src="<?php echo base_url(); ?>/assets/images/icone_mascaras.png" class="icone_area_categoria" alt="icone" />
 		<h1 class="titulo_area_categoria">Entretenimento</h1>
+>>>>>>> 3400b7c7abb7fa7017bfa48d46276a626c56287e
 	</div>
 	<!--Inicio da área de conteúdo esquerda-->
 	<div id="area_conteudo_esquerda" class="area_conteudo">
@@ -201,7 +210,11 @@
     	<!--Inicio do campo de filtragem-->
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
+<<<<<<< HEAD
+				<div id="topo_select_escolha_bebidas"></div>
+=======
 				<div id="topo_select_escolha_entretenimento"></div>
+>>>>>>> 3400b7c7abb7fa7017bfa48d46276a626c56287e
                     <select>
                         <option selected>No bairro</option>
                         <optgroup label="Recife">
