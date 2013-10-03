@@ -19,12 +19,12 @@
 ================================================== -->
 <div id="conteudo" class="">
 	<div class="topo_area_categoria">
-		<img src="<?php echo base_url(); ?>/assets/images/icone_bebidas_laranja.png" class="icone_area_categoria" alt="icone" />
-		<h1 class="titulo_area_categoria">Bebidas</h1>
+		<img src="<?php echo base_url(); ?>/assets/images/icone_lanches_laranja2.png" class="icone_area_categoria" alt="icone" />
+		<h1 class="titulo_area_categoria">Lanchonetes</h1>
 	</div>
 	<!--Inicio da área de conteúdo esquerda-->
 	<div id="area_conteudo_esquerda" class="area_conteudo">
-    	<div class="sliders-medium direita">
+    	<div class="sliders-medium esquerda">
 				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 					<?php
 					if (isset($chamada_beb_s)) {
@@ -47,7 +47,7 @@
 			</div><!-- /sliders -->
 
 			<!-- chamadas -->
-			<div class="chamadas esquerda">
+			<div class="chamadas direita">
 				<?php
 				if (isset($chamada_p_top)) {
 					foreach ($chamada_p_top as $beb_p_top) {
@@ -201,7 +201,7 @@
     	<!--Inicio do campo de filtragem-->
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
-				<div id="topo_select_escolha_bebidas"></div>
+				<div id="topo_select_escolha_lanchonetes"></div>
                     <select>
                         <option selected>No bairro</option>
                         <optgroup label="Recife">

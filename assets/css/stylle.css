@@ -369,7 +369,11 @@ select{background: #FFF4F4 ;
 #topo_select_filtrar{position:relative; float:left; width:240px; height:78px; margin-bottom:10px; background:url(../images/quero_ver_apenas.jpg) }
 #topo_select_escolha{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_restaurante.jpg); }
 #topo_select_escolha_bebidas{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_bebida.jpg)}
+#topo_select_escolha_lanchonetes{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_lanchonete.jpg)}
+#topo_select_escolha_passeio{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_passeio.jpg)}
+#topo_select_escolha_estadias{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_estadias.jpg)}
 #topo_select_escolha_entretenimento{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_entretenimento.jpg)}
+
 
 
 
