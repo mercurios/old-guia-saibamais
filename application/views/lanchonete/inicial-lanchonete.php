@@ -107,20 +107,22 @@
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
-            <?php
-			if (isset($chamada_p_bot)) {
-				foreach ($chamada_p_bot as $beb_p_bot) {
-			?>
-			<div class="chamada_pequena">
-				<a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
-					<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
-                    <p><?php echo $beb_p_bot->desc_chamada; ?></p>
-				</a>
+            <div class="chamada-horizontal">
+				<?php
+                if (isset($chamada_p_bot)) {
+                    foreach ($chamada_p_bot as $beb_p_bot) {
+                ?>
+                <div class="chamada_pequena">
+                    <a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
+                        <img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                        <p><?php echo $beb_p_bot->desc_chamada; ?></p>
+                    </a>
+                </div>
+                <?php
+                    }
+                }
+                ?>
 			</div>
-			<?php
-				}
-			}
-			?>
             <div class="chamadas_sidebar_esquerda">
         	<?php
         	if (isset($chamada_beb_m_p)) {
@@ -231,11 +233,19 @@
                     <h4>ou</h4>
                     
                     <select>
-                        <option selected>Por Bebida</option>
-                            <option>Batidas</option>
-                            <option>Cachaça</option>
-                            <option>Cerveja</option>
-                            
+                        <option selected>Por Lanche</option>
+                            <option>Açaí</option>
+                            <option>Crepe</option>
+                            <option>Doces</option>
+                            <option>Fondue</option>
+                            <option>Hamburguer</option>
+                            <option>Iogurte</option>
+                            <option>Pastel</option>
+                            <option>Pizza</option>
+                            <option>Sanduiche</option>
+                            <option>Sorvete / Picolé</option>
+                            <option>Sushi</option>
+                            <option>Temaki</option>
                         </optgroup>
                     </select>
 				</div>
@@ -275,6 +285,18 @@
                 </div>
                 <div id="promocoes_promocoes_semana">
                 	<ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                    <ul>
+                    	<a href="">
+                    		<li>Compre uma pizza e leve outra gratis!</li>
+                        	<li><span>Pizzaria Barretos</span></li>
+                        </a>
+                    </ul>
+                    <ul>
                     	<a href="">
                     		<li>Compre uma pizza e leve outra gratis!</li>
                         	<li><span>Pizzaria Barretos</span></li>

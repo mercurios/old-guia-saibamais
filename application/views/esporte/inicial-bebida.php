@@ -203,16 +203,17 @@
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_escolha_bebidas"></div>
                     <select>
-                        <option selected>No bairro</option>
-                        <optgroup label="Recife">
-                            <option>Boa Viagem</option>
-                            <option>Boa vista</option>
-                            <option>Espinheiro</option>
-                            <option>Graças</option>
-                            <option>Ilha do Leite</option>
-                            <option>Madalena</option>
-                            <option>Recife antigo</option>
-                            <option>Torre</option>
+                        <option selected>Por cidade</option>
+                        	<option>Abreu e lima</option>
+                            <option>Cabo de santo agostinho</option>
+                            <option>Goiana</option>
+                            <option>Igarassu</option>
+                            <option>Ipojuca</option>
+                            <option>Itamaracá</option>
+                            <option>Jaboatão dos Guararapes</option>
+                            <option>Olinda</option>
+                            <option>Paulista</option>
+                            <option>Recife</option>
                         </optgroup>
                     </select>
                     

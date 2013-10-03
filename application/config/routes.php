@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "lanchonete";
+$route['default_controller'] = "estadia";
 $route['404_override'] = '';
 
 

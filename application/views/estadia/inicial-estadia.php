@@ -19,8 +19,8 @@
 ================================================== -->
 <div id="conteudo" class="">
 	<div class="topo_area_categoria">
-		<img src="<?php echo base_url(); ?>/assets/images/icone_bebidas_laranja.png" class="icone_area_categoria" alt="icone" />
-		<h1 class="titulo_area_categoria">Bebidas</h1>
+		<img src="<?php echo base_url(); ?>/assets/images/icone_estadias.png" class="icone_area_categoria" alt="icone" />
+		<h1 class="titulo_area_categoria">Estadias</h1>
 	</div>
 	<!--Inicio da área de conteúdo esquerda-->
 	<div id="area_conteudo_esquerda" class="area_conteudo">
@@ -107,20 +107,22 @@
 					<div class="cycle-pager"></div>
 				</div>
 			</div><!-- /sliders -->
-            <?php
-			if (isset($chamada_p_bot)) {
-				foreach ($chamada_p_bot as $beb_p_bot) {
-			?>
-			<div class="chamada_pequena">
-				<a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
-					<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
-                    <p><?php echo $beb_p_bot->desc_chamada; ?></p>
-				</a>
+            <div class="chamada-horizontal">
+				<?php
+                if (isset($chamada_p_bot)) {
+                    foreach ($chamada_p_bot as $beb_p_bot) {
+                ?>
+                <div class="chamada_pequena">
+                    <a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
+                        <img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $beb_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $beb_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                        <p><?php echo $beb_p_bot->desc_chamada; ?></p>
+                    </a>
+                </div>
+                <?php
+                    }
+                }
+                ?>
 			</div>
-			<?php
-				}
-			}
-			?>
             <div class="chamadas_sidebar_esquerda">
         	<?php
         	if (isset($chamada_beb_m_p)) {
@@ -201,18 +203,19 @@
     	<!--Inicio do campo de filtragem-->
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
-				<div id="topo_select_escolha_bebidas"></div>
+				<div id="topo_select_escolha_estadia"></div>
                     <select>
-                        <option selected>No bairro</option>
-                        <optgroup label="Recife">
-                            <option>Boa Viagem</option>
-                            <option>Boa vista</option>
-                            <option>Espinheiro</option>
-                            <option>Graças</option>
-                            <option>Ilha do Leite</option>
-                            <option>Madalena</option>
-                            <option>Recife antigo</option>
-                            <option>Torre</option>
+                        <option selected>Por cidade</option>
+                        	<option>Abreu e lima</option>
+                            <option>Cabo de santo agostinho</option>
+                            <option>Goiana</option>
+                            <option>Igarassu</option>
+                            <option>Ipojuca</option>
+                            <option>Itamaracá</option>
+                            <option>Jaboatão dos Guararapes</option>
+                            <option>Olinda</option>
+                            <option>Paulista</option>
+                            <option>Recife</option>
                         </optgroup>
                     </select>
                     
@@ -231,11 +234,12 @@
                     <h4>ou</h4>
                     
                     <select>
-                        <option selected>Por Bebida</option>
-                            <option>Batidas</option>
-                            <option>Cachaça</option>
-                            <option>Cerveja</option>
-                            
+                        <option selected>Por Localidade</option>
+                            <option>Campo</option>
+                            <option>Cidade</option>
+                            <option>Mata</option>
+                            <option>Marítimo</option>
+                            <option>Praia</option>
                         </optgroup>
                     </select>
 				</div>

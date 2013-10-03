@@ -53,6 +53,7 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 /*css do topo*/
 
 /*topo*/
+
 #topo{width:1014px; height:150px; position:relative; float:left;}
 #logo{position:relative; float:left; margin-left:10px;}
 #campo_estado{position:relative; float:right; width:248px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
@@ -66,6 +67,7 @@ input.placeholder {text-align: center;}
 #busca img{position:relative; float:left; margin-top:5px; margin-left:10px; margin-right:10px; }
 #botao_busca{position:relative; float: right; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#fff; background-color:#5c5c5c; width:86px; height:100%; border:0; font-weight:bold;}
 #texto_busca{position:relative; float:left; width:385px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#5c5c5c; text-align: center}
+
 ::-webkit-input-placeholder { /* WebKit browsers */
 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
 color: #adadad; 
@@ -173,7 +175,9 @@ color: #adadad;
 /*css das divs gerais das chamadas*/
 .chamadas{position:relative; float:left; width:326px;}
 .chamada-horizontal{position:relative; float:left; width:100%;}
-.chamada-horizontal .chamada_media:last-child{margin-right:0px}
+.chamada-horizontal .chamada_media:last-child{margin-right:0px; float:right}
+.chamada-horizontal .chamada_pequena:last-child{margin-right:0px; float:right}
+
 
 /*css das chamadas pequenas*/
 .chamada_pequena{position:relative; float:left; width:326px; height:74px; margin-bottom:18px;}
@@ -182,6 +186,7 @@ color: #adadad;
 .chamada_pequena a{color:#454545; text-decoration: none;}
 .chamada_pequena:hover img{border-bottom:3px solid #ff8100; }
 .chamada_pequena:hover p{font-weight:bold;}
+
 
 /*css das chamadas médias*/
 
@@ -354,7 +359,7 @@ color: #adadad;
 
 /*select*/
 #filtrar_ordenar{position:relative; float:left; margin-bottom:25px;}
-select{background: #FFF4F4 ;
+select{background: #fbfbfb ;
     border:1px solid #c4c4c4;
     font-size: 16px;
 	font-weight:bold;
@@ -371,9 +376,9 @@ select{background: #FFF4F4 ;
 #topo_select_escolha_bebidas{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_bebida.jpg)}
 #topo_select_escolha_lanchonetes{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_lanchonete.jpg)}
 #topo_select_escolha_passeio{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_passeio.jpg)}
-#topo_select_escolha_estadias{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_estadias.jpg)}
+#topo_select_escolha_estadia{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_estadia.jpg)}
 #topo_select_escolha_entretenimento{position:relative; float:left; width:326px; height:78px; margin-bottom:10px; background:url(../images/escolha_entretenimento.jpg)}
-
+select
 
 
 
