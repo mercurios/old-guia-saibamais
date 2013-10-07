@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Lazer extends CI_Controller {
+class Entretenimentos extends CI_Controller {
 
 	/**
-	 * lazer
+	 * entretenimento
 	 */
 
 	/* Construtor
@@ -13,13 +13,13 @@ class Lazer extends CI_Controller {
 		parent::__construct();
 
 		// Carrega o model cinema
-		$this->load->model('Lazer_model', 'lazer');
+		$this->load->model('Entretenimento_model', 'entretenimento');
 	}
 
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "lazers | Guia Saiba Mais";
+		$seo['titulopag'] = "entretenimentos | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -34,73 +34,73 @@ class Lazer extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'lazers | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'entretenimentos | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->lazer->get_publicidade('top', 'lazer');
+		$dados['pub_top'] = $this->entretenimento->get_publicidade('top', 'entretenimento');
 
-		// Chamadas lazers pequena top
-		$dados['chamada_p_top'] = $this->lazer->get_chamada('pequena', 'lazer', 3);
+		// Chamadas entretenimentos pequena top
+		$dados['chamada_p_top'] = $this->entretenimento->get_chamada('pequena', 'entretenimento', 3);
 
-		// Chamadas lazers pequena top
-		$dados['chamada_p_bot'] = $this->lazer->get_chamada('pequena', 'lazer', 2, 3);
+		// Chamadas entretenimentos pequena top
+		$dados['chamada_p_bot'] = $this->entretenimento->get_chamada('pequena', 'entretenimento', 2, 3);
 
-		// Chamadas lazers Slider default
-		$dados['chamada_laz_s'] = $this->lazer->get_chamada('slider', 'lazer', 3);
+		// Chamadas entretenimentos Slider default
+		$dados['chamada_entre_s'] = $this->entretenimento->get_chamada('slider', 'entretenimento', 3);
 
-		// Chamadas lazers média
-		$dados['chamada_laz_m'] = $this->lazer->get_chamada('media', 'lazer', 4);
+		// Chamadas entretenimentos média
+		$dados['chamada_entre_m'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4);
 
-		// Chamadas lazers Slider full
-		$dados['chamada_laz_s_f'] = $this->lazer->get_chamada('slider-full', 'lazer', 3);
+		// Chamadas entretenimentos Slider full
+		$dados['chamada_entre_s_f'] = $this->entretenimento->get_chamada('slider-full', 'entretenimento', 3);
 
-		// Chamadas lazers média plus
-		$dados['chamada_laz_m_p'] = $this->lazer->get_chamada('media-plus', 'lazer', 4);
+		// Chamadas entretenimentos média plus
+		$dados['chamada_entre_m_p'] = $this->entretenimento->get_chamada('media-plus', 'entretenimento', 4);
 
-		// Chamadas lazers média Full
-		$dados['chamada_laz_m_f'] = $this->lazer->get_chamada('media-full', 'lazer', 1);
-
-		// Publicidade conteudo bottom
-		$dados['pub_contentbot'] = $this->lazer->get_publicidade('conteudo-bottom', 'lazer');
-
-		// Chamadas lazers média
-		$dados['chamada_laz_m_2'] = $this->lazer->get_chamada('media', 'lazer', 4, 4);
+		// Chamadas entretenimentos média Full
+		$dados['chamada_entre_m_f'] = $this->entretenimento->get_chamada('media-full', 'entretenimento', 1);
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->lazer->get_publicidade('bottom', 'lazer');
+		$dados['pub_contentbot'] = $this->entretenimento->get_publicidade('conteudo-bottom', 'entretenimento');
+
+		// Chamadas entretenimentos média
+		$dados['chamada_entre_m_2'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4, 4);
 
 		// Publicidade conteudo bottom
-		$dados['pub_sidebar'] = $this->lazer->get_publicidade('sidebar', 'lazer');
+		$dados['pub_bottom'] = $this->entretenimento->get_publicidade('bottom', 'entretenimento');
+
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->entretenimento->get_publicidade('sidebar', 'entretenimento');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('lazer/inicial-lazer', $dados);
+		$this->load->view('entretenimento/inicial-entretenimento', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
 
-	/* Lista lazers
+	/* Lista entretenimentos
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3); 
 
 		if (isset($_categoria)) {
-			$dados['lazers'] = $this->lazer->search_lazers($_categoria);
+			$dados['entretenimentos'] = $this->entretenimento->search_entretenimentos($_categoria);
 		}
 		else {
-			$dados['lazers'] = $this->lazer->get_lazers();
+			$dados['entretenimentos'] = $this->entretenimento->get_entretenimentos();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "lazers | Guia Saiba Mais";
+		$seo['titulopag'] = "entretenimentos | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -115,9 +115,9 @@ class Lazer extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'lazers | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'entretenimentos | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
@@ -125,13 +125,13 @@ class Lazer extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('lazer/listar', $dados);
+		$this->load->view('entretenimento/listar', $dados);
 
 		// Carrega o rodape
 			$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do lazer
+	/* Detalhe do entretenimento
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
@@ -143,7 +143,7 @@ class Lazer extends CI_Controller {
 		if (empty($id)) {
 
 			if (empty($slug)) {
-				redirect('lazer');
+				redirect('entretenimento');
 			}
 			else {
 				// Salva o slug em uma variável
@@ -155,18 +155,18 @@ class Lazer extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->lazer->get_lazer($id);
-			$dados['fotos'] 		= $this->lazer->listar_fotos($id);
-			$dados['p_principal']	= $this->lazer->listar_prato_principal($id);
-			$dados['p_normal']		= $this->lazer->listar_pratos($id);
-			$dados['lazers']		= $this->lazer->listar_lazers($id);
-			$dados['promocoes']     = $this->lazer->listar_promocao($id);
+			$dados['conteudo'] 		= $this->entretenimento->get_entretenimento($id);
+			$dados['fotos'] 		= $this->entretenimento->listar_fotos($id);
+			$dados['p_principal']	= $this->entretenimento->listar_prato_principal($id);
+			$dados['p_normal']		= $this->entretenimento->listar_pratos($id);
+			$dados['entretenimentos']		= $this->entretenimento->listar_entretenimentos($id);
+			$dados['promocoes']     = $this->entretenimento->listar_promocao($id);
 
-			$_titulo = $dados['conteudo'][0]->nome_lazer;
-			$_descri = $dados['conteudo'][0]->desc_lazer;
-			$_imagem = $dados['conteudo'][0]->logo_lazer;
-			$_latitu = $dados['conteudo'][0]->lati_lazer;
-			$_longit = $dados['conteudo'][0]->long_lazer;
+			$_titulo = $dados['conteudo'][0]->nome_entretenimento;
+			$_descri = $dados['conteudo'][0]->desc_entretenimento;
+			$_imagem = $dados['conteudo'][0]->logo_entretenimento;
+			$_latitu = $dados['conteudo'][0]->lati_entretenimento;
+			$_longit = $dados['conteudo'][0]->long_entretenimento;
 
 			// Inicializa o mapa
 			$config['center'] = "$_latitu, $_longit";
@@ -198,7 +198,7 @@ class Lazer extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -206,7 +206,7 @@ class Lazer extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('lazer/detalhe', $dados);
+			$this->load->view('entretenimento/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');

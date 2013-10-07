@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Estadia_model extends CI_Model 
+class Entretenimento_model extends CI_Model 
 {
     // Nome da Tabela
     private $tabela      = 'guia_bebidas';

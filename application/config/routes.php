@@ -38,8 +38,9 @@
 |
 */
 
-$route['default_controller'] = "estadia";
+$route['default_controller'] = "home";
 $route['404_override'] = '';
+$route['passeio-e-lazer'] = "lazer";
 
 
 /* End of file routes.php */

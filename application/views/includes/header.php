@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <div id="lanchonetes" class="link_menu">
-                    <a href="<?php echo base_url('lanchonete/'); ?>" title="">
+                    <a href="<?php echo base_url('lanchonetes/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/lanche.png" alt="Prato" />
                         <h3 class="">Lanchonetes</h3>
                         <div class="v"></div>
@@ -112,42 +112,42 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por tipo</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/doces'); ?>" title="Veja as lanchonetes que vendem lanches tipo Doces">Doces</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/gelados'); ?>" title="Veja as lanchonetes que vendem lanches tipo Gelados">Gelados</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/massas'); ?>" title="Veja as lanchonetes que vendem lanches tipo Massas">Massas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/especiais'); ?>" title="Veja as lanchonetes que vendem lanches Light / Especiais">Light/Especiais</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/naturais'); ?>" title="Veja as lanchonetes que vendem lanches naturais">Naturais</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/salgados'); ?>" title="Veja as lanchonetes que vendem lanches tipo salgados">Salgados</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/doces'); ?>" title="Veja as lanchonetes que vendem lanches tipo Doces">Doces</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/gelados'); ?>" title="Veja as lanchonetes que vendem lanches tipo Gelados">Gelados</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/massas'); ?>" title="Veja as lanchonetes que vendem lanches tipo Massas">Massas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/especiais'); ?>" title="Veja as lanchonetes que vendem lanches Light / Especiais">Light/Especiais</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/naturais'); ?>" title="Veja as lanchonetes que vendem lanches naturais">Naturais</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/salgados'); ?>" title="Veja as lanchonetes que vendem lanches tipo salgados">Salgados</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por comida</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/acai'); ?>" title="Veja as lanchonetes que vendem Açaí(s)">Açaí</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/crepes'); ?>" title="Veja as lanchonetes que vendem Crepe(s)">Crepe</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/doces'); ?>" title="Veja as lanchonetes que vendem Doces">Doces</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/fondue'); ?>" title="Veja as lanchonetes que vendem Fondue">Fondue</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/hamburguers'); ?>" title="Veja as lanchonetes que vendem Hamburguer">Hamburguer</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/iorgutes'); ?>" title="Veja as lanchonetes que vendem Iogurte">Iogurte</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/pasteis'); ?>" title="Veja as lanchonetes que vendem Pastel">Pastel</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/acai'); ?>" title="Veja as lanchonetes que vendem Açaí(s)">Açaí</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/crepes'); ?>" title="Veja as lanchonetes que vendem Crepe(s)">Crepe</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/doces'); ?>" title="Veja as lanchonetes que vendem Doces">Doces</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/fondue'); ?>" title="Veja as lanchonetes que vendem Fondue">Fondue</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/hamburguers'); ?>" title="Veja as lanchonetes que vendem Hamburguer">Hamburguer</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/iorgutes'); ?>" title="Veja as lanchonetes que vendem Iogurte">Iogurte</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/pasteis'); ?>" title="Veja as lanchonetes que vendem Pastel">Pastel</a></li>
                                 
                             </ul>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/pizzas'); ?>" title="Veja as lanchonetes que vendem Pizza">Pizza</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/sanduiches'); ?>" title="Veja as lanchonetes que vendem Sanduiche">Sanduiche</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/sorvete-picole'); ?>" title="Veja as lanchonetes que vendem Sorvete ou picolé">Sorvete / Picolé</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/sushi-temaki'); ?>" title="Veja as lanchonetes que vendem Sushi ou Temaki">Sushi / Temaki</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/pizzas'); ?>" title="Veja as lanchonetes que vendem Pizza">Pizza</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/sanduiches'); ?>" title="Veja as lanchonetes que vendem Sanduiche">Sanduiche</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/sorvete-picole'); ?>" title="Veja as lanchonetes que vendem Sorvete ou picolé">Sorvete / Picolé</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/sushi-temaki'); ?>" title="Veja as lanchonetes que vendem Sushi ou Temaki">Sushi / Temaki</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por serviço</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/fast-food'); ?>" title="Veja as lanchonetes que vendem por Fast-food">Fast-food</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/dilivery'); ?>" title="Veja as lanchonetes que vendem por Delivery">Delivery</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/drive-thrur'); ?>" title="Veja as lanchonetes que vendem por Drive-thrur">Drive-thrur</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonete/categoria/rodizios'); ?>" title="Veja as lanchonetes que vendem por Rodizio">Rodizio</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/fast-food'); ?>" title="Veja as lanchonetes que vendem por Fast-food">Fast-food</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/dilivery'); ?>" title="Veja as lanchonetes que vendem por Delivery">Delivery</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/drive-thrur'); ?>" title="Veja as lanchonetes que vendem por Drive-thrur">Drive-thrur</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/rodizios'); ?>" title="Veja as lanchonetes que vendem por Rodizio">Rodizio</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">
@@ -159,7 +159,7 @@
                     </div>
                 </div>
                 <div id="bebidas" class="link_menu">
-                    <a href="<?php echo base_url('bebida/'); ?>" title="">
+                    <a href="<?php echo base_url('bebidas/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/drink.png" alt="Prato" />
                         <h3 class="">Bebidas</h3>
                         <div class="v"></div>
@@ -169,44 +169,44 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por local</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/bares'); ?>" title="Veja os bares onde você quer beber">Bar</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/botecos'); ?>" title="Veja os botecos onde você quer beber">Boteco</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/cafeterias'); ?>" title="Veja as cafeterias onde você quer beber">Cafeteria</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/lanchonetes'); ?>" title="Veja as lanchonetes onde você quer beber">Lanchonete</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/restaurantes'); ?>" title="Veja os restaurantes onde você quer beber">Restaurante</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/bares'); ?>" title="Veja os bares onde você quer beber">Bar</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/botecos'); ?>" title="Veja os botecos onde você quer beber">Boteco</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/cafeterias'); ?>" title="Veja as cafeterias onde você quer beber">Cafeteria</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/lanchonetes'); ?>" title="Veja as lanchonetes onde você quer beber">Lanchonete</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/restaurantes'); ?>" title="Veja os restaurantes onde você quer beber">Restaurante</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por bebida</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/batidas'); ?>" title="Veja os locais onde vende batidas(s)">Batidas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/cachacas'); ?>" title="Veja os locais onde vende cachaça">Cachaça</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/cafes'); ?>" title="Veja os locais onde vende café">Café</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/caipirinhas'); ?>" title="Veja os locais onde vende caipirinha">Caipirinha</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/cervejas'); ?>" title="Veja os locais onde vende cerveja">Cerveja</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/chopps'); ?>" title="Veja os locais onde vende chopp">Chopp</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/energeticas'); ?>" title="Veja os locais onde vende bebidas energéticas">Energéticas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/batidas'); ?>" title="Veja os locais onde vende batidas(s)">Batidas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/cachacas'); ?>" title="Veja os locais onde vende cachaça">Cachaça</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/cafes'); ?>" title="Veja os locais onde vende café">Café</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/caipirinhas'); ?>" title="Veja os locais onde vende caipirinha">Caipirinha</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/cervejas'); ?>" title="Veja os locais onde vende cerveja">Cerveja</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/chopps'); ?>" title="Veja os locais onde vende chopp">Chopp</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/energeticas'); ?>" title="Veja os locais onde vende bebidas energéticas">Energéticas</a></li>
                                 
                             </ul>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/licor'); ?>" title="Veja os locais onde vende licor">Licor</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/milk-shake'); ?>" title="Veja os locais onde vende milk-shake">Milk-shake</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/refrigerantes'); ?>" title="Veja os locais onde vende refrigerante">Refrigerante</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/sucos'); ?>" title="Veja os locais onde vende suco">Suco</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/tequilas'); ?>" title="Veja os locais onde vende tequila">Tequila</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/vinhos'); ?>" title="Veja os locais onde vende vinho">Vinho</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/whisky'); ?>" title="Veja os locais onde vende wisky">Wisky</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/licor'); ?>" title="Veja os locais onde vende licor">Licor</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/milk-shake'); ?>" title="Veja os locais onde vende milk-shake">Milk-shake</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/refrigerantes'); ?>" title="Veja os locais onde vende refrigerante">Refrigerante</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/sucos'); ?>" title="Veja os locais onde vende suco">Suco</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/tequilas'); ?>" title="Veja os locais onde vende tequila">Tequila</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/vinhos'); ?>" title="Veja os locais onde vende vinho">Vinho</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/whisky'); ?>" title="Veja os locais onde vende wisky">Wisky</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por extras</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/jogos-ao-vivo'); ?>" title="Veja os locais onde transmite jogos ao vivo">Jogos ao vivo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/lutas-transmitidas'); ?>" title="Veja os locais onde transmite Lutas ao vivo">Lutas transmitidas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/musicas-ao-vivo'); ?>" title="Veja os locais onde transmite Musicas ao vivo">Musicas ao vivo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('bebida/categoria/open-bar'); ?>" title="Veja os locais onde possuem oppen bar">Open bar</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/jogos-ao-vivo'); ?>" title="Veja os locais onde transmite jogos ao vivo">Jogos ao vivo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/lutas-transmitidas'); ?>" title="Veja os locais onde transmite Lutas ao vivo">Lutas transmitidas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/musicas-ao-vivo'); ?>" title="Veja os locais onde transmite Musicas ao vivo">Musicas ao vivo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('bebidas/categoria/open-bar'); ?>" title="Veja os locais onde possuem oppen bar">Open bar</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">
@@ -218,7 +218,7 @@
                     </div>
                 </div>
                 <div id="passeio_e_lazer" class="link_menu">
-                    <a href="<?php echo base_url('lazer/'); ?>" title="">
+                    <a href="<?php echo base_url('passeio-e-lazer/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/bicicleta.png" alt="Prato" />
                         <h3 class="">Passeio e Lazer</h3>
                         <div class="v"></div>
@@ -246,20 +246,20 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Praticar esportes</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/arborismo'); ?>" title="Veja os locais onde você pode praticar arborismo">Arborismo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/ciclismo'); ?>" title="Veja os locais onde você pode andar de bicicleta">Ciclismo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/escalada'); ?>" title="Veja os locais onde você pode praticar escalada">Escalada</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/futebol'); ?>" title="Veja os locais onde você pode jogar futebol">Futebol</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/futebol-de-areia'); ?>" title="Veja os locais onde você pode jogar futebol de areia">Futebol de areia</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/futsal'); ?>" title="Veja os locais onde você pode jogar futsal">Futsal</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/patins'); ?>" title="Veja os locais onde você pode andar de patins">Patins</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/arborismo'); ?>" title="Veja os locais onde você pode praticar arborismo">Arborismo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/ciclismo'); ?>" title="Veja os locais onde você pode andar de bicicleta">Ciclismo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/escalada'); ?>" title="Veja os locais onde você pode praticar escalada">Escalada</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/futebol'); ?>" title="Veja os locais onde você pode jogar futebol">Futebol</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/futebol-de-areia'); ?>" title="Veja os locais onde você pode jogar futebol de areia">Futebol de areia</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/futsal'); ?>" title="Veja os locais onde você pode jogar futsal">Futsal</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/patins'); ?>" title="Veja os locais onde você pode andar de patins">Patins</a></li>
                             </ul>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/skate'); ?>" title="Veja os locais onde você pode andar de skate">Skate</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/surf'); ?>" title="Veja os locais onde você pode surfar">Surf</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/tennis'); ?>" title="Veja os locais onde você pode jogar tênnis">Tênnis</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/volei'); ?>" title="Veja os locais onde você pode jogar volêi">Volei</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/outros'); ?>" title="Veja os locais onde você pode praticar outros esportes">Outros</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/skate'); ?>" title="Veja os locais onde você pode andar de skate">Skate</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/surf'); ?>" title="Veja os locais onde você pode surfar">Surf</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/tennis'); ?>" title="Veja os locais onde você pode jogar tênnis">Tênnis</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/volei'); ?>" title="Veja os locais onde você pode jogar volêi">Volei</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('esportes/categoria/outros'); ?>" title="Veja os locais onde você pode praticar outros esportes">Outros</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
@@ -282,7 +282,7 @@
                     </div>
                 </div>
                 <div id="estadias" class="link_menu">
-                    <a href="<?php echo base_url('estadia/'); ?>" title="">
+                    <a href="<?php echo base_url('estadias/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/cama.png" alt="Prato" />
                         <h3 class="">Estadias</h3>
                         <div class="v"></div>
@@ -330,7 +330,7 @@
                     </div>
                 </div>
                 <div id="entretenimento" class="link_menu link_menu_ultimo">
-                    <a href="<?php echo base_url('entretenimento/'); ?>" title="">
+                    <a href="<?php echo base_url('entretenimentos/'); ?>" title="">
                         <img src="<?php echo base_url('assets'); ?>/images/mascaras.png" alt="Prato" />
                         <h3 class="">Entretenimento</h3>
                         <div class="v"></div>

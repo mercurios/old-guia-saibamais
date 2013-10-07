@@ -1,9 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Estadia_model extends CI_Model 
+class Lazer_model extends CI_Model 
 {
     // Nome da Tabela
-    private $tabela      = 'guia_bebidas';
     private $chamada     = 'guia_chamadas';
     private $publicidade = 'guia_publicidades';
 
