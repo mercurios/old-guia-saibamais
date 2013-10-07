@@ -292,33 +292,33 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por tipo</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/albergue'); ?>" title="Veja onde tem albergues para você se hospedar">Albergue</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/chale'); ?>" title="Veja onde tem chalés para você se hospedar">Chalé</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/hotel'); ?>" title="Veja onde tem hotéis para você se hospedar">Hotel</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/pousada'); ?>" title="Veja onde tem pousadas para você se hospedar">Pousada</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/prive'); ?>" title="Veja onde tem privês para você se hospedar">Privê</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/resort'); ?>" title="Veja onde tem resorts para você se hospedar">Resort</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/albergue'); ?>" title="Veja onde tem albergues para você se hospedar">Albergue</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/chale'); ?>" title="Veja onde tem chalés para você se hospedar">Chalé</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/hotel'); ?>" title="Veja onde tem hotéis para você se hospedar">Hotel</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/pousada'); ?>" title="Veja onde tem pousadas para você se hospedar">Pousada</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/prive'); ?>" title="Veja onde tem privês para você se hospedar">Privê</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/resort'); ?>" title="Veja onde tem resorts para você se hospedar">Resort</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por localidade</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/campo'); ?>" title="Veja locais no campo onde você pode se hospedar">Campo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/cidade'); ?>" title="Veja locais na cidade onde você pode se hospedar">Cidade</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/mata'); ?>" title="Veja locais em matas onde você pode se hospedar">Mata</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/maritimo'); ?>" title="Veja locais sobre as águas onde você pode se hospedar">Marítimo</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/praia'); ?>" title="Veja locais na praia onde você pode se hospedar">Praia</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/campo'); ?>" title="Veja locais no campo onde você pode se hospedar">Campo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/cidade'); ?>" title="Veja locais na cidade onde você pode se hospedar">Cidade</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/mata'); ?>" title="Veja locais em matas onde você pode se hospedar">Mata</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/maritimo'); ?>" title="Veja locais sobre as águas onde você pode se hospedar">Marítimo</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/praia'); ?>" title="Veja locais na praia onde você pode se hospedar">Praia</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por classificação</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/tres-estrelas'); ?>" title="Veja locais com classificação 3 estrelas onde você pode se hospedar">3 estrelas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/quatro-estrelas'); ?>" title="Veja locais com classificação 4 estrelas onde você pode se hospedar">4 estrelas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/cinco-estrelas'); ?>" title="Veja locais com classificação 5 estrelas onde você pode se hospedar">5 estrelas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/estadia/seis-estrelas'); ?>" title="Veja locais com classificação 6 estrelas onde você pode se hospedar">6 estrelas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/tres-estrelas'); ?>" title="Veja locais com classificação 3 estrelas onde você pode se hospedar">3 estrelas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/quatro-estrelas'); ?>" title="Veja locais com classificação 4 estrelas onde você pode se hospedar">4 estrelas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/cinco-estrelas'); ?>" title="Veja locais com classificação 5 estrelas onde você pode se hospedar">5 estrelas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('estadias/categoria/seis-estrelas'); ?>" title="Veja locais com classificação 6 estrelas onde você pode se hospedar">6 estrelas</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">
@@ -340,20 +340,20 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por tipo</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/cinemas'); ?>" title="Veja os cinemas e os filmes que estão em exibição">Cinemas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/exposicoes'); ?>" title="Veja as exposições estão acontecendo">Exposições</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/feira-e-eventos'); ?>" title="Veja as feiras e eventos que estão acontecendo">Feiras e eventos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/shows'); ?>" title="Veja onde tem shows para você">Shows</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/teatros'); ?>" title="Veja os teatros e as peças que estão em exibição">Teatros</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/cinemas'); ?>" title="Veja os cinemas e os filmes que estão em exibição">Cinemas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/exposicoes'); ?>" title="Veja as exposições estão acontecendo">Exposições</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/feira-e-eventos'); ?>" title="Veja as feiras e eventos que estão acontecendo">Feiras e eventos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/shows'); ?>" title="Veja onde tem shows para você">Shows</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/teatros'); ?>" title="Veja os teatros e as peças que estão em exibição">Teatros</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por atividade</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/assistir'); ?>" title="Veja programações para você assistir">Assistir</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/comprar'); ?>" title="Veja os locais onde você deseja comprar coisas">Comprar</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/dancar'); ?>" title="Veja os locais onde você pode dançar">Dançar</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/assistir'); ?>" title="Veja programações para você assistir">Assistir</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/comprar'); ?>" title="Veja os locais onde você deseja comprar coisas">Comprar</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/dancar'); ?>" title="Veja os locais onde você pode dançar">Dançar</a></li>
                                 
                             </ul>
                         </div>
@@ -361,11 +361,11 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Por público</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/adolecentes'); ?>" title="Veja as programações ideais para adolescentes">Adolescentes</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/adultos'); ?>" title="Veja as programações ideais para adultos">Adultos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/criancas'); ?>" title="Veja as programações ideais para crianças">Crianças</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/idosos'); ?>" title="Veja as programações ideais para idosos">Idosos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('pesquisar/entretenimento/jovens'); ?>" title="Veja as programações ideais para jovens">Jovens</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/adolecentes'); ?>" title="Veja as programações ideais para adolescentes">Adolescentes</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/adultos'); ?>" title="Veja as programações ideais para adultos">Adultos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/criancas'); ?>" title="Veja as programações ideais para crianças">Crianças</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/idosos'); ?>" title="Veja as programações ideais para idosos">Idosos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/jovens'); ?>" title="Veja as programações ideais para jovens">Jovens</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">
