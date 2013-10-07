@@ -3,7 +3,7 @@
 class Lanchonetes extends CI_Controller {
 
 	/**
-	 * bebida
+	 * lanchonete
 	 */
 
 	/* Construtor
@@ -13,13 +13,13 @@ class Lanchonetes extends CI_Controller {
 		parent::__construct();
 
 		// Carrega o model cinema
-		$this->load->model('Bebida_model', 'bebida');
+		$this->load->model('Lanchonete_model', 'lanchonete');
 	}
 
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "Bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "Lanchonetes | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -34,47 +34,47 @@ class Lanchonetes extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'lanchonetes | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('lanchonete'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'bebida');
+		$dados['pub_top'] = $this->lanchonete->get_publicidade('top', 'lanchonete');
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_top'] = $this->bebida->get_chamada('pequena', 'bebida', 3);
+		// Chamadas lanchonetes pequena top
+		$dados['chamada_p_top'] = $this->lanchonete->get_chamada('pequena', 'lanchonete', 3);
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_bot'] = $this->bebida->get_chamada('pequena', 'bebida', 2, 3);
+		// Chamadas lanchonetes pequena top
+		$dados['chamada_p_bot'] = $this->lanchonete->get_chamada('pequena', 'lanchonete', 2, 3);
 
-		// Chamadas bebidas Slider default
-		$dados['chamada_beb_s'] = $this->bebida->get_chamada('slider', 'bebida', 3);
+		// Chamadas lanchonetes Slider default
+		$dados['chamada_lan_s'] = $this->lanchonete->get_chamada('slider', 'lanchonete', 3);
 
-		// Chamadas bebidas média
-		$dados['chamada_beb_m'] = $this->bebida->get_chamada('media', 'bebida', 4);
+		// Chamadas lanchonetes média
+		$dados['chamada_lan_m'] = $this->lanchonete->get_chamada('media', 'lanchonete', 4);
 
-		// Chamadas bebidas Slider full
-		$dados['chamada_beb_s_f'] = $this->bebida->get_chamada('slider-full', 'bebida', 3);
+		// Chamadas lanchonetes Slider full
+		$dados['chamada_lan_s_f'] = $this->lanchonete->get_chamada('slider-full', 'lanchonete', 3);
 
-		// Chamadas bebidas média plus
-		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media-plus', 'bebida', 4);
+		// Chamadas lanchonetes média plus
+		$dados['chamada_lan_m_p'] = $this->lanchonete->get_chamada('media-plus', 'lanchonete', 4);
 
-		// Chamadas bebidas média Full
-		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media-full', 'bebida', 1);
-
-		// Publicidade conteudo bottom
-		$dados['pub_contentbot'] = $this->bebida->get_publicidade('conteudo-bottom', 'bebida');
-
-		// Chamadas bebidas média
-		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
+		// Chamadas lanchonetes média Full
+		$dados['chamada_lan_m_f'] = $this->lanchonete->get_chamada('media-full', 'lanchonete', 1);
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
+		$dados['pub_contentbot'] = $this->lanchonete->get_publicidade('conteudo-bottom', 'lanchonete');
+
+		// Chamadas lanchonetes média
+		$dados['chamada_lan_m_2'] = $this->lanchonete->get_chamada('media', 'lanchonete', 4, 4);
 
 		// Publicidade conteudo bottom
-		$dados['pub_sidebar'] = $this->bebida->get_publicidade('sidebar', 'bebida');
+		$dados['pub_bottom'] = $this->lanchonete->get_publicidade('bottom', 'lanchonete');
+
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->lanchonete->get_publicidade('sidebar', 'lanchonete');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
@@ -86,21 +86,21 @@ class Lanchonetes extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
-	/* Lista bebidas
+	/* Lista lanchonetes
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3); 
 
 		if (isset($_categoria)) {
-			$dados['bebidas'] = $this->bebida->search_bebidas($_categoria);
+			$dados['lanchonetes'] = $this->lanchonete->search_lanchonetes($_categoria);
 		}
 		else {
-			$dados['bebidas'] = $this->bebida->get_bebidas();
+			$dados['lanchonetes'] = $this->lanchonete->get_lanchonetes();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "lanchonetes | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -115,9 +115,9 @@ class Lanchonetes extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'lanchonetes | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('lanchonete'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
@@ -125,13 +125,13 @@ class Lanchonetes extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('bebida/listar', $dados);
+		$this->load->view('lanchonete/listar', $dados);
 
 		// Carrega o rodape
 			$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do bebida
+	/* Detalhe do lanchonete
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
@@ -143,7 +143,7 @@ class Lanchonetes extends CI_Controller {
 		if (empty($id)) {
 
 			if (empty($slug)) {
-				redirect('bebida');
+				redirect('lanchonete');
 			}
 			else {
 				// Salva o slug em uma variável
@@ -155,18 +155,18 @@ class Lanchonetes extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->bebida->get_bebida($id);
-			$dados['fotos'] 		= $this->bebida->listar_fotos($id);
-			$dados['p_principal']	= $this->bebida->listar_prato_principal($id);
-			$dados['p_normal']		= $this->bebida->listar_pratos($id);
-			$dados['bebidas']		= $this->bebida->listar_bebidas($id);
-			$dados['promocoes']     = $this->bebida->listar_promocao($id);
+			$dados['conteudo'] 		= $this->lanchonete->get_lanchonete($id);
+			$dados['fotos'] 		= $this->lanchonete->listar_fotos($id);
+			$dados['p_principal']	= $this->lanchonete->listar_prato_principal($id);
+			$dados['p_normal']		= $this->lanchonete->listar_pratos($id);
+			$dados['lanchonetes']		= $this->lanchonete->listar_lanchonetes($id);
+			$dados['promocoes']     = $this->lanchonete->listar_promocao($id);
 
-			$_titulo = $dados['conteudo'][0]->nome_bebida;
-			$_descri = $dados['conteudo'][0]->desc_bebida;
-			$_imagem = $dados['conteudo'][0]->logo_bebida;
-			$_latitu = $dados['conteudo'][0]->lati_bebida;
-			$_longit = $dados['conteudo'][0]->long_bebida;
+			$_titulo = $dados['conteudo'][0]->nome_lanchonete;
+			$_descri = $dados['conteudo'][0]->desc_lanchonete;
+			$_imagem = $dados['conteudo'][0]->logo_lanchonete;
+			$_latitu = $dados['conteudo'][0]->lati_lanchonete;
+			$_longit = $dados['conteudo'][0]->long_lanchonete;
 
 			// Inicializa o mapa
 			$config['center'] = "$_latitu, $_longit";
@@ -198,7 +198,7 @@ class Lanchonetes extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('lanchonete'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -206,7 +206,7 @@ class Lanchonetes extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('bebida/detalhe', $dados);
+			$this->load->view('lanchonete/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');

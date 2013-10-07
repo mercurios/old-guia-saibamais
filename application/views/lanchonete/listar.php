@@ -11,17 +11,17 @@
 	<div class="content">
 
 		<?php 
-		if (isset($bebidas)) {
-			foreach ($bebidas as $bebida) {
+		if (isset($lanchonetes)) {
+			foreach ($lanchonetes as $lanchonete) {
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $bebida->logo_bebida; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
-	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $bebida->nome_bebida; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $bebida->bairro_bebida; ?></p>
+	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $lanchonete->logo_lanchonete; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
+	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $lanchonete->nome_lanchonete; ?></h3>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $lanchonete->bairro_lanchonete; ?></p>
 	        <h4>Acessível para:</h4>
 	        <?php  
-	        $adaptado = $bebida->adaptado_bebida;
+	        $adaptado = $lanchonete->adaptado_lanchonete;
 	        $adaptado = explode(',', $adaptado);
 
 	        if (in_array('cego', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_cego_pequeno.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
@@ -35,7 +35,7 @@
 	        ?>
 
 	        <div class="rodape_resultado_pesquisa">
-	        	<a href="<?php echo base_url('bebida/detalhe') . '/' . $bebida->slug_bebida . '/' . $bebida->id_bebida; ?>" title="">
+	        	<a href="<?php echo base_url('lanchonetes/detalhe') . '/' . $lanchonete->slug_lanchonete . '/' . $lanchonete->id_lanchonete; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
 	            	<h2>Ver mais informações</h2>
 	            </a>
@@ -46,7 +46,7 @@
 			}
 		}
 		else {
-			echo 'Nenhum registro encontrado na categoria bebida.';
+			echo 'Nenhum registro encontrado na categoria lanchonete.';
 		}
 		?>
 	</div><!-- /listar-all -->

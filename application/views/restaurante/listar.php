@@ -35,7 +35,7 @@
 	        ?>
 
 	        <div class="rodape_resultado_pesquisa">
-	        	<a href="<?php echo base_url('restaurante/detalhe') . '/' . $restaurante->slug_restaurante . '/' . $restaurante->id_restaurante; ?>" title="">
+	        	<a href="<?php echo base_url('restaurantes/detalhe') . '/' . $restaurante->slug_restaurante . '/' . $restaurante->id_restaurante; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
 	            	<h2>Ver mais informações</h2>
 	            </a>
