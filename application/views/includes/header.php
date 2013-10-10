@@ -7,7 +7,9 @@
         <!-- Meta tags -->
         <?php echo meta($meta); ?>
         <link rel="shortcut icon" href="<?php echo base_url('assets'); ?>/favicon.ico"/>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        
         <!-- Facebook Meta tags -->
         <?php echo meta($metaface); ?>
 
@@ -71,7 +73,7 @@
 
                         <span class="ou">ou</span>
                         <div id="" class="sub_menu">
-                            <h4 class="titulo_sub_menus">Por tipo</h4>
+                            <h4 class="titulo_sub_menus">Por comida</h4>
                             <ul>
                                 <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/carnes'); ?>" title="Veja os restaurantes que vendem Carne(s)">Carnes</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('restaurantes/categoria/crustaceos'); ?>" title="Veja os restaurantes que vendem Crustáceo(s)">Crustáceos / Moluscos</a></li>
@@ -229,7 +231,7 @@
                             <h4 class="titulo_sub_menus">Visitar locais</h4>
                             <ul>
                                 <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/cachoeiras'); ?>" title="Veja as cachoeiras onde você pode visitar">Cachoeiras</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/historicos'); ?>" title="Veja os locais históricos onde você pode visitar">Historicos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/historicos'); ?>" title="Veja os locais históricos onde você pode visitar">Lugares históricos</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/matas'); ?>" title="Veja as matas onde você pode visitar">Matas</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/museus'); ?>" title="Veja os museus onde você pode visitar">Museus</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('locais/categoria/parques'); ?>" title="Veja os parques onde você pode visitar">Parques</a></li>

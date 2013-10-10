@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "home";
+$route['default_controller'] = "restaurantes";
 $route['404_override'] = '';
 $route['passeio-e-lazer'] = "lazer";
 
