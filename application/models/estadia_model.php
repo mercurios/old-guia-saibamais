@@ -1,9 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Estadia_model extends CI_Model
+class Estadia_model extends CI_Model 
 {
     // Nome da Tabela
-    private $tabela   = 'guia_estadias';
+    private $tabela      = 'guia_bebidas';
+    private $chamada     = 'guia_chamadas';
+    private $publicidade = 'guia_publicidades';
 
     // Método construtor
     public function __construct()
@@ -18,30 +20,85 @@ class Estadia_model extends CI_Model
     }
 
     // Pega as informações vindas do DB
-    public function get_estadias()
+    public function get_bebidas()
     {
-        return $this->db->get($this->tabela);
-    }
-
-    // Pega a estadia pelo id
-    public function get_estadia($id)
-    {
-        $this->db->where('id_estadia', $id);
         return $this->db->get($this->tabela)->result();
     }
 
-    // Lista as fotos de estadias
+    // Lista os bebidas por categoria
+    public function search_bebidas($categoria)
+    {   
+        $this->db->like('tipo_extra_bebida',$categoria);
+        $this->db->or_like('local_bebida',$categoria);
+        $this->db->or_like('tipo_bebida_bebida',$categoria);
+        $query = $this->db->get($this->tabela)->result();
+        return $query;
+    }
+
+    // Pega o bebida pelo id
+    public function get_bebida($id)
+    {
+        $this->db->where('id_bebida', $id);
+        return $this->db->get($this->tabela)->result();
+    }
+
+    // Lista as fotos de bebidas
     public function listar_fotos($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('categoria_foto', 'estadia');
+        $this->db->where('categoria_foto', 'bebida');
         return $this->db->get('guia_fotos')->result();
     }
 
-    // Listar acomodações
-    public function listar_acomodacao($id)
+    // Lista pratos principal
+    public function listar_prato_principal($id)
     {
         $this->db->where('id_cliente', $id);
-        return $this->db->get('guia_acomodacoes')->result();
+        $this->db->where('tipo_prato', 'pratoprincipal');
+        return $this->db->get('guia_cardapios')->result();
+    }
+
+    // Lista todos os pratos
+    public function listar_pratos($id)
+    {
+        $this->db->where('id_cliente', $id);
+        $this->db->where('tipo_prato', 'normal');
+        return $this->db->get('guia_cardapios')->result();
+    }
+
+    // Lista bebidas
+    public function listar_bebidas($id)
+    {
+        $this->db->where('id_cliente', $id);
+        $this->db->where('tipo_prato', 'bebida');
+        return $this->db->get('guia_cardapios')->result();
+    }
+
+    // Listar promoções
+    public function listar_promocao($id)
+    {
+        $this->db->where('id_cliente', $id);
+        return $this->db->get('guia_promocoes')->result();
+    }
+
+    // Lista as chamadas
+    public function get_chamada($posicao, $categoria, $qnt, $offset = NULL)
+    {
+        $this->db->where('pos_chamada', $posicao);
+        $this->db->where('categoria_chamada', $categoria);
+        return $this->db->get($this->chamada, $qnt, $offset)->result();
+    }
+
+    // Publicidades
+    public function get_publicidade($pos, $pag)
+    {
+        // $pos = 'top' , 'conteudo' , 'sidebar' , 'bottom'
+        // $pag = 'home' , 'bebidas' , 'lanchonetes' , 'bebidas' , 'lazer' , 'estadias' , 'entretenimento'    
+
+        $this->db->where('pos_publicidade', $pos);
+        $this->db->where('pag_publicidade', $pag);
+        $result = $this->db->get($this->publicidade)->result();
+
+        return $result;
     }
 }

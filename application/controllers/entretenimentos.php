@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Bebida extends CI_Controller {
+class Entretenimentos extends CI_Controller {
 
 	/**
-	 * bebida
+	 * entretenimento
 	 */
 
 	/* Construtor
@@ -13,13 +13,13 @@ class Bebida extends CI_Controller {
 		parent::__construct();
 
 		// Carrega o model cinema
-		$this->load->model('Bebida_model', 'bebida');
+		$this->load->model('Entretenimento_model', 'entretenimento');
 	}
 
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "Bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "entretenimentos | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -34,73 +34,73 @@ class Bebida extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'entretenimentos | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'bebida');
+		$dados['pub_top'] = $this->entretenimento->get_publicidade('top', 'entretenimento');
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_top'] = $this->bebida->get_chamada('pequena', 'bebida', 3);
+		// Chamadas entretenimentos pequena top
+		$dados['chamada_p_top'] = $this->entretenimento->get_chamada('pequena', 'entretenimento', 3);
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_bot'] = $this->bebida->get_chamada('pequena', 'bebida', 2, 3);
+		// Chamadas entretenimentos pequena top
+		$dados['chamada_p_bot'] = $this->entretenimento->get_chamada('pequena', 'entretenimento', 2, 3);
 
-		// Chamadas bebidas Slider default
-		$dados['chamada_beb_s'] = $this->bebida->get_chamada('slider', 'bebida', 3);
+		// Chamadas entretenimentos Slider default
+		$dados['chamada_entre_s'] = $this->entretenimento->get_chamada('slider', 'entretenimento', 3);
 
-		// Chamadas bebidas média
-		$dados['chamada_beb_m'] = $this->bebida->get_chamada('media', 'bebida', 4);
+		// Chamadas entretenimentos média
+		$dados['chamada_entre_m'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4);
 
-		// Chamadas bebidas Slider full
-		$dados['chamada_beb_s_f'] = $this->bebida->get_chamada('slider-full', 'bebida', 3);
+		// Chamadas entretenimentos Slider full
+		$dados['chamada_entre_s_f'] = $this->entretenimento->get_chamada('slider-full', 'entretenimento', 3);
 
-		// Chamadas bebidas média plus
-		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media-plus', 'bebida', 4);
+		// Chamadas entretenimentos média plus
+		$dados['chamada_entre_m_p'] = $this->entretenimento->get_chamada('media-plus', 'entretenimento', 4);
 
-		// Chamadas bebidas média Full
-		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media-full', 'bebida', 1);
-
-		// Publicidade conteudo bottom
-		$dados['pub_contentbot'] = $this->bebida->get_publicidade('conteudo-bottom', 'bebida');
-
-		// Chamadas bebidas média
-		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
+		// Chamadas entretenimentos média Full
+		$dados['chamada_entre_m_f'] = $this->entretenimento->get_chamada('media-full', 'entretenimento', 1);
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
+		$dados['pub_contentbot'] = $this->entretenimento->get_publicidade('conteudo-bottom', 'entretenimento');
+
+		// Chamadas entretenimentos média
+		$dados['chamada_entre_m_2'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4, 4);
 
 		// Publicidade conteudo bottom
-		$dados['pub_sidebar'] = $this->bebida->get_publicidade('sidebar', 'bebida');
+		$dados['pub_bottom'] = $this->entretenimento->get_publicidade('bottom', 'entretenimento');
+
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->entretenimento->get_publicidade('sidebar', 'entretenimento');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('bebida/inicial-bebida', $dados);
+		$this->load->view('entretenimento/inicial-entretenimento', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
 
-	/* Lista bebidas
+	/* Lista entretenimentos
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3); 
 
 		if (isset($_categoria)) {
-			$dados['bebidas'] = $this->bebida->search_bebidas($_categoria);
+			$dados['entretenimentos'] = $this->entretenimento->search_entretenimentos($_categoria);
 		}
 		else {
-			$dados['bebidas'] = $this->bebida->get_bebidas();
+			$dados['entretenimentos'] = $this->entretenimento->get_entretenimentos();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "entretenimentos | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -115,9 +115,9 @@ class Bebida extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'entretenimentos | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
@@ -125,13 +125,13 @@ class Bebida extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('bebida/listar', $dados);
+		$this->load->view('entretenimento/listar', $dados);
 
 		// Carrega o rodape
 			$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do bebida
+	/* Detalhe do entretenimento
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
@@ -143,7 +143,7 @@ class Bebida extends CI_Controller {
 		if (empty($id)) {
 
 			if (empty($slug)) {
-				redirect('bebida');
+				redirect('entretenimento');
 			}
 			else {
 				// Salva o slug em uma variável
@@ -155,18 +155,18 @@ class Bebida extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->bebida->get_bebida($id);
-			$dados['fotos'] 		= $this->bebida->listar_fotos($id);
-			$dados['p_principal']	= $this->bebida->listar_prato_principal($id);
-			$dados['p_normal']		= $this->bebida->listar_pratos($id);
-			$dados['bebidas']		= $this->bebida->listar_bebidas($id);
-			$dados['promocoes']     = $this->bebida->listar_promocao($id);
+			$dados['conteudo'] 		= $this->entretenimento->get_entretenimento($id);
+			$dados['fotos'] 		= $this->entretenimento->listar_fotos($id);
+			$dados['p_principal']	= $this->entretenimento->listar_prato_principal($id);
+			$dados['p_normal']		= $this->entretenimento->listar_pratos($id);
+			$dados['entretenimentos']		= $this->entretenimento->listar_entretenimentos($id);
+			$dados['promocoes']     = $this->entretenimento->listar_promocao($id);
 
-			$_titulo = $dados['conteudo'][0]->nome_bebida;
-			$_descri = $dados['conteudo'][0]->desc_bebida;
-			$_imagem = $dados['conteudo'][0]->logo_bebida;
-			$_latitu = $dados['conteudo'][0]->lati_bebida;
-			$_longit = $dados['conteudo'][0]->long_bebida;
+			$_titulo = $dados['conteudo'][0]->nome_entretenimento;
+			$_descri = $dados['conteudo'][0]->desc_entretenimento;
+			$_imagem = $dados['conteudo'][0]->logo_entretenimento;
+			$_latitu = $dados['conteudo'][0]->lati_entretenimento;
+			$_longit = $dados['conteudo'][0]->long_entretenimento;
 
 			// Inicializa o mapa
 			$config['center'] = "$_latitu, $_longit";
@@ -198,7 +198,7 @@ class Bebida extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -206,7 +206,7 @@ class Bebida extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('bebida/detalhe', $dados);
+			$this->load->view('entretenimento/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');

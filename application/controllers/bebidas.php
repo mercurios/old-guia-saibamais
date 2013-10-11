@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Entretenimento extends CI_Controller {
+class Bebidas extends CI_Controller {
 
 	/**
 	 * bebida
@@ -80,7 +80,7 @@ class Entretenimento extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('entretenimento/inicial-entretenimento', $dados);
+		$this->load->view('bebida/inicial-bebida', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');

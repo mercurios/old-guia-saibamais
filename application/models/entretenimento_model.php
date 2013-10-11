@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Lanchonete_model extends CI_Model 
+class Entretenimento_model extends CI_Model 
 {
     // Nome da Tabela
-    private $tabela      = 'guia_lanchonetes';
+    private $tabela      = 'guia_bebidas';
     private $chamada     = 'guia_chamadas';
     private $publicidade = 'guia_publicidades';
 
@@ -20,33 +20,33 @@ class Lanchonete_model extends CI_Model
     }
 
     // Pega as informações vindas do DB
-    public function get_lanchonetes()
+    public function get_bebidas()
     {
         return $this->db->get($this->tabela)->result();
     }
 
-    // Lista os lanchonetes por categoria
-    public function search_lanchonetes($categoria)
+    // Lista os bebidas por categoria
+    public function search_bebidas($categoria)
     {   
-        $this->db->like('tipo_lanchonete',$categoria);
-        $this->db->or_like('tipo_comida_lanchonete',$categoria);
-        $this->db->or_like('tipo_servico_lanchonete',$categoria);
+        $this->db->like('tipo_extra_bebida',$categoria);
+        $this->db->or_like('local_bebida',$categoria);
+        $this->db->or_like('tipo_bebida_bebida',$categoria);
         $query = $this->db->get($this->tabela)->result();
         return $query;
     }
 
-    // Pega o lanchonete pelo id
-    public function get_lanchonete($id)
+    // Pega o bebida pelo id
+    public function get_bebida($id)
     {
-        $this->db->where('id_lanchonete', $id);
+        $this->db->where('id_bebida', $id);
         return $this->db->get($this->tabela)->result();
     }
 
-    // Lista as fotos de lanchonetes
+    // Lista as fotos de bebidas
     public function listar_fotos($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('categoria_foto', 'lanchonete');
+        $this->db->where('categoria_foto', 'bebida');
         return $this->db->get('guia_fotos')->result();
     }
 
@@ -66,11 +66,11 @@ class Lanchonete_model extends CI_Model
         return $this->db->get('guia_cardapios')->result();
     }
 
-    // Lista lanchonetes
-    public function listar_lanchonetes($id)
+    // Lista bebidas
+    public function listar_bebidas($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('tipo_prato', 'lanchonete');
+        $this->db->where('tipo_prato', 'bebida');
         return $this->db->get('guia_cardapios')->result();
     }
 
@@ -93,7 +93,7 @@ class Lanchonete_model extends CI_Model
     public function get_publicidade($pos, $pag)
     {
         // $pos = 'top' , 'conteudo' , 'sidebar' , 'bottom'
-        // $pag = 'home' , 'lanchonetes' , 'lanchonetes' , 'lanchonetes' , 'lazer' , 'estadias' , 'entretenimento'    
+        // $pag = 'home' , 'bebidas' , 'lanchonetes' , 'bebidas' , 'lazer' , 'estadias' , 'entretenimento'    
 
         $this->db->where('pos_publicidade', $pos);
         $this->db->where('pag_publicidade', $pag);

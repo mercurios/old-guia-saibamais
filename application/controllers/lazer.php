@@ -3,7 +3,7 @@
 class Lazer extends CI_Controller {
 
 	/**
-	 * bebida
+	 * lazer
 	 */
 
 	/* Construtor
@@ -13,13 +13,13 @@ class Lazer extends CI_Controller {
 		parent::__construct();
 
 		// Carrega o model cinema
-		$this->load->model('Bebida_model', 'bebida');
+		$this->load->model('Lazer_model', 'lazer');
 	}
 
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "Bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "lazers | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -34,47 +34,47 @@ class Lazer extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'lazers | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'bebida');
+		$dados['pub_top'] = $this->lazer->get_publicidade('top', 'lazer');
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_top'] = $this->bebida->get_chamada('pequena', 'bebida', 3);
+		// Chamadas lazers pequena top
+		$dados['chamada_p_top'] = $this->lazer->get_chamada('pequena', 'lazer', 3);
 
-		// Chamadas bebidas pequena top
-		$dados['chamada_p_bot'] = $this->bebida->get_chamada('pequena', 'bebida', 2, 3);
+		// Chamadas lazers pequena top
+		$dados['chamada_p_bot'] = $this->lazer->get_chamada('pequena', 'lazer', 2, 3);
 
-		// Chamadas bebidas Slider default
-		$dados['chamada_beb_s'] = $this->bebida->get_chamada('slider', 'bebida', 3);
+		// Chamadas lazers Slider default
+		$dados['chamada_laz_s'] = $this->lazer->get_chamada('slider', 'lazer', 3);
 
-		// Chamadas bebidas média
-		$dados['chamada_beb_m'] = $this->bebida->get_chamada('media', 'bebida', 4);
+		// Chamadas lazers média
+		$dados['chamada_laz_m'] = $this->lazer->get_chamada('media', 'lazer', 4);
 
-		// Chamadas bebidas Slider full
-		$dados['chamada_beb_s_f'] = $this->bebida->get_chamada('slider-full', 'bebida', 3);
+		// Chamadas lazers Slider full
+		$dados['chamada_laz_s_f'] = $this->lazer->get_chamada('slider-full', 'lazer', 3);
 
-		// Chamadas bebidas média plus
-		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media-plus', 'bebida', 4);
+		// Chamadas lazers média plus
+		$dados['chamada_laz_m_p'] = $this->lazer->get_chamada('media-plus', 'lazer', 4);
 
-		// Chamadas bebidas média Full
-		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media-full', 'bebida', 1);
-
-		// Publicidade conteudo bottom
-		$dados['pub_contentbot'] = $this->bebida->get_publicidade('conteudo-bottom', 'bebida');
-
-		// Chamadas bebidas média
-		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
+		// Chamadas lazers média Full
+		$dados['chamada_laz_m_f'] = $this->lazer->get_chamada('media-full', 'lazer', 1);
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
+		$dados['pub_contentbot'] = $this->lazer->get_publicidade('conteudo-bottom', 'lazer');
+
+		// Chamadas lazers média
+		$dados['chamada_laz_m_2'] = $this->lazer->get_chamada('media', 'lazer', 4, 4);
 
 		// Publicidade conteudo bottom
-		$dados['pub_sidebar'] = $this->bebida->get_publicidade('sidebar', 'bebida');
+		$dados['pub_bottom'] = $this->lazer->get_publicidade('bottom', 'lazer');
+
+		// Publicidade conteudo bottom
+		$dados['pub_sidebar'] = $this->lazer->get_publicidade('sidebar', 'lazer');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
@@ -86,21 +86,21 @@ class Lazer extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
-	/* Lista bebidas
+	/* Lista lazers
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3); 
 
 		if (isset($_categoria)) {
-			$dados['bebidas'] = $this->bebida->search_bebidas($_categoria);
+			$dados['lazers'] = $this->lazer->search_lazers($_categoria);
 		}
 		else {
-			$dados['bebidas'] = $this->bebida->get_bebidas();
+			$dados['lazers'] = $this->lazer->get_lazers();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "bebidas | Guia Saiba Mais";
+		$seo['titulopag'] = "lazers | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -115,9 +115,9 @@ class Lazer extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'bebidas | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'lazers | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
@@ -125,13 +125,13 @@ class Lazer extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('bebida/listar', $dados);
+		$this->load->view('lazer/listar', $dados);
 
 		// Carrega o rodape
 			$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do bebida
+	/* Detalhe do lazer
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
@@ -143,7 +143,7 @@ class Lazer extends CI_Controller {
 		if (empty($id)) {
 
 			if (empty($slug)) {
-				redirect('bebida');
+				redirect('lazer');
 			}
 			else {
 				// Salva o slug em uma variável
@@ -155,18 +155,18 @@ class Lazer extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->bebida->get_bebida($id);
-			$dados['fotos'] 		= $this->bebida->listar_fotos($id);
-			$dados['p_principal']	= $this->bebida->listar_prato_principal($id);
-			$dados['p_normal']		= $this->bebida->listar_pratos($id);
-			$dados['bebidas']		= $this->bebida->listar_bebidas($id);
-			$dados['promocoes']     = $this->bebida->listar_promocao($id);
+			$dados['conteudo'] 		= $this->lazer->get_lazer($id);
+			$dados['fotos'] 		= $this->lazer->listar_fotos($id);
+			$dados['p_principal']	= $this->lazer->listar_prato_principal($id);
+			$dados['p_normal']		= $this->lazer->listar_pratos($id);
+			$dados['lazers']		= $this->lazer->listar_lazers($id);
+			$dados['promocoes']     = $this->lazer->listar_promocao($id);
 
-			$_titulo = $dados['conteudo'][0]->nome_bebida;
-			$_descri = $dados['conteudo'][0]->desc_bebida;
-			$_imagem = $dados['conteudo'][0]->logo_bebida;
-			$_latitu = $dados['conteudo'][0]->lati_bebida;
-			$_longit = $dados['conteudo'][0]->long_bebida;
+			$_titulo = $dados['conteudo'][0]->nome_lazer;
+			$_descri = $dados['conteudo'][0]->desc_lazer;
+			$_imagem = $dados['conteudo'][0]->logo_lazer;
+			$_latitu = $dados['conteudo'][0]->lati_lazer;
+			$_longit = $dados['conteudo'][0]->long_lazer;
 
 			// Inicializa o mapa
 			$config['center'] = "$_latitu, $_longit";
@@ -198,7 +198,7 @@ class Lazer extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('lazer'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -206,7 +206,7 @@ class Lazer extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('bebida/detalhe', $dados);
+			$this->load->view('lazer/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');
