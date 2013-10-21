@@ -294,11 +294,14 @@
 				<h1 class="titulo_area_pagina">Extras do local</h1>
 			</div>
 			<?php $extras = explode(',', $restaurante->extra_restaurante);
-			if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi.jpg" alt="Wi-fi" title="Wi-fi" class="icone_esquerda"/>'; }
-			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento.jpg" alt="Estacionamento" title="Estacionamento fácil" class="icone_esquerda"/>'; }
-			if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc.jpg" alt="UFC" title="Lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
-			if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc.jpg" alt="PFC" title="Jogos transmitidos ao vivo" class="icone_direita"/>'; }
-			if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica.jpg" alt="Musica" title="Shows ao vivo" class="icone_esquerda"/>'; }
+			if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi_claro.jpg" alt="Wi-fi" title="Não possui Wi-fi" class="icone_esquerda"/>'; }
+			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento_claro.jpg" alt="Estacionamento" title="Não possui estacionamento" class="icone_esquerda"/>'; }
+			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_piscina_claro.jpg" alt="Piscina" title="Não possui piscina" class="icone_esquerda"/>'; }
+			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pao_claro.jpg" alt="Café da Manhã" title="Não possui café da manhã incluso" class="icone_esquerda"/>'; }
+			if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica_claro.jpg" alt="Musica" title="Não possui shows ao vivo" class="icone_esquerda"/>'; }
+			if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc_claro.jpg" alt="UFC" title="Não possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
+			if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc_claro.jpg" alt="PFC" title="Não possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
+			
 			?>
 		</div><!-- /extras -->
 
@@ -311,7 +314,7 @@
 			if (in_array('dinheiro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_dinheiro.jpg" alt="Dinheiro" title="Dinheiro" class="icone_esquerda"/>'; }
 			if (in_array('visa', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_visa.jpg" alt="Visa crédito" title="Visa crédito" class="icone_esquerda"/>'; }
 			if (in_array('master', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_master.jpg" alt="Master Card" title="Master Card" class="icone_esquerda"/>'; }
-			if (in_array('hiper', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_hiper.jpg" alt="HiperCard" title="HiperCard" class="icone_direita"/>'; }
+			if (in_array('hiper', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_hiper_claro.jpg" alt="HiperCard" title="HiperCard" class="icone_direita"/>'; }
 			if (in_array('diners', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_diners.jpg" alt="Diners club" title="Diners club" class="icone_esquerda"/>'; }
 			if (in_array('elo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_elo.jpg" alt="Elo" title="Elo" class="icone_esquerda"/>'; }
 			if (in_array('credcard', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_credcard.jpg" alt="Credcard" title="Credcard" class="icone_esquerda"/>'; }
