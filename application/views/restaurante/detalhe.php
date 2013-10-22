@@ -1,6 +1,19 @@
-<div id="publicidade_superior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_superior" class="publicidade">
+ 	<div class="conteudo_publicidade">
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+            <?php
+        	if (isset($pub_top)) {
+        		foreach ($pub_top as $pubtop) {
+        	?>
+    		<div class="item-slider">
+                <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade; ?>" alt="Titulo da imagem" />
+                </a>
+            </div>
+        	<?php } } ?>
+        </div>
+    </div>
+</div><!-- Publicidade -->
 
 <!-- Conteudo
 ================================================== -->
@@ -110,8 +123,31 @@
 								<p>R$ <?php echo $pratop->valor_preco_tres; ?></p>
 							</div>
 						</div>
+                        <div class="linha_separatoria"></div>
 					</div>
-					<div class="linha_separatoria"></div>
+                    
+                    <div class="pratos_cardapio">
+						<div class="pratos_cardapio_esquerda">
+							<h4><?php echo $pratop->nome_prato; ?></h4>
+							<p>R$ <?php echo $pratop->desc_prato; ?></p>
+						</div>
+						<div class="pratos_cardapio_direita">
+							<div class="preco_cardapio">
+								<h5><?php echo $pratop->titulo_preco_um; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_um; ?></p>
+							</div>
+							<div class="preco_cardapio">
+								<h5><?php echo $pratop->titulo_preco_dois; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_dois; ?></p>
+							</div>
+							<div class="preco_cardapio">
+								<h5><?php echo $pratop->titulo_preco_tres; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_tres; ?></p>
+							</div>
+						</div>
+                        <div class="linha_separatoria"></div>
+					</div>
+					
 					<?php 
 						} 
 					}
@@ -311,21 +347,21 @@
 				<h1 class="titulo_area_pagina">Formas de pagamento</h1>
 			</div>
 			<?php $pagamento = explode(',', $restaurante->pag_restaurante);
-			if (in_array('dinheiro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_dinheiro.jpg" alt="Dinheiro" title="Dinheiro" class="icone_esquerda"/>'; }
-			if (in_array('visa', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_visa.jpg" alt="Visa crédito" title="Visa crédito" class="icone_esquerda"/>'; }
-			if (in_array('master', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_master.jpg" alt="Master Card" title="Master Card" class="icone_esquerda"/>'; }
-			if (in_array('hiper', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_hiper_claro.jpg" alt="HiperCard" title="HiperCard" class="icone_direita"/>'; }
-			if (in_array('diners', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_diners.jpg" alt="Diners club" title="Diners club" class="icone_esquerda"/>'; }
-			if (in_array('elo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_elo.jpg" alt="Elo" title="Elo" class="icone_esquerda"/>'; }
-			if (in_array('credcard', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_credcard.jpg" alt="Credcard" title="Credcard" class="icone_esquerda"/>'; }
-			if (in_array('visaelectro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_visaelectron.jpg" alt="Visa Electron" title="Visa Electron" class="icone_direita"/>'; }
-			if (in_array('paggo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_paggo.jpg" alt="Paggo" title="Paggo" class="icone_esquerda"/>'; }
-			if (in_array('redeshop', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_redeshop.jpg" alt="RedeShop" title="RedeShop" class="icone_esquerda"/>'; }
-			if (in_array('vr', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_vr.jpg" alt="VR" title="VR" class="icone_esquerda"/>'; }
-			if (in_array('aura', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_aura.jpg" alt="Aura" title="Aura" class="icone_direita"/>'; }
-			if (in_array('toppremium', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_top.jpg" alt="Top premium" title="Top premium" class="icone_grande_esquerda"/>'; }
-			if (in_array('sodexo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_sodexo.jpg" alt="Sodexo" title="Sodexo" class="icone_grande_esquerda"/>'; }
-			if (in_array('sodexopass', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_sodexopass.jpg" alt="Sodexo Pass" title="Sodexo Pass" class="icone_grande_direita"/>'; }
+			if (in_array('dinheiro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_dinheiro_claro.jpg" alt="Não aceitamos pagamento com dinheiro" title="Dinheiro" class="icone_esquerda"/>'; }
+			if (in_array('visa', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_visa_claro.jpg" alt="Visa crédito" title="Não aceitamos pagamento com visa crédito" class="icone_esquerda"/>'; }
+			if (in_array('master', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_master_claro.jpg" alt="Não aceitamos pagamento com master Card" title="Master Card" class="icone_esquerda"/>'; }
+			if (in_array('hiper', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_hiper_claro.jpg" alt="HiperCard" title="Não aceitamos pagamento com hiperCard" class="icone_direita"/>'; }
+			if (in_array('diners', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_diners_claro.jpg" alt="Diners club" title="Não aceitamos pagamento com diners club" class="icone_esquerda"/>'; }
+			if (in_array('elo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_elo_claro.jpg" alt="Elo" title="Não aceitamos pagamento com elo" class="icone_esquerda"/>'; }
+			if (in_array('american', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_american_claro.jpg" alt="American" title="Não aceitamos pagamento com american express" class="icone_esquerda"/>'; }
+			if (in_array('visaelectro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_visaelectron_claro.jpg" alt="Não aceitamos pagamento com visa Electron" title="Visa Electron" class="icone_direita"/>'; }
+			if (in_array('paggo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_paggo_claro.jpg" alt="Paggo" title="Não aceitamos pagamento com paggo" class="icone_esquerda"/>'; }
+			if (in_array('redeshop', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_redeshop_claro.jpg" alt="RedeShop" title="Não aceitamos pagamento com redeShop" class="icone_esquerda"/>'; }
+			if (in_array('vr', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_vr_claro.jpg" alt="VR" title="Não aceitamos pagamento com VR" class="icone_esquerda"/>'; }
+			if (in_array('aura', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_aura_claro.jpg" alt="Aura" title="Não aceitamos pagamento com aura" class="icone_direita"/>'; }
+			if (in_array('toppremium', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_top_claro.jpg" alt="Top premium" title="Não aceitamos pagamento com top premium" class="icone_grande_esquerda"/>'; }
+			if (in_array('sodexo', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_sodexo_claro.jpg" alt="Sodexo" title="Não aceitamos pagamento com sodexo" class="icone_grande_esquerda"/>'; }
+			if (in_array('sodexopass', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_sodexopass_claro.jpg" alt="Sodexo Pass" title="Não aceitamos pagamento com sodexo Pass" class="icone_grande_direita"/>'; }
 			?>
 		</div><!-- /formapagamento -->
 
@@ -335,14 +371,14 @@
 				<h1 class="titulo_area_pagina">Acessível para</h1>
 			</div>
 			<?php $adaptado = explode(',', $restaurante->adaptado_restaurante);
-			if (in_array('cego', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_cego.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda"/>'; }
-			if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_surdo.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda"/>'; }
-			if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_deficiente.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda"/>'; }
-			if (in_array('braile', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_braille.jpg" alt="Braille" title="Braille" class="icone_direita"/>'; }
-			if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_obeso.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda"/>'; }
-			if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_idoso.jpg" alt="Idoso" title="Idosos" class="icone_esquerda"/>'; }
-			if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_gestante.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda"/>'; }
-			if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_bebe.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_direita"/>'; }
+			if (in_array('cego', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_cego_claro.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda"/>'; }
+			if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_surdo_claro.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda"/>'; }
+			if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_deficiente_claro.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda"/>'; }
+			if (in_array('braile', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_braille_claro.jpg" alt="Braille" title="Braille" class="icone_direita"/>'; }
+			if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_obeso_claro.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda"/>'; }
+			if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_idoso_claro.jpg" alt="Idoso" title="Idosos" class="icone_esquerda"/>'; }
+			if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_gestante_claro.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda"/>'; }
+			if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_bebe_claro.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_direita"/>'; }
 			?>
 		</div><!-- /adaptado -->
     </div><!-- /direita -->
@@ -350,6 +386,17 @@
 <?php endforeach; ?>
 </div>
 
-<div id="publicidade_inferior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_inferior" class="publicidade">
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<?php
+    	if (isset($pub_bottom)) {
+    		foreach ($pub_bottom as $pubbottom) {
+    	?>
+		<div class="item-slider">
+            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+            	<img src="tim.php?src=<?php echo base_url('uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
+            </a>
+        </div>
+        <?php }} ?>
+	</div>
+</div><!-- /publicidade -->
