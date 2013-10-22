@@ -41,7 +41,7 @@ class Teste extends CI_Controller {
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteudo
-		$this->load->view('teste/teste', $dados);
+		$this->load->view('teste/teste');
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
