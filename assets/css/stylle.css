@@ -43,7 +43,7 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 #container{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
 #conteudo{position:relative; float:left; width:1014px; margin-top:-50px; }
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
-#area_conteudo_esquerda{width:670px; position:relative; float:left; }
+#area_conteudo_esquerda{width:670px; position:relative; float:left; border:1px solid red }
 #area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px; }
 .area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
 #area_conteudo_esquerda_pesquisa{width:756px; position:relative; float:left; }
@@ -214,8 +214,10 @@ color: #adadad;
 
 
 /*css da descrição das páginas*/
-#descricao_pagina{position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px;}
+#descricao_pagina{position:relative; float:left; width:326px; margin-bottom:30px; margin-top:0px;}
+#descricao_pagina_grande{position:relative; float:left; width:100%; margin-bottom:30px; margin-top:0px;}
 .texto_pagina{position:relative; float:left;  width:100%; text-align:justify; font-size:14px; color:#424242;}
+
 
 /*css do endereço das páginas*/
 #endereco_pagina{ position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px}
@@ -612,7 +614,10 @@ img{border:0px}
 #rodape_5_mercurios h3{position:relative; float:left; font-family:"arial"; font-size:24px; margin-left:40px}
 #rodape_5_mercurios img{position:relative; float:left; margin-top:15px; margin-left:8px}
 
+ 
+/*classes gerais*/
 .laranja{color:#ff8100}
+
 }
 @media only screen and (min-width:200px) and (max-width: 1000px){
 #container{width:100%; position:relative; margin:0 auto; margin-top:15px;}

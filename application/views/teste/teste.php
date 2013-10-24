@@ -38,7 +38,35 @@
                 </div>
     </div><!-- /fim da area de conteudo superior -->
     <div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->
-    
+    	<div id="album">
+            <div class="topo_area_pagina">
+           		<img src="<?php echo base_url('assets'); ?>/images/icone_foto.png" class="icone_area_pagina" />
+            	<h1 class="titulo_area_pagina">Fotos</h1>
+            </div>
+            <div class="albun_fotos">
+                <ul id="pikame" class="jcarousel-skin-pika">
+                	<?php
+                	if (isset($fotos)) {
+                		foreach ($fotos as $foto) {
+                	?>
+                    <li><img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=644"/></li>
+                    <?php
+                		}
+                	}
+                	else {
+                		echo '<li><img src="'.base_url().'uploads/fotos/default.jpg"/></li>';
+                	}
+                	?>
+                </ul>
+            </div>
+        </div><!-- /album -->
+    	<div id="descricao_pagina_grande" class="w-grande">
+            <div class="topo_area_pagina">
+                <img src="<?php echo base_url('assets'); ?>/images/icone_descricao.png" class="icone_area_pagina" />
+                <h1 class="titulo_area_pagina">Descrição</h1>
+            </div>
+            <p class="texto_pagina">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique elementum arcu a cursus. Integer et congue nulla. Quisque laoreet tristique imperdiet. Donec vel sollicitudin lectus. Vivamus orci lectus, tincidunt id sagittis eget, lacinia non sapien. Nulla non ligula a lacus ornare aliquet sed in lacus. Etiam viverra purus </p>
+        </div>
     </div><!-- /fim da area de conteudo esquerda -->
     <div id="area_conteudo_direita"><!-- /inicio da area de conteudo direita -->
     
