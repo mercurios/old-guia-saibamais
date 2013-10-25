@@ -40,11 +40,13 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .8coluna{width:670px} .9coluna{width:756px} .10coluna{width:842px} .11coluna{width:928px} .12coluna{width:1014px}
 
 @media only screen and (min-width: 1024px){
-#container{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
+#container{width:1014px; position:relative; margin:0 auto; margin-top:15px; }
 #conteudo{position:relative; float:left; width:1014px; margin-top:-50px; }
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
 #area_conteudo_esquerda{width:670px; position:relative; float:left; }
-#area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px; }
+#area_conteudo_esquerda_borda{width:674px; position:relative; float:left; padding-right:2px; border-right:2px solid red }
+#area_conteudo_direita{width:326px; position:relative; float:right; margin-right:0px;}
+#area_conteudo_direita_borda{width:326px; position:relative; float:right; margin-right:0px; padding-left:5px; border-left:2px solid #999 }
 .area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
 #area_conteudo_esquerda_pesquisa{width:756px; position:relative; float:left; }
 #area_conteudo_direita_pesquisa{width:240px; position:relative; float:right; margin-right:0px; }
@@ -139,7 +141,7 @@ color: #adadad;
 #conteudo{position:relative; float:left; margin-top:30px}
 
 /*topo das páginas de anunciantes*/
-#topo_pagina_anunciante{background:url(../images/back_topo_pagina.jpg); position:relative; float:left; width:1000px; height:339px;}
+#topo_pagina_anunciante{background:url(../images/back_topo_pagina.jpg); position:relative; float:left; width:100%; height:339px;}
 #redes_sociais_pagina{position:relative; float:left; width:307px; margin-top:210px; margin-right:10px; height:26px;}
 #redes_sociais_pagina ul{margin-top:0px}
 #redes_sociais_pagina ul li{ float:right; position: relative; list-style:none; height:26px; margin-left:5px}
@@ -148,8 +150,7 @@ color: #adadad;
 #logo_topo_pagina_anunciante h3{ font-size:30px; font-weight:100; color:#424242; margin-top:10px; height:64px; vertical-align:middle; text-align:center}
 #contatos_pagina{position:relative; float:left; margin-top:210px; color:#424242; margin-left:10px; width:307px;}
 .titulo_contatos_pagina{position:relative; float:left; font-size:16px; font-weight:bolder; margin-top:0px; margin-bottom:0px; width:72px;}
-.contatos_pagina{position:relative; float:left; width:100%; margin-bottom:5px;}
-
+.contatos_pagina{position:relative; float:left; width:100%; margin-bottom:5px; height:18px;}
 #contatos_pagina h6{position:relative; float:left; font-size:16px; font-weight:100; width:73%; height:100%; vertical-align:middle; margin-top:0px; margin-bottom:0px ; margin-left:5px; }
 
 
@@ -214,25 +215,39 @@ color: #adadad;
 
 
 /*css da descrição das páginas*/
-#descricao_pagina{position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px;}
+#descricao_pagina{position:relative; float:left; width:326px; margin-bottom:30px; margin-top:0px;}
+#descricao_pagina_grande{position:relative; float:left; width:100%; margin-bottom:30px; margin-top:0px;}
 .texto_pagina{position:relative; float:left;  width:100%; text-align:justify; font-size:14px; color:#424242;}
 
 /*css do endereço das páginas*/
-#endereco_pagina{ position:relative; float:left; width:315px; margin-bottom:30px; margin-top:0px}
+#endereco_pagina{ position:relative; float:left; width:326px; margin-bottom:30px; margin-top:0px}
 .texto_pagina{position:relative; float:left;  width:100%; text-align:justify; font-size:14px; color:#424242; margin-top:0px}
 
 /*css da forma de pagamento*/
-#formas_pagamento{position:relative; float:left; width:315px; margin-bottom:30px;}
-.icone_esquerda{position:relative; float: left; margin-right: 13px; margin-bottom:10px}
+#formas_pagamento{position:relative; float:left; width:326px; margin-bottom:30px;}
+.icone_esquerda{position:relative; float: left; margin-right: 16px; margin-bottom:10px}
 .icone_direita{position:relative; float: right; margin-bottom:10px}
 .icone_grande_esquerda{position:relative; float: left; margin-right: 12px; margin-bottom:10px}
 .icone_grande_direita{position:relative; float: right; margin-bottom:10px}
 
 /*css de adapitado*/
-#adaptado{position:relative; float:left; width:315px; margin-bottom:30px;}
+#adaptado{position:relative; float:left; width:326px; margin-bottom:30px;}
+
+
+/*css de informações*/
+#informacoes_pagina{position:relative; float:left; width:326px; margin-bottom:15px; color:#424242; margin-right:18px}
+.informacoes_pagina{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; padding-bottom:0px; border-bottom:1px solid #CCC; padding-bottom:15px}
+.informacoes_pagina_pagamento{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; padding-bottom:0px;}
+.informacoes_pagina_pagamento h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:10px;}
+.informacoes_pagina h4{position:relative; float:left; width:22%; margin-top:0px; margin-bottom:0px;}
+.informacoes_pagina h6{position:relative; float:right; width:73%; margin-top:0px; margin-bottom:0px; font-size:16px; font-weight:100; vertical-align:middle;}
+.precos_informacoes_pagina{position:relative; float:left; width:23%; margin-top:0px; margin-left:8px; margin-bottom:0px; }
+.precos_informacoes_pagina h6{position:relative; float:right; width:100%; margin-top:0px; margin-bottom:5px; font-size:14px; font-weight:100; vertical-align:middle; text-align:center;}
+.precos_informacoes_pagina p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
+
 
 /*css de extras*/
-#extras{position:relative; float:left; width:315px; margin-bottom:30px;}
+#extras{position:relative; float:left; width:326px; margin-bottom:30px;}
 #extras img:nth-child(5n){margin-right:0px}
 
 /*css de frase do dia*/
@@ -241,7 +256,7 @@ color: #adadad;
 #frase_do_dia p span{position:relative; float:right; marginn-top:20px; margin-right:7px; margin-bottom:0px; text-align:right; font-style:italic;}
 
 /*css do funcionamento das páginas*/
-#funcionamento_pagina{ position:relative; float:left; width:313px; margin-bottom:30px; margin-top:0px; color:#242424;}
+#funcionamento_pagina{ position:relative; float:left; width:326px; margin-bottom:30px; margin-top:0px; color:#242424;}
 .funcionamento_pagina_semana{position:relative; float:left; list-style:none;  font-size:14px; margin-left:0px; margin-bottom:0px; margin-top:0px; width:100%;}
 .funcionamento_pagina_semana h4{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px;}
 .funcionamento_pagina_semana p{position:relative; float:right; width:208px; margin-top:0px; margin-bottom:0px; margin-right:0px}
@@ -279,7 +294,6 @@ color: #adadad;
 .preco_quarto{position:relative; float:right; width:84px; height:40px;  margin:10px auto;}
 .preco_quarto h5{position:relative; font-size:12px; font-weight:bold; margin-top:0px; margin-bottom:0px; text-align:center; }
 .preco_quarto p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
-
 .conteudo_acomodacoes{position:relative; float:left; width:666px; overflow:hidden; height:710px; margin-top:5px; }
 #pratos_cardapio{ position:relative; float:left; width:100%; overflow:hidden; height:100%; border:2px solid #4d4d4d}
 #cardapio {display: inline-block; width: 666px; }
@@ -313,7 +327,7 @@ color: #adadad;
 .classificacao_indicativa span{position:relative; float:left; margin-left:10px; margin-right:10px}
 
 /*css de album*/
-#album{position:relative; float:left; width:666px; margin-bottom:30px;}
+#album{position:relative; float:left; width:100%; margin-bottom:30px;}
 
 /*css de promoções*/
 #promocoes{position:relative; float:left; width:666px; height:182px; margin-bottom:30px;}
@@ -325,10 +339,11 @@ color: #adadad;
 .promocao h4 span{ font-weight:normal; margin-left:8px}
 
 /*Locais próximos*/ 
-.locais_proximos{position:relative; float:left; width:313px; height:71px; border:1px solid #d4d4d4; margin-bottom:10px; color:#424242; font-weight:bold; padding:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
+.locais_proximos{position:relative; float:left; width:319px; height:71px; border:1px solid #d4d4d4; margin-bottom:16px; color:#424242; padding:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
+.locais_proximos:last-child{margin-bottom:0px}
 .locais_proximos img{position:relative; float:left; width:102px; height:71px; margin-right:6px; margin-bottom:0px}
-.locais_proximos h3{position:relative; float:left; font-schamada-horizontalize:16px; width:204px; margin-top:0px; margin-bottom:0px }
-.locais_proximos h5{position:relative; float:left; font-size:12px; margin-top:10px; margin-bottom:0px;}
+.locais_proximos h3{position:relative; float:left; font-size:16px; width:204px; margin-top:0px; margin-bottom:0px; font-weight:bold }
+.locais_proximos h5{position:relative; float:left; font-size:12px; margin-top:10px; margin-bottom:0px; font-weight:100}
 .locais_proximos h5 span{position:relative; margin-left:5px}
 
 /*outros css*/
