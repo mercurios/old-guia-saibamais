@@ -2,10 +2,6 @@
 
 class Estadias extends CI_Controller {
 
-	/**
-	 * estadia
-	 */
-
 	/* Construtor
 	=========================================================== */
 	public function __construct()
@@ -16,10 +12,11 @@ class Estadias extends CI_Controller {
 		$this->load->model('Estadia_model', 'estadia');
 	}
 
+
 	public function index()
 	{	
 		// Titulo da página
-		$seo['titulopag'] = "Estadia | Guia Saiba Mais";
+		$seo['titulopag'] = "Estadias | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -90,7 +87,12 @@ class Estadias extends CI_Controller {
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
-		$_categoria = $this->uri->segment(3); 
+		$_categoria = $this->uri->segment(3);
+
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		/*$dados['bread'] = $this->mybreadcrumb->bread_estadia($_categoria);*/
 
 		if (isset($_categoria)) {
 			$dados['estadias'] = $this->estadia->search_estadias($_categoria);
@@ -128,7 +130,7 @@ class Estadias extends CI_Controller {
 		$this->load->view('estadia/listar', $dados);
 
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 	/* Detalhe do estadia
@@ -136,8 +138,8 @@ class Estadias extends CI_Controller {
 	public function detalhe($id = NULL) 
 	{	
 		// Pega a id do cliente
-		$id = $this->uri->segment(4);
-		$slug = $this->uri->segment(3);
+		$id 	= $this->uri->segment(4);
+		$slug 	= $this->uri->segment(3);
 
 		// Caso o id não for informado, ele pega o slug e faz uma pesquisa
 		if (empty($id)) {
@@ -157,10 +159,12 @@ class Estadias extends CI_Controller {
 
 			$dados['conteudo'] 		= $this->estadia->get_estadia($id);
 			$dados['fotos'] 		= $this->estadia->listar_fotos($id);
-			$dados['p_principal']	= $this->estadia->listar_prato_principal($id);
-			$dados['p_normal']		= $this->estadia->listar_pratos($id);
-			$dados['estadias']		= $this->estadia->listar_estadias($id);
+			$dados['acomodacoes']	= $this->estadia->listar_acomodacoes($id);
 			$dados['promocoes']     = $this->estadia->listar_promocao($id);
+			$dados['pub_top']		= $this->estadia->get_publicidade('top', 'estadia');
+
+			// Publicidade conteudo bottom
+			$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');
 
 			$_titulo = $dados['conteudo'][0]->nome_estadia;
 			$_descri = $dados['conteudo'][0]->desc_estadia;
@@ -213,3 +217,6 @@ class Estadias extends CI_Controller {
 		}
 	}
 }
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */

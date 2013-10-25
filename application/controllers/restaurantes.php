@@ -93,6 +93,11 @@ class Restaurantes extends CI_Controller {
 	{	
 		$_categoria = $this->uri->segment(3);
 
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		$dados['bread'] = $this->mybreadcrumb->bread_restaurante($_categoria);
+
 		if (isset($_categoria)) {
 			$dados['restaurantes'] = $this->restaurante->search_restaurantes($_categoria);
 		}
@@ -129,7 +134,7 @@ class Restaurantes extends CI_Controller {
 		$this->load->view('restaurante/listar', $dados);
 
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 	/* Detalhe do restaurante
@@ -137,8 +142,8 @@ class Restaurantes extends CI_Controller {
 	public function detalhe($id = NULL) 
 	{	
 		// Pega a id do cliente
-		$id = $this->uri->segment(4);
-		$slug = $this->uri->segment(3);
+		$id 	= $this->uri->segment(4);
+		$slug 	= $this->uri->segment(3);
 
 		// Caso o id não for informado, ele pega o slug e faz uma pesquisa
 		if (empty($id)) {
@@ -162,6 +167,10 @@ class Restaurantes extends CI_Controller {
 			$dados['p_normal']		= $this->restaurante->listar_pratos($id);
 			$dados['bebidas']		= $this->restaurante->listar_bebidas($id);
 			$dados['promocoes']     = $this->restaurante->listar_promocao($id);
+			$dados['pub_top']		= $this->restaurante->get_publicidade('top', 'restaurante');
+
+			// Publicidade conteudo bottom
+			$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
 
 			$_titulo = $dados['conteudo'][0]->nome_restaurante;
 			$_descri = $dados['conteudo'][0]->desc_restaurante;

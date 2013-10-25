@@ -128,7 +128,7 @@ class Bebidas extends CI_Controller {
 		$this->load->view('bebida/listar', $dados);
 
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 	/* Detalhe do bebida
@@ -157,9 +157,7 @@ class Bebidas extends CI_Controller {
 
 			$dados['conteudo'] 		= $this->bebida->get_bebida($id);
 			$dados['fotos'] 		= $this->bebida->listar_fotos($id);
-			$dados['p_principal']	= $this->bebida->listar_prato_principal($id);
-			$dados['p_normal']		= $this->bebida->listar_pratos($id);
-			$dados['bebidas']		= $this->bebida->listar_bebidas($id);
+			$dados['card_bebidas']		= $this->bebida->listar_bebidas($id);
 			$dados['promocoes']     = $this->bebida->listar_promocao($id);
 
 			$_titulo = $dados['conteudo'][0]->nome_bebida;

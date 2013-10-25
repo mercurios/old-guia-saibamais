@@ -706,3 +706,8 @@ color: #adadad;
 #entretenimento{width:184px}
 .link_menu:hover #menu_entretenimento {left:-355px; top:auto;}
 	}
+
+
+#adv-custom-pager img {
+    margin: 0 1px;
+}

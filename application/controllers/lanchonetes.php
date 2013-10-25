@@ -92,6 +92,11 @@ class Lanchonetes extends CI_Controller {
 	{	
 		$_categoria = $this->uri->segment(3); 
 
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		$dados['bread'] = $this->mybreadcrumb->bread_lanchonete($_categoria);
+
 		if (isset($_categoria)) {
 			$dados['lanchonetes'] = $this->lanchonete->search_lanchonetes($_categoria);
 		}
@@ -159,7 +164,7 @@ class Lanchonetes extends CI_Controller {
 			$dados['fotos'] 		= $this->lanchonete->listar_fotos($id);
 			$dados['p_principal']	= $this->lanchonete->listar_prato_principal($id);
 			$dados['p_normal']		= $this->lanchonete->listar_pratos($id);
-			$dados['lanchonetes']		= $this->lanchonete->listar_lanchonetes($id);
+			$dados['lanchonetes']	= $this->lanchonete->listar_lanchonetes($id);
 			$dados['promocoes']     = $this->lanchonete->listar_promocao($id);
 
 			$_titulo = $dados['conteudo'][0]->nome_lanchonete;

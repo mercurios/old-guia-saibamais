@@ -33,7 +33,7 @@
 
 					<div class="item-slider" data-title="<?php echo $est_s->titulo_chamada; ?>">
 						<a href="<?php echo $est_s->link_chamada; ?>" title="<?php echo $est_s->titulo_chamada; ?>">
-							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_s->img_chamada; ?>&w=326&h=250" alt="<?php echo $est_s->titulo_chamada; ?>" />
+							<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_s->img_chamada; ?>&w=326&h=250" alt="<?php echo $est_s->titulo_chamada; ?>" />
 						</a>
 					</div>
 
@@ -55,7 +55,7 @@
 
 				<div class="chamada_pequena">
 					<a href="<?php echo $est_p_top->link_chamada; ?>" title="<?php echo $est_p_top->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_p_top->img_chamada; ?>&w=99&h=77" alt="<?php echo $est_p_top->titulo_chamada; ?>" class="img_chamada_pequena"/>
+						<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_p_top->img_chamada; ?>&w=99&h=77" alt="<?php echo $est_p_top->titulo_chamada; ?>" class="img_chamada_pequena"/>
                         <p><?php echo $est_p_top->desc_chamada; ?></p>
 					</a>
 				</div>
@@ -74,7 +74,7 @@
 
 				<div class="chamada_media">
 					<a href="<?php echo $est_m->link_chamada; ?>" title="<?php echo $est_m->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $est_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $est_m->titulo_chamada; ?>" class="img_chamada_media"/>
 						<h2><?php echo $est_m->titulo_chamada; ?></h2>
 						<p><?php echo $est_m->desc_chamada; ?></p>
 					</a>
@@ -95,7 +95,7 @@
 
 					<div class="item-slider" data-title="<?php echo $est_s_f->titulo_chamada; ?>">
 						<a href="<?php echo $est_s_f->link_chamada; ?>" title="<?php echo $est_s_f->titulo_chamada; ?>">
-							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_s_f->img_chamada; ?>&w=670&h=200" alt="<?php echo $est_s_f->titulo_chamada; ?>" />
+							<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_s_f->img_chamada; ?>&w=670&h=200" alt="<?php echo $est_s_f->titulo_chamada; ?>" />
 						</a>
 					</div>
 
@@ -114,7 +114,7 @@
                 ?>
                 <div class="chamada_pequena">
                     <a href="<?php echo $est_p_bot->link_chamada; ?>" title="<?php echo $est_p_bot->titulo_chamada; ?>">
-                        <img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $est_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
+                        <img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_p_bot->img_chamada; ?>&w=99&h=77" alt="<?php echo $est_p_bot->titulo_chamada; ?>" class="img_chamada_pequena"/>
                         <p><?php echo $est_p_bot->desc_chamada; ?></p>
                     </a>
                 </div>
@@ -130,7 +130,7 @@
         	?>
 
         	<div class="chamada-captions">
-        		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_m_p->img_chamada; ?>&w=154&h=168" alt="<?php echo $est_m_p->titulo_chamada; ?>"/>
+        		<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_m_p->img_chamada; ?>&w=154&h=168" alt="<?php echo $est_m_p->titulo_chamada; ?>"/>
 
             	<span>
             		<a href="<?php echo $est_m_p->link_chamada; ?>" title="<?php echo $est_m_p->titulo_chamada; ?>"><?php echo $est_m_p->titulo_chamada; ?></a>
@@ -148,7 +148,7 @@
 	        		foreach ($chamada_est_m_f as $est_m_f) {
 	        	?>
             	<div class="chamada-captions-grande">
-            		<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_m_f->img_chamada; ?>&w=343&h=370" alt="<?php echo $est_m_f->titulo_chamada; ?>"/>
+            		<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_m_f->img_chamada; ?>&w=343&h=370" alt="<?php echo $est_m_f->titulo_chamada; ?>"/>
 	            	<span>
 	            		<a href="<?php echo $est_m_f->link_chamada; ?>" title="<?php echo $est_m_f->titulo_chamada; ?>"><?php echo $est_m_f->titulo_chamada; ?></a>
 	             	</span>
@@ -169,7 +169,7 @@
 		        	?>
 	        		<div class="item-slider">
 		                <a href="<?php echo $pubcontbottom->link_publicidade; ?>" title="" target="<?php echo ($pubcontbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-		                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubcontbottom->img_vd_publicidade; ?>" alt="Titulo da imagem" />
+		                    <img src="<?php echo base_url('tim.php?src=uploads/publicidades') . '/' . $pubcontbottom->img_vd_publicidade; ?>" alt="Titulo da imagem" />
 		                </a>
 		            </div>
 		        	<?php } } ?>
@@ -185,7 +185,7 @@
 
 				<div class="chamada_media">
 					<a href="<?php echo $est_m->link_chamada; ?>" title="<?php echo $est_m->titulo_chamada; ?>">
-						<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $est_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $est_m->titulo_chamada; ?>" class="img_chamada_media"/>
+						<img src="<?php echo base_url('tim.php?src=uploads/chamadas') . '/' . $est_m->img_chamada; ?>&w=154&h=102" alt="<?php echo $est_m->titulo_chamada; ?>" class="img_chamada_media"/>
 						<h2><?php echo $est_m->titulo_chamada; ?></h2>
 						<p><?php echo $est_m->desc_chamada; ?></p>
 					</a>
@@ -305,7 +305,7 @@
                 </div>
                 <div id="mais_promocoes">
                 	<a href="">
-                	   	<img src="assets/images/mais.png" alt=""/>
+                	   	<img src="<?php echo base_url() ?>assets/images/mais.png" alt=""/>
 						<h4>Veja mais promoções aqui</h4>
                     </a>
                 </div>            

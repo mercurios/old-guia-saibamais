@@ -55,6 +55,7 @@ class Lanchonete_model extends CI_Model
     {
         $this->db->where('id_cliente', $id);
         $this->db->where('tipo_prato', 'pratoprincipal');
+        $this->db->where('categoria_prato', 'lanchonete');
         return $this->db->get('guia_cardapios')->result();
     }
 
@@ -63,6 +64,7 @@ class Lanchonete_model extends CI_Model
     {
         $this->db->where('id_cliente', $id);
         $this->db->where('tipo_prato', 'normal');
+        $this->db->where('categoria_prato', 'lanchonete');
         return $this->db->get('guia_cardapios')->result();
     }
 

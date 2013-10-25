@@ -55,59 +55,98 @@
            		<img src="<?php echo base_url('assets'); ?>/images/icone_foto.png" class="icone_area_pagina" />
             	<h1 class="titulo_area_pagina">Fotos</h1>
             </div>
-            <div class="albun_fotos">
-                <ul id="pikame" class="jcarousel-skin-pika">
-                	<?php
+            </br></br></br>
+            <div class="albun_fotos">	
+            	<div class="cycle-slideshow" 
+				    data-cycle-fx=fade
+				    data-cycle-pager="#adv-custom-pager"
+				    data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
+				    >
+				    <?php
                 	if (isset($fotos)) {
                 		foreach ($fotos as $foto) {
                 	?>
-                    <li><img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=644"/></li>
-                    <?php
+                	<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=666&h=400"/>
+                	<?php
                 		}
                 	}
                 	else {
                 		echo '<li><img src="'.base_url().'uploads/fotos/default.jpg"/></li>';
                 	}
                 	?>
-                </ul>
+				</div>
+				<!-- empty element for pager links -->
+				<div id=adv-custom-pager class="center external"></div>
             </div>
         </div><!-- /album -->
 
         <div id="cardapio">
 			<div class="topo_area_pagina">
 				<img src="<?php echo base_url('assets'); ?>/images/icone_cardapio.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">Acomodações</h1>
+				<h1 class="titulo_area_pagina">Cardápio</h1>
 			</div>
 
 			<p id="abas">
-				<a href="#pratos_principais" class="selected">Acomodações</a>
-				<!--<a href="#outros_pratos">Outros pratos</a>
-				<a href="#pratos_lanchonetes">lanchonetes</a>-->
+				<a href="#pratos_principais" class="selected">Pratos principais</a>
+				<a href="#outros_pratos">Outros pratos</a>
 			</p><!-- /Titulo abas -->
 
 			<ul id="conteudo_cardapio">
 				<li id="pratos_principais">
 					<?php 
-					if (isset($acomodacoes)) { 
-						foreach ($acomodacoes as $acomodacao) {
+					if (isset($p_principal)) { 
+						foreach ($p_principal as $pratop) {
 					?>
 					<div class="pratos_cardapio">
 						<div class="pratos_cardapio_esquerda">
-							<h4><?php echo $acomodacao->nome_acomodacao; ?></h4>
-							<p><?php echo $acomodacao->desc_acomodacao; ?></p>
+							<h4><?php echo $pratop->nome_prato; ?></h4>
+							<p>R$ <?php echo $pratop->desc_prato; ?></p>
 						</div>
 						<div class="pratos_cardapio_direita">
 							<div class="preco_cardapio">
-								<h5><?php echo $acomodacao->titulo_preco_um; ?></h5>
-								<p>R$ <?php echo $acomodacao->valor_preco_um; ?></p>
+								<h5><?php echo $pratop->titulo_preco_um; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_um; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $acomodacao->titulo_preco_dois; ?></h5>
-								<p>R$ <?php echo $acomodacao->valor_preco_dois; ?></p>
+								<h5><?php echo $pratop->titulo_preco_dois; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_dois; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $acomodacao->titulo_preco_tres; ?></h5>
-								<p>R$ <?php echo $acomodacao->valor_preco_tres; ?></p>
+								<h5><?php echo $pratop->titulo_preco_tres; ?></h5>
+								<p>R$ <?php echo $pratop->valor_preco_tres; ?></p>
+							</div>
+						</div>
+                        <div class="linha_separatoria"></div>
+					</div>
+					
+					<?php 
+						} 
+					}
+					?>
+				</li><!-- /pratos-principais -->
+
+				<li id="outros_pratos">
+					<?php 
+					if (isset($p_normal)) { 
+						foreach ($p_normal as $pnormal) {
+					?>
+					<div class="pratos_cardapio">
+						<div class="pratos_cardapio_esquerda">
+							<h4><?php echo $pnormal->nome_prato; ?></h4>
+							<p><?php echo $pnormal->desc_prato; ?></p>
+						</div>
+						<div class="pratos_cardapio_direita">
+							<div class="preco_cardapio">
+								<h5><?php echo $pnormal->titulo_preco_um; ?></h5>
+								<p>R$ <?php echo $pnormal->valor_preco_um; ?></p>
+							</div>
+							<div class="preco_cardapio">
+								<h5><?php echo $pnormal->titulo_preco_dois; ?></h5>
+								<p>R$ <?php echo $pnormal->valor_preco_dois; ?></p>
+							</div>
+							<div class="preco_cardapio">
+								<h5><?php echo $pnormal->titulo_preco_tres; ?></h5>
+								<p>R$ <?php echo $pnormal->valor_preco_tres; ?></p>
 							</div>
 						</div>
 					</div>
@@ -116,8 +155,7 @@
 						} 
 					}
 					?>
-				</li><!-- /pratos-principais -->
-
+				</li><!-- /outros-pratos -->
 			</ul><!-- /abas -->
         </div><!-- /cardapio -->
 
@@ -152,11 +190,26 @@
 				<h1 class="titulo_area_pagina">Extras do local</h1>
 			</div>
 			<?php $extras = explode(',', $lanchonete->extra_lanchonete);
-			if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi.jpg" alt="Wi-fi" title="Wi-fi" class="icone_esquerda"/>'; }
-			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento.jpg" alt="Estacionamento" title="Estacionamento fácil" class="icone_esquerda"/>'; }
-			if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc.jpg" alt="UFC" title="Lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
-			if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc.jpg" alt="PFC" title="Jogos transmitidos ao vivo" class="icone_direita"/>'; }
-			if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica.jpg" alt="Musica" title="Shows ao vivo" class="icone_esquerda"/>'; }
+			if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi.jpg" alt="Wi-fi" title="Não possui Wi-fi" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_wifi_claro.jpg" alt="Wi-fi" title="Não possui Wi-fi" class="icone_esquerda"/>'; }
+
+			if (in_array('piscina', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_piscina.jpg" alt="Estacionamento" title="Não possui estacionamento" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_piscina_claro.jpg" alt="Estacionamento" title="Não possui estacionamento" class="icone_esquerda"/>'; }
+
+			if (in_array('cafe-da-manha', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pao.jpg" alt="Piscina" title="Não possui piscina" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_pao_claro.jpg" alt="Piscina" title="Não possui piscina" class="icone_esquerda"/>'; }
+
+			if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento.jpg" alt="Café da Manhã" title="Não possui café da manhã incluso" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento_claro.jpg" alt="Café da Manhã" title="Não possui café da manhã incluso" class="icone_esquerda"/>'; }
+
+			if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica.jpg" alt="Musica" title="Não possui shows ao vivo" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_musica_claro.jpg" alt="Musica" title="Não possui shows ao vivo" class="icone_esquerda"/>'; }
+
+			if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc.jpg" alt="UFC" title="Não possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_ufc_claro.jpg" alt="UFC" title="Não possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
+
+			if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc.jpg" alt="PFC" title="Não possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
+			else { echo '<img src="'. base_url('assets') .'/images/icone_pfc_claro.jpg" alt="PFC" title="Não possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
 			?>
 		</div><!-- /extras -->
 
@@ -166,14 +219,29 @@
 				<h1 class="titulo_area_pagina">Acessível para</h1>
 			</div>
 			<?php $adaptado = explode(',', $lanchonete->adaptado_lanchonete);
-			if (in_array('cego', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_cego.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda"/>'; }
-			if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_surdo.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda"/>'; }
-			if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_deficiente.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda"/>'; }
-			if (in_array('braile', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_braille.jpg" alt="Braille" title="Braille" class="icone_direita"/>'; }
-			if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_obeso.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda"/>'; }
-			if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_idoso.jpg" alt="Idoso" title="Idosos" class="icone_esquerda"/>'; }
-			if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_gestante.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda"/>'; }
-			if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url('assets') .'/images/icone_bebe.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_direita"/>'; }
+			if (in_array('cego', $adaptado)){ echo '<img src="'. base_url() .'assets/images/icone_cego.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda "/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_cego_claro.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda "/>'; }
+
+	        if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_surdo.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda "/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_surdo_claro.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda "/>'; }
+
+	        if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_deficiente.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda "/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_deficiente_claro.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda "/>'; }
+
+	        if (in_array('braile', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_braille.jpg" alt="Braille" title="Braille" class="icone_direita "/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_braille_claro.jpg" alt="Braille" title="Braille" class="icone_direita "/>'; }
+
+	        if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_obeso.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda "/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_obeso_claro.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda "/>'; }
+
+	        if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_idoso.jpg" alt="Idoso" title="Idosos" class="icone_esquerda "/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_idoso_claro.jpg" alt="Idoso" title="Idosos" class="icone_esquerda "/>'; }
+
+	        if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_gestante.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda "/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_gestante_claro.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda "/>'; }
+
+	        if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_bebe.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_direita "/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_bebe_claro.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_direita "/>'; }
 			?>
 		</div><!-- /adaptado -->
     </div><!-- /direita -->

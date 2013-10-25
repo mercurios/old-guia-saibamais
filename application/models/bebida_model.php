@@ -50,27 +50,12 @@ class bebida_model extends CI_Model
         return $this->db->get('guia_fotos')->result();
     }
 
-    // Lista pratos principal
-    public function listar_prato_principal($id)
-    {
-        $this->db->where('id_cliente', $id);
-        $this->db->where('tipo_prato', 'pratoprincipal');
-        return $this->db->get('guia_cardapios')->result();
-    }
-
-    // Lista todos os pratos
-    public function listar_pratos($id)
-    {
-        $this->db->where('id_cliente', $id);
-        $this->db->where('tipo_prato', 'normal');
-        return $this->db->get('guia_cardapios')->result();
-    }
-
     // Lista bebidas
     public function listar_bebidas($id)
     {
         $this->db->where('id_cliente', $id);
         $this->db->where('tipo_prato', 'bebida');
+        $this->db->where('categoria_prato', 'bebida');
         return $this->db->get('guia_cardapios')->result();
     }
 

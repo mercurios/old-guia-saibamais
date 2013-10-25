@@ -147,7 +147,7 @@
                             <h4 class="titulo_sub_menus">Por serviço</h4>
                             <ul>
                                 <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/fast-food'); ?>" title="Veja as lanchonetes que vendem por Fast-food">Fast-food</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/dilivery'); ?>" title="Veja as lanchonetes que vendem por Delivery">Delivery</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/delivery'); ?>" title="Veja as lanchonetes que vendem por Delivery">Delivery</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/drive-thrur'); ?>" title="Veja as lanchonetes que vendem por Drive-thrur">Drive-thrur</a></li>
                                 <li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/rodizios'); ?>" title="Veja as lanchonetes que vendem por Rodizio">Rodizio</a></li>
                             </ul>
