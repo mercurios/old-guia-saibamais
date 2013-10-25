@@ -37,7 +37,7 @@
                     </div>
                 </div>
     </div><!-- /fim da area de conteudo superior -->
-    <div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->
+    <div id="area_conteudo_esquerda_borda"><!-- /inicio da area de conteudo esquerda -->
     	<div id="album">
             <div class="topo_area_pagina">
            		<img src="<?php echo base_url('assets'); ?>/images/icone_foto.png" class="icone_area_pagina" />
