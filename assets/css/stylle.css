@@ -141,7 +141,7 @@ color: #adadad;
 #conteudo{position:relative; float:left; margin-top:30px}
 
 /*topo das páginas de anunciantes*/
-#topo_pagina_anunciante{background:url(../images/back_topo_pagina.jpg); position:relative; float:left; width:100%; height:339px;}
+#topo_pagina_anunciante{background:url(../images/back_topo_pagina.png); position:relative; float:left; width:100%; height:339px;}
 #redes_sociais_pagina{position:relative; float:left; width:307px; margin-top:210px; margin-right:10px; height:26px;}
 #redes_sociais_pagina ul{margin-top:0px}
 #redes_sociais_pagina ul li{ float:right; position: relative; list-style:none; height:26px; margin-left:5px}
@@ -236,7 +236,9 @@ color: #adadad;
 
 /*css de informações*/
 #informacoes_pagina{position:relative; float:left; width:326px; margin-bottom:15px; color:#424242; margin-right:18px}
-.informacoes_pagina{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; padding-bottom:0px; border-bottom:1px solid #CCC; padding-bottom:15px}
+.informacoes_pagina{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px;  border-bottom:1px solid #CCC; padding-bottom:15px}
+.informacoes_pagina_2{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; border-bottom:1px solid #CCC}
+.informacoes_pagina_2 h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:22px; }
 .informacoes_pagina_pagamento{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; padding-bottom:0px;}
 .informacoes_pagina_pagamento h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:10px;}
 .informacoes_pagina h4{position:relative; float:left; width:22%; margin-top:0px; margin-bottom:0px;}
@@ -259,6 +261,7 @@ color: #adadad;
 #funcionamento_pagina{ position:relative; float:left; width:326px; margin-bottom:30px; margin-top:0px; color:#242424;}
 .funcionamento_pagina_semana{position:relative; float:left; list-style:none;  font-size:14px; margin-left:0px; margin-bottom:0px; margin-top:0px; width:100%;}
 .funcionamento_pagina_semana h4{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px;}
+.funcionamento_pagina_semana h2{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px; font-size:14px}
 .funcionamento_pagina_semana p{position:relative; float:right; width:208px; margin-top:0px; margin-bottom:0px; margin-right:0px}
 
 /*css do cardapio*/
@@ -304,7 +307,7 @@ color: #adadad;
 
 	
 /*css de Filmes e peças*/
-#cinema{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:0px; border:1px solid red;}
+#cinema{position:relative; float:left; width:670px; margin-bottom:40px; margin-top:0px;}
 
 #teatro{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:0px; border:1px solid red;}
 .cartaz{position:relative; float:left; width:326px; border:1px solid #b4b4b4;; margin-left:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
@@ -338,9 +341,21 @@ color: #adadad;
 .promocao h4{position:relative; float:right; max-width:370px; margin-bottom:10px; margin-top:0px; font-size:14px; font-weight:bold; color:#424242; }
 .promocao h4 span{ font-weight:normal; margin-left:8px}
 
+/*O que fazer lá*/ 
+#dicas{position:relative; float:left; width:100%; color:#424242; margin-bottom:30px}
+.dicas{position:relative; float:left; width:100%; margin-bottom:15px; border-bottom:1px solid #CCC;}
+.dicas:last-child{border-bottom:0px}
+.dicas h3{position:relative; float:left; font-size:14px; font-weight:bold; margin-top:0px; margin-bottom:0px;}
+.dicas a{color:#424242}
+.dicas a:hover h6{color:#ff8100}
+.dicas p{position:relative; float:left; width:100%; font-size:14px; margin-top:6px; margin-bottom:0px;}
+.dicas h6{position:relative; float:right; font-size:12px; font-weight:bold; margin-top:6px; margin-bottom:7px; text-align:right}
+
 /*Locais próximos*/ 
 .locais_proximos{position:relative; float:left; width:319px; height:71px; border:1px solid #d4d4d4; margin-bottom:16px; color:#424242; padding:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
 .locais_proximos:last-child{margin-bottom:0px}
+.locais_proximos a{text-decoration:none; color:#424242}
+.locais_proximos a:hover{color:#ff8100}
 .locais_proximos img{position:relative; float:left; width:102px; height:71px; margin-right:6px; margin-bottom:0px}
 .locais_proximos h3{position:relative; float:left; font-size:16px; width:204px; margin-top:0px; margin-bottom:0px; font-weight:bold }
 .locais_proximos h5{position:relative; float:left; font-size:12px; margin-top:10px; margin-bottom:0px; font-weight:100}
