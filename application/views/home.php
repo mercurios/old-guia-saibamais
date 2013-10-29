@@ -7,7 +7,7 @@
         	?>
         		<div class="item-slider">
 	                <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-	                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade; ?>" alt="Titulo da imagem" />
+	                	<?php echo image_thumb('uploads/publicidades/'.$pubtop->img_vd_publicidade, 914, 90, 'Titulo'); ?>
 	                </a>
 	            </div>
 
@@ -19,8 +19,6 @@
 <!-- Conteudo
 ================================================== -->
 <div id="conteudo" class="">
-
-	<!-- Conteudo esquerda -->
 	<div id="area_conteudo_esquerda" class="area_conteudo">
 
         <!-- conteudo Passeio e lazer -->
@@ -41,7 +39,7 @@
 
 					<div class="item-slider" data-title="<?php echo $slider_lazer->titulo_chamada; ?>">
 						<a href="<?php echo $slider_lazer->link_chamada; ?>" title="<?php echo $slider_lazer->titulo_chamada; ?>">
-							<img src="tim.php?src=<?php echo base_url('uploads/chamadas') . '/' . $slider_lazer->img_chamada; ?>&w=670&h=200" alt="<?php echo $slider_lazer->titulo_chamada; ?>" />
+							<?php echo image_thumb('uploads/chamadas/' . $slider_lazer->img_chamada, 670, 200, 'Titulo'); ?>
 						</a>
 					</div>
 
