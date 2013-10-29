@@ -6,18 +6,8 @@
 <div id="conteudo">
 	<div id="area_conteudo_superior"><!-- /inicio da area de conteudo superior -->
     	<div id="topo_pagina_anunciante" class="">
-            <div id="redes_sociais_pagina">
-                <ul>
-                    <li><a href="" title="Flickr"><img src="<?php echo base_url('assets'); ?>/images/flickr_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Instagram"><img src="<?php echo base_url('assets'); ?>/images/instagram_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Youtube"><img src="<?php echo base_url('assets'); ?>/images/youtube_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Orkut"><img src="<?php echo base_url('assets'); ?>/images/orkut_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Google Plus"><img src="<?php echo base_url('assets'); ?>/images/gplus_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Twitter"><img src="<?php echo base_url('assets'); ?>/images/twitter_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="" title="Facebook"><img src="<?php echo base_url('assets'); ?>/images/facebook_icon.jpg" alt="RS" /></a></li>
-                </ul>
-            </div>
-            <div id="logo_topo_pagina_anunciante" class="">
+            
+            <div id="logo_topo_pagina_lazer" class="">
                 <img src="<?php echo base_url('assets'); ?>/images/logo_barretos.jpg" alt="Logo do anunciante" />
                 <h3>Restaurante e Pizzaria barretos</h3>
             </div>
@@ -48,106 +38,51 @@
                 </ul>
             </div>
         </div><!-- /album -->
+        <div id="rotas">
+        	<div class="topo_area_pagina">
+                    <img src="<?php echo base_url('assets'); ?>/images/icone_rota.png" class="icone_area_pagina" />
+                    <h1 class="titulo_area_pagina">Lugares da rota</h1>
+            </div>
+            <div class="rota">
+            	<h1>1º lugar da rota</h1>
+                <div class="rotas">
+                    <img src="" alt="imagem da rota" />
+                    <h2>Museu de arte moderna aloísio magalhães</h2>
+                    <p>aqui fica a descrição do museu, auh dsuh ushduh dushuda hsudhsdk nsldhsi dohdos</p>
+                    <h3>Preço por pessoa:<span>R$ 3,00</span></h3>
+                </div>
+            </div>
+            <div class="rota">
+            	<h1>2º lugar da rota</h1>
+                <div class="rotas">
+                    <img src="" alt="imagem da rota" />
+                    <h2>Museu de arte moderna aloísio magalhães</h2>
+                    <p>aqui fica a descrição do museu, auh dsuh ushduh dushuda hsudhsdk nsldhsi dohdos</p>
+                    <h3>Preço por pessoa:<span>R$ 3,00</span></h3>
+                </div>
+            </div>
+            <div class="rota">
+            	<h1>3º lugar da rota</h1>
+                <div class="rotas">
+                    <img src="" alt="imagem da rota" />
+                    <h2>Museu de arte moderna aloísio magalhães</h2>
+                    <p>aqui fica a descrição do museu, auh dsuh ushduh dushuda hsudhsdk nsldhsi dohdos</p>
+                    <h3>Preço por pessoa:<span>R$ 3,00</span></h3>
+                </div>
+            </div>
+            <div id="rotas_valor_final">
+            	<h1>O valor total que será gasto por pessoa, nessa rota é: <span>R$ 12,00</span></h1>
+            </div>
+        </div>
         <div id="descricao_pagina_grande" class="w-grande">
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_descricao.png" class="icone_area_pagina" />
-                <h1 class="titulo_area_pagina">Descrição</h1>
+                <h1 class="titulo_area_pagina">Descrição da rota</h1>
             </div>
                 <p class="texto_pagina">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique elementum arcu a cursus. Integer et congue nulla. Quisque laoreet tristique imperdiet. Donec vel sollicitudin lectus. Vivamus orci lectus, tincidunt id sagittis eget, lacinia non sapien. Nulla non ligula a lacus ornare aliquet sed in lacus. Etiam viverra purus </p>
         </div>
-        <div id="informacoes_pagina" >
-            <div class="topo_area_pagina">
-                <img src="<?php echo base_url('assets'); ?>/images/icone_informacao.png" class="icone_area_pagina" />
-                <h1 class="titulo_area_pagina">Informações</h1>
-            </div>
-            <div class="informacoes_pagina">
-                <h4>Preço(s):</h4> 
-                <div class="precos_informacoes_pagina">
-                	<h6>Inteira</h6>
-                    <p>R$ 30,00</p>
-                </div>
-                <div class="precos_informacoes_pagina">
-                	<h6>Meia</h6>
-                    <p>R$ 30,00</p>
-                </div>
-                <div class="precos_informacoes_pagina">
-                	<h6>Especial</h6>
-                    <p>R$ 30,00</p>
-                </div>
-            </div>
-            <div class="informacoes_pagina_2">
-                <h4>Dia(s) e horário(s) para visitação:</h4> 
-                <div id="funcionamento_pagina">
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Domingo</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Segunda-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Terça-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Quarta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Quinta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Sexta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Sábado</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="informacoes_pagina">
-                <h4>Censura:</h4> 
-                <h6>12 anos</h6>
-            </div>
-            
-           
-        </div>
         
-        <div id="endereco_pagina">
-			<div id="" class="topo_area_pagina">
-				<img src="<?php echo base_url('assets'); ?>/images/icone_place.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">Local</h1>
-			</div>
-			
-		</div><!-- /endereco -->
-        <div id="dicas">
-        	<div id="" class="topo_area_pagina">
-				<img src="<?php echo base_url('assets'); ?>/images/icone_dicas.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">O que fazer lá</h1>
-			</div>
-        	<div class="dicas">
-            	<a href="" title="">  <h3>Futebol de areia</h3>
-                <p>AUhsuahd uah udsh uaog duiasg diasg diyags diygas digtf uyf utf uitf utif utf utf iu fiut futi futif utf uf u ftas idgaisy dgysaigdiygsa</p>
-				<h6>Saiba mais +</h6> </a>
-               
-            </div>
-            <div class="dicas">
-            	<a href="" title="">  <h3>Futebol de areia</h3>
-                <p>AUhsuahd uah udsh uaog duiasg diasg diyags diygas digas idgaisy dgysaigdiygsa</p>
-				<h6>Saiba mais +</h6> </a>
-               
-            </div>
-        </div>
+        
 	</div><!-- /fim da area de conteudo esquerda -->
 	<div id="area_conteudo_direita_borda"><!-- /inicio da area de conteudo direita -->
 		<div class="locais_proximos">

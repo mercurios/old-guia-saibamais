@@ -15,9 +15,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'alte_haas_groteskregular';
     src: url('altehaasgroteskregular-webfont.eot');
@@ -30,6 +27,41 @@
 
 }
 
+@font-face {
+    font-family: 'axure_handwritingregular';
+    src: url('axurehandwriting-webfont.eot');
+    src: url('axurehandwriting-webfont.eot?#iefix') format('embedded-opentype'),
+         url('axurehandwriting-webfont.woff') format('woff'),
+         url('axurehandwriting-webfont.ttf') format('truetype'),
+         url('axurehandwriting-webfont.svg#axure_handwritingregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'axure_handwritingbold';
+    src: url('axurehandwriting-bold-webfont.eot');
+    src: url('axurehandwriting-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('axurehandwriting-bold-webfont.woff') format('woff'),
+         url('axurehandwriting-bold-webfont.ttf') format('truetype'),
+         url('axurehandwriting-bold-webfont.svg#axure_handwritingbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'axure_handwritingbold_italic';
+    src: url('axurehandwriting-bolditalic-webfont.eot');
+    src: url('axurehandwriting-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('axurehandwriting-bolditalic-webfont.woff') format('woff'),
+         url('axurehandwriting-bolditalic-webfont.ttf') format('truetype'),
+         url('axurehandwriting-bolditalic-webfont.svg#axure_handwritingbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 
 /* CSS Document */
@@ -148,6 +180,9 @@ color: #adadad;
 #logo_topo_pagina_anunciante{position:relative; float:left;  margin-top:0px; width:364px;}
 #logo_topo_pagina_anunciante img{position:relative; float:left; width:364px; height:265px; background:#fafafa;vertical-align:middle; text-align:center; border:1px solid #767676 }
 #logo_topo_pagina_anunciante h3{ font-size:30px; font-weight:100; color:#424242; margin-top:10px; height:64px; vertical-align:middle; text-align:center}
+#logo_topo_pagina_lazer{position:relative; float:left;  margin-top:0px; width:498px; margin-left:240px ; border:1px solid red}
+#logo_topo_pagina_lazer img{position:relative; float:left; width:498px; height:265px; background:#fafafa;vertical-align:middle; text-align:center; border:1px solid #767676 }
+#logo_topo_pagina_lazer h3{ font-size:30px; font-weight:100; color:#424242; margin-top:10px; height:64px; vertical-align:middle; text-align:center}
 #contatos_pagina{position:relative; float:left; margin-top:210px; color:#424242; margin-left:10px; width:307px;}
 .titulo_contatos_pagina{position:relative; float:left; font-size:16px; font-weight:bolder; margin-top:0px; margin-bottom:0px; width:72px;}
 .contatos_pagina{position:relative; float:left; width:100%; margin-bottom:5px; height:18px;}
@@ -241,9 +276,9 @@ color: #adadad;
 .informacoes_pagina_2 h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:22px; }
 .informacoes_pagina_pagamento{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:15px; padding-bottom:0px;}
 .informacoes_pagina_pagamento h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:10px;}
-.informacoes_pagina h4{position:relative; float:left; width:22%; margin-top:0px; margin-bottom:0px;}
-.informacoes_pagina h6{position:relative; float:right; width:73%; margin-top:0px; margin-bottom:0px; font-size:16px; font-weight:100; vertical-align:middle;}
-.precos_informacoes_pagina{position:relative; float:left; width:23%; margin-top:0px; margin-left:8px; margin-bottom:0px; }
+.informacoes_pagina h4{position:relative; float:left; /*width:22%*/; margin-top:0px; margin-bottom:0px;}
+.informacoes_pagina h6{position:relative; float:left; /*width:73%*/; margin-top:0px; margin-bottom:0px; margin-left:10px; font-size:16px; font-weight:100; }
+.precos_informacoes_pagina{position:relative; float:left; max-width:23%; margin-top:0px; margin-left:8px; margin-bottom:0px; }
 .precos_informacoes_pagina h6{position:relative; float:right; width:100%; margin-top:0px; margin-bottom:5px; font-size:14px; font-weight:100; vertical-align:middle; text-align:center;}
 .precos_informacoes_pagina p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
 
@@ -262,7 +297,7 @@ color: #adadad;
 .funcionamento_pagina_semana{position:relative; float:left; list-style:none;  font-size:14px; margin-left:0px; margin-bottom:0px; margin-top:0px; width:100%;}
 .funcionamento_pagina_semana h4{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px;}
 .funcionamento_pagina_semana h2{position:relative; float:left; width:100px; margin-top:0px; margin-bottom:0px; font-size:14px}
-.funcionamento_pagina_semana p{position:relative; float:right; width:208px; margin-top:0px; margin-bottom:0px; margin-right:0px}
+.funcionamento_pagina_semana p{position:relative; float:right; width:208px; margin-top:0px; margin-bottom:0px; margin-right:0px; text-align:right}
 
 /*css do cardapio*/
 #cardapio{position:relative; float:left; width:666px;color:#242424;; margin-bottom:30px}
@@ -328,6 +363,25 @@ color: #adadad;
 .classificacao_indicativa h4{position:relative; float:left; font-size:12px; width:20%; font-weight:bold; color:#fff; margin-top:0px; margin-bottom:0px; margin-left:10px}
 .classificacao_indicativa p{position:relative; float:left; width:15%; margin-right:0px; margin-top:0px; margin-left:3px; margin-bottom:0px; font-size:12px;}
 .classificacao_indicativa span{position:relative; float:left; margin-left:10px; margin-right:10px}
+
+
+/*css de rotas*/
+#rotas{position:relative; float:left; width:100%; margin-bottom:30px; }
+.rota{position:relative; float:left; width:100%; margin-bottom:10px;}
+.rotas{position:relative; float:left; width:100%; color:#424242; border:1px solid #ccc}
+.rota h1{position:relative; float:right; font-family:"axure_handwritingbold"; font-size:20px; text-align:center; color:#ff9c00;  margin-bottom:0px; padding:5px}
+.rotas img{position:relative; float:left; width:240px; height:170px;}
+.rotas h2{position:relative; float:right; font-size:16px; padding:8px; margin-top:0px; margin-bottom:0px;}
+.rotas p{position:relative; float:right; max-width:412px;  font-size:14px; padding:8px; margin-top:0px; }
+.rotas h3{position:absolute;  font-size:14px; padding:8px; margin-top:0px; margin-bottom:0px; right:0; bottom:0; border-top:1px solid #ccc; border-left:1px solid #ccc;}
+.rotas h3 span{margin-left:8px; font-size:16px}
+.rota:nth-child(2n+2) h1{float:left}
+.rota:nth-child(2n+2) img{float:right}
+.rota:nth-child(2n+2) h2{float:left;}
+.rota:nth-child(2n+2) h3{position:absolute; left:0; bottom:0; right:auto; border-top:1px solid #ccc; border-right:1px solid #ccc; border-left:none; }
+#rotas_valor_final{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:40px; border:3px solid #ff9c00;}
+#rotas_valor_final h1{position:relative; float:left; width:100%; text-align:center; color:#424242}
+#rotas_valor_final h1 span{font-size:20px; margin-left:10px; color: #F60;}
 
 /*css de album*/
 #album{position:relative; float:left; width:100%; margin-bottom:30px;}

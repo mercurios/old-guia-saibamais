@@ -5,11 +5,12 @@ $(document).ready(function (){
     $('.publicidade_simples').cycle({
 		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 	});
-
+	
+	
 
 	/*Inicialização do album de fotos*/
 	$("#pikame").PikaChoose({carousel:true});
-
+	
 	$('.chamada_imagem p').each(function(){
 		//...set the opacity to 0...
 		$(this).css('opacity', 0);
