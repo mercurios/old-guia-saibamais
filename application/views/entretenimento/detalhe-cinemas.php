@@ -21,6 +21,20 @@
                 <img src="<?php echo base_url('assets'); ?>/images/logo_barretos.jpg" alt="Logo do anunciante" />
                 <h3>Restaurante e Pizzaria barretos</h3>
             </div>
+            <div id="contatos_pagina">
+                <div class="contatos_pagina">
+                    <h4 class="titulo_contatos_pagina">Telefone:</h4>
+                    <h6>(81) 3333.3333</h6>
+                </div>
+                <div class="contatos_pagina">
+                    <h4  class="titulo_contatos_pagina">Site:</h4>
+                    <h6>sbm.guia/barretospizzaria</h6>
+                </div>
+                <div class="contatos_pagina">
+                    <h4  class="titulo_contatos_pagina">E-mail:</h4>
+                    <h6>barretospizzaria@gmail.com</h6>
+                </div>
+            </div>
            
            
         </div>
@@ -51,14 +65,14 @@
         <div id="descricao_pagina_grande" class="w-grande">
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_descricao.png" class="icone_area_pagina" />
-                <h1 class="titulo_area_pagina">Descrição</h1>
+                <h1 class="titulo_area_pagina">Sobre o cinema</h1>
             </div>
                 <p class="texto_pagina">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tristique elementum arcu a cursus. Integer et congue nulla. Quisque laoreet tristique imperdiet. Donec vel sollicitudin lectus. Vivamus orci lectus, tincidunt id sagittis eget, lacinia non sapien. Nulla non ligula a lacus ornare aliquet sed in lacus. Etiam viverra purus </p>
         </div>
         <div id="cinema">
     	<div class="topo_area_pagina">
             <img src="<?php echo base_url('assets'); ?>/images/icone_cardapio.png" class="icone_area_pagina" />
-            <h1 class="titulo_area_pagina">Filmes</h1>
+            <h1 class="titulo_area_pagina">Filmes em exibição</h1>
         </div>
     	<div class="cartaz">
         	<img src="img/cartaz.jpg" alt="" />
@@ -215,58 +229,28 @@
                     <p>R$ 30,00</p>
                 </div>
             </div>
-            <div class="informacoes_pagina_2">
-                <h4>Dia(s) e horário(s) para visitação:</h4> 
-                <div id="funcionamento_pagina">
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Domingo</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Segunda-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Terça-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Quarta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Quinta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Sexta-feira</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                    <div class="linha_separatoria"></div>
-                    <div class="funcionamento_pagina_semana">
-                        <h2>Sábado</h2>
-                        <p>8:00 às 13:00 e 16:00 às 22:00</p>
-                    </div>
-                </div>
-            </div>
-           
-            <div class="informacoes_pagina">
-                <h4>Censura:</h4> 
-                <h6>12 anos</h6>
-            </div>
-            
-           
+            <div class="informacoes_pagina_pagamento">
+				<h4>Formas de pagamento:</h4> 
+				<div class="formas_pagamento">
+					<img src="<?php echo base_url('assets'); ?>/images/icone_dinheiro.jpg" alt="Dinheiro" title="Dinheiro" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_visa.jpg" alt="Visa crédito" title="Visa crédito" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_master.jpg" alt="Master Card" title="Master Card" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_hiper.jpg" alt="HiperCard" title="HiperCard" class="icone_direita"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_diners.jpg" alt="Diners club" title="Diners club" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_elo.jpg" alt="Elo" title="Elo" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_credcard.jpg" alt="Credcard" title="Credcard" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_visaelectron.jpg" alt="Visa Electron" title="Visa Electron" class="icone_direita"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_paggo.jpg" alt="Paggo" title="Paggo" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_redeshop.jpg" alt="RedeShop" title="RedeShop" class="icone_esquerda"/>
+					<img src="<?php echo base_url('assets'); ?>/images/icone_aura.jpg" alt="Aura" title="Aura" class="icone_esquerda"/>
+				</div>
+			</div>
         </div>
         
         <div id="endereco_pagina">
 			<div id="" class="topo_area_pagina">
 				<img src="<?php echo base_url('assets'); ?>/images/icone_place.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">Local</h1>
+				<h1 class="titulo_area_pagina">Endereço</h1>
 			</div>
 			
 		</div><!-- /endereco -->

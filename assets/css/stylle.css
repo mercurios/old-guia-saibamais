@@ -344,8 +344,9 @@ color: #adadad;
 /*css de Filmes e peças*/
 #cinema{position:relative; float:left; width:670px; margin-bottom:40px; margin-top:0px;}
 
-#teatro{position:relative; float:left; width:666px; margin-bottom:30px; margin-top:0px; border:1px solid red;}
-.cartaz{position:relative; float:left; width:326px; border:1px solid #b4b4b4;; margin-left:3px; background:url(../images/back_detalhes_claro_claro.jpg)}
+#teatro{position:relative; float:left; width:670px; margin-bottom:30px; margin-top:0px;}
+.cartaz{position:relative; float:left; width:326px; border:1px solid #b4b4b4; margin-bottom:16px; background:#fff}
+.cartaz:nth-child(2n+2){float:right}
 .cartaz img{position:relative; float:left; width:108px; margin-top:5px; margin-left:5px; margin-bottom:0px;}
 .cartaz h4{position:relative; float:right; width:198px; margin-right:4px; margin-bottom:0px; margin-top:7px; font-size:14px; font-weight:bold; }
 .cartaz p{position:relative; float:right; width:198px; margin-right:4px;; margin-top:10px; margin-bottom:0px; font-size:12px; text-align:justify; }
