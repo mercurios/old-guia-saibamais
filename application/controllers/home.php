@@ -44,7 +44,7 @@ class Home extends CI_Controller {
 		$dados['pub_top'] = $this->home->get_publicidade('top', 'home');
 
 		// Chamadas Passeio e lazer Slider
-		$dados['lazer_slider'] = $this->home->get_chamada('slider', 'passeio-lazer', 4);
+		$dados['lazer_slider'] = $this->home->get_chamada('slider-full', 'passeio-lazer', 4);
 
 		// Chamadas Passeio e lazer média
 		$dados['lazer_media'] = $this->home->get_chamada('media', 'passeio-lazer', 4);
@@ -86,25 +86,25 @@ class Home extends CI_Controller {
 		$dados['pub_bottom'] = $this->home->get_publicidade('bottom', 'home');
 
 		// Chamada Entretenimento média plus
-		$dados['chamada_ent_m_p'] = $this->home->get_chamada('sidebar-m-p', 'entretenimento', 4);
+		$dados['chamada_ent_m_p'] = $this->home->get_chamada('media', 'entretenimento', 4);
 
 		// Chamada Entretenimento pequena
-		$dados['chamada_ent_p'] = $this->home->get_chamada('sidebar-p', 'entretenimento', 3);
+		$dados['chamada_ent_p'] = $this->home->get_chamada('pequena', 'entretenimento', 3);
 
 		// Chamada Entretenimento pequena
-		$dados['chamada_ent_m'] = $this->home->get_chamada('sidebar-m', 'entretenimento', 2);
+		$dados['chamada_ent_m'] = $this->home->get_chamada('media', 'entretenimento', 2, 4);
 
 		// Publicidade conteudo bottom
 		$dados['pub_sidebar'] = $this->home->get_publicidade('sidebar', 'home');
 
 		// Chamada Estadia slider
-		$dados['chamada_est_s'] = $this->home->get_chamada('sidebar-s', 'estadia', 3);
+		$dados['chamada_est_s'] = $this->home->get_chamada('slider', 'estadia', 3);
 
 		// Chamada Estadia media
-		$dados['chamada_est_m'] = $this->home->get_chamada('sidebar-m', 'estadia', 2);
+		$dados['chamada_est_m'] = $this->home->get_chamada('media', 'estadia', 2);
 
 		// Chamada Estadia pequena
-		$dados['chamada_est_p'] = $this->home->get_chamada('sidebar-p', 'estadia', 3);
+		$dados['chamada_est_p'] = $this->home->get_chamada('pequena', 'estadia', 3);
 
 		// Frase do dia
 		$dados['frases_dia'] = $this->home->get_frase(getdate());

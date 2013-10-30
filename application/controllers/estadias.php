@@ -56,16 +56,16 @@ class Estadias extends CI_Controller {
 		$dados['chamada_est_s_f'] = $this->estadia->get_chamada('slider-full', 'estadia', 3);
 
 		// Chamadas estadias média plus
-		$dados['chamada_est_m_p'] = $this->estadia->get_chamada('media-plus', 'estadia', 4);
+		$dados['chamada_est_m_p'] = $this->estadia->get_chamada('media', 'estadia', 4, 4);
 
 		// Chamadas estadias média Full
-		$dados['chamada_est_m_f'] = $this->estadia->get_chamada('media-full', 'estadia', 1);
+		$dados['chamada_est_m_f'] = $this->estadia->get_chamada('media', 'estadia', 1, 8);
 
 		// Publicidade conteudo bottom
 		$dados['pub_contentbot'] = $this->estadia->get_publicidade('conteudo-bottom', 'estadia');
 
 		// Chamadas estadias média
-		$dados['chamada_est_m_2'] = $this->estadia->get_chamada('media', 'estadia', 4, 4);
+		$dados['chamada_est_m_2'] = $this->estadia->get_chamada('media', 'estadia', 4, 9);
 
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');

@@ -15,11 +15,11 @@ class Home_model extends CI_Model
     }
 
     // Lista as chamadas
-    public function get_chamada($posicao, $categoria, $qnt)
+    public function get_chamada($posicao, $categoria, $qnt, $offset = NULL)
     {
         $this->db->where('pos_chamada', $posicao);
         $this->db->where('categoria_chamada', $categoria);
-        return $this->db->get($this->chamada, $qnt)->result();
+        return $this->db->get($this->chamada, $qnt, $offset)->result();
     }
 
     // Get frases do dia

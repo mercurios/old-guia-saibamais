@@ -59,17 +59,17 @@ class Bebidas extends CI_Controller {
 		$dados['chamada_beb_s_f'] = $this->bebida->get_chamada('slider-full', 'bebida', 3);
 
 		// Chamadas bebidas média plus
-		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media-plus', 'bebida', 4);
+		$dados['chamada_beb_m_p'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
 
 		// Chamadas bebidas média Full
-		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media-full', 'bebida', 1);
+		$dados['chamada_beb_m_f'] = $this->bebida->get_chamada('media', 'bebida', 1, 8);
 
 		// Publicidade conteudo bottom
 		$dados['pub_contentbot'] = $this->bebida->get_publicidade('conteudo-bottom', 'bebida');
 
 		// Chamadas bebidas média
-		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 4);
-
+		$dados['chamada_beb_m_2'] = $this->bebida->get_chamada('media', 'bebida', 4, 9);
+		
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
 

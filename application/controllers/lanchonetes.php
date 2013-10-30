@@ -59,16 +59,16 @@ class Lanchonetes extends CI_Controller {
 		$dados['chamada_lan_s_f'] = $this->lanchonete->get_chamada('slider-full', 'lanchonete', 3);
 
 		// Chamadas lanchonetes média plus
-		$dados['chamada_lan_m_p'] = $this->lanchonete->get_chamada('media-plus', 'lanchonete', 4);
+		$dados['chamada_lan_m_p'] = $this->lanchonete->get_chamada('media', 'lanchonete', 4, 4);
 
 		// Chamadas lanchonetes média Full
-		$dados['chamada_lan_m_f'] = $this->lanchonete->get_chamada('media-full', 'lanchonete', 1);
+		$dados['chamada_lan_m_f'] = $this->lanchonete->get_chamada('media', 'lanchonete', 1, 8);
 
 		// Publicidade conteudo bottom
 		$dados['pub_contentbot'] = $this->lanchonete->get_publicidade('conteudo-bottom', 'lanchonete');
 
 		// Chamadas lanchonetes média
-		$dados['chamada_lan_m_2'] = $this->lanchonete->get_chamada('media', 'lanchonete', 4, 4);
+		$dados['chamada_lan_m_2'] = $this->lanchonete->get_chamada('media', 'lanchonete', 4, 9);
 
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->lanchonete->get_publicidade('bottom', 'lanchonete');
