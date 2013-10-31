@@ -6,10 +6,10 @@
         		foreach ($pub_top as $pubtop) {
         	?>
     		<div class="item-slider">
-                <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                    <img src="<?php echo base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade; ?>" alt="Titulo da imagem" />
-                </a>
-            </div>
+                    <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                    </a>
+                </div>
         	<?php } } ?>
         </div>
     </div>
@@ -33,14 +33,11 @@
                 </ul>
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
-            	<?php 
-            	if (empty($restaurante->logo_restaurante)) {
-            		echo '<img src="'.base_url().'tim.php?src=uploads/logos/default.jpg&w=366&h=267" alt="Logo do anunciante" />';
-            	}
-            	else {
-            		echo '<img src="'.base_url().'tim.php?src=uploads/logos/'. $restaurante->logo_restaurante .'&w=366&h=267" alt="Logo do anunciante" />';
-            	}
-            	?>
+            	<?php if (empty($restaurante->logo_restaurante)) { ?>
+            		<img src="<?php echo base_url('tim.php?src=uploads/publicidades/default.jpg&w=366&h=267'); ?>" alt="" />
+            	<?php } else { ?>
+            		<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $restaurante->logo_restaurante .'&w=366&h=267'); ?>" alt="" />
+            	<?php } ?>
                 <h3><?php echo $restaurante->nome_restaurante; ?></h3>
             </div>
             <div id="contatos_pagina">
@@ -75,18 +72,11 @@
 				    data-cycle-pager="#adv-custom-pager"
 				    data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
 				    >
-				    <?php
-                	if (isset($fotos)) {
-                		foreach ($fotos as $foto) {
-                	?>
-                	<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=666&h=400"/>
-                	<?php
-                		}
-                	}
-                	else {
-                		echo '<li><img src="'.base_url().'uploads/fotos/default.jpg"/></li>';
-                	}
-                	?>
+				    <?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
+				    	<img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+                	<?php } } else { ?>
+                		<img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+                	<?php } ?>
 				</div>
 				<!-- empty element for pager links -->
 				<div id=adv-custom-pager class="center external"></div>
@@ -210,38 +200,12 @@
 				<img src="<?php echo base_url('assets'); ?>/images/icone_promocao.png" class="icone_area_pagina" />
 				<h1 class="titulo_area_pagina">Promoções</h1>
 			</div>
-			<?php  
-			if (isset($promocoes)) {
-				foreach ($promocoes as $promocao) {
-
-					$_dataini 		= $promocao->data_inicio;
-					$_dataini 		= explode(' ', $_dataini);
-					$_data_inicio 	= $_dataini[0];
-					$_data_inicio 	= explode('-', $_data_inicio);
-					$_data_inicio	= $_data_inicio[2] . '/' . $_data_inicio[1] . '/' . $_data_inicio[0];
-
-					$_datafim 	= $promocao->data_final;
-					$_datafim 	= explode(' ', $_datafim);
-					$_data_fim 	= $_datafim[0];
-					$_data_fim 	= explode('-', $_data_fim);
-					$_data_fim 	= $_data_fim[2] . '/' . $_data_fim[1] . '/' . $_data_fim[0];
-					
-					echo 'Essa promoção é válida de: '. $_data_inicio .' a '. $_data_fim .'<br>';
-			?>
-	    	<!--<div class="promocao">
+			<div class="promocao">
 	        	<img src="" alt="" />
-	            <h3><?php echo $promocao->titulo_promocao; ?></h3>
+	            <h3>Titulo da Promoção</h3>
 	            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit euismod viverra. Ut accumsan odio tincidunt ipsum feugiat eu sodales lacus condimentum. Nulla sapien elit, aliquet eu aliquam id, feugiat ut velit. Aliquam leo nibh, convallis ac consectetur non, pretium non purus. Proin mi massa, eu</p>
-	            <h4>Data ou dia da promoção:<span>dsdfdfdf</span></h4>
-	        </div>-->
-
-	        <?php
-				}
-			}
-			else {
-				echo 'Nenhuma promoção cadastrada para esse cliente.';
-			}
-			?>
+	            <h4>Data ou dia da promoção:<span>32/13/1900</span></h4>
+	        </div>
 		</div>
     </div><!-- /esquerda -->
 

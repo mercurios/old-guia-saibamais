@@ -1,6 +1,19 @@
-<div id="publicidade_superior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_superior" class="publicidade">
+ 	<div class="conteudo_publicidade">
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+            <?php
+        	if (isset($pub_top)) {
+        		foreach ($pub_top as $pubtop) {
+        	?>
+    		<div class="item-slider">
+                    <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                    </a>
+                </div>
+        	<?php } } ?>
+        </div>
+    </div>
+</div><!-- Publicidade -->
 
 <!-- Conteudo
 ================================================== -->
@@ -20,16 +33,14 @@
                 </ul>
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
-            	<?php 
-            	if (empty($lanchonete->logo_lanchonete)) {
-            		echo '<img src="'.base_url().'tim.php?src=uploads/logos/default.jpg&w=366&h=267" alt="Logo do anunciante" />';
-            	}
-            	else {
-            		echo '<img src="'.base_url().'tim.php?src=uploads/logos/'. $lanchonete->logo_lanchonete .'&w=366&h=267" alt="Logo do anunciante" />';
-            	}
-            	?>
+            	<?php if (empty($lanchonete->logo_lanchonete)) { ?>
+            		<img src="<?php echo base_url(); ?>tim.php?src=uploads/logos/default.jpg&w=366&h=267" alt="Anunciante sem logo" />
+            	<?php } else { ?>
+            		<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $lanchonete->logo_lanchonete; ?>&w=366&h=267" />
+            	<?php } ?>
                 <h3><?php echo $lanchonete->nome_lanchonete; ?></h3>
             </div>
+
             <div id="contatos_pagina">
                 <div class="contatos_pagina">
                     <h4 class="titulo_contatos_pagina">Telefone:</h4> 
@@ -87,75 +98,61 @@
 			</div>
 
 			<p id="abas">
-				<a href="#pratos_principais" class="selected">Pratos principais</a>
-				<a href="#outros_pratos">Outros pratos</a>
+				<a href="#pratos_principais" class="selected">Lanches</a>
+				<a href="#pratos_bebidas">Bebidas</a>
 			</p><!-- /Titulo abas -->
 
 			<ul id="conteudo_cardapio">
 				<li id="pratos_principais">
-					<?php 
-					if (isset($p_principal)) { 
-						foreach ($p_principal as $pratop) {
-					?>
+					<?php if (isset($lanches)) { foreach ($lanches as $lanche) { ?>
 					<div class="pratos_cardapio">
 						<div class="pratos_cardapio_esquerda">
-							<h4><?php echo $pratop->nome_prato; ?></h4>
-							<p>R$ <?php echo $pratop->desc_prato; ?></p>
+							<h4><?php echo $lanche->nome_prato; ?></h4>
+							<p>R$ <?php echo $lanche->desc_prato; ?></p>
 						</div>
 						<div class="pratos_cardapio_direita">
 							<div class="preco_cardapio">
-								<h5><?php echo $pratop->titulo_preco_um; ?></h5>
-								<p>R$ <?php echo $pratop->valor_preco_um; ?></p>
+								<h5><?php echo $lanche->titulo_preco_um; ?></h5>
+								<p>R$ <?php echo $lanche->valor_preco_um; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $pratop->titulo_preco_dois; ?></h5>
-								<p>R$ <?php echo $pratop->valor_preco_dois; ?></p>
+								<h5><?php echo $lanche->titulo_preco_dois; ?></h5>
+								<p>R$ <?php echo $lanche->valor_preco_dois; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $pratop->titulo_preco_tres; ?></h5>
-								<p>R$ <?php echo $pratop->valor_preco_tres; ?></p>
+								<h5><?php echo $lanche->titulo_preco_tres; ?></h5>
+								<p>R$ <?php echo $lanche->valor_preco_tres; ?></p>
 							</div>
 						</div>
                         <div class="linha_separatoria"></div>
 					</div>
-					
-					<?php 
-						} 
-					}
-					?>
+					<?php } } ?>
 				</li><!-- /pratos-principais -->
 
-				<li id="outros_pratos">
-					<?php 
-					if (isset($p_normal)) { 
-						foreach ($p_normal as $pnormal) {
-					?>
+				<li id="pratos_bebidas">
+					<?php if (isset($bebidas)) { foreach ($bebidas as $bebida) { ?>
 					<div class="pratos_cardapio">
 						<div class="pratos_cardapio_esquerda">
-							<h4><?php echo $pnormal->nome_prato; ?></h4>
-							<p><?php echo $pnormal->desc_prato; ?></p>
+							<h4><?php echo $bebida->nome_prato; ?></h4>
+							<p><?php echo $bebida->desc_prato; ?></p>
 						</div>
 						<div class="pratos_cardapio_direita">
 							<div class="preco_cardapio">
-								<h5><?php echo $pnormal->titulo_preco_um; ?></h5>
-								<p>R$ <?php echo $pnormal->valor_preco_um; ?></p>
+								<h5><?php echo $bebida->titulo_preco_um; ?></h5>
+								<p><?php echo $bebida->valor_preco_um; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $pnormal->titulo_preco_dois; ?></h5>
-								<p>R$ <?php echo $pnormal->valor_preco_dois; ?></p>
+								<h5><?php echo $bebida->titulo_preco_dois; ?></h5>
+								<p><?php echo $bebida->valor_preco_dois; ?></p>
 							</div>
 							<div class="preco_cardapio">
-								<h5><?php echo $pnormal->titulo_preco_tres; ?></h5>
-								<p>R$ <?php echo $pnormal->valor_preco_tres; ?></p>
+								<h5><?php echo $bebida->titulo_preco_tres; ?></h5>
+								<p><?php echo $bebida->valor_preco_tres; ?></p>
 							</div>
 						</div>
 					</div>
-					<div class="linha_separatoria"></div>
-					<?php 
-						} 
-					}
-					?>
-				</li><!-- /outros-pratos -->
+					<?php } } ?>
+				</li><!-- /pratos-bebidas -->
 			</ul><!-- /abas -->
         </div><!-- /cardapio -->
 
@@ -249,6 +246,17 @@
 <?php endforeach; ?>
 </div>
 
-<div id="publicidade_inferior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_inferior" class="publicidade">
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<?php
+    	if (isset($pub_bottom)) {
+    		foreach ($pub_bottom as $pubbottom) {
+    	?>
+		<div class="item-slider">
+            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+            	<img src="<?php echo base_url('tim.php?src=/uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
+            </a>
+        </div>
+        <?php }} ?>
+	</div>
+</div><!-- /publicidade -->

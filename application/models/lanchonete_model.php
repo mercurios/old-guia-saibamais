@@ -51,19 +51,19 @@ class Lanchonete_model extends CI_Model
     }
 
     // Lista pratos principal
-    public function listar_prato_principal($id)
+    public function get_lanches($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('tipo_prato', 'pratoprincipal');
+        $this->db->where('tipo_prato', 'normal');
         $this->db->where('categoria_prato', 'lanchonete');
         return $this->db->get('guia_cardapios')->result();
     }
 
-    // Lista todos os pratos
-    public function listar_pratos($id)
+    // Lista pratos principal
+    public function get_bebidas($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('tipo_prato', 'normal');
+        $this->db->where('tipo_prato', 'bebida');
         $this->db->where('categoria_prato', 'lanchonete');
         return $this->db->get('guia_cardapios')->result();
     }

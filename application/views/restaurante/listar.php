@@ -1,6 +1,16 @@
-<div id="publicidade_superior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_superior" class="publicidade">
+ 	<div class="conteudo_publicidade">
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+            <?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
+                <div class="item-slider">
+                    <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                    </a>
+                </div>
+            <?php } } ?>
+        </div>
+    </div>
+</div><!-- Publicidade -->
 
 <!-- Conteudo
 ================================================== -->
@@ -19,7 +29,7 @@
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $restaurante->logo_restaurante; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
+	    	<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $restaurante->logo_restaurante .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $restaurante->nome_restaurante; ?></h3>
 	        <p class="local_resultado_pesquisa">Local: <?php echo $restaurante->bairro_restaurante; ?></p>
 	        <h4>Acessível para:</h4>
@@ -141,6 +151,19 @@
 	</div><!--Fim da área de conteúdo direita-->
 </div>
 
-<div id="publicidade_inferior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_inferior" class="publicidade">
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<?php
+    	if (isset($pub_bottom)) {
+    		foreach ($pub_bottom as $pubbottom) {
+    	?>
+		<div class="item-slider">
+            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+            	<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubbottom->img_vd_publicidade .'&w=980&h=170'); ?>" 
+                     alt="<?php echo $pubbottom->titulo_publicidade; ?>" 
+                     class="" />
+            </a>
+        </div>
+        <?php }} ?>
+	</div>
+</div><!-- /publicidade -->

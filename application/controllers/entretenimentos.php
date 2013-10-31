@@ -59,16 +59,16 @@ class Entretenimentos extends CI_Controller {
 		$dados['chamada_entre_s_f'] = $this->entretenimento->get_chamada('slider-full', 'entretenimento', 3);
 
 		// Chamadas entretenimentos média plus
-		$dados['chamada_entre_m_p'] = $this->entretenimento->get_chamada('media-plus', 'entretenimento', 4);
+		$dados['chamada_entre_m_p'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4, 4);
 
 		// Chamadas entretenimentos média Full
-		$dados['chamada_entre_m_f'] = $this->entretenimento->get_chamada('media-full', 'entretenimento', 1);
+		$dados['chamada_entre_m_f'] = $this->entretenimento->get_chamada('media', 'entretenimento', 1, 8);
 
 		// Publicidade conteudo bottom
 		$dados['pub_contentbot'] = $this->entretenimento->get_publicidade('conteudo-bottom', 'entretenimento');
 
 		// Chamadas entretenimentos média
-		$dados['chamada_entre_m_2'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4, 4);
+		$dados['chamada_entre_m_2'] = $this->entretenimento->get_chamada('media', 'entretenimento', 4, 9);
 
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->entretenimento->get_publicidade('bottom', 'entretenimento');

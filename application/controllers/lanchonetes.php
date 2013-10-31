@@ -126,6 +126,9 @@ class Lanchonetes extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		$dados['pub_top']	 	= $this->lanchonete->get_publicidade('top', 'lanchonete');
+		$dados['pub_bottom'] 	= $this->lanchonete->get_publicidade('bottom', 'lanchonete');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
@@ -133,7 +136,7 @@ class Lanchonetes extends CI_Controller {
 		$this->load->view('lanchonete/listar', $dados);
 
 		// Carrega o rodape
-			$this->load->view('includes/footer');
+		$this->load->view('includes/footer');
 	}
 
 	/* Detalhe do lanchonete
@@ -162,10 +165,12 @@ class Lanchonetes extends CI_Controller {
 
 			$dados['conteudo'] 		= $this->lanchonete->get_lanchonete($id);
 			$dados['fotos'] 		= $this->lanchonete->listar_fotos($id);
-			$dados['p_principal']	= $this->lanchonete->listar_prato_principal($id);
-			$dados['p_normal']		= $this->lanchonete->listar_pratos($id);
+			$dados['lanches']		= $this->lanchonete->get_lanches($id);
+			$dados['bebidas']		= $this->lanchonete->get_bebidas($id);
 			$dados['lanchonetes']	= $this->lanchonete->listar_lanchonetes($id);
 			$dados['promocoes']     = $this->lanchonete->listar_promocao($id);
+			$dados['pub_top']	 	= $this->lanchonete->get_publicidade('top', 'lanchonete');
+			$dados['pub_bottom']	= $this->lanchonete->get_publicidade('bottom', 'lanchonete');
 
 			$_titulo = $dados['conteudo'][0]->nome_lanchonete;
 			$_descri = $dados['conteudo'][0]->desc_lanchonete;
@@ -174,8 +179,8 @@ class Lanchonetes extends CI_Controller {
 			$_longit = $dados['conteudo'][0]->long_lanchonete;
 
 			// Inicializa o mapa
-			$config['center'] = "$_latitu, $_longit";
-			$config['zoom'] = '15';
+			$config['center'] 	= "$_latitu, $_longit";
+			$config['zoom'] 	= '15';
 			$this->googlemaps->initialize($config);
 
 			$marker = array();

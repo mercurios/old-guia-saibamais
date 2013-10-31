@@ -41,5 +41,8 @@
 $route['default_controller'] = "teste";
 $route['404_override'] = '';
 
+// Passeio e lazer
+$route['passeio-e-lazer'] = "lazer";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

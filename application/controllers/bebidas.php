@@ -121,6 +121,9 @@ class Bebidas extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		$dados['pub_top'] 	 = $this->bebida->get_publicidade('top', 'bebida');
+		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
@@ -157,8 +160,9 @@ class Bebidas extends CI_Controller {
 
 			$dados['conteudo'] 		= $this->bebida->get_bebida($id);
 			$dados['fotos'] 		= $this->bebida->listar_fotos($id);
-			$dados['card_bebidas']		= $this->bebida->listar_bebidas($id);
+			$dados['card_bebidas']	= $this->bebida->listar_bebidas($id);
 			$dados['promocoes']     = $this->bebida->listar_promocao($id);
+			$dadosp['card_bebidas'] = $this->bebida->get_bebidas_cardapio($id);
 
 			$_titulo = $dados['conteudo'][0]->nome_bebida;
 			$_descri = $dados['conteudo'][0]->desc_bebida;
@@ -199,6 +203,9 @@ class Bebidas extends CI_Controller {
 				array('name' => 'og:url', 'content' => base_url('bebida'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
+
+			$dados['pub_top'] 	 = $this->bebida->get_publicidade('top', 'bebida');
+			$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
 
 			// Carrega o topo
 			$this->load->view('includes/header', $seo);

@@ -1,6 +1,19 @@
-<div id="publicidade_superior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_superior" class="publicidade">
+ 	<div class="conteudo_publicidade">
+        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+            <?php
+        	if (isset($pub_top)) {
+        		foreach ($pub_top as $pubtop) {
+        	?>
+    		<div class="item-slider">
+                    <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                    </a>
+                </div>
+        	<?php } } ?>
+        </div>
+    </div>
+</div><!-- Publicidade -->
 
 <!-- Conteudo
 ================================================== -->
@@ -62,18 +75,11 @@
 				    data-cycle-pager="#adv-custom-pager"
 				    data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
 				    >
-				    <?php
-                	if (isset($fotos)) {
-                		foreach ($fotos as $foto) {
-                	?>
-                	<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=666&h=400"/>
-                	<?php
-                		}
-                	}
-                	else {
-                		echo '<li><img src="'.base_url().'uploads/fotos/default.jpg"/></li>';
-                	}
-                	?>
+				    <?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
+				    	<img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+                	<?php } } else { ?>
+                		<img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+                	<?php } ?>
 				</div>
 				<!-- empty element for pager links -->
 				<div id=adv-custom-pager class="center external"></div>
@@ -215,6 +221,17 @@
 <?php endforeach; ?>
 </div>
 
-<div id="publicidade_inferior">
-    <!-- Publicidade -->
-</div>
+<div id="publicidade_inferior" class="publicidade">
+	<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+		<?php
+    	if (isset($pub_bottom)) {
+    		foreach ($pub_bottom as $pubbottom) {
+    	?>
+		<div class="item-slider">
+            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+            	<img src="<?php echo base_url('tim.php?src=/uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
+            </a>
+        </div>
+        <?php }} ?>
+	</div>
+</div><!-- /publicidade -->

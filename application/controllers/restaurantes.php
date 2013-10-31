@@ -127,6 +127,12 @@ class Restaurantes extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Publicidade top
+		$dados['pub_top'] = $this->restaurante->get_publicidade('top', 'restaurante');
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 

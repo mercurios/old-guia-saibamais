@@ -192,7 +192,6 @@
 				if (isset($chamada_lan_m_2)) {
 					foreach ($chamada_lan_m_2 as $lan_m) {
 				?>
-
 				<div class="chamada_media">
                     <a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
                         <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m->img_chamada .'&w=154&h=102'); ?>" 

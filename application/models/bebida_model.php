@@ -59,6 +59,15 @@ class bebida_model extends CI_Model
         return $this->db->get('guia_cardapios')->result();
     }
 
+    // Lista bebidas do cardápio
+    public function get_bebidas_cardapio($id)
+    {
+        $this->db->where('id_cliente', $id);
+        $this->db->where('tipo_prato', 'bebida');
+        $this->db->where('categoria_prato', 'bebida');
+        return $this->db->get('guia_cardapios')->result();
+    }
+
     // Listar promoções
     public function listar_promocao($id)
     {
