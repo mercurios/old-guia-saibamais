@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "teste";
+$route['default_controller'] = "home";
 $route['404_override'] = '';
 
 // Passeio e lazer

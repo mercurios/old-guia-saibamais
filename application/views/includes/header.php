@@ -268,11 +268,11 @@
                         <div id="" class="sub_menu">
                             <h4 class="titulo_sub_menus">Rotas para passeio</h4>
                             <ul>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/aventura'); ?>" title="Veja as rotas para quem gosta de aventuras">Aventura</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/assustadores'); ?>" title="Veja as rotas para quem gosta de locais assustadores">Assustadoras</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/familiar'); ?>" title="Veja as rotas para fazer com sua familia">Familiar</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/locais-historicos'); ?>" title="Veja as rotas para quem gosta de locais históricos">Locais Históricos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('esporte/categoria/romanticas'); ?>" title="Veja as rotas ideais para casais">Romanticas</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('rotas/categoria/aventura'); ?>" title="Veja as rotas para quem gosta de aventuras">Aventura</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('rotas/categoria/assustadores'); ?>" title="Veja as rotas para quem gosta de locais assustadores">Assustadoras</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('rotas/categoria/familiar'); ?>" title="Veja as rotas para fazer com sua familia">Familiar</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('rotas/categoria/locais-historicos'); ?>" title="Veja as rotas para quem gosta de locais históricos">Locais Históricos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('rotas/categoria/romanticas'); ?>" title="Veja as rotas ideais para casais">Romanticas</a></li>
                             </ul>
                         </div>
                         <div id="" class="rodape_menu">

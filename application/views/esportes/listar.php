@@ -24,31 +24,22 @@
 	<!-- Listar all
 	================================================== -->
 		<?php 
-		if (count($locais) != 0) {
-			foreach ($locais as $local) {
+		if (count($esportes) != 0) {
+			foreach ($esportes as $esporte) {
 		?>
-
-		
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $local->logo_local; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
-	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $local->nome_local; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $local->bairro_local; ?></p>
+	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $esporte->logo_esporte; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
+	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $esporte->nome_esporte; ?></h3>
+	        <p class="esporte_resultado_pesquisa">Local: <?php echo $esporte->local_esporte; ?></p>
 	        <div class="rodape_resultado_pesquisa">
-	        	<a href="<?php echo base_url('locais/detalhe') . '/' . $local->slug_local . '/' . $local->id_local; ?>" title="">
+	        	<a href="<?php echo base_url('esportes/detalhe') . '/' . $esporte->slug_esporte . '/' . $esporte->id_esporte; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
 	            	<h2>Ver mais informações</h2>
 	            </a>
 	        </div>
 	    </div>
 		
-	
-	    <?php
-			}
-		}
-		else {
-			echo 'Ops! Ainda não tem locais cadastrados nessa categoria.';
-		}
-		?>
+	    <?php } } else { echo 'Ops! Ainda não tem esportes cadastrados nessa categoria.'; } ?>
 	</div><!-- /listar-all -->
 	<!--Fim da área de conteúdo esquerda-->
 	<!--Inicio da área de conteúdo direita-->
@@ -58,7 +49,7 @@
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
 					<select>
-                        <option selected>Por localização</option>
+                        <option selected>Por esporteização</option>
                         <optgroup label="Recife">
                             <option>Abreu e lima</option>
                             <option>Cabo de santo agostinho</option>
@@ -89,7 +80,7 @@
                                         
                     <select>
                         <option selected>Por atividade</option>
-                            <optgroup label="Visitar locais	">
+                            <optgroup label="Visitar esportes	">
                                 <option>Cachoeiras</option>
                                 <option>Lugares históricos</option>
                                 <option>Matas</option>
@@ -102,7 +93,7 @@
                             <optgroup label="Rotas para passeio">
                                 <option>Assustadoras</option>
                                 <option>Familiar</option>
-                                <option>Locais históricos</option>
+                                <option>esportes históricos</option>
                         	</optgroup>
                     </select>
             </div>

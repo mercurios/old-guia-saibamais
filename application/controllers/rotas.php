@@ -1,10 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Esporte extends CI_Controller {
-
-	/**
-	 * Esporte
-	 */
+class Rotas extends CI_Controller {
 
 	/* Construtor
 	=========================================================== */
@@ -12,8 +8,8 @@ class Esporte extends CI_Controller {
 	{
 		parent::__construct();
 
-		// Carrega o model cinema
-		$this->load->model('Locais_model', 'locais');
+		// Carrega o model rotas
+		$this->load->model('rotas_model', 'rotas');
 	}
 
 
@@ -23,21 +19,21 @@ class Esporte extends CI_Controller {
 	}
 
 
-	/* Lista locais
+	/* Listar
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3);
 
 		if (isset($_categoria)) {
-			$dados['locais'] = $this->locais->search_locais($_categoria);
+			$dados['rotas'] = $this->rotas->search_rotas($_categoria);
 		}
 		else {
-			$dados['locais'] = $this->locais->get_locais();
+			$dados['rotas'] = $this->rotas->get_rotas();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "Locais | Guia Saiba Mais";
+		$seo['titulopag'] = "Rotas | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -52,29 +48,32 @@ class Esporte extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'Locais | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'rotas | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('local'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('rota'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
+
+		$dados['pub_top']		= $this->rotas->get_publicidade('top', 'rota');
+		$dados['pub_bottom'] 	= $this->rotas->get_publicidade('bottom', 'rota');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('locais/listar', $dados);
+		$this->load->view('rotas/listar', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do local
+	/* Detalhe do rota
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
 		// Pega a id do cliente
-		$id = $this->uri->segment(4);
-		$slug = $this->uri->segment(3);
+		$id 	= $this->uri->segment(4);
+		$slug 	= $this->uri->segment(3);
 
 		// Caso o id não for informado, ele pega o slug e faz uma pesquisa
 		if (empty($id)) {
@@ -92,27 +91,13 @@ class Esporte extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->local->get_local($id);
-			$dados['fotos'] 		= $this->local->listar_fotos($id);
-			$dados['promocoes']     = $this->local->listar_promocao($id);
-
-			$_titulo = $dados['conteudo'][0]->nome_local;
-			$_descri = $dados['conteudo'][0]->desc_local;
-			$_imagem = $dados['conteudo'][0]->logo_local;
-			$_latitu = $dados['conteudo'][0]->lati_local;
-			$_longit = $dados['conteudo'][0]->long_local;
-
-			// Inicializa o mapa
-			$config['center'] = "$_latitu, $_longit";
-			$config['zoom'] = '15';
-			$this->googlemaps->initialize($config);
-
-			$marker = array();
-			$marker['position'] = "$_latitu, $_longit";
-			$this->googlemaps->add_marker($marker);
-
-			// Instacia o mapa
-			$seo['map'] = $this->googlemaps->create_map();
+			$dados['conteudo'] 		= $this->rotas->get_rota($id);
+			$dados['fotos'] 		= $this->rotas->listar_fotos($id);
+			$dados['pub_top']		= $this->rotas->get_publicidade('top', 'rota');
+			$dados['pub_bottom'] 	= $this->rotas->get_publicidade('bottom', 'rota');
+			$_titulo 				= $dados['conteudo'][0]->titulo_rota;
+			$_descri 				= $dados['conteudo'][0]->desc_rota;
+			$_imagem 				= $dados['conteudo'][0]->logo_rota;
 
 			// Titulo da página
 			$seo['titulopag'] = "$_titulo | Guia Saiba Mais";
@@ -132,7 +117,7 @@ class Esporte extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('local'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('rota'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -140,7 +125,7 @@ class Esporte extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('local/detalhe', $dados);
+			$this->load->view('rotas/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');

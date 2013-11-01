@@ -57,7 +57,7 @@
                         <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $res_p_top->img_chamada .'&w=99&h=77'); ?>" 
                                  alt="<?php echo $res_p_top->titulo_chamada; ?>" 
                                  class="img_chamada_pequena" />
-                        <p><?php echo character_limiter($res_p_top->desc_chamada, 120); ?></p>
+                        <p><?php echo character_limiter($res_p_top->desc_chamada, 100); ?></p>
                     </a>
                 </div>
 

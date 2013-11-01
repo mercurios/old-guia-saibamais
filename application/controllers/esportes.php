@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Locais extends CI_Controller {
+class Esportes extends CI_Controller {
 
 	/**
-	 * local
+	 * esporte
 	 */
 
 	/* Construtor
@@ -12,8 +12,8 @@ class Locais extends CI_Controller {
 	{
 		parent::__construct();
 
-		// Carrega o model locais
-		$this->load->model('Locais_model', 'locais');
+		// Carrega o model esportes
+		$this->load->model('esportes_model', 'esportes');
 	}
 
 
@@ -23,21 +23,21 @@ class Locais extends CI_Controller {
 	}
 
 
-	/* Lista locais
+	/* Lista esportes
 	=========================================================== */
 	public function categoria($categoria = NULL)
 	{	
 		$_categoria = $this->uri->segment(3);
 
 		if (isset($_categoria)) {
-			$dados['locais'] = $this->locais->search_locais($_categoria);
+			$dados['esportes'] = $this->esportes->search_esportes($_categoria);
 		}
 		else {
-			$dados['locais'] = $this->locais->get_locais();
+			$dados['esportes'] = $this->esportes->get_esportes();
 		}
 
 		// Titulo da página
-		$seo['titulopag'] = "Locais | Guia Saiba Mais";
+		$seo['titulopag'] = "esportes | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(
@@ -52,26 +52,26 @@ class Locais extends CI_Controller {
 
 		// Meta tags facebook
 		$seo['metaface'] = array(
-			array('name' => 'og:title', 'content' => 'Locais | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:title', 'content' => 'esportes | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('local'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('esporte'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
-		$dados['pub_top']		= $this->locais->get_publicidade('top', 'local');
-		$dados['pub_bottom'] 	= $this->locais->get_publicidade('bottom', 'local');
+		$dados['pub_top']		= $this->esportes->get_publicidade('top', 'esporte');
+		$dados['pub_bottom'] 	= $this->esportes->get_publicidade('bottom', 'esporte');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
 		// Carrega o conteúdo
-		$this->load->view('locais/listar', $dados);
+		$this->load->view('esportes/listar', $dados);
 
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
 
-	/* Detalhe do local
+	/* Detalhe do esporte
 	=========================================================== */
 	public function detalhe($id = NULL) 
 	{	
@@ -95,16 +95,16 @@ class Locais extends CI_Controller {
 		}
 		else {
 
-			$dados['conteudo'] 		= $this->locais->get_local($id);
-			$dados['fotos'] 		= $this->locais->listar_fotos($id);
-			$dados['promocoes']     = $this->locais->listar_promocao($id);
-			$dados['pub_top']		= $this->locais->get_publicidade('top', 'local');
-			$dados['pub_bottom'] 	= $this->locais->get_publicidade('bottom', 'local');
-			$_titulo 				= $dados['conteudo'][0]->nome_local;
-			$_descri 				= $dados['conteudo'][0]->desc_local;
-			$_imagem 				= $dados['conteudo'][0]->logo_local;
-			$_latitu 				= $dados['conteudo'][0]->lati_local;
-			$_longit 				= $dados['conteudo'][0]->long_local;
+			$dados['conteudo'] 		= $this->esportes->get_esporte($id);
+			$dados['fotos'] 		= $this->esportes->listar_fotos($id);
+			$dados['promocoes']     = $this->esportes->listar_promocao($id);
+			$dados['pub_top']		= $this->esportes->get_publicidade('top', 'esporte');
+			$dados['pub_bottom'] 	= $this->esportes->get_publicidade('bottom', 'esporte');
+			$_titulo 				= $dados['conteudo'][0]->nome_esporte;
+			$_descri 				= $dados['conteudo'][0]->desc_esporte;
+			$_imagem 				= $dados['conteudo'][0]->logo_esporte;
+			$_latitu 				= $dados['conteudo'][0]->lati_esporte;
+			$_longit 				= $dados['conteudo'][0]->long_esporte;
 
 			// Inicializa o mapa
 			$config['center'] = "$_latitu, $_longit";
@@ -136,7 +136,7 @@ class Locais extends CI_Controller {
 			$seo['metaface'] = array(
 				array('name' => 'og:title', 'content' => "$_titulo | Guia Saiba Mais", 'type' => 'property'),
 				array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-				array('name' => 'og:url', 'content' => base_url('local'), 'type' => 'property'),
+				array('name' => 'og:url', 'content' => base_url('esporte'), 'type' => 'property'),
 				array('name' => 'og:image', 'content' => base_url('tim.php?src=uploads/logos/'.$_imagem.''), 'type' => 'property'),
 			);
 
@@ -144,7 +144,7 @@ class Locais extends CI_Controller {
 			$this->load->view('includes/header', $seo);
 
 			// Carrega o conteudo
-			$this->load->view('locais/detalhe', $dados);
+			$this->load->view('esportes/detalhe', $dados);
 
 			// Carrega o rodape
 			$this->load->view('includes/footer');

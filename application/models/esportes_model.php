@@ -1,9 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class locais_model extends CI_Model
+class Esportes_model extends CI_Model
 {
     // Nome da Tabela
-    private $tabela   = 'guia_locais';
+    private $tabela   = 'guia_esportes';
     private $publicidade = 'guia_publicidades';
 
     // Método construtor
@@ -19,31 +19,31 @@ class locais_model extends CI_Model
     }
 
     // Pega as informações vindas do DB
-    public function get_locais()
+    public function get_esportes()
     {
         return $this->db->get($this->tabela)->result();
     }
 
-    // Lista os locals por categoria
-    public function search_locais($categoria)
+    // Lista os esportes por categoria
+    public function search_esportes($categoria)
     {   
-        $this->db->like('categoria_local',$categoria);
+        $this->db->like('categoria_esporte',$categoria);
         $query = $this->db->get($this->tabela)->result();
         return $query;
     }
 
-    // Pega o local pelo id
-    public function get_local($id)
+    // Pega o esporte pelo id
+    public function get_esporte($id)
     {
-        $this->db->where('id_local', $id);
+        $this->db->where('id_esporte', $id);
         return $this->db->get($this->tabela)->result();
     }
 
-    // Lista as fotos de locals
+    // Lista as fotos de esportes
     public function listar_fotos($id)
     {
         $this->db->where('id_cliente', $id);
-        $this->db->where('categoria_foto', 'local');
+        $this->db->where('categoria_foto', 'esporte');
         return $this->db->get('guia_fotos')->result();
     }
 

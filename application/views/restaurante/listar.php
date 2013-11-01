@@ -29,7 +29,7 @@
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $restaurante->logo_restaurante .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
+	    	<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $restaurante->logo_restaurante .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $restaurante->nome_restaurante; ?></h3>
 	        <p class="local_resultado_pesquisa">Local: <?php echo $restaurante->bairro_restaurante; ?></p>
 	        <h4>Acessível para:</h4>

@@ -18,24 +18,24 @@
 <!-- Conteudo
 ================================================== -->
 <div id="conteudo">
-    <?php foreach ($conteudo as $local) : ?>
-	<div id="area_conteudo_superior"><!-- /inicio da area de conteudo superior -->
-    	<div id="topo_pagina_anunciante" class="">
+    <?php foreach ($conteudo as $esporte) : ?>
+    <div id="area_conteudo_superior"><!-- /inicio da area de conteudo superior -->
+        <div id="topo_pagina_anunciante" class="">
             
             <div id="logo_topo_pagina_lazer" class="">
-                <?php if (empty($local->logo_local)) { ?>
+                <?php if (empty($esporte->logo_esporte)) { ?>
                     <img src="<?php echo base_url('tim.php?src=uploads/publicidades/default.jpg&w=366&h=267'); ?>" alt="" />
                 <?php } else { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $local->logo_local .'&w=500&h=267'); ?>" alt="" />
+                    <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $esporte->logo_esporte .'&w=500&h=267'); ?>" alt="" />
                 <?php } ?>
-                <h3><?php echo $local->nome_local; ?></h3>
+                <h3><?php echo $esporte->nome_esporte; ?></h3>
             </div>
            
            
         </div>
-	</div><!-- /fim da area de conteudo superior -->
-	<div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->  
-		<div id="album">
+    </div><!-- /fim da area de conteudo superior -->
+    <div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->  
+        <div id="album">
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_foto.png" class="icone_area_pagina" />
                 <h1 class="titulo_area_pagina">Fotos</h1>
@@ -63,7 +63,7 @@
                 <img src="<?php echo base_url('assets'); ?>/images/icone_descricao.png" class="icone_area_pagina" />
                 <h1 class="titulo_area_pagina">Descrição</h1>
             </div>
-                <p class="texto_pagina"><?php echo $local->desc_local ?></p>
+                <p class="texto_pagina"><?php echo $esporte->desc_esporte ?></p>
         </div>
         <div id="informacoes_pagina" >
             <div class="topo_area_pagina">
@@ -73,16 +73,16 @@
             <div class="informacoes_pagina">
                 <h4>Preço(s):</h4> 
                 <div class="precos_informacoes_pagina">
-                	<h6>Inteira</h6>
-                    <p>R$ <?php echo $local->val_inteira_local ?></p>
+                    <h6><?php echo $esporte->val_titulo_um ?></h6>
+                    <p><?php echo $esporte->val_um ?></p>
                 </div>
                 <div class="precos_informacoes_pagina">
-                	<h6>Meia</h6>
-                    <p>R$ <?php echo $local->val_meia_local ?></p>
+                    <h6><?php echo $esporte->val_titulo_dois ?></h6>
+                    <p><?php echo $esporte->val_dois ?></p>
                 </div>
                 <div class="precos_informacoes_pagina">
-                	<h6>Especial</h6>
-                    <p>R$ <?php echo $local->val_especial_local ?></p>
+                    <h6><?php echo $esporte->val_titulo_tres ?></h6>
+                    <p><?php echo $esporte->val_tres ?></p>
                 </div>
             </div>
             <div class="informacoes_pagina_2">
@@ -90,132 +90,109 @@
                 <div id="funcionamento_pagina">
                     <div class="funcionamento_pagina_semana">
                         <h2>Domingo</h2>
-                        <p><?php echo $local->h_dom ?></p>
+                        <p><?php echo $esporte->h_dom ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Segunda-feira</h2>
-                        <p><?php echo $local->h_seg ?></p>
+                        <p><?php echo $esporte->h_seg ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Terça-feira</h2>
-                        <p><?php echo $local->h_ter ?></p>
+                        <p><?php echo $esporte->h_ter ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Quarta-feira</h2>
-                        <p><?php echo $local->h_qua ?></p>
+                        <p><?php echo $esporte->h_qua ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Quinta-feira</h2>
-                        <p><?php echo $local->h_qui ?></p>
+                        <p><?php echo $esporte->h_qui ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Sexta-feira</h2>
-                        <p><?php echo $local->h_sex ?></p>
+                        <p><?php echo $esporte->h_sex ?></p>
                     </div>
                     <div class="linha_separatoria"></div>
                     <div class="funcionamento_pagina_semana">
                         <h2>Sábado</h2>
-                        <p><?php echo $local->h_sab ?></p>
+                        <p><?php echo $esporte->h_sab ?></p>
                     </div>
                 </div>
             </div>
            
             <div class="informacoes_pagina">
-                <h4>Censura:</h4> 
-                <h6><?php echo $local->censura_local ?></h6>
+                <h4>Idade mínima:</h4> 
+                <h6><?php echo $esporte->idade_esporte ?></h6>
             </div>
         </div>
         
         <div id="endereco_pagina">
-			<div id="" class="topo_area_pagina">
-				<img src="<?php echo base_url('assets'); ?>/images/icone_place.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">Local</h1>
-			</div>
+            <div id="" class="topo_area_pagina">
+                <img src="<?php echo base_url('assets'); ?>/images/icone_place.png" class="icone_area_pagina" />
+                <h1 class="titulo_area_pagina">Esportes</h1>
+            </div>
 
             <?php echo $map['html']; ?>
             <div id="directionsDiv"></div>
-			
-		</div><!-- /endereco -->
-        <div id="dicas">
-        	<div id="" class="topo_area_pagina">
-				<img src="<?php echo base_url('assets'); ?>/images/icone_dicas.png" class="icone_area_pagina" />
-				<h1 class="titulo_area_pagina">O que fazer lá</h1>
-			</div>
-
-            <?php 
-            $atv_titulo = explode('_-_', $local->fazer_titulo_local);
-            $atv_desc   = explode('_-_', $local->fazer_desc_local);
-            $atv_link   = explode('_-_', $local->fazer_link_local);
-            $count_atv  = count($atv_titulo);
-            for ($i=0; $i < $count_atv; $i++) { 
-            ?>
-
-            <div class="dicas">
-                <a href="<?php echo $atv_link[$i] ?>" title="">  <h3><?php echo $atv_titulo[$i] ?></h3>
-                <p><?php echo $atv_desc[$i] ?></p>
-                <h6>Saiba mais +</h6> </a>
-            </div>
-            
-            <?php } ?>
+        </div><!-- /endereco -->
+    </div><!-- /fim da area de conteudo esquerda -->
+    <div id="area_conteudo_direita_borda"><!-- /inicio da area de conteudo direita -->
+        <div class="locais_proximos">
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
+            </a>
         </div>
-	</div><!-- /fim da area de conteudo esquerda -->
-	<div id="area_conteudo_direita_borda"><!-- /inicio da area de conteudo direita -->
-		<div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
-            </a>
-    	</div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
         <div class="locais_proximos">
-        	<a href="" title="">
-            	<img src="" alt="logo do local" />
-            	<h3>Pizzaria e Restaurante Barretos</h3>
-            	<h5>Local: Graças - Recife</h5>
+            <a href="" title="">
+                <img src="" alt="logo do esporte" />
+                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h5>esporte: Graças - Recife</h5>
             </a>
-    	</div>
+        </div>
     
-	</div><!-- /fim da area de conteudo direita -->
+    </div><!-- /fim da area de conteudo direita -->
     <?php endforeach; ?>
 </div>
 <!-- /conteudo -->

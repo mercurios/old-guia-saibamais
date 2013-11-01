@@ -123,6 +123,9 @@ class Estadias extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		$dados['pub_top'] = $this->estadia->get_publicidade('top', 'estadia');
+		$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');	
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
@@ -161,10 +164,9 @@ class Estadias extends CI_Controller {
 			$dados['fotos'] 		= $this->estadia->listar_fotos($id);
 			$dados['acomodacoes']	= $this->estadia->listar_acomodacoes($id);
 			$dados['promocoes']     = $this->estadia->listar_promocao($id);
-			$dados['pub_top']		= $this->estadia->get_publicidade('top', 'estadia');
+			$dados['pub_top'] 		= $this->estadia->get_publicidade('top', 'estadia');
+			$dados['pub_bottom'] 	= $this->estadia->get_publicidade('bottom', 'estadia');
 
-			// Publicidade conteudo bottom
-			$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');
 
 			$_titulo = $dados['conteudo'][0]->nome_estadia;
 			$_descri = $dados['conteudo'][0]->desc_estadia;
