@@ -278,6 +278,11 @@ color: #adadad;
 .informacoes_pagina_pagamento h4{position:relative; float:left; width:100%; margin-top:0px; margin-bottom:10px;}
 .informacoes_pagina h4{position:relative; float:left; /*width:22%*/; margin-top:0px; margin-bottom:0px;}
 .informacoes_pagina h6{position:relative; float:left; /*width:73%*/; margin-top:0px; margin-bottom:0px; margin-left:10px; font-size:16px; font-weight:100; }
+.informacoes_pagina_pagamento ul{position:relative; float:left; padding:3px; margin:0 0 0 6px; font-size:12px; }
+.informacoes_pagina_pagamento ul li{ list-style:none; padding-top:1px; padding-bottom:1px }
+.informacoes_pagina_pagamento ul li:nth-child(2n+2){background:#F3F3F3}
+.dia{font-weight:bold; font-size:14px; width:58px;}
+.titulo_dia_cinema{ font-weight:bold; margin-bottom:8px; text-align:center}
 .precos_informacoes_pagina{position:relative; float:left; max-width:23%; margin-top:0px; margin-left:8px; margin-bottom:0px; }
 .precos_informacoes_pagina h6{position:relative; float:right; width:100%; margin-top:0px; margin-bottom:5px; font-size:14px; font-weight:100; vertical-align:middle; text-align:center;}
 .precos_informacoes_pagina p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
@@ -799,8 +804,6 @@ color: #adadad;
 #entretenimento{width:184px}
 .link_menu:hover #menu_entretenimento {left:-355px; top:auto;}
 	}
-
-
 #adv-custom-pager img {
     margin: 0 1px;
 }

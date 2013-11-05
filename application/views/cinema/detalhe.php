@@ -54,8 +54,6 @@
                     <h6><?php echo $cinema->email_cinema ?></h6>
                 </div>
             </div>
-           
-           
         </div>
     </div><!-- /fim da area de conteudo superior -->
     <div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->  
@@ -201,21 +199,66 @@
                 <img src="<?php echo base_url('assets'); ?>/images/icone_informacao.png" class="icone_area_pagina" />
                 <h1 class="titulo_area_pagina">Informações</h1>
             </div>
-            <div class="informacoes_pagina">
+            <div class="informacoes_pagina_pagamento">
                 <h4>Preço(s):</h4> 
-                <div class="precos_informacoes_pagina">
-                    <h6>Inteira</h6>
-                    <p>R$ 30,00</p>
-                </div>
-                <div class="precos_informacoes_pagina">
-                    <h6>Meia</h6>
-                    <p>R$ 30,00</p>
-                </div>
-                <div class="precos_informacoes_pagina">
-                    <h6>Especial</h6>
-                    <p>R$ 30,00</p>
-                </div>
+                <ul class="dia">
+                    <li class="titulo_dia_cinema">Dia</li>
+                    <li>Segunda</li>
+                    <li>Terça</li>
+                    <li>Quarta</li>
+                    <li>Quinta</li>
+                    <li>Sexta</li>
+                    <li>Sábado</li>
+                    <li>Domingo</li>
+                    <li>Feriados</li>
+                </ul>
+                <ul>
+                    <li class="titulo_dia_cinema">Inteira</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                </ul>
+                <ul>
+                    <li class="titulo_dia_cinema">Meia</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                </ul>
+                <ul>
+                    <li class="titulo_dia_cinema">Inteira 3D</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                </ul>
+                <ul>
+                    <li class="titulo_dia_cinema">Meia - 3D</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                    <li>R$ 10,00</li>
+                </ul>
+                
             </div>
+
             <div class="informacoes_pagina_pagamento">
                 <h4>Formas de pagamento:</h4> 
                 <div class="formas_pagamento">
