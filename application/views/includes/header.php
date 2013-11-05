@@ -343,10 +343,10 @@
                             <h4 class="titulo_sub_menus">Por tipo</h4>
                             <ul>
                                 <li class="sub_menus"><a href="<?php echo base_url('cinemas'); ?>" title="Veja os cinemas e os filmes que estão em exibição">Cinemas</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/exposicoes'); ?>" title="Veja as exposições estão acontecendo">Exposições</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/feira-e-eventos'); ?>" title="Veja as feiras e eventos que estão acontecendo">Feiras e eventos</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/shows'); ?>" title="Veja onde tem shows para você">Shows</a></li>
-                                <li class="sub_menus"><a href="<?php echo base_url('entretenimentos/categoria/teatros'); ?>" title="Veja os teatros e as peças que estão em exibição">Teatros</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('exposicoes'); ?>" title="Veja as exposições estão acontecendo">Exposições</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('feira-e-eventos'); ?>" title="Veja as feiras e eventos que estão acontecendo">Feiras e eventos</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('shows'); ?>" title="Veja onde tem shows para você">Shows</a></li>
+                                <li class="sub_menus"><a href="<?php echo base_url('teatros'); ?>" title="Veja os teatros e as peças que estão em exibição">Teatros</a></li>
                             </ul>
                         </div>
                         <span class="ou">ou</span>

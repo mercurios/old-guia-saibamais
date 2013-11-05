@@ -42,7 +42,7 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 // Passeio e lazer
-$route['passeio-e-lazer'] = "lazer";
+$route['feira-e-eventos'] = "eventos";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

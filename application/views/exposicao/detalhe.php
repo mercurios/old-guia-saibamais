@@ -17,41 +17,41 @@
 
 <!-- Conteudo
 ================================================== -->
-<div id="conteudo"> 
-    <?php foreach ($conteudo as $cinema) : ?>
+<div id="conteudo">
+    <?php foreach ($conteudo as $exposicao) : ?>
     <div id="area_conteudo_superior"><!-- /inicio da area de conteudo superior -->
         <div id="topo_pagina_anunciante" class="">
             <div id="redes_sociais_pagina">
                 <ul>
-                    <li><a href="<?php echo $cinema->flickr_cinema; ?>" target="_blank" title="Flickr"><img src="<?php echo base_url('assets'); ?>/images/flickr_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->insta_cinema; ?>" target="_blank" title="Instagram"><img src="<?php echo base_url('assets'); ?>/images/instagram_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->youtube_cinema; ?>" target="_blank" title="Youtube"><img src="<?php echo base_url('assets'); ?>/images/youtube_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->orkut_cinema; ?>" target="_blank" title="Orkut"><img src="<?php echo base_url('assets'); ?>/images/orkut_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->googleplus_cinema; ?>" target="_blank" title="Google Plus"><img src="<?php echo base_url('assets'); ?>/images/gplus_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->twitter_cinema; ?>" target="_blank" title="Twitter"><img src="<?php echo base_url('assets'); ?>/images/twitter_icon.jpg" alt="RS" /></a></li>
-                    <li><a href="<?php echo $cinema->facebook_cinema; ?>" target="_blank" title="Facebook"><img src="<?php echo base_url('assets'); ?>/images/facebook_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->flickr_exposicao; ?>" target="_blank" title="Flickr"><img src="<?php echo base_url('assets'); ?>/images/flickr_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->insta_exposicao; ?>" target="_blank" title="Instagram"><img src="<?php echo base_url('assets'); ?>/images/instagram_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->youtube_exposicao; ?>" target="_blank" title="Youtube"><img src="<?php echo base_url('assets'); ?>/images/youtube_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->orkut_exposicao; ?>" target="_blank" title="Orkut"><img src="<?php echo base_url('assets'); ?>/images/orkut_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->googleplus_exposicao; ?>" target="_blank" title="Google Plus"><img src="<?php echo base_url('assets'); ?>/images/gplus_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->twitter_exposicao; ?>" target="_blank" title="Twitter"><img src="<?php echo base_url('assets'); ?>/images/twitter_icon.jpg" alt="RS" /></a></li>
+                    <li><a href="<?php echo $exposicao->facebook_exposicao; ?>" target="_blank" title="Facebook"><img src="<?php echo base_url('assets'); ?>/images/facebook_icon.jpg" alt="RS" /></a></li>
                 </ul>
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
-                <?php if (empty($cinema->logo_cinema)) { ?>
+                <?php if (empty($exposicao->logo_exposicao)) { ?>
                     <img src="<?php echo base_url('tim.php?src=uploads/logos/default.jpg&w=366&h=267'); ?>" alt="" />
                 <?php } else { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/logos/'. $cinema->logo_cinema .'&w=366&h=267'); ?>" alt="" />
+                    <img src="<?php echo base_url('tim.php?src=uploads/logos/'. $exposicao->logo_exposicao .'&w=366&h=267'); ?>" alt="" />
                 <?php } ?>
-                <h3><?php echo $cinema->nome_cinema ?></h3>
+                <h3><?php echo $exposicao->nome_exposicao ?></h3>
             </div>
             <div id="contatos_pagina">
                 <div class="contatos_pagina">
                     <h4 class="titulo_contatos_pagina">Telefone:</h4>
-                    <h6><?php echo $cinema->fone_cinema ?></h6>
+                    <h6><?php echo $exposicao->fone_exposicao ?></h6>
                 </div>
                 <div class="contatos_pagina">
                     <h4  class="titulo_contatos_pagina">Site:</h4>
-                    <h6><?php echo $cinema->site_cinema ?></h6>
+                    <h6><?php echo $exposicao->site_exposicao ?></h6>
                 </div>
                 <div class="contatos_pagina">
-                    <h4  class="titulo_contatos_pagina">E-mail:</h4>
-                    <h6><?php echo $cinema->email_cinema ?></h6>
+                    <h4 class="titulo_contatos_pagina">E-mail:</h4>
+                    <h6><?php echo $exposicao->email_exposicao ?></h6>
                 </div>
             </div>
         </div>
@@ -83,184 +83,49 @@
         <div id="descricao_pagina_grande" class="w-grande">
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_descricao.png" class="icone_area_pagina" />
-                <h1 class="titulo_area_pagina">Sobre o cinema</h1>
+                <h1 class="titulo_area_pagina">Descrição</h1>
             </div>
-                <p class="texto_pagina"> <?php echo $cinema->desc_cinema ?> </p>
+                <p class="texto_pagina"> <?php echo $exposicao->desc_exposicao ?></p>
         </div>
-        <div id="cinema">
-        <div class="topo_area_pagina">
-            <img src="<?php echo base_url('assets'); ?>/images/icone_cardapio.png" class="icone_area_pagina" />
-            <h1 class="titulo_area_pagina">Filmes em exibição</h1>
-        </div>
-
-        <?php if (!empty($filmes)) { foreach ($filmes as $filme) { ?>
-
-        <div class="cartaz">
-            <img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $filme->logo_filme .'&w=108&h=108'); ?>" alt="" />
-            <h4><?php echo $filme->titulo_filme ?></h4>
-            <p><?php echo $filme->sinopse_filme ?></p>
-            <div class="classificacao_indicativa">
-                <h4>Duração:</h4>
-                <p title="duração"><?php echo $filme->duracao_filme ?></p>
-                <span>/</span>
-                <p title="Gênero"><?php echo $filme->categoria_filme ?></p>
-                <span>/</span>
-                <p title="Censura"><?php echo $filme->idade_filme ?></p>
-            </div>
-                
-            <div class="horarios_exibicao">
-                <h3>Dias e horários de exibição:</h3>
-                <div class="dia_exibicao">
-                    <h4>Seg</h4>
-                    <p>
-                    <?php 
-                    $seg = $filme->h_seg;
-                    $seg = explode(',', $seg);
-                    for($i=0;$i<count($seg);$i++) { ?>
-                    <p><?php echo $seg[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Ter</h4>
-                    <p>
-                    <?php 
-                    $ter = $filme->h_ter;
-                    $ter = explode(',', $ter);
-                    for($i=0;$i<count($ter);$i++) { ?>
-                    <p><?php echo $ter[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Qua</h4>
-                    <p>
-                    <?php 
-                    $qua = $filme->h_qua;
-                    $qua = explode(',', $qua);
-                    for($i=0;$i<count($qua);$i++) { ?>
-                    <p><?php echo $qua[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Qui</h4>
-                    <p>
-                    <?php 
-                    $qui = $filme->h_qui;
-                    $qui = explode(',', $qui);
-                    for($i=0;$i<count($qui);$i++) { ?>
-                    <p><?php echo $qui[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Sex</h4>
-                    <p>
-                    <?php 
-                    $sex = $filme->h_sex;
-                    $sex = explode(',', $sex);
-                    for($i=0;$i<count($sex);$i++) { ?>
-                    <p><?php echo $sex[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Sab</h4>
-                    <p>
-                    <?php 
-                    $sab = $filme->h_sab;
-                    $sab = explode(',', $sab);
-                    for($i=0;$i<count($sab);$i++) { ?>
-                    <p><?php echo $sab[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-                <div class="dia_exibicao">
-                    <h4>Dom</h4>
-                    <p>
-                    <?php 
-                    $dom = $filme->h_dom;
-                    $dom = explode(',', $dom);
-                    for($i=0;$i<count($dom);$i++) { ?>
-                    <p><?php echo $dom[$i]; ?></p>
-                    <?php } ?>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <?php } } ?>
-    </div>
-
+     
         <div id="informacoes_pagina" >
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_informacao.png" class="icone_area_pagina" />
                 <h1 class="titulo_area_pagina">Informações</h1>
             </div>
-            <div class="informacoes_pagina_pagamento">
-                <h4>Preço(s):</h4> 
-                <ul class="dia">
-                    <li class="titulo_dia_cinema">Dia</li>
-                    <li>Segunda</li>
-                    <li>Terça</li>
-                    <li>Quarta</li>
-                    <li>Quinta</li>
-                    <li>Sexta</li>
-                    <li>Sábado</li>
-                    <li>Domingo</li>
-                    <li>Feriados</li>
-                </ul>
-                <ul>
-                    <li class="titulo_dia_cinema"><?php echo $cinema->t_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->seg_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->ter_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qua_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qui_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sex_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sab_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->dom_1_cinema ?></li>
-                    <li>R$ <?php echo $cinema->fer_1_cinema ?></li>
-                </ul>
-                <ul>
-                    <li class="titulo_dia_cinema"><?php echo $cinema->t_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->seg_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->ter_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qua_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qui_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sex_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sab_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->dom_2_cinema ?></li>
-                    <li>R$ <?php echo $cinema->fer_2_cinema ?></li>
-                </ul>
-                <ul>
-                    <li class="titulo_dia_cinema"><?php echo $cinema->t_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->seg_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->ter_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qua_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qui_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sex_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sab_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->dom_3_cinema ?></li>
-                    <li>R$ <?php echo $cinema->fer_3_cinema ?></li>
-                </ul>
-                <ul>
-                    <li class="titulo_dia_cinema"><?php echo $cinema->t_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->seg_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->ter_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qua_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->qui_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sex_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->sab_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->dom_4_cinema ?></li>
-                    <li>R$ <?php echo $cinema->fer_4_cinema ?></li>
-                </ul>
+            <div class="informacoes_pagina">
+                <h4>Data(s):</h4> 
+                <h6><?php echo $exposicao->data_exposicao ?></h6>
             </div>
 
+            <div class="informacoes_pagina">
+                <h4>Preço(s):</h4> 
+                <div class="precos_informacoes_pagina">
+                    <h6><?php echo $exposicao->titulo_preco_um ?></h6>
+                    <p>R$ <?php echo $exposicao->val_preco_um ?></p>
+                </div>
+                <div class="precos_informacoes_pagina">
+                    <h6><?php echo $exposicao->titulo_preco_dois ?></h6>
+                    <p>R$ <?php echo $exposicao->val_preco_dois ?></p>
+                </div>
+                <div class="precos_informacoes_pagina">
+                    <h6><?php echo $exposicao->titulo_preco_tres ?></h6>
+                    <p>R$ <?php echo $exposicao->val_preco_tres ?></p>
+                </div>
+            </div>
+            <div class="informacoes_pagina">
+                <h4>Horário(s):</h4> 
+                <h6>Das <?php echo $exposicao->horario_exposicao ?></h6>
+            </div>
+           
+            <div class="informacoes_pagina">
+                <h4>Censura:</h4> 
+                <h6>12 anos</h6>
+            </div>
             <div class="informacoes_pagina_pagamento">
                 <h4>Formas de pagamento:</h4> 
                 <div class="formas_pagamento">
-                    <?php $pagamento = explode(',', $cinema->pag_cinema);
+                    <?php $pagamento = explode(',', $exposicao->pag_exposicao);
                     if (in_array('dinheiro', $pagamento)) { echo '<img src="'. base_url('assets') .'/images/icone_dinheiro.jpg" alt="Não aceitamos pagamento com dinheiro" title="Dinheiro" class="icone_esquerda"/>'; }
                     else { echo '<img src="'. base_url('assets') .'/images/icone_dinheiro_claro.jpg" alt="Não aceitamos pagamento com dinheiro" title="Dinheiro" class="icone_esquerda"/>'; }
 
@@ -308,12 +173,15 @@
                     ?>
                 </div>
             </div>
+
+            
+           
         </div>
         
         <div id="endereco_pagina">
             <div id="" class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_place.png" class="icone_area_pagina" />
-                <h1 class="titulo_area_pagina">Endereço</h1>
+                <h1 class="titulo_area_pagina">Local</h1>
                 <?php echo $map['html']; ?>
                 <div id="directionsDiv"></div>
             </div>
