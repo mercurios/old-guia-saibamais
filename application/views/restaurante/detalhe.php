@@ -34,9 +34,9 @@
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
             	<?php if (empty($restaurante->logo_restaurante)) { ?>
-            		<img src="<?php echo base_url('tim.php?src=uploads/publicidades/default.jpg&w=366&h=267'); ?>" alt="" />
+            		<img src="<?php echo base_url('tim.php?src=uploads/logos/default.jpg&w=366&h=267'); ?>" alt="" />
             	<?php } else { ?>
-            		<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $restaurante->logo_restaurante .'&w=366&h=267'); ?>" alt="" />
+            		<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $restaurante->logo_restaurante .'&w=366&h=267'); ?>" alt="" />
             	<?php } ?>
                 <h3><?php echo $restaurante->nome_restaurante; ?></h3>
             </div>

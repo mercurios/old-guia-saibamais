@@ -14,16 +14,16 @@
 	<!-- Listar all
 	================================================== -->
 		<?php 
-		if (count($conteudos) != 0) {
-			foreach ($conteudos as $conteudo) {
+		if (count($conteudo) != 0) {
+			foreach ($conteudo as $cinema) {
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $conteudo->logo_conteudo; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
-	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $conteudo->nome_conteudo; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $conteudo->bairro_conteudo; ?></p>
+			<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $cinema->logo_cinema .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
+	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $cinema->nome_cinema; ?></h3>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $cinema->bairro_cinema; ?></p>
 	        <div class="rodape_resultado_pesquisa">
-	        	<a href="<?php echo base_url('conteudos/detalhe') . '/' . $conteudo->slug_conteudo . '/' . $conteudo->id_conteudo; ?>" title="">
+	        	<a href="<?php echo base_url('cinemas/detalhe') . '/' . $cinema->slug_cinema . '/' . $cinema->id_cinema; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
 	            	<h2>Ver mais informações</h2>
 	            </a>
@@ -34,7 +34,7 @@
 			}
 		}
 		else {
-			echo 'Ops! Ainda não tem conteudos cadastrados nessa categoria.';
+			echo 'Ops! Ainda não tem cinemas cadastrados nessa categoria.';
 		}
 		?>
 	</div><!-- /listar-all -->
