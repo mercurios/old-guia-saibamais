@@ -191,9 +191,8 @@
         </div>
 
         <?php } } ?>
-        
-         
     </div>
+    
         <div id="informacoes_pagina" >
             <div class="topo_area_pagina">
                 <img src="<?php echo base_url('assets'); ?>/images/icone_informacao.png" class="icone_area_pagina" />
@@ -256,7 +255,6 @@
                     <li>R$ 10,00</li>
                     <li>R$ 10,00</li>
                 </ul>
-                
             </div>
 
             <div class="informacoes_pagina_pagamento">

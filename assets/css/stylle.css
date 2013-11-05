@@ -287,7 +287,6 @@ color: #adadad;
 .precos_informacoes_pagina h6{position:relative; float:right; width:100%; margin-top:0px; margin-bottom:5px; font-size:14px; font-weight:100; vertical-align:middle; text-align:center;}
 .precos_informacoes_pagina p{position:relative; font-size:14px; margin-top:0px; margin-bottom:0px;; font-weight:bold; text-align:center;}
 
-
 /*css de extras*/
 #extras{position:relative; float:left; width:326px; margin-bottom:30px;}
 #extras img:nth-child(5n){margin-right:0px}
