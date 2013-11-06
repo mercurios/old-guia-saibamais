@@ -85,4 +85,49 @@ class Entretenimentos extends CI_Controller {
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
+
+	// Lista categorias
+	public function categoria($categoria = NULL)
+	{	
+		$_categoria = $this->uri->segment(3);
+
+		$this->load->library('mybreadcrumb');
+
+		// Dados
+		$dados['bread'] 		= $this->mybreadcrumb->bread_restaurante($_categoria);
+		$dados['conteudos'] 	= $this->entretenimento->listar_resultados($_categoria);
+		$dados['pub_top'] 		= $this->entretenimento->get_publicidade('top', 'entretenimento');
+		$dados['pub_bottom'] 	= $this->entretenimento->get_publicidade('bottom', 'entretenimento');	
+
+		// Titulo da página
+		$seo['titulopag'] = "Entretenimentos | Guia Saiba Mais";
+
+		// Meta tags
+		$seo['meta'] = array(
+			array('name' => 'language', 'content' => 'pt-br'),
+			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'keywords', 'content' => 'Key, key'),
+			array('name' => 'author', 'content' => 'Mercurios'),
+			array('name' => 'googlebot', 'content' => 'ALL'),
+			array('name' => 'robots', 'content' => 'ALL'),
+			array('name' => 'viewport', 'content' => 'width=device-width; initial-scale=1.0')
+		);
+
+		// Meta tags facebook
+		$seo['metaface'] = array(
+			array('name' => 'og:title', 'content' => 'entretenimentos | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('entretenimento'), 'type' => 'property'),
+			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
+		);
+
+		// Carrega o header
+		$this->load->view('includes/header', $seo);
+
+		// Carrega o conteudo
+		$this->load->view('entretenimento/listar', $dados);
+
+		// Carrega o rodape
+		$this->load->view('includes/footer');
+	}
 }

@@ -37,7 +37,9 @@ class Teatros extends CI_Controller {
 		);
 
 		// Lista todos os teatros
-		$dados['conteudo'] = $this->teatros->listar_teatros();
+		$dados['conteudo'] 		= $this->teatros->listar_teatros();
+		$dados['pub_top']		= $this->teatros->get_publicidade('top', 'teatro');
+		$dados['pub_bottom'] 	= $this->teatros->get_publicidade('bottom', 'teatro');
 
 		// Chama o header
 		$this->load->view('includes/header', $seo);
