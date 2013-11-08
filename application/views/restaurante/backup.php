@@ -20,9 +20,15 @@
 		<h1 class="titulo_area_categoria">Restaurantes - <?php echo $bread; ?></h1>
 	</div>
 
+	<div class="ajax-loader">
+		<p>Carregando informações...</p>
+		<img src="<?php echo base_url('assets/images') ?>/ajax-loader.gif" alt="Carregando..." />
+	</div>
+
 		<!--Inicio da área de conteúdo esquerda-->
 	<div id="area_conteudo_esquerda_pesquisa" class="area_conteudo">
-
+	<!-- Listar all
+	================================================== -->
 		<?php 
 		if (count($restaurantes) != 0) {
 			foreach ($restaurantes as $restaurante) {
@@ -79,6 +85,7 @@
 		?>
 	</div><!-- /listar-all -->
 
+
 	<!--Fim da área de conteúdo esquerda-->
 	<!--Inicio da área de conteúdo direita-->
     <div id="area_conteudo_direita_pesquisa" class="area_conteudo">
@@ -86,66 +93,77 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
-					<form name="filtrar_restaurantes">
+					<form name="filter_restaurantes" method="post">
+						<select name="filter_local" id="rest_local_filter">
+	                        <option selected>Por localização</option>
 
-							<select name="filtrar_local" id="filtrar_local">
-								<option value="todas">Por localização</option>
-
-								<optgroup label="Recife">
-									<?php foreach ($bairros as $bairro) : ?>
-										<option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
-									<?php endforeach; ?>
-								</optgroup>
-							</select>
-
-
-                    	<h4>ou</h4>
-                 
-	                    <select id="filtrar_adaptado">
-	                        <option value="todos">Que seja acessivel à:</option>
-	                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
-	                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
-	                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
-	                        <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
-	                        <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
-	                        <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
-	                    </select>
-	                
-                    	<h4>ou</h4>
-                                        
-	                    <select id="filtrar_comida">
-	                        <option value="todos" selected>Por comida</option>
-	                        	<option value="crustaceos" <?php if ($this->uri->segment(5) == "crustaceos") { echo 'selected '; } ?>>Crustáceos</option>
-	                            <option value="rodizios" <?php if ($this->uri->segment(5) == "rodizios") { echo 'selected '; } ?>>Rodízios</option>
-	                            <option value="self-services" <?php if ($this->uri->segment(5) == "self-services") { echo 'selected '; } ?>>Self-services</option>
-	                            <option value="a-la-carte" <?php if ($this->uri->segment(5) == "a-la-carte") { echo 'selected '; } ?>>A la carte</option>
-	                            <option value="washington-redskins" <?php if ($this->uri->segment(5) == "washington-redskins") { echo 'selected '; } ?>>Washington Redskins</option>
-	                            <option value="callas-cowboys" <?php if ($this->uri->segment(5) == "callas-cowboys") { echo 'selected '; } ?>>Dallas Cowboys</option>
+	                        <optgroup label="Recife">
+	                            <option value="abreu-e-lima">Abreu e lima</option>
+	                            <option value="cabo-de-santo-agostinho">Cabo de santo agostinho</option>
+	                            <option value="goiana">Goiana</option>
+	                            <option value="igarassu">Igarassu</option>
+	                            <option value="ipojuca">Ipojuca</option>
+	                            <option value="itamaraca">Itamaracá</option>
+	                            <option value="jaboatão-dos-guararapes">Jaboatão dos Guararapes</option>
+	                            <option value="olinda">Olinda</option>
+	                            <option value="paulista">Paulista</option>
+	                            <option value="recife">Recife</option>
 	                        </optgroup>
 	                    </select>
-	                </form>
-            	</div>
+
+					</form>
+
+
+					
+                    
+                    <h4>ou</h4>
+                 
+                    <select>
+                        <option selected>Que seja acessivel à:</option>
+                        <option>Cegos</option>
+                        <option>Deficientes físicos</option>
+                        <option>Gestantes</option>
+                        <option>Idosos</option>
+                        <option>Obesos</option>
+                        <option>Surdos</option>
+                    </select>
+                    
+                    <h4>ou</h4>
+                                        
+                    <select>
+                        <option selected>Por comida</option>
+                            <option>Rodízios</option>
+                            <option>Self-services</option>
+                            <option>A la carte</option>
+                            <option>Washington Redskins</option>
+                            <option>Dallas Cowboys</option>
+                            <option>New York Giants</option>
+                            <option>Philadelphia Eagles</option>
+                            <option>Washington Redskins</option>
+                        </optgroup>
+                    </select>
+            </div>
             
                 
-				<div id="filtrar_pesquisa" class="select">
-					<div id="topo_select_ordenar"></div>
-						<select>
-							<option selected>Por ordem alfabética:</option>
-		                    <option>De A - Z</option>
-		                    <option>De Z - A</option>
-		                </select>
+			<div id="filtrar_pesquisa" class="select">
+			<div id="topo_select_ordenar"></div>
+				<select>
+					<option selected>Por ordem alfabética:</option>
+                    <option>De A - Z</option>
+                    <option>De Z - A</option>
+                </select>
 				
-						<h4>ou</h4>
+				<h4>ou</h4>
 				
-						<select>
-							<option selected>Por próximidade:</option>
-							<option>Mais perto de mim</option>
-							<option>Mais distante de mim</option>
-						</select>
-					</div>
-				</div>
-            	<!--Fim do campo de filtragem-->
-			</div><!--Fim da área de conteúdo direita-->
+				<select>
+					<option selected>Por próximidade:</option>
+					<option>Mais perto de mim</option>
+					<option>Mais distante de mim</option>
+				</select>
+			</div>
+		</div>
+            <!--Fim do campo de filtragem-->
+	</div><!--Fim da área de conteúdo direita-->
 </div>
 
 <div id="publicidade_inferior" class="publicidade">

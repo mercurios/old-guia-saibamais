@@ -133,6 +133,9 @@ class Restaurantes extends CI_Controller {
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->restaurante->get_bairros('5406');
+
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
 
@@ -228,6 +231,98 @@ class Restaurantes extends CI_Controller {
 			$this->load->view('includes/footer');
 		}
 	}
+
+	// Filtragem de resultados
+	public function filtrar()
+	{
+
+		// Parametros de filtragem
+		$filter_local = $this->uri->segment(3);
+		$filter_defic = $this->uri->segment(4);
+		$filter_catco = $this->uri->segment(5);
+		$filter_ordem = $this->uri->segment(6);
+
+		// Breadcrumb
+		$this->load->library('mybreadcrumb');
+		$dados['bread'] = $this->mybreadcrumb->bread_restaurante('teste');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->restaurante->get_bairros('5406');
+
+		// Listar seguindo os parametros
+		$dados['restaurantes'] = $this->restaurante->filtrar_restaurantes($filter_local, $filter_defic, $filter_catco, $filter_ordem);
+
+		// Publicidade top
+		$dados['pub_top'] = $this->restaurante->get_publicidade('top', 'restaurante');
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->restaurante->get_publicidade('bottom', 'restaurante');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->restaurante->get_bairros('5406');
+
+		// Titulo da página
+		$seo['titulopag'] = "Restaurantes | Guia Saiba Mais";
+
+		// Meta tags
+		$seo['meta'] = array(
+			array('name' => 'language', 'content' => 'pt-br'),
+			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'keywords', 'content' => 'Key, key'),
+			array('name' => 'author', 'content' => 'Mercurios'),
+			array('name' => 'googlebot', 'content' => 'ALL'),
+			array('name' => 'robots', 'content' => 'ALL'),
+			array('name' => 'viewport', 'content' => 'width=device-width; initial-scale=1.0')
+		);
+
+		// Meta tags facebook
+		$seo['metaface'] = array(
+			array('name' => 'og:title', 'content' => 'Restaurantes | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('restaurante'), 'type' => 'property'),
+			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
+		);
+
+		// Carrega o header
+		$this->load->view('includes/header', $seo);
+
+		// Carrega o conteúdo
+		$this->load->view('restaurante/listar', $dados);
+
+		// Carrega o rodape
+		$this->load->view('includes/footer');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /* End of file welcome.php */

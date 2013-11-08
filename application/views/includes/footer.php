@@ -100,9 +100,10 @@ estão reservados para a Mercurios.</p>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
         <script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle2.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.jcarousel.min.js'); ?>"></script>
-        
         <script type="text/javascript" src="<?php echo base_url('assets/js/cardapio.js'); ?>"></script>
-        <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.pikachoose.min.js'); ?>"></script>
+        <script type="text/javascript">
+            var path        = '<?php echo site_url(); ?>';
+        </script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/iniciar.js'); ?>"></script>
     </body>
 </html>

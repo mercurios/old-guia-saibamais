@@ -6,11 +6,6 @@ $(document).ready(function (){
 		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
 	});
 	
-	
-
-	/*Inicialização do album de fotos*/
-	$("#pikame").PikaChoose({carousel:true});
-	
 	$('.chamada_imagem p').each(function(){
 		//...set the opacity to 0...
 		$(this).css('opacity', 0);
@@ -32,6 +27,84 @@ $(document).ready(function (){
 		//use fadeTo to hide the div
 		$(this).children('.chamada_imagem p').stop().fadeTo(200, 0);
 	});
+
+	// Filtragem Restaurante
+	$('#filtrar_local').change(function(){
+
+		// Pega o valor do campo
+		var localizacao = $(this).val();
+
+		// Nova url
+		var newUrl = path + 'restaurantes/filtrar/' + localizacao;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_adaptado').change(function(){
+
+		// Url atual
+		var url = path + 'restaurantes/filtrar/' + $('#filtrar_local').val();
+
+		// Pega o valor do campo
+		var adaptado = $(this).val();
+
+		// Nova url
+		var novaUrl = url + '/' + adaptado;
+
+		// Redireciona
+		$(window.document.location).attr('href', novaUrl);
+	});
+
+	$('#filtrar_comida').change(function(){
+
+		// Url atual
+		var url = path + 'restaurantes/filtrar/' + $('#filtrar_local').val() + '/' + $('#filtrar_adaptado').val();
+
+		// Pega o valor do campo
+		var comida = $(this).val();
+
+		// Nova url
+		var urlComida = url + '/' + comida;
+
+		// Redireciona
+		$(window.document.location).attr('href', urlComida);
+	});
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*Fim da inicialização*/
 });

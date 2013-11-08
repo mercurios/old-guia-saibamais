@@ -104,4 +104,26 @@ class Restaurante_model extends CI_Model
 
         return $result;
     }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    // Retorna os clientes seguindo os parametros
+    public function filtrar_restaurantes($local, $deficiencia, $comida, $ordem)
+    {
+        //$this->db->where('bairro_restaurante', $local);
+        $this->db->like('bairro_restaurante', $local);
+        $this->db->like('adaptado_restaurante', $deficiencia);
+        $this->db->like('tipo_comida_restaurante', $comida);
+        return $this->db->get($this->tabela)->result();
+    }
+
+
+
+
+
 }
