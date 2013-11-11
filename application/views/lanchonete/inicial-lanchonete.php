@@ -214,48 +214,35 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_escolha_lanchonetes"></div>
-                    <select>
-                        <option selected>No bairro</option>
+                    <select name="filtrar_local_lanchonete" id="filtrar_local_lanchonete">
+                        <option value="all">Por localização</option>
+
                         <optgroup label="Recife">
-                            <option>Boa Viagem</option>
-                            <option>Boa vista</option>
-                            <option>Espinheiro</option>
-                            <option>Graças</option>
-                            <option>Ilha do Leite</option>
-                            <option>Madalena</option>
-                            <option>Recife antigo</option>
-                            <option>Torre</option>
+                            <?php foreach ($bairros as $bairro) : ?>
+                                <option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+                            <?php endforeach; ?>
                         </optgroup>
                     </select>
                     
                     <h4>ou</h4>
-                    
-                    <select>
-                        <option selected>Que seja acessivel à:</option>
-                        <option>Cegos</option>
-                        <option>Deficientes físicos</option>
-                        <option>Gestantes</option>
-                        <option>Idosos</option>
-                        <option>Obesos</option>
-                        <option>Surdos</option>
+                 
+                    <select id="filtrar_adaptado_lanchonete">
+                        <option value="all">Que seja acessivel à:</option>
+                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
+                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
+                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
+                        <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
+                        <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
+                        <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
                     </select>
                     
                     <h4>ou</h4>
-                    
-                    <select>
-                        <option selected>Por Lanche</option>
-                            <option>Açaí</option>
-                            <option>Crepe</option>
-                            <option>Doces</option>
-                            <option>Fondue</option>
-                            <option>Hamburguer</option>
-                            <option>Iogurte</option>
-                            <option>Pastel</option>
-                            <option>Pizza</option>
-                            <option>Sanduiche</option>
-                            <option>Sorvete / Picolé</option>
-                            <option>Sushi</option>
-                            <option>Temaki</option>
+                                        
+                    <select id="filtrar_comida_lanchonete">
+                        <option value="all" selected>Por lanche</option>
+                            <option value="acai" <?php if ($this->uri->segment(5) == "acai") { echo 'selected '; } ?>>Acaí</option>
+                            <option value="crepes" <?php if ($this->uri->segment(5) == "crepes") { echo 'selected '; } ?>>Crepes</option>
+                            <option value="doces" <?php if ($this->uri->segment(5) == "doces") { echo 'selected '; } ?>>Doces</option>
                         </optgroup>
                     </select>
 				</div>

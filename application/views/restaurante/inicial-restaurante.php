@@ -204,47 +204,43 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_escolha"></div>
-                    <select>
-                        <option selected>Por cidade</option>
-                        	<option>Abreu e lima</option>
-                            <option>Cabo de santo agostinho</option>
-                            <option>Goiana</option>
-                            <option>Igarassu</option>
-                            <option>Ipojuca</option>
-                            <option>Itamaracá</option>
-                            <option>Jaboatão dos Guararapes</option>
-                            <option>Olinda</option>
-                            <option>Paulista</option>
-                            <option>Recife</option>
-                        </optgroup>
-                    </select>
+                    <form name="filtrar_restaurantes">
+                            <select name="filtrar_local" id="filtrar_local">
+                                <option value="all">Por localização</option>
+
+                                <optgroup label="Recife">
+                                    <?php foreach ($bairros as $bairro) : ?>
+                                        <option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+                                    <?php endforeach; ?>
+                                </optgroup>
+                            </select>
+
+
+                        <h4>ou</h4>
+                 
+                        <select id="filtrar_adaptado">
+                            <option value="all">Que seja acessivel à:</option>
+                            <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
+                            <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
+                            <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
+                            <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
+                            <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
+                            <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
+                        </select>
                     
-                    <h4>ou</h4>
-                    
-                    <select>
-                        <option selected>Que seja acessivel à:</option>
-                        <option>Cegos</option>
-                        <option>Deficientes físicos</option>
-                        <option>Gestantes</option>
-                        <option>Idosos</option>
-                        <option>Obesos</option>
-                        <option>Surdos</option>
-                    </select>
-                    
-                    <h4>ou</h4>
-                    
-                    <select>
-                        <option selected>Por tipo</option>
-                            <option>Rodízios</option>
-                            <option>Self-services</option>
-                            <option>A la carte</option>
-                            <option>Washington Redskins</option>
-                            <option>Dallas Cowboys</option>
-                            <option>New York Giants</option>
-                            <option>Philadelphia Eagles</option>
-                            <option>Washington Redskins</option>
-                        </optgroup>
-                    </select>
+                        <h4>ou</h4>
+                                        
+                        <select id="filtrar_comida">
+                            <option value="all" selected>Por comida</option>
+                                <option value="crustaceos" <?php if ($this->uri->segment(5) == "crustaceos") { echo 'selected '; } ?>>Crustáceos</option>
+                                <option value="rodizios" <?php if ($this->uri->segment(5) == "rodizios") { echo 'selected '; } ?>>Rodízios</option>
+                                <option value="self-services" <?php if ($this->uri->segment(5) == "self-services") { echo 'selected '; } ?>>Self-services</option>
+                                <option value="a-la-carte" <?php if ($this->uri->segment(5) == "a-la-carte") { echo 'selected '; } ?>>A la carte</option>
+                                <option value="washington-redskins" <?php if ($this->uri->segment(5) == "washington-redskins") { echo 'selected '; } ?>>Washington Redskins</option>
+                                <option value="callas-cowboys" <?php if ($this->uri->segment(5) == "callas-cowboys") { echo 'selected '; } ?>>Dallas Cowboys</option>
+                            </optgroup>
+                        </select>
+                    </form>
 				</div>
 			</div>
             <!--Fim do campo de filtragem-->

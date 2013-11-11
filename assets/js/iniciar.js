@@ -27,49 +27,268 @@ $(document).ready(function (){
 		//use fadeTo to hide the div
 		$(this).children('.chamada_imagem p').stop().fadeTo(200, 0);
 	});
-
+	
 	// Filtragem Restaurante
 	$('#filtrar_local').change(function(){
 
-		// Pega o valor do campo
-		var localizacao = $(this).val();
+		var local 		= $('#filtrar_local').val();
+		var adaptado 	= $('#filtrar_adaptado').val();
+		var comida 		= $('#filtrar_comida').val();
+		var ordem 		= $('#filtrar_ordem').val();
 
 		// Nova url
-		var newUrl = path + 'restaurantes/filtrar/' + localizacao;
+		var newUrl = path + 'restaurantes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
 
 		// Redireciona
 		$(window.document.location).attr('href',newUrl);
 	});
 
+	// Filtragem Restaurante
 	$('#filtrar_adaptado').change(function(){
 
-		// Url atual
-		var url = path + 'restaurantes/filtrar/' + $('#filtrar_local').val();
-
-		// Pega o valor do campo
-		var adaptado = $(this).val();
+		var local 		= $('#filtrar_local').val();
+		var adaptado 	= $('#filtrar_adaptado').val();
+		var comida 		= $('#filtrar_comida').val();
+		var ordem 		= $('#filtrar_ordem').val();
 
 		// Nova url
-		var novaUrl = url + '/' + adaptado;
+		var newUrl = path + 'restaurantes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
 
 		// Redireciona
-		$(window.document.location).attr('href', novaUrl);
+		$(window.document.location).attr('href',newUrl);
 	});
 
+	// Filtragem Restaurante
 	$('#filtrar_comida').change(function(){
 
-		// Url atual
-		var url = path + 'restaurantes/filtrar/' + $('#filtrar_local').val() + '/' + $('#filtrar_adaptado').val();
-
-		// Pega o valor do campo
-		var comida = $(this).val();
+		var local 		= $('#filtrar_local').val();
+		var adaptado 	= $('#filtrar_adaptado').val();
+		var comida 		= $('#filtrar_comida').val();
+		var ordem 		= $('#filtrar_ordem').val();
 
 		// Nova url
-		var urlComida = url + '/' + comida;
+		var newUrl = path + 'restaurantes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
 
 		// Redireciona
-		$(window.document.location).attr('href', urlComida);
+		$(window.document.location).attr('href',newUrl);
 	});
+
+	// Filtragem Restaurante
+	$('#filtrar_ordem').change(function(){
+
+		var local 		= $('#filtrar_local').val();
+		var adaptado 	= $('#filtrar_adaptado').val();
+		var comida 		= $('#filtrar_comida').val();
+		var ordem 		= $('#filtrar_ordem').val();
+
+		// Nova url
+		var newUrl = path + 'restaurantes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de lanchonetes
+		-> Local
+		-> Adpatado
+		-> Lanches
+		-> Ordem
+	*/
+	$('#filtrar_local_lanchonete').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_lanchonete').val();
+		var adaptado 	= $('#filtrar_adaptado_lanchonete').val();
+		var comida 		= $('#filtrar_comida_lanchonete').val();
+		var ordem 		= $('#filtrar_ordem_lanchonete').val();
+
+		// Nova url
+		var newUrl = path + 'lanchonetes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_adaptado_lanchonete').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_lanchonete').val();
+		var adaptado 	= $('#filtrar_adaptado_lanchonete').val();
+		var comida 		= $('#filtrar_comida_lanchonete').val();
+		var ordem 		= $('#filtrar_ordem_lanchonete').val();
+
+		// Nova url
+		var newUrl = path + 'lanchonetes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_comida_lanchonete').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_lanchonete').val();
+		var adaptado 	= $('#filtrar_adaptado_lanchonete').val();
+		var comida 		= $('#filtrar_comida_lanchonete').val();
+		var ordem 		= $('#filtrar_ordem_lanchonete').val();
+
+		// Nova url
+		var newUrl = path + 'lanchonetes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_ordem_lanchonete').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_lanchonete').val();
+		var adaptado 	= $('#filtrar_adaptado_lanchonete').val();
+		var comida 		= $('#filtrar_comida_lanchonete').val();
+		var ordem 		= $('#filtrar_ordem_lanchonete').val();
+
+		// Nova url
+		var newUrl = path + 'lanchonetes/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de Bebidas
+		-> Local
+		-> Adpatado
+		-> Lanches
+		-> Ordem
+	*/
+	$('#filtrar_local_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_bebida').val();
+		var adaptado 	= $('#filtrar_adaptado_bebida').val();
+		var comida 		= $('#filtrar_comida_bebida').val();
+		var ordem 		= $('#filtrar_ordem_bebida').val();
+
+		// Nova url
+		var newUrl = path + 'bebidas/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_adaptado_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_bebida').val();
+		var adaptado 	= $('#filtrar_adaptado_bebida').val();
+		var comida 		= $('#filtrar_comida_bebida').val();
+		var ordem 		= $('#filtrar_ordem_bebida').val();
+
+		// Nova url
+		var newUrl = path + 'bebidas/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_comida_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_bebida').val();
+		var adaptado 	= $('#filtrar_adaptado_bebida').val();
+		var comida 		= $('#filtrar_comida_bebida').val();
+		var ordem 		= $('#filtrar_ordem_bebida').val();
+
+		// Nova url
+		var newUrl = path + 'bebidas/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_ordem_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_bebida').val();
+		var adaptado 	= $('#filtrar_adaptado_bebida').val();
+		var comida 		= $('#filtrar_comida_bebida').val();
+		var ordem 		= $('#filtrar_ordem_bebida').val();
+
+		// Nova url
+		var newUrl = path + 'bebidas/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de estadias
+		-> Local
+		-> Adpatado
+		-> Lanches
+		-> Ordem
+	*/
+	$('#filtrar_local_estadia').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_estadia').val();
+		var adaptado 	= $('#filtrar_adaptado_estadia').val();
+		var comida 		= $('#filtrar_comida_estadia').val();
+		var ordem 		= $('#filtrar_ordem_estadia').val();
+
+		// Nova url
+		var newUrl = path + 'estadias/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_adaptado_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_estadia').val();
+		var adaptado 	= $('#filtrar_adaptado_estadia').val();
+		var comida 		= $('#filtrar_comida_estadia').val();
+		var ordem 		= $('#filtrar_ordem_estadia').val();
+
+		// Nova url
+		var newUrl = path + 'estadias/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_comida_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_estadia').val();
+		var adaptado 	= $('#filtrar_adaptado_estadia').val();
+		var comida 		= $('#filtrar_comida_estadia').val();
+		var ordem 		= $('#filtrar_ordem_estadia').val();
+
+		// Nova url
+		var newUrl = path + 'estadias/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_ordem_bebida').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtrar_local_estadia').val();
+		var adaptado 	= $('#filtrar_adaptado_estadia').val();
+		var comida 		= $('#filtrar_comida_estadia').val();
+		var ordem 		= $('#filtrar_ordem_estadia').val();
+
+		// Nova url
+		var newUrl = path + 'estadias/filtrar/' + local + '/' + adaptado + '/' + comida + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+	
 	
 
 	

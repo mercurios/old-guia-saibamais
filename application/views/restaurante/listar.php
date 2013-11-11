@@ -87,9 +87,8 @@
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
 					<form name="filtrar_restaurantes">
-
 							<select name="filtrar_local" id="filtrar_local">
-								<option value="todas">Por localização</option>
+								<option value="all">Por localização</option>
 
 								<optgroup label="Recife">
 									<?php foreach ($bairros as $bairro) : ?>
@@ -102,7 +101,7 @@
                     	<h4>ou</h4>
                  
 	                    <select id="filtrar_adaptado">
-	                        <option value="todos">Que seja acessivel à:</option>
+	                        <option value="all">Que seja acessivel à:</option>
 	                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
 	                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
 	                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
@@ -114,7 +113,7 @@
                     	<h4>ou</h4>
                                         
 	                    <select id="filtrar_comida">
-	                        <option value="todos" selected>Por comida</option>
+	                        <option value="all" selected>Por comida</option>
 	                        	<option value="crustaceos" <?php if ($this->uri->segment(5) == "crustaceos") { echo 'selected '; } ?>>Crustáceos</option>
 	                            <option value="rodizios" <?php if ($this->uri->segment(5) == "rodizios") { echo 'selected '; } ?>>Rodízios</option>
 	                            <option value="self-services" <?php if ($this->uri->segment(5) == "self-services") { echo 'selected '; } ?>>Self-services</option>
@@ -129,10 +128,10 @@
                 
 				<div id="filtrar_pesquisa" class="select">
 					<div id="topo_select_ordenar"></div>
-						<select>
-							<option selected>Por ordem alfabética:</option>
-		                    <option>De A - Z</option>
-		                    <option>De Z - A</option>
+						<select id="filtrar_ordem">
+							<option selected value="a-z">Por ordem alfabética:</option>
+		                    <option value="a-z" <?php if ($this->uri->segment(6) == "a-z") { echo 'selected '; } ?> >De A - Z</option>
+		                    <option value="z-a" <?php if ($this->uri->segment(6) == "z-a") { echo 'selected '; } ?> >De Z - A</option>
 		                </select>
 				
 						<h4>ou</h4>

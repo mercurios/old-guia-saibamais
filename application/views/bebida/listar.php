@@ -1,4 +1,4 @@
-<div id="publicidade_superior" class="publicidade">
+	<div id="publicidade_superior" class="publicidade">
  	<div class="conteudo_publicidade">
         <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
             <?php
@@ -85,46 +85,35 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
-					<select>
-                        <option selected>Por localização</option>
-                        <optgroup label="Recife">
-                            <option>Abreu e lima</option>
-                            <option>Cabo de santo agostinho</option>
-                            <option>Goiana</option>
-                            <option>Igarassu</option>
-                            <option>Ipojuca</option>
-                            <option>Itamaracá</option>
-                            <option>Jaboatão dos Guararapes</option>
-                            <option>Olinda</option>
-                            <option>Paulista</option>
-                            <option>Recife</option>
-                        </optgroup>
-                    </select>
+					<select name="filtrar_local_bebida" id="filtrar_local_bebida">
+						<option value="all">Por localização</option>
+
+						<optgroup label="Recife">
+							<?php foreach ($bairros as $bairro) : ?>
+								<option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+							<?php endforeach; ?>
+						</optgroup>
+					</select>
                     
                     <h4>ou</h4>
                  
-                    <select>
-                        <option selected>Que seja acessivel à:</option>
-                        <option>Cegos</option>
-                        <option>Deficientes físicos</option>
-                        <option>Gestantes</option>
-                        <option>Idosos</option>
-                        <option>Obesos</option>
-                        <option>Surdos</option>
+                    <select id="filtrar_adaptado_bebida">
+                        <option value="all">Que seja acessivel à:</option>
+                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
+                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
+                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
+                        <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
+                        <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
+                        <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
                     </select>
                     
                     <h4>ou</h4>
                                         
-                    <select>
-                        <option selected>Por bebida</option>
-                            <option>Rodízios</option>
-                            <option>Self-services</option>
-                            <option>A la carte</option>
-                            <option>Washington Redskins</option>
-                            <option>Dallas Cowboys</option>
-                            <option>New York Giants</option>
-                            <option>Philadelphia Eagles</option>
-                            <option>Washington Redskins</option>
+                    <select id="filtrar_comida_bebida">
+                        <option value="all" selected>Por lanche</option>
+                            <option value="batidas" <?php if ($this->uri->segment(5) == "batidas") { echo 'selected '; } ?>>Batidas</option>
+                            <option value="caipirinhas" <?php if ($this->uri->segment(5) == "caipirinhas") { echo 'selected '; } ?>>Caipirinhas</option>
+                            <option value="cafes" <?php if ($this->uri->segment(5) == "cafes") { echo 'selected '; } ?>>Cafés</option>
                         </optgroup>
                     </select>
             </div>
@@ -132,10 +121,10 @@
                 
 			<div id="filtrar_pesquisa" class="select">
 			<div id="topo_select_ordenar"></div>
-				<select>
-					<option selected>Por ordem alfabética:</option>
-                    <option>De A - Z</option>
-                    <option>De Z - A</option>
+				<select id="filtrar_ordem_bebida">
+					<option selected value="a-z">Por ordem alfabética:</option>
+                    <option value="a-z" <?php if ($this->uri->segment(6) == "a-z") { echo 'selected '; } ?> >De A - Z</option>
+                    <option value="z-a" <?php if ($this->uri->segment(6) == "z-a") { echo 'selected '; } ?> >De Z - A</option>
                 </select>
 				
 				<h4>ou</h4>

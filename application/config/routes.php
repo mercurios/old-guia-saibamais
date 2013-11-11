@@ -43,6 +43,7 @@ $route['404_override'] = '';
 
 // Passeio e lazer
 $route['feira-e-eventos'] = "eventos";
+$route['passeio-e-lazer'] = "lazer";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

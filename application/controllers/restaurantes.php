@@ -41,6 +41,9 @@ class Restaurantes extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->restaurante->get_bairros('5406');
+
 		// Publicidade top
 		$dados['pub_top'] = $this->restaurante->get_publicidade('top', 'restaurante');
 
@@ -97,6 +100,7 @@ class Restaurantes extends CI_Controller {
 
 		// Breadcrumb
 		$dados['bread'] = $this->mybreadcrumb->bread_restaurante($_categoria);
+
 
 		if (isset($_categoria)) {
 			$dados['restaurantes'] = $this->restaurante->search_restaurantes($_categoria);
@@ -235,12 +239,35 @@ class Restaurantes extends CI_Controller {
 	// Filtragem de resultados
 	public function filtrar()
 	{
-
 		// Parametros de filtragem
 		$filter_local = $this->uri->segment(3);
 		$filter_defic = $this->uri->segment(4);
 		$filter_catco = $this->uri->segment(5);
 		$filter_ordem = $this->uri->segment(6);
+
+		if ($filter_local == 'all')
+		{
+			$filter_local = '';
+		}
+
+		if ($filter_defic == 'all')
+		{
+			$filter_defic = '';
+		}
+
+		if ($filter_catco == 'all')
+		{
+			$filter_catco = '';
+		}
+
+		if ($filter_ordem == 'a-z')
+		{
+			$filter_ordem = 'ASC';
+		}
+		else
+		{
+			$filter_ordem = 'DESC';
+		}
 
 		// Breadcrumb
 		$this->load->library('mybreadcrumb');

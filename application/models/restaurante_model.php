@@ -119,6 +119,7 @@ class Restaurante_model extends CI_Model
         $this->db->like('bairro_restaurante', $local);
         $this->db->like('adaptado_restaurante', $deficiencia);
         $this->db->like('tipo_comida_restaurante', $comida);
+        $this->db->order_by("nome_restaurante", $ordem);
         return $this->db->get($this->tabela)->result();
     }
 
