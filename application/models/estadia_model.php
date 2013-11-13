@@ -84,4 +84,22 @@ class Estadia_model extends CI_Model
 
         return $result;
     }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    // Retorna os clientes seguindo os parametros
+    public function filtrar_estadias($local, $deficiencia, $tipo, $ordem)
+    {
+        //$this->db->where('bairro_lanchonete', $local);
+        $this->db->like('bairro_estadia', $local);
+        $this->db->like('adaptado_estadia', $deficiencia);
+        $this->db->like('tipo_estadia', $tipo);
+        $this->db->order_by("nome_estadia", $ordem);
+        return $this->db->get($this->tabela)->result();
+    }
 }

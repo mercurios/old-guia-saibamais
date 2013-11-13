@@ -66,4 +66,22 @@ class locais_model extends CI_Model
 
         return $result;
     }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    // Retorna os clientes seguindo os parametros
+    public function filtrar_locais($local, $deficiencia, $comida, $ordem)
+    {
+        //$this->db->where('bairro_restaurante', $local);
+        $this->db->like('bairro_local', $local);
+        $this->db->like('adaptado_local', $deficiencia);
+        $this->db->like('categoria_local', $comida);
+        $this->db->order_by("nome_local", $ordem);
+        return $this->db->get($this->tabela)->result();
+    }
 }

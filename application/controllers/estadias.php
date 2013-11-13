@@ -40,6 +40,9 @@ class Estadias extends CI_Controller {
 		// Publicidade top
 		$dados['pub_top'] = $this->estadia->get_publicidade('top', 'estadia');
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->estadia->get_bairros('5406');
+
 		// Chamadas estadias pequena top
 		$dados['chamada_p_top'] = $this->estadia->get_chamada('pequena', 'estadia', 3);
 
@@ -125,6 +128,9 @@ class Estadias extends CI_Controller {
 
 		$dados['pub_top'] = $this->estadia->get_publicidade('top', 'estadia');
 		$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');	
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->estadia->get_bairros('5406');
 
 		// Carrega o header
 		$this->load->view('includes/header', $seo);
@@ -217,6 +223,91 @@ class Estadias extends CI_Controller {
 			// Carrega o rodape
 			$this->load->view('includes/footer');
 		}
+	}
+
+	// Filtragem de resultados
+	public function filtrar()
+	{
+		// Parametros de filtragem
+		$filter_local = $this->uri->segment(3);
+		$filter_defic = $this->uri->segment(4);
+		$filter_tipo = $this->uri->segment(5);
+		$filter_ordem = $this->uri->segment(6);
+
+		if ($filter_local == 'all')
+		{
+			$filter_local = '';
+		}
+
+		if ($filter_defic == 'all')
+		{
+			$filter_defic = '';
+		}
+
+		if ($filter_tipo == 'all')
+		{
+			$filter_tipo = '';
+		}
+
+		if ($filter_ordem == 'a-z')
+		{
+			$filter_ordem = 'ASC';
+		}
+		else
+		{
+			$filter_ordem = 'DESC';
+		}
+
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		$dados['bread'] = $this->mybreadcrumb->bread_lanchonete('');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->estadia->get_bairros('5406');
+
+		// Listar seguindo os parametros
+		$dados['estadias'] = $this->estadia->filtrar_estadias($filter_local, $filter_defic, $filter_tipo, $filter_ordem);
+
+		// Publicidade top
+		$dados['pub_top'] = $this->estadia->get_publicidade('top', 'estadia');
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->estadia->get_publicidade('bottom', 'estadia');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->estadia->get_bairros('5406');
+
+		// Titulo da página
+		$seo['titulopag'] = "Estadias | Guia Saiba Mais";
+
+		// Meta tags
+		$seo['meta'] = array(
+			array('name' => 'language', 'content' => 'pt-br'),
+			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'keywords', 'content' => 'Key, key'),
+			array('name' => 'author', 'content' => 'Mercurios'),
+			array('name' => 'googlebot', 'content' => 'ALL'),
+			array('name' => 'robots', 'content' => 'ALL'),
+			array('name' => 'viewport', 'content' => 'width=device-width; initial-scale=1.0')
+		);
+
+		// Meta tags facebook
+		$seo['metaface'] = array(
+			array('name' => 'og:title', 'content' => 'Restaurantes | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('estadias'), 'type' => 'property'),
+			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
+		);
+
+		// Carrega o header
+		$this->load->view('includes/header', $seo);
+
+		// Carrega o conteúdo
+		$this->load->view('estadia/listar', $dados);
+
+		// Carrega o rodape
+		$this->load->view('includes/footer');
 	}
 }
 

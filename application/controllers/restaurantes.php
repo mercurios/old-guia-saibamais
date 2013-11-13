@@ -319,37 +319,6 @@ class Restaurantes extends CI_Controller {
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 /* End of file welcome.php */

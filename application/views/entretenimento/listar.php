@@ -116,37 +116,31 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
-					<select>
-                        <option selected>Por localização</option>
-                        <optgroup label="Recife">
-                            <option>Abreu e lima</option>
-                            <option>Cabo de santo agostinho</option>
-                            <option>Goiana</option>
-                            <option>Igarassu</option>
-                            <option>Ipojuca</option>
-                            <option>Itamaracá</option>
-                            <option>Jaboatão dos Guararapes</option>
-                            <option>Olinda</option>
-                            <option>Paulista</option>
-                            <option>Recife</option>
-                        </optgroup>
-                    </select>
+					<select id="filtrar_local_entretenimento">
+						<option value="all">Por localização</option>
+
+						<optgroup label="Recife">
+							<?php foreach ($bairros as $bairro) : ?>
+								<option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+							<?php endforeach; ?>
+						</optgroup>
+					</select>
                     
                     <h4>ou</h4>
                  
-                    <select>
-                        <option selected>Que seja acessivel à:</option>
-                        <option>Cegos</option>
-                        <option>Deficientes físicos</option>
-                        <option>Gestantes</option>
-                        <option>Idosos</option>
-                        <option>Obesos</option>
-                        <option>Surdos</option>
+                    <select id="filtrar_adaptado">
+                        <option value="all">Que seja acessivel à:</option>
+                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
+                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
+                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
+                        <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
+                        <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
+                        <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
                     </select>
                     
                     <h4>ou</h4>
                                         
-                    <select>
+                    <select id="filtro_entretenimentos_listar">
                         <option selected>Por tipo</option>
                             <option>Cinemas</option>
                             <option>Exposições</option>
@@ -154,24 +148,6 @@
                         </optgroup>
                     </select>
             </div>
-            
-                
-			<div id="filtrar_pesquisa" class="select">
-			<div id="topo_select_ordenar"></div>
-				<select>
-					<option selected>Por ordem alfabética:</option>
-                    <option>De A - Z</option>
-                    <option>De Z - A</option>
-                </select>
-				
-				<h4>ou</h4>
-				
-				<select>
-					<option selected>Por próximidade:</option>
-					<option>Mais perto de mim</option>
-					<option>Mais distante de mim</option>
-				</select>
-			</div>
 		</div>
             <!--Fim do campo de filtragem-->
             

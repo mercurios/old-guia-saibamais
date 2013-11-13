@@ -269,16 +269,16 @@ class Bebidas extends CI_Controller {
 		$dados['bebidas'] = $this->bebida->filtrar_lanchonetes($filter_local, $filter_defic, $filter_catco, $filter_ordem);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'restaurante');
+		$dados['pub_top'] = $this->bebida->get_publicidade('top', 'bebida');
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'restaurante');
+		$dados['pub_bottom'] = $this->bebida->get_publicidade('bottom', 'bebida');
 
 		// Lista os bairros do recife
 		$dados['bairros'] = $this->bebida->get_bairros('5406');
 
 		// Titulo da página
-		$seo['titulopag'] = "Lanchonetes | Guia Saiba Mais";
+		$seo['titulopag'] = "Bebidas | Guia Saiba Mais";
 
 		// Meta tags
 		$seo['meta'] = array(

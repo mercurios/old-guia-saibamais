@@ -274,10 +274,10 @@ class Lanchonetes extends CI_Controller {
 		$dados['lanchonetes'] = $this->lanchonete->filtrar_lanchonetes($filter_local, $filter_defic, $filter_catco, $filter_ordem);
 
 		// Publicidade top
-		$dados['pub_top'] = $this->lanchonete->get_publicidade('top', 'restaurante');
+		$dados['pub_top'] = $this->lanchonete->get_publicidade('top', 'lanchonete');
 
 		// Publicidade conteudo bottom
-		$dados['pub_bottom'] = $this->lanchonete->get_publicidade('bottom', 'restaurante');
+		$dados['pub_bottom'] = $this->lanchonete->get_publicidade('bottom', 'lanchonete');
 
 		// Lista os bairros do recife
 		$dados['bairros'] = $this->lanchonete->get_bairros('5406');
@@ -300,7 +300,7 @@ class Lanchonetes extends CI_Controller {
 		$seo['metaface'] = array(
 			array('name' => 'og:title', 'content' => 'Restaurantes | Guia Saiba Mais', 'type' => 'property'),
 			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
-			array('name' => 'og:url', 'content' => base_url('restaurante'), 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('lanchonetes'), 'type' => 'property'),
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 

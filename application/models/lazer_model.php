@@ -100,4 +100,57 @@ class Lazer_model extends CI_Model
 
         return $result;
     }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    // Retorna os clientes seguindo os parametros
+    public function get_filtro($filter_defic, $filter_local, $ordem)
+    {
+
+        
+        $this->db->like('bairro_local', $filter_local);
+        $this->db->like('adaptado_local', $filter_defic);
+        $this->db->order_by("nome_local", $ordem);
+        $result_locais = $this->db->get('guia_locais')->result();
+
+        $this->db->like('local_esporte', $filter_local);
+        $this->db->order_by("nome_esporte", $ordem);
+        $result_esportes = $this->db->get('guia_esportes')->result();
+
+        $this->db->order_by("titulo_rota", $ordem);
+        $result_rotas = $this->db->get('guia_rotas')->result();
+
+        $result_all = array("locais" => $result_locais, "esportes" => $result_esportes, "rotas" => $result_rotas);
+
+        return $result_all;
+
+
+        /*$this->db->where('bairro_lanchonete', $local);
+        $this->db->like('bairro_bebida', $local);
+        $this->db->like('adaptado_bebida', $deficiencia);
+        $this->db->like('tipo_bebida_bebida', $comida);
+        $this->db->order_by("nome_bebida", $ordem);
+        return $this->db->get($this->tabela)->result();*/
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -16,15 +16,20 @@ class Cinema_model extends CI_Model
     // Lista todos os cinemas
     public function listar_cinemas()
     {
-        $_query = $this->db->get($this->tabela)->result();
-        return $_query;
+        $this->db->select('*');
+        $this->db->from('guia_cinemas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_cinemas.bairro_cinema');
+        return $this->db->get()->result();
     }
 
     // Pega um único cinema
     public function get_cinema($id)
     {
+        $this->db->select('*');
+        $this->db->from('guia_cinemas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_cinemas.bairro_cinema');
         $this->db->where('id_cinema', $id);
-        return $this->db->get($this->tabela)->result();
+        return $this->db->get()->result();
     }
 
     // Lista as fotos de cinemas
@@ -53,10 +58,34 @@ class Cinema_model extends CI_Model
     {
         $this->db->where('id_cinema', $id);
         return $this->db->get($this->filmes)->result();
-
-
-
     }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    public function filtrar_cinema($local, $adaptado, $ordem)
+    {
+        $this->db->select('*');
+        $this->db->from('guia_cinemas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_cinemas.bairro_cinema');
+        $this->db->like('bairro_cinema', $local);
+        $this->db->order_by("nome_cinema", $ordem);
+        return $this->db->get()->result();
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 

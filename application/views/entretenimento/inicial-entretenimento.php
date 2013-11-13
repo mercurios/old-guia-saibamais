@@ -238,13 +238,13 @@
                     
                     <h4>ou</h4>
                     
-                    <select>
-                        <option selected>Por tipo</option>
-                            <option>Cinemas</option>
-                            <option>Exposições</option>
-                            <option>Feiras e eventos</option>
-                            <option>Shows</option>
-                            <option>Teatros</option>
+                    <select id="filter_categoria_entretenimento">
+                        <option value="" selected>Por tipo</option>
+                            <option value="cinemas">Cinemas</option>
+                            <option value="exposicoes">Exposições</option>
+                            <option value="eventos">Feiras e eventos</option>
+                            <option value="shows">Shows</option>
+                            <option value="teatros">Teatros</option>
                         </optgroup>
                     </select>
 				</div>

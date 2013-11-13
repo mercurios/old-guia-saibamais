@@ -214,40 +214,35 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_escolha_passeio"></div>
-                    <select>
-                        <option selected>Por cidade</option>
-                        	<option>Abreu e lima</option>
-                            <option>Cabo de santo agostinho</option>
-                            <option>Goiana</option>
-                            <option>Igarassu</option>
-                            <option>Ipojuca</option>
-                            <option>Itamaracá</option>
-                            <option>Jaboatão dos Guararapes</option>
-                            <option>Olinda</option>
-                            <option>Paulista</option>
-                            <option>Recife</option>
+                    <select id="filtrar_local_lazer">
+                        <option value="all">Por localização</option>
+
+                        <optgroup label="Recife">
+                            <?php foreach ($bairros as $bairro) : ?>
+                                <option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(5) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+                            <?php endforeach; ?>
                         </optgroup>
                     </select>
                     
                     <h4>ou</h4>
                     
-                    <select>
-                        <option selected>Que seja acessivel à:</option>
-                        <option>Cegos</option>
-                        <option>Deficientes físicos</option>
-                        <option>Gestantes</option>
-                        <option>Idosos</option>
-                        <option>Obesos</option>
-                        <option>Surdos</option>
+                    <select id="filtrar_adaptado_lazer">
+                        <option value="all">Que seja acessivel à:</option>
+                        <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
+                        <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
+                        <option value="gestantes" <?php if ($this->uri->segment(4) == "gestantes") { echo 'selected '; } ?>>Gestantes</option>
+                        <option value="idosos" <?php if ($this->uri->segment(4) == "idosos") { echo 'selected '; } ?>>Idosos</option>
+                        <option value="obesos" <?php if ($this->uri->segment(4) == "obesos") { echo 'selected '; } ?>>Obesos</option>
+                        <option value="surdos" <?php if ($this->uri->segment(4) == "surdos") { echo 'selected '; } ?>>Surdos</option>
                     </select>
                     
                     <h4>ou</h4>
                     
-                    <select>
-                        <option selected>Por atividade</option>
-                            <option>Conhecer locais</option>
-                            <option>Praticar esportes</option>
-                            <option>Rotas para passear</option>
+                    <select id="filtrar_categoria_lazer">
+                        <option value="all" selected>Por atividade</option>
+                            <option value="locais" <?php if ($this->uri->segment(3) == "locais") { echo 'selected '; } ?>>Conhecer locais</option>
+                            <option value="esportes" <?php if ($this->uri->segment(3) == "esportes") { echo 'selected '; } ?>>Praticar esportes</option>
+                            <option value="rotas" <?php if ($this->uri->segment(3) == "rotas") { echo 'selected '; } ?>>Rotas para passear</option>
                         </optgroup>
                     </select>
 				</div>

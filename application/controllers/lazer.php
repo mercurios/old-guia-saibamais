@@ -40,6 +40,9 @@ class Lazer extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->lazer->get_bairros('5406');
+
 		// Publicidade top
 		$dados['pub_top'] = $this->lazer->get_publicidade('top', 'lazer');
 
@@ -211,5 +214,84 @@ class Lazer extends CI_Controller {
 			// Carrega o rodape
 			$this->load->view('includes/footer');
 		}
+	}
+
+	// Filtragem de resultados
+	public function filtrar()
+	{
+		// Parametros de filtragem
+		$filter_local 		= $this->uri->segment(4);
+		$filter_defic 		= $this->uri->segment(3);
+		$filter_ordem 		= $this->uri->segment(5);
+
+		if ($filter_local == 'all')
+		{
+			$filter_local = '';
+		}
+
+		if ($filter_defic == 'all')
+		{
+			$filter_defic = '';
+		}
+
+		if ($filter_ordem == 'a-z')
+		{
+			$filter_ordem = 'ASC';
+		}
+		else
+		{
+			$filter_ordem = 'DESC';
+		}
+
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		$dados['bread'] = $this->mybreadcrumb->bread_lanchonete('');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->lazer->get_bairros('5406');
+
+		// Publicidade top
+		$dados['pub_top'] = $this->lazer->get_publicidade('top', 'lazer');
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->lazer->get_publicidade('bottom', 'lazer');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->lazer->get_bairros('5406');
+
+		// Lista os bairros do recife
+		$dados['resultados'] = $this->lazer->get_filtro($filter_defic, $filter_local, $filter_ordem);
+
+		// Titulo da página
+		$seo['titulopag'] = "Passeio e Lazer | Guia Saiba Mais";
+
+		// Meta tags
+		$seo['meta'] = array(
+			array('name' => 'language', 'content' => 'pt-br'),
+			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'keywords', 'content' => 'Key, key'),
+			array('name' => 'author', 'content' => 'Mercurios'),
+			array('name' => 'googlebot', 'content' => 'ALL'),
+			array('name' => 'robots', 'content' => 'ALL'),
+			array('name' => 'viewport', 'content' => 'width=device-width; initial-scale=1.0')
+		);
+
+		// Meta tags facebook
+		$seo['metaface'] = array(
+			array('name' => 'og:title', 'content' => 'Restaurantes | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('restaurante'), 'type' => 'property'),
+			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
+		);
+
+		// Carrega o header
+		$this->load->view('includes/header', $seo);
+
+		// Carrega o conteúdo
+		$this->load->view('lazer/listar', $dados);
+
+		// Carrega o rodape
+		$this->load->view('includes/footer');
 	}
 }

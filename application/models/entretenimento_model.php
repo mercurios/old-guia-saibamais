@@ -65,14 +65,51 @@ class Entretenimento_model extends CI_Model
         return $result;
     }
 
+    /* --------------------------------
+        Filtragem por categorias
+        - Cinemas
+        - Exposições
+        - Eventos
+        - Shows
+        - Teatros
+    -------------------------------- */
+    public function filtrar_entretenimentos($bairro, $adaptado)
+    {
+        // Filtra cinemas por bairro
+        $this->db->like('bairro_cinema', $bairro);
+        $resultado_cinema = $this->db->get('guia_cinemas')->result();
 
+        // Filtra exposicoes por bairro
+        $this->db->like('bairro_exposicao', $bairro);
+        $resultado_exposicao = $this->db->get('guia_exposicoes')->result();
 
+        // Filtra eventos por bairro
+        $this->db->like('bairro_evento', $bairro);
+        $resultado_evento = $this->db->get('guia_eventos')->result();
 
+        // Filtra shows por bairro
+        $this->db->like('bairro_show', $bairro);
+        $resultado_show = $this->db->get('guia_shows')->result();
 
+        // Filtra shows por bairro
+        $this->db->like('bairro_teatro', $bairro);
+        $resultado_teatro = $this->db->get('guia_teatros')->result();
 
+        $resultados = array(
+            "cinemas"       => $resultado_cinema,
+            "exposicoes"    => $resultado_exposicao,
+            "eventos"       => $resultado_evento,
+            "shows"         => $resultado_show,
+            "teatros"       => $resultado_teatro
+        );
 
+        return $resultados;
+    }
 
-
-
-
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
 }
