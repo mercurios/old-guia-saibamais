@@ -26,6 +26,7 @@
 	<!--Inicio da área de conteúdo esquerda-->
 	<div id="area_conteudo_esquerda_pesquisa" class="area_conteudo">
 	<?php
+
 	$cinemas 	= $conteudos['cinemas'];
 	$exposicoes = $conteudos['exposicoes'];
 	$eventos 	= $conteudos['eventos'];
@@ -40,7 +41,7 @@
 		<div class="resultado_pesquisa">
 	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $cinema->logo_cinema; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $cinema->nome_cinema; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $cinema->bairro_cinema; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $cinema->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('cinemas/detalhe') . '/' . $cinema->slug_cinema . '/' . $cinema->id_cinema; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
@@ -54,7 +55,7 @@
 		<div class="resultado_pesquisa">
 	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $exposicao->logo_exposicao; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $exposicao->nome_exposicao; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $exposicao->bairro_exposicao; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $exposicao->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('exposicoes/detalhe') . '/' . $exposicao->slug_exposicao . '/' . $exposicao->id_exposicao; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
@@ -68,7 +69,7 @@
 		<div class="resultado_pesquisa">
 	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $evento->logo_evento; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $evento->nome_evento; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $evento->bairro_evento; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $evento->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('eventos/detalhe') . '/' . $evento->slug_evento . '/' . $evento->id_evento; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
@@ -82,7 +83,7 @@
 		<div class="resultado_pesquisa">
 	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $show->logo_show; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $show->nome_show; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $show->bairro_show; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $show->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('shows/detalhe') . '/' . $show->slug_show . '/' . $show->id_show; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
@@ -96,7 +97,7 @@
 		<div class="resultado_pesquisa">
 	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $teatro->logo_teatro; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $teatro->nome_teatro; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $teatro->bairro_teatro; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $teatro->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('teatros/detalhe') . '/' . $teatro->slug_teatro . '/' . $teatro->id_teatro; ?>" title="">
 	        		<img src="<?php echo base_url(); ?>assets/images/mais_pequeno.png" alt="" />
@@ -116,19 +117,19 @@
         <div id="filtrar_ordenar">
 			<div id="filtrar_pesquisa" class="select">
 				<div id="topo_select_filtrar"></div>
-					<select id="filtrar_local_entretenimento">
-						<option value="all">Por localização</option>
+					<select id="filtro_local_entretenimento">
+                        <option value="all">Por localização</option>
 
-						<optgroup label="Recife">
-							<?php foreach ($bairros as $bairro) : ?>
-								<option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
-							<?php endforeach; ?>
-						</optgroup>
-					</select>
+                        <optgroup label="Recife">
+                            <?php foreach ($bairros as $bairro) : ?>
+                                <option value="<?php echo $bairro->cd_bairro ?>" <?php if ($this->uri->segment(3) == $bairro->cd_bairro) { echo 'selected '; } ?>><?php echo $bairro->ds_bairro_nome ?></option>
+                            <?php endforeach; ?>
+                        </optgroup>
+                    </select>
                     
                     <h4>ou</h4>
                  
-                    <select id="filtrar_adaptado">
+                    <select id="filtro_adaptado_entretenimento">
                         <option value="all">Que seja acessivel à:</option>
                         <option value="cego" <?php if ($this->uri->segment(4) == "cego") { echo 'selected '; } ?>>Cegos</option>
                         <option value="deficientes-fisicos" <?php if ($this->uri->segment(4) == "deficientes-fisicos") { echo 'selected '; } ?>>Deficientes físicos</option>
@@ -140,11 +141,13 @@
                     
                     <h4>ou</h4>
                                         
-                    <select id="filtro_entretenimentos_listar">
-                        <option selected>Por tipo</option>
-                            <option>Cinemas</option>
-                            <option>Exposições</option>
-                            <option>Feiras / Eventos</option>
+                    <select id="filter_categoria_entretenimento">
+                        <option value="" selected>Por tipo</option>
+                            <option value="cinemas" <?php if ($this->uri->segment(1) == "cinemas") { echo 'selected '; } ?>>Cinemas</option>
+                            <option value="exposicoes" <?php if ($this->uri->segment(1) == "exposicoes") { echo 'selected '; } ?>>Exposições</option>
+                            <option value="eventos" <?php if ($this->uri->segment(1) == "eventos") { echo 'selected '; } ?>>Feiras e eventos</option>
+                            <option value="shows" <?php if ($this->uri->segment(1) == "shows") { echo 'selected '; } ?>>Shows</option>
+                            <option value="teatros" <?php if ($this->uri->segment(1) == "teatros") { echo 'selected '; } ?>>Teatros</option>
                         </optgroup>
                     </select>
             </div>

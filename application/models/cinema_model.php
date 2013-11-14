@@ -76,18 +76,4 @@ class Cinema_model extends CI_Model
         $this->db->order_by("nome_cinema", $ordem);
         return $this->db->get()->result();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -16,9 +16,10 @@ class exposicao_model extends CI_Model
     // Lista todos os exposicoes
     public function listar_exposicoes()
     {
-        $_query = $this->db->get($this->tabela)->result();
-        
-        return $_query;
+        $this->db->select('*');
+        $this->db->from('guia_exposicoes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_exposicoes.bairro_exposicao');
+        return $this->db->get()->result();
     }
 
     // Pega um único exposicao
@@ -56,5 +57,22 @@ class exposicao_model extends CI_Model
     {
         $this->db->where('id_exposicao', $id);
         return $this->db->get($this->filmes)->result();
+    }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    public function filtrar_exposicoes($local, $adaptado, $ordem)
+    {
+        $this->db->select('*');
+        $this->db->from('guia_exposicoes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_exposicoes.bairro_exposicao');
+        $this->db->like('bairro_exposicao', $local);
+        $this->db->order_by("nome_exposicao", $ordem);
+        return $this->db->get()->result();
     }
 }

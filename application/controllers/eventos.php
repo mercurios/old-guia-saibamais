@@ -39,6 +39,15 @@ class eventos extends CI_Controller {
 		// Lista todos os eventos
 		$dados['conteudo'] = $this->eventos->listar_eventos();
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->eventos->get_bairros('5406');
+
+		// Publicidade top
+		$dados['pub_top'] = $this->eventos->get_publicidade('top', 'evento');
+
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->eventos->get_publicidade('bottom', 'evento');
+
 		// Chama o header
 		$this->load->view('includes/header', $seo);
 
@@ -129,22 +138,73 @@ class eventos extends CI_Controller {
 		}
 	}
 
+	public function filtrar()
+	{
+		// Parametros
+		$local 		= $this->uri->segment(3);
+		$adaptado 	= $this->uri->segment(4);
+		$ordem 		= $this->uri->segment(5);
 
+		if ($local == 'all')
+		{
+			$local = '';
+		}
 
+		if ($adaptado == 'all')
+		{
+			$adaptado = '';
+		}
 
+		if ($ordem == 'a-z')
+		{
+			$ordem = 'ASC';
+		}
+		else
+		{
+			$ordem = 'DESC';
+		}
 
+		// Titulo da página
+		$seo['titulopag'] = "Feiras e eventos | Guia Saiba Mais";
 
+		// Meta tags
+		$seo['meta'] = array(
+			array('name' => 'language', 'content' => 'pt-br'),
+			array('name' => 'description', 'content' => 'Descrição de lanchonetes'),
+			array('name' => 'keywords', 'content' => 'Key, key'),
+			array('name' => 'author', 'content' => 'Mercurios'),
+			array('name' => 'googlebot', 'content' => 'ALL'),
+			array('name' => 'robots', 'content' => 'ALL'),
+			array('name' => 'viewport', 'content' => 'width=device-width; initial-scale=1.0')
+		);
 
+		// Meta tags facebook
+		$seo['metaface'] = array(
+			array('name' => 'og:title', 'content' => 'esportes | Guia Saiba Mais', 'type' => 'property'),
+			array('name' => 'og:type', 'content' => 'website', 'type' => 'property'),
+			array('name' => 'og:url', 'content' => base_url('cinemas'), 'type' => 'property'),
+			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
+		);
 
+		// Lista todos os cinemas
+		$dados['conteudo'] = $this->eventos->filtrar_eventos($local, $adaptado, $ordem);
 
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->eventos->get_bairros('5406');
 
+		// Publicidade top
+		$dados['pub_top'] = $this->eventos->get_publicidade('top', 'evento');
 
+		// Publicidade conteudo bottom
+		$dados['pub_bottom'] = $this->eventos->get_publicidade('bottom', 'evento');
 
+		// Chama o header
+		$this->load->view('includes/header', $seo);
 
+		// Chama a página de conteúdo
+		$this->load->view('evento/listar', $dados);
 
-
-
-
-
-
+		// Chama o footer
+		$this->load->view('includes/footer');	
+	}
 }

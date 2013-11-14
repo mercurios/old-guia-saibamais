@@ -131,26 +131,52 @@ class Entretenimentos extends CI_Controller {
 		$this->load->view('includes/footer');
 	}
 
-	// Filtrar
+	// Filtragem de resultados
 	public function filtrar()
 	{
-		$bairro 	= $this->uri->segment(3);
-		$adaptado 	= $this->uri->segment(4);
+		// Parametros de filtragem
+		$local 			= $this->uri->segment(3);
+		$adaptado 		= $this->uri->segment(4);
+		$ordem 			= $this->uri->segment(5);
 
-		if ($bairro == 'all') { $bairro = ''; }
-		if ($adaptado == 'all') { $adaptado = ''; }
+		if ($local == 'all')
+		{
+			$local = '';
+		}
+
+		if ($adaptado == 'all')
+		{
+			$adaptado = '';
+		}
+
+		if ($ordem == 'a-z')
+		{
+			$ordem = 'ASC';
+		}
+		else
+		{
+			$ordem = 'DESC';
+		}
+
+		$this->load->library('mybreadcrumb');
+
+		// Breadcrumb
+		$dados['bread'] = $this->mybreadcrumb->bread_lanchonete('');
 
 		// Lista os bairros do recife
 		$dados['bairros'] = $this->entretenimento->get_bairros('5406');
-
-		// Conteudo
-		$dados['conteudos'] = $this->entretenimento->filtrar_entretenimentos($bairro, $adaptado);
 
 		// Publicidade top
 		$dados['pub_top'] = $this->entretenimento->get_publicidade('top', 'entretenimento');
 
 		// Publicidade conteudo bottom
 		$dados['pub_bottom'] = $this->entretenimento->get_publicidade('bottom', 'entretenimento');
+
+		// Lista os bairros do recife
+		$dados['bairros'] = $this->entretenimento->get_bairros('5406');
+
+		// Lista os bairros do recife
+		$dados['conteudos'] = $this->entretenimento->get_filtro($local, $adaptado, $ordem);
 
 		// Titulo da página
 		$seo['titulopag'] = "Entretenimentos | Guia Saiba Mais";
@@ -183,8 +209,6 @@ class Entretenimentos extends CI_Controller {
 		// Carrega o rodape
 		$this->load->view('includes/footer');
 	}
-
-
 
 
 

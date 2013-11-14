@@ -16,9 +16,10 @@ class Show_model extends CI_Model
     // Lista todos os shows
     public function listar_shows()
     {
-        $_query = $this->db->get($this->tabela)->result();
-
-        return $_query;
+        $this->db->select('*');
+        $this->db->from('guia_shows');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_shows.bairro_show');
+        return $this->db->get()->result();
     }
 
     // Pega um único show
@@ -56,5 +57,22 @@ class Show_model extends CI_Model
     {
         $this->db->where('id_show', $id);
         return $this->db->get($this->filmes)->result();
+    }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    public function filtrar_cinema($local, $adaptado, $ordem)
+    {
+        $this->db->select('*');
+        $this->db->from('guia_shows');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_shows.bairro_show');
+        $this->db->like('bairro_show', $local);
+        $this->db->order_by("nome_show", $ordem);
+        return $this->db->get()->result();
     }
 }

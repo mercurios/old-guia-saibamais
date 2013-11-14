@@ -81,11 +81,11 @@
                                         
                     <select id="filter_categoria_entretenimento">
                         <option value="" selected>Por tipo</option>
-                            <option value="cinemas">Cinemas</option>
-                            <option value="exposicoes">Exposições</option>
-                            <option value="eventos">Feiras e eventos</option>
-                            <option value="shows">Shows</option>
-                            <option value="teatros">Teatros</option>
+                            <option value="cinemas" <?php if ($this->uri->segment(1) == "cinemas") { echo 'selected '; } ?>>Cinemas</option>
+                            <option value="exposicoes" <?php if ($this->uri->segment(1) == "exposicoes") { echo 'selected '; } ?>>Exposições</option>
+                            <option value="eventos" <?php if ($this->uri->segment(1) == "eventos") { echo 'selected '; } ?>>Feiras e eventos</option>
+                            <option value="shows" <?php if ($this->uri->segment(1) == "shows") { echo 'selected '; } ?>>Shows</option>
+                            <option value="teatros" <?php if ($this->uri->segment(1) == "teatros") { echo 'selected '; } ?>>Teatros</option>
                         </optgroup>
                     </select>
             </div>

@@ -16,8 +16,10 @@ class Teatro_model extends CI_Model
     // Lista todos os teatros
     public function listar_teatros()
     {
-        $_query = $this->db->get($this->tabela)->result();
-        return $_query;
+        $this->db->select('*');
+        $this->db->from('guia_teatros');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_teatros.bairro_teatro');
+        return $this->db->get()->result();
     }
 
     // Pega um único teatro
@@ -53,5 +55,22 @@ class Teatro_model extends CI_Model
     {
         $this->db->where('id_teatro', $id);
         return $this->db->get($this->pecas)->result();
+    }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    public function filtrar_cinema($local, $adaptado, $ordem)
+    {
+        $this->db->select('*');
+        $this->db->from('guia_teatros');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_teatros.bairro_teatro');
+        $this->db->like('bairro_teatro', $local);
+        $this->db->order_by("nome_teatro", $ordem);
+        return $this->db->get()->result();
     }
 }

@@ -112,4 +112,78 @@ class Entretenimento_model extends CI_Model
         $this->db->where('cd_cidade', $cd_cidade);
         return $this->db->get('guia_bairros')->result();
     }
+
+    // Retorna os clientes seguindo os parametros
+    public function get_filtro($local, $adaptado, $ordem)
+    {
+        // Retorna cinemas
+        $this->db->select('*');
+        $this->db->from('guia_cinemas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_cinemas.bairro_cinema');
+        $this->db->like('bairro_cinema', $local);
+        $this->db->order_by("nome_cinema", $ordem);
+        $return_cinemas = $this->db->get()->result();
+
+        // Retorna exposicoes
+        $this->db->select('*');
+        $this->db->from('guia_exposicoes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_exposicoes.bairro_exposicao');
+        $this->db->like('bairro_exposicao', $local);
+        $this->db->order_by("nome_exposicao", $ordem);
+        $return_exposicoes = $this->db->get()->result();
+
+        // Retorna eventos
+        $this->db->select('*');
+        $this->db->from('guia_eventos');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_eventos.bairro_evento');
+        $this->db->like('bairro_evento', $local);
+        $this->db->order_by("nome_evento", $ordem);
+        $return_eventos = $this->db->get()->result();
+
+        // Retorna eventos
+        $this->db->select('*');
+        $this->db->from('guia_shows');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_shows.bairro_show');
+        $this->db->like('bairro_show', $local);
+        $this->db->order_by("nome_show", $ordem);
+        $return_shows = $this->db->get()->result();
+
+        // Retorna eventos
+        $this->db->select('*');
+        $this->db->from('guia_teatros');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_teatros.bairro_teatro');
+        $this->db->like('bairro_teatro', $local);
+        $this->db->order_by("nome_teatro", $ordem);
+        $return_teatros = $this->db->get()->result();
+
+
+        $resultados = array(
+            "cinemas"       => $return_cinemas,
+            "exposicoes"    => $return_exposicoes,
+            "eventos"       => $return_eventos,
+            "shows"         => $return_shows,
+            "teatros"       => $return_teatros
+        );
+
+        return $resultados;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

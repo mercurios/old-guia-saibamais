@@ -409,16 +409,6 @@ $(document).ready(function (){
 		$(window.document.location).attr('href',newUrl);
 	});
 
-	$('#filter_categoria_entretenimento').change(function(){
-
-		// Define variáveis para os filtros
-		var categoria = $('#filter_categoria_entretenimento').val();
-
-		// Redireciona
-		$(window.document.location).attr('href', path + categoria);
-
-	});
-
 	/*	
 		Filtragem de cinemas
 		-> Local
@@ -467,11 +457,252 @@ $(document).ready(function (){
 		$(window.document.location).attr('href',newUrl);
 	});
 	
-	
-	
-	
+	/*	
+		Filtragem de exposições
+		-> Local
+		-> Adpatado
+		-> Ordem
+	*/
+	$('#filtro_local_exposicao').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_exposicao').val();
+		var adaptado 	= $('#filtro_adaptado_exposicao').val();
+		var ordem 		= $('#filtrar_ordem_exposicao').val();
+
+		// Nova url
+		var newUrl = path + 'exposicoes/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_ordem_exposicao').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_exposicao').val();
+		var adaptado 	= $('#filtro_adaptado_exposicao').val();
+		var ordem 		= $('#filtrar_ordem_exposicao').val();
+
+		// Nova url
+		var newUrl = path + 'exposicoes/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_adaptado_exposicao').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_exposicao').val();
+		var adaptado 	= $('#filtro_adaptado_exposicao').val();
+		var ordem 		= $('#filtrar_ordem_exposicao').val();
+
+		// Nova url
+		var newUrl = path + 'exposicoes/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de Eventos
+		-> Local
+		-> Adpatado
+		-> Ordem
+	*/
+	$('#filtro_local_evento').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_evento').val();
+		var adaptado 	= $('#filtro_adaptado_evento').val();
+		var ordem 		= $('#filtrar_ordem_evento').val();
+
+		// Nova url
+		var newUrl = path + 'eventos/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtrar_ordem_evento').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_evento').val();
+		var adaptado 	= $('#filtro_adaptado_evento').val();
+		var ordem 		= $('#filtrar_ordem_evento').val();
+
+		// Nova url
+		var newUrl = path + 'eventos/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_adaptado_evento').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_evento').val();
+		var adaptado 	= $('#filtro_adaptado_evento').val();
+		var ordem 		= $('#filtrar_ordem_evento').val();
+
+		// Nova url
+		var newUrl = path + 'eventos/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de show
+		-> Local
+		-> Adpatado
+		-> Ordem
+	*/
+	$('#filtro_local_show').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_show').val();
+		var adaptado 	= $('#filtro_adaptado_show').val();
+		var ordem 		= $('#filtrar_ordem_show').val();
+
+		// Nova url
+		var newUrl = path + 'shows/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_ordem_show').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_show').val();
+		var adaptado 	= $('#filtro_adaptado_show').val();
+		var ordem 		= $('#filtro_ordem_show').val();
+
+		// Nova url
+		var newUrl = path + 'shows/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_adaptado_show').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_show').val();
+		var adaptado 	= $('#filtro_adaptado_show').val();
+		var ordem 		= $('#filtrar_ordem_show').val();
+
+		// Nova url
+		var newUrl = path + 'shows/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	/*	
+		Filtragem de teatro
+		-> Local
+		-> Adpatado
+		-> Ordem
+	*/
+	$('#filtro_local_teatro').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_teatro').val();
+		var adaptado 	= $('#filtro_adaptado_teatro').val();
+		var ordem 		= $('#filtrar_ordem_teatro').val();
+
+		// Nova url
+		var newUrl = path + 'teatros/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_ordem_teatro').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_teatro').val();
+		var adaptado 	= $('#filtro_adaptado_teatro').val();
+		var ordem 		= $('#filtro_ordem_teatro').val();
+
+		// Nova url
+		var newUrl = path + 'teatros/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_adaptado_teatro').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_teatro').val();
+		var adaptado 	= $('#filtro_adaptado_teatro').val();
+		var ordem 		= $('#filtrar_ordem_teatro').val();
+
+		// Nova url
+		var newUrl = path + 'teatros/filtrar/' + local + '/' + adaptado + '/' + ordem;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_local_entretenimento').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_entretenimento').val();
+		var adaptado 	= $('#filtro_adaptado_entretenimento').val();
+
+		// Nova url
+		var newUrl = path + 'entretenimentos/filtrar/' + local + '/' + adaptado;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filtro_adaptado_entretenimento').change(function(){
+
+		// Define variáveis para os filtros
+		var local 		= $('#filtro_local_entretenimento').val();
+		var adaptado 	= $('#filtro_adaptado_entretenimento').val();
+
+		// Nova url
+		var newUrl = path + 'entretenimentos/filtrar/' + local + '/' + adaptado;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
+
+	$('#filter_categoria_entretenimento').change(function(){
+
+		// Define variáveis para os filtros
+		var categoria 		= $('#filter_categoria_entretenimento').val();
+
+		// Nova url
+		var newUrl = path + categoria;
+
+		// Redireciona
+		$(window.document.location).attr('href',newUrl);
+	});
 
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

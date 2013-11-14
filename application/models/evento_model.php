@@ -16,9 +16,10 @@ class Evento_model extends CI_Model
     // Lista todos os eventos
     public function listar_eventos()
     {
-        $_query = $this->db->get($this->tabela)->result();
-
-        return $_query;
+        $this->db->select('*');
+        $this->db->from('guia_eventos');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_eventos.bairro_evento');
+        return $this->db->get()->result();
     }
 
     // Pega um único evento
@@ -56,5 +57,22 @@ class Evento_model extends CI_Model
     {
         $this->db->where('id_evento', $id);
         return $this->db->get($this->filmes)->result();
+    }
+
+    // Retorna os bairros
+    public function get_bairros($cd_cidade)
+    {
+        $this->db->where('cd_cidade', $cd_cidade);
+        return $this->db->get('guia_bairros')->result();
+    }
+
+    public function filtrar_eventos($local, $adaptado, $ordem)
+    {
+        $this->db->select('*');
+        $this->db->from('guia_eventos');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_eventos.bairro_evento');
+        $this->db->like('bairro_evento', $local);
+        $this->db->order_by("nome_evento", $ordem);
+        return $this->db->get()->result();
     }
 }
