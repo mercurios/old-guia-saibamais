@@ -9,7 +9,6 @@
         <link rel="shortcut icon" href="<?php echo base_url('assets'); ?>/favicon.ico"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
         
-        
         <!-- Facebook Meta tags -->
         <?php echo meta($metaface); ?>
 
