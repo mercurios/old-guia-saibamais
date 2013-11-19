@@ -2,7 +2,7 @@
 //DEFINE BANCO DEDADOS
 define('HOST','localhost');
 define('USER','root');
-define('PASS','root');
+define('PASS','');
 define('DBSA','guiasaibamais');
 
 //BASE DO SITE

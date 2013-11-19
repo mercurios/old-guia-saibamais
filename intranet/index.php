@@ -1,140 +1,205 @@
-<?php 
-ob_start();
-session_start();
-require('../dts/dbaSis.php'); 
+<?php
 
-if (!empty($_SESSION['autUser'])) {
-    header('Location: painel.php');
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
 }
-?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>Painel administrativo</title>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />    
-        
-        <link href="css/bootstrap.min.css" rel="stylesheet" />
-        <link href="css/bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />
-        <link href="css/font-awesome.css" rel="stylesheet" />
-        <link href="css/adminia.css" rel="stylesheet" /> 
-        <link href="css/adminia-responsive.css" rel="stylesheet" /> 
-        <link href="css/pages/login.css" rel="stylesheet" /> 
 
-        <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    </head>
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = 'system';
 
-    <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
-                        <span class="icon-bar"></span> 
-                        <span class="icon-bar"></span> 
-                        <span class="icon-bar"></span>              
-                    </a>
-                    
-                    <a class="brand" href="#">Painel administrativo</a>
-                    
-                    <div class="nav-collapse">
-                        <ul class="nav pull-right">
-                            <li class="">
-                                <a href="javascript:;"><i class="icon-chevron-left"></i> Voltar para o site</a>
-                            </li>
-                        </ul>
-                    </div> <!-- /nav-collapse -->
-                </div> <!-- /container -->
-            </div> <!-- /navbar-inner -->
-        </div> <!-- /navbar -->
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = 'application';
 
-        <?php if( isset($_GET['acao']) && $_GET['acao'] == 'recuperarsenha' ) { ?>
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
 
-        <div id="login-container">
-            <?php require('actions/recsenha.php'); ?>
-            <div id="login-header">
-                <h3>Recuperar senha</h3>
-            </div> <!-- /login-header -->
+	// The controller class file name.  Example:  Mycontroller
+	// $routing['controller'] = '';
 
-            <div id="login-content" class="clearfix">
-                <form name="recSenha" method="post" action="">
-                    <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="username">Informe seu e-mail</label>
-                            <div class="controls">
-                                <input type="text" class="" name="email" id="username" value="<?php if($recover) { echo $recover; } ?>" />
-                            </div>
-                        </div><!-- /control-group -->
-                    </fieldset>
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
 
-                    <div class="pull-right">
-                        <button type="submit" name="recSenha" class="btn btn-warning btn-large">Resgatar</button>
-                    </div>
-                </form><!-- /form -->      
-            </div> <!-- /login-content -->
-        </div><!-- /login-container -->
 
-        <div id="login-extra">
-            <p>Voltar ao painel de <a href="index.php">login</a></p>
-        </div> <!-- /login-extra -->
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
 
-        <?php } else { ?>
 
-        <div id="login-container">
-            <?php require('actions/login.php'); ?>
 
-            <div id="login-header">
-                <h3>Faça seu login</h3>
-            </div> <!-- /login-header -->
-            
-            <div id="login-content" class="clearfix">
-                <form name="formLogin" method="post" action="">
-                    <fieldset>
-                        <div class="control-group">
-                            <label class="control-label" for="username">E-mail</label>
-                            <div class="controls">
-                                <input type="text" class="" name="email" id="username" value="<?php if($email) { echo $email; } ?>" />
-                            </div>
-                        </div><!-- /control-group -->
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
 
-                        <div class="control-group">
-                            <label class="control-label" for="password">Senha</label>
-                            <div class="controls">
-                                <input type="password" class="" name="senha" id="password" value="<?php if($email) { echo $senha; } ?>" />
-                            </div>
-                        </div><!-- /control-group -->
-                    </fieldset>
-                            
-                    <div id="remember-me" class="pull-left">
-                        <input type="checkbox" name="remember" id="remember" value="1" <?php if($remember) echo 'checked="checked"' ?> /> 
-                        <label id="remember-label" for="remember">Lembrar senha</label>
-                    </div>
-                            
-                    <div class="pull-right">
-                        <button type="submit" name="sendLogin" class="btn btn-warning btn-large">Entrar</button>
-                    </div>
-                </form><!-- /form -->           
-            </div> <!-- /login-content -->
-        </div><!-- /form-container -->
-                
-        <div id="login-extra">
-            <p>Esqueceu a senha? <a href="index.php?acao=recuperarsenha">Recuperar</a></p>
-        </div> <!-- /login-extra -->
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
 
-        <?php } ?>
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
 
-        <!-- Le javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/app.js"></script>
-    </body>
-    <?php ob_end_flush();?>
-</html>
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	// this global constant is deprecated.
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter.php';
+
+/* End of file index.php */
+/* Location: ./index.php */
