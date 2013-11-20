@@ -13,36 +13,36 @@ class Users_model extends CI_Model
     // Verifica se existe o e-mail informado
     public function chec_usuario($usuario)
     {
-            $this->db->where('email_user', $usuario);
-            return $this->db->get($this->tabela)->result();
-    }
-
-    // Verifica se existe o e-mail informado
-    public function chec_email($email)
-    {
-            $this->db->where('email', $email);
-            return $this->db->get($this->tabela)->result();
+        $this->db->where('email_user', $usuario);
+        return $this->db->get($this->tabela)->result();
     }
 
     // Verifica se existe o login informado
     public function chec_login($login)
     {
-            $this->db->where('login', $login);
-            return $this->db->get($this->tabela)->result();
+        $this->db->where('login', $login);
+        return $this->db->get($this->tabela)->result();
+    }
+
+    // Retorna o e-mail informado
+    public function check_email($_email)
+    {
+        $this->db->where('email_user', $_email);
+        return $this->db->get($this->tabela)->result();
     }
 
     // Lista usuários cadastrados
     public function all_users()
     {
-            $result = $this->db->get($this->tabela)->result();
-            return $result;
+        $result = $this->db->get($this->tabela)->result();
+        return $result;
     }
 
     // Pega o usuário pelo ID
     public function get_user($id)
     {
-            $this->db->where('id', $id);
-            return $this->db->get($this->tabela)->result();
+        $this->db->where('id_user', $id);
+        return $this->db->get($this->tabela)->result();
     }
 
     // Salva no banco de dados
@@ -55,7 +55,7 @@ class Users_model extends CI_Model
     // Salva no banco de dados
     public function update($id, $dados)
     {
-            $this->db->where('id', $id);
+            $this->db->where('id_user', $id);
             $this->db->update($this->tabela, $dados);
             return true;
     }
@@ -63,8 +63,9 @@ class Users_model extends CI_Model
     // Deleta
     public function delete($id)
     {
-            $this->db->where('id', $id);
+            $this->db->where('id_user', $id);
             $this->db->delete($this->tabela);
+            return true;
     }
 
 }

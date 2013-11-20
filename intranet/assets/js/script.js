@@ -1,4 +1,5 @@
 $(document).ready( function () {
+	// Tabela
 	$('#tabelas').dataTable( {
 		"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
 		"oTableTools": {
@@ -23,4 +24,28 @@ $(document).ready( function () {
 			]
 		}
 	});
+
+	// Tooltip Bootstrap
+	$('.tool').tooltip();
+
+	// Input file custom
+	$(":file").filestyle();
+
+	// Combo dos estados
+	$('#estado').change(function(){
+
+
+		alert('teste');
+
+
+	});
+
+
+
+
+
+
+
+
+
 });

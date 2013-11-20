@@ -1,3 +1,8 @@
+<?php if (!empty($msg)) : ?>
+<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>
+	<?php echo $msg; ?>
+</div>
+<?php endif; ?>
 <div class="container">
 	<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="tabelas">
 	<thead>
@@ -32,8 +37,8 @@
 				<div class="btn-group">
   					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Ações <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="#" alt=""><i class="icon-pencil"></i> Editar</a></li>
-						<li><a href="#" alt=""><i class="icon-remove"></i> Exluir</a></li>
+						<li><a href="<?php echo base_url('users/editar') . '/' . $user->id_user ?>" alt=""><i class="icon-pencil"></i> Editar</a></li>
+						<li><a href="<?php echo base_url('users/excluir') . '/' . $user->id_user ?>" alt=""><i class="icon-remove"></i> Exluir</a></li>
 					</ul>
 				</div>
 			</td>

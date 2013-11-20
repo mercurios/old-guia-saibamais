@@ -35,6 +35,20 @@
 	background: red;
 }
 
+.titulo-separator {
+  background: url('../img/borda_titulo.gif') repeat-x bottom;
+  font-family: arial;
+  font-size: 14px;
+  height: 30px;
+  margin: 25px 0 10px 0;
+  word-spacing: 0px;
+  border: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.padding-left-35 {padding-left: 35px;}
+
 
 /*===================================
 	TOPO

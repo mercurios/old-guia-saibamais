@@ -1,0 +1,457 @@
+<div class="row">
+	<form name="newRestaurante" class="form-horizontal" method="post" action="<?php echo base_url('restaurantes/save') ?>">
+		<div class="span12">
+			<div class="widget">
+				<div class="widget-head">
+					<div class="pull-left"><i class="icon-plus"></i> Cadastrar restaurantes</div>
+					<div class="widget-icons pull-right"></div>  
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="widget-content padding-left-35">
+					<div class="padd">
+							<div class="row">
+								<div class="span11">
+									<label class="titulo-separator">Informações Básicas</label>
+								</div>
+
+								<div class="span5">
+									<label for="nome">Nome: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('nome'); ?></span></small></label>
+									<input type="text" class="input-block-level" id="nome" name="nome" value="" />
+
+									</br></br>
+
+									<label>Logo: <span class="text-error"></span></label>
+									<input type="file" class="filestyle" data-buttonText="Selecionar aquivo">	
+								</div>
+
+								<div class="span6">
+									<label>Descrição: <span class="text-error">*</span><small><span class="text-error"><?php echo form_error('descricao'); ?></span></small></label>
+									<textarea class="input-block-level" rows="5" name="descricao"></textarea>
+								</div>
+
+								<div class="span11">
+	                                <label class="titulo-separator">Redes Sociais</label>
+	                            </div>
+
+	                            <div class="span5">
+	                                <label>Twitter:</label>
+	                                <input class="input-block-level" name="twitter" type="text">
+	                            </div>
+
+	                            <div class="span6">
+	                                <label>Facebook:</label>
+	                                <input class="input-block-level" name="facebook" type="text">
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                                <label>Youtube:</label>
+	                                <input class="input-block-level" name="youtube" type="text">
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                                <label>Instagram:</label>
+	                                <input class="input-block-level" name="instagram" type="text">
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                                <label>Flickr:</label>
+	                                <input class="input-block-level" name="flickr" type="text">
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                                <label>Google +:</label>
+	                                <input class="input-block-level" name="googleplus" type="text">
+	                            </div>
+
+	                            <div class="span11">
+	                            </br>
+	                                <label>Orkut:</label>
+	                                <input class="input-block-level" name="orkut" type="text">
+	                            </div>
+
+	                            <div class="span11">
+	                                <label class="titulo-separator">Localidade</label>
+	                            </div>
+
+	                            <div class="span5">
+	                            	<label for="estado">Estado: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('estado'); ?></span></small></label>
+									<select name="estado" class="input-block-level" id="estado">
+										<option value="">Selecione um estado</option>
+										<option value="1">asdklasmdlaksmd</option>
+									</select>
+	                            </div>
+
+	                            <div class="span6">
+	                            	<label for="cidade">Cidade: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('cidade'); ?></span></small></label>
+									<select name="cidade" class="input-block-level" id="cidade">
+										<option value="">Selecione uma cidade</option>
+									</select>
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                            	<label for="bairro">Bairro: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('bairro'); ?></span></small></label>
+									<select name="bairro" class="input-block-level" id="bairro">
+										<option value="">Selecione um bairro</option>
+									</select>
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                            	<label for="rua">Rua: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('rua'); ?></span></small></label>
+									<input type="text" name="rua" id="rua" value="" class="input-block-level">
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                            	<label for="numero">Numero: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('numero'); ?></span></small></label>
+									<input type="text" name="numero" id="numero" value="" class="input-block-level">
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                            	<label for="cep">Cep: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('cep'); ?></span></small></label>
+									<input type="text" name="cep" id="cep" value="" class="input-block-level">
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                            	<label for="longitude">Longitude: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('longitude'); ?></span></small></label>
+									<input type="text" name="longitude" id="longitude" value="" class="input-block-level">
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                            	<label for="latitude">Latitude: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('latitude'); ?></span></small></label>
+									<input type="text" name="latitude" id="latitude" value="" class="input-block-level">
+	                            </div>
+
+	                            <div class="span11">
+	                                <label class="titulo-separator">Contato</label>
+	                            </div>
+
+	                            <div class="span5">
+	                                <label>Atendimento:</label>
+	                                <input name="foneAtendimento" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                            </div>
+
+	                            <div class="span6">
+	                                <label>Disk-Entrega:</label>
+	                                <input name="foneDiskEntrega" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                            </div>
+
+	                            <div class="span5">
+	                            	</br>
+	                                <label>E-mail:</label>
+	                                <input name="email" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                            </div>
+
+	                            <div class="span6">
+	                            	</br>
+	                                <label>Site:</label>
+	                                <input name="site" class="input-block-level" name="googleplus" type="text">
+	                            </div>
+
+	                            <div class="span11">
+	                                <label class="titulo-separator">Horário de funcionamento</label>
+	                            </div>
+
+	                            <div class="span11">
+	                                <table class="table table-bordered table-striped">
+	                                    <thead>
+	                                        <tr class="info">
+	                                            <td width="80"><strong>Dia </strong></td>
+	                                            <td width="560"><strong>Horário </strong></td>
+	                                        </tr>
+	                                    </thead>
+
+	                                    <tbody>
+	                                        <tr>
+	                                            <td><strong>Domingo:</strong></td>
+	                                            <td><input class="input-block-level" name="h_dom" type="text" placeholder="8:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Segunda:</strong></td>
+	                                            <td><input class="input-block-level" name="h_seg" type="text" placeholder="Não funcionamos" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Terça:</strong></td>
+	                                            <td><input class="input-block-level" name="h_ter" type="text" placeholder="8:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Quarta:</strong></td>
+	                                            <td><input class="input-block-level" name="h_qua" type="text" placeholder="8:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Quinta:</strong></td>
+	                                            <td><input class="input-block-level" name="h_qui" type="text" placeholder="18:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Sexta:</strong></td>
+	                                            <td><input class="input-block-level" name="h_sex" type="text" placeholder="8:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+
+	                                        <tr>
+	                                            <td><strong>Sábado:</strong></td>
+	                                            <td><input class="input-block-level" name="h_sab" type="text" placeholder="8:00 às 13:00 e 16:00 às 22:00" maxlength="31"></td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+
+	                            <div class="span11">
+									<label class="titulo-separator">Formas de pagamento</label>
+								</div>
+
+								<div class="span11">
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="dinheiro"> Dinheiro
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="visa"> Visa
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="master"> Master Card
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="hiper"> Hiper Card
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="diners"> Diners
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="elo"> Elo
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="american"> American
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="visaelectro"> Visa Eletro
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="paggo"> Paggo
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="redeshop"> Redeshop
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="vr"> Vale Refeição
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="aura"> Aura
+									</label>
+									</br>
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="toppremium"> Top Premium
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="sodexo"> Sodexo
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="formaPagamento" name="formaPagamento[]" value="sodexopass"> Sodexo Pass
+									</label>
+								</div>
+
+								<div class="span11">
+									<label class="titulo-separator">Informações Extras</label>
+								</div>
+
+								<div class="span11">
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="wifi"> Wifi
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="piscina"> Piscina
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="cafe-da-manha"> Café da manhã
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="estacionamento"> Estacionamento
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="shows-ao-vivo"> Show ao vivo
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="lutas-ao-vivo"> Luta ao vivo
+									</label>
+
+									<label class="checkbox inline">
+										<input type="checkbox" id="infoExtras" name="infoExtras[]" value="jogos-ao-vivo"> Jogos ao vivo
+									</label>
+								</div>
+
+								<div class="span11">
+	                                <label class="titulo-separator">Categoria</label>
+	                            </div>
+
+	                            <div class="span11">
+	                                <label><strong>Tipo de cozinha</strong></label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="africanas"> Africanas
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="arabes"> Árabe
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="brasileiras"> Brasileira 
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="europeias"> Europeia
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="italianas"> Italiana
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="latinas"> Latinas
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="orientais"> Orientais
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoCozinha[]" value="regionais"> Regional
+	                                </label>
+	                            </div><!-- /span11 -->
+
+	                            <div class="span11">
+	                                <div>&nbsp</div>
+	                                <label><strong>Tipo de comida</strong></label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="carnes"> Carne
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="crustaceos"> Crustáceos
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="especiais"> Light / Especiais 
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="massas"> Massa
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="naturais"> Natural
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="peixes"> Peixes
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoComida[]" value="vegetais"> Vegetais
+	                                </label>
+	                            </div><!-- /span11 -->
+
+	                            <div class="span11">
+	                                <div>&nbsp</div>
+	                                <label><strong>Tipo de Serviço</strong></label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoServico[]" value="alacartes"> A lá carte
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoServico[]" value="delivery"> Delivery
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoServico[]" value="drive-thrur"> Drive-thrur 
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoServico[]" value="rodizios"> Rodizio
+	                                </label>
+
+	                                <label class="checkbox inline">
+	                                    <input type="checkbox" id="inlineCheckbox1" name="tipoServico[]" value="self-service"> Self-Serviçe
+	                                </label>
+	                            </div>
+
+	                            <div class="span11">
+                                <label class="titulo-separator">Adaptado</label>
+                            </div>
+
+                            <div class="span11">
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="cego"> Cego
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="surdo"> Surdo
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="deficientefisico"> Deficiente fisico
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="braile"> Braile
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="obeso"> Obeso
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="idoso"> Idoso
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="gestante"> Gestante
+                                </label>
+
+                                <label class="checkbox inline">
+                                    <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="bebe"> Bêbe
+                            	</label>
+                            </div>
+						</div>
+					</div><!-- Padd -->
+
+					<div class="widget-foot">
+						<p class="pull-right">Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
+						<input type="submit" class="btn btn-success" name="cadastrar" value="Cadastrar restaurante" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

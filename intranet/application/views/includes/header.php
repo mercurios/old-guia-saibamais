@@ -46,7 +46,7 @@
                             <!-- Links de menu dropdown -->
                             <li><a href="#" title=""><i class="icon-user margin-icon-right"></i> Perfil </a></li>
                             
-                            <li><a href="#" title=""><i class="icon-pencil margin-icon-right"></i> Editar </a></li>
+                            <li><a href="<?php echo base_url('users/editar') . '/' . $this->session->userdata('id'); ?>" title=""><i class="icon-pencil margin-icon-right"></i> Editar </a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url('users/logoff') ?>" title=""><i class="icon-off margin-icon-right"></i> Sair </a></li>
                         </ul>
@@ -70,7 +70,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Restaurantes <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
                                     <li><a href="<?php echo base_url('restaurantes/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('restaurantes/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li><a href="<?php echo base_url('restaurantes/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('chamadas/listar/restaurante') ?>"><i class="icon-edit"></i> Chamadas</a></li>
                                 </ul>
