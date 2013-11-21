@@ -21,7 +21,7 @@
         </div>
 
         <!-- JavaScript -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
 
         <!-- Datatables -->
@@ -30,8 +30,10 @@
 		<script type="text/javascript" charset="utf-8" src="http://datatables.net/release-datatables/extras/TableTools/media/js/TableTools.js"></script>
 		<script type="text/javascript" charset="utf-8" src="http://datatables.github.com/Plugins/integration/bootstrap/2/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" charset="utf-8" src="http://markusslima.github.io/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/mask.js'); ?>"></script>
         <script type="text/javascript">
-		    var path 		= "<?php echo site_url('assets/js/datatables/swf'); ?>";
+		    var path      = "<?php echo site_url('assets/js/datatables/swf'); ?>";
+            var thePath   = "<?php echo site_url(); ?>";
 		</script>
         <script src="<?php echo base_url(); ?>assets/js/script.js"></script>
     </body>

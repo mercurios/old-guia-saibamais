@@ -1,5 +1,5 @@
 <div class="row">
-	<form name="newRestaurante" class="form-horizontal" method="post" action="<?php echo base_url('restaurantes/save') ?>">
+	<form name="newRestaurante" class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo base_url('restaurantes/save') ?>">
 		<div class="span12">
 			<div class="widget">
 				<div class="widget-head">
@@ -21,8 +21,11 @@
 
 									</br></br>
 
-									<label>Logo: <span class="text-error"></span></label>
-									<input type="file" class="filestyle" data-buttonText="Selecionar aquivo">	
+									<label>Logo: 
+										<span class="badge badge-info tool" 
+										title="Atenção: Só são permitidos imagens de no máximo 2MB, caso o tamanho exceda ou voçê tente enviar outro arquivo que não seja imagem, o programa altomaticamente irá salva sua imagem como NULA." 										data-placement="top" rel="popover"><i class="icon-info"></i></span>
+									</label>
+									<input type="file" name="logo" class="filestyle" data-buttonText="Selecionar aquivo">	
 								</div>
 
 								<div class="span6">
@@ -65,7 +68,7 @@
 	                            <div class="span6">
 	                            	</br>
 	                                <label>Google +:</label>
-	                                <input class="input-block-level" name="googleplus" type="text">
+	                                <input class="input-block-level" name="google" type="text">
 	                            </div>
 
 	                            <div class="span11">
@@ -82,7 +85,11 @@
 	                            	<label for="estado">Estado: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('estado'); ?></span></small></label>
 									<select name="estado" class="input-block-level" id="estado">
 										<option value="">Selecione um estado</option>
-										<option value="1">asdklasmdlaksmd</option>
+										<?php
+										foreach ($estados as $estado) :
+											echo '<option value="'. $estado->cd_uf .'">'. $estado->ds_uf_nome .'</option>';
+										endforeach;  
+										?>
 									</select>
 	                            </div>
 
@@ -116,7 +123,7 @@
 	                            <div class="span6">
 	                            	</br>
 	                            	<label for="cep">Cep: <span class="text-error">*</span> <small><span class="text-error"><?php echo form_error('cep'); ?></span></small></label>
-									<input type="text" name="cep" id="cep" value="" class="input-block-level">
+									<input type="text" name="cep" id="cep" value="" class="input-block-level maskCep">
 	                            </div>
 
 	                            <div class="span5">
@@ -137,24 +144,24 @@
 
 	                            <div class="span5">
 	                                <label>Atendimento:</label>
-	                                <input name="foneAtendimento" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                                <input class="input-block-level maskTelefone" name="num_atendimento" type="text" placeholder="">
 	                            </div>
 
 	                            <div class="span6">
 	                                <label>Disk-Entrega:</label>
-	                                <input name="foneDiskEntrega" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                                <input class="input-block-level maskTelefone" name="num_entrega" type="text" placeholder="">
 	                            </div>
 
 	                            <div class="span5">
 	                            	</br>
 	                                <label>E-mail:</label>
-	                                <input name="email" class="input-block-level" name="googleplus" type="text" placeholder="">
+	                                <input name="email" class="input-block-level" name="email" type="text" placeholder="">
 	                            </div>
 
 	                            <div class="span6">
 	                            	</br>
 	                                <label>Site:</label>
-	                                <input name="site" class="input-block-level" name="googleplus" type="text">
+	                                <input name="site" class="input-block-level" name="site" type="text">
 	                            </div>
 
 	                            <div class="span11">

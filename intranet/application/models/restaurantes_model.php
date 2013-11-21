@@ -14,6 +14,7 @@ class Restaurantes_model extends CI_Model
         $this->db->select('*');
         $this->db->from('guia_restaurantes');
         $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_restaurantes.bairro_restaurante');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_restaurantes.cidade_restaurante');
         return $this->db->get()->result();
     }
 
@@ -23,5 +24,12 @@ class Restaurantes_model extends CI_Model
         $this->db->where('id_restaurante', $_id);
         $this->db->delete('guia_restaurantes');
         return true;
+    }
+
+    // Salva as informações no banco de dados
+    public function save($_dados)
+    {
+        $this->db->insert('guia_restaurantes', $_dados);
+        return $this->db->insert_id();
     }
 }

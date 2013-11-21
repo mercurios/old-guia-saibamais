@@ -29,7 +29,7 @@
 			<tr>
 				<td><?php echo $res->id_restaurante ?></td>
 				<td><?php echo $res->nome_restaurante ?></td>
-				<td><?php echo $res->ds_bairro_nome . ' / ' . $res->cidade_restaurante ?></td>
+				<td><?php echo $res->ds_bairro_nome . ' / ' . $res->ds_cidade_nome ?></td>
 				<td>
 					<div class="btn-group">									
 						<a href="" class="tool btn" title="Vídeos" data-placement="top" rel="tooltip"><i class="icon-film"></i></a>
