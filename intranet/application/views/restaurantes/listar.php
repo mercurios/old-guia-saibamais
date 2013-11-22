@@ -32,11 +32,11 @@
 				<td><?php echo $res->ds_bairro_nome . ' / ' . $res->ds_cidade_nome ?></td>
 				<td>
 					<div class="btn-group">									
-						<a href="" class="tool btn" title="Vídeos" data-placement="top" rel="tooltip"><i class="icon-film"></i></a>
-						<a href="" class="tool btn" title="Fotos" data-placement="top" rel="tooltip"><i class="icon-camera"></i></a>
-						<a href="" class="tool btn" title="Cardápio" data-placement="top" rel="tooltip"><i class="icon-list"></i></a>
-						<a href="" class="tool btn" title="Promoções" data-placement="top" rel="tooltip"><i class="icon-thumbs-up"></i></a>
-						<a href="" class="tool btn" title="Editar Informações" data-placement="top" rel="tooltip"><i class="icon-info-sign"></i></a>
+						<a href="<?php echo base_url('videos/listar/restaurante') . '/' . $res->id_restaurante ; ?>" class="tool btn" title="Vídeos" data-placement="top" rel="tooltip"><i class="icon-film"></i></a>
+						<a href="<?php echo base_url('fotos/listar/restaurante') . '/' . $res->id_restaurante ; ?>" class="tool btn" title="Fotos" data-placement="top" rel="tooltip"><i class="icon-camera"></i></a>
+						<a href="<?php echo base_url('cardapios/listar/restaurante') . '/' . $res->id_restaurante ; ?>" class="tool btn" title="Cardápio" data-placement="top" rel="tooltip"><i class="icon-list"></i></a>
+						<a href="<?php echo base_url('promocoes/listar/restaurante') . '/' . $res->id_restaurante ; ?>" class="tool btn" title="Promoções" data-placement="top" rel="tooltip"><i class="icon-thumbs-up"></i></a>
+						<a href="<?php echo base_url('restaurantes/editar') . '/' . $res->id_restaurante ; ?>" class="tool btn" title="Editar Informações" data-placement="top" rel="tooltip"><i class="icon-info-sign"></i></a>
 					</div>
 				</td>
 				<td><?php echo ($res->status_restaurante == 1 ? 'Ativo' : 'Bloqueado'); ?></td>

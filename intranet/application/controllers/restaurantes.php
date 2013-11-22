@@ -208,6 +208,199 @@ class Restaurantes extends CI_Controller {
         }
     }
 
+    // Exibe o formulário de edição
+    public function editar($_id = NULL, $_msg = NULL)
+    {
+        // Verifica se o id foi informado
+        if (empty($_id))
+        {
+            redirect('restaurantes');
+        }
+
+        // Consulta o restaurante
+        $dados['restaurante'] = $this->resmodel->get_restaurante($_id);
+
+        // Envia uma msg
+        $dados['msg'] = $_msg;
+
+        // Pega todos os estados
+        $dados['estados'] = $this->enderecosmodel->get_all_estados();
+
+        // Pega as cidades
+        $dados['cidades'] = $this->enderecosmodel->get_cidades($dados['restaurante'][0]->uf_restaurante);
+
+        // Pega os bairros
+        $dados['bairros'] = $this->enderecosmodel->get_bairros($dados['restaurante'][0]->cidade_restaurante);
+
+        // Chama as views
+        $this->load->view('includes/header');
+        $this->load->view('restaurantes/editar', $dados);
+        $this->load->view('includes/footer');
+    }
+
+    // Atualiza as informações do restaurante
+    public function update()
+    {   
+        // Pega o ID e a imagem atual
+        $_id        = $this->input->post('id');
+        $_imgAtual  = $this->input->post('imgAtual'); 
+
+        // Verifica se o id foi informado
+        if (empty($_id))
+        {
+            redirect('restaurantes');
+        }
+
+        // Verifica se o usuário selecionou outra logo
+        $_checkLogo = $_FILES['logo']['name'];
+
+        if (empty($_checkLogo))
+        {
+            $_newLogo = $_imgAtual;
+        }
+        else
+        {
+            $_logo = 'logo';
+
+            // Seta as configurações de upload
+            $_config['upload_path']     = '../uploads/logos/'; // Caminho
+            $_config['allowed_types']   = 'gif|jpg|png|jpeg|pjpeg'; // Tipos de imagens aceito
+            $_config['max_size']        = '2048'; // 2MB
+            $_config['overwrite']       = FALSE; // Não irá sobre-escrever o arquivo
+            $_config['encrypt_name']    = TRUE; // Trocará o nome do arquivo para um HASH
+
+            // Inicializa a library
+            $this->load->library('upload', $_config);
+
+            //Faz o upload
+            if(!$this->upload->do_upload($_logo))
+            {
+                $error = array('erro' => $this->upload->display_errors());
+                $_newLogo = "";
+            }
+            else
+            {
+                $upload_data = $this->upload->data();
+                $_newLogo   = $upload_data['file_name']; 
+            }
+        }
+
+        // Pega as informações
+        $_nome              = $this->input->post('nome');
+        $_descricao         = $this->input->post('descricao');
+        $_twitter           = $this->input->post('twitter');
+        $_facebook          = $this->input->post('facebook');
+        $_youtube           = $this->input->post('youtube');
+        $_instagram         = $this->input->post('instagram');
+        $_flickr            = $this->input->post('flickr');
+        $_google            = $this->input->post('google');
+        $_orkut             = $this->input->post('orkut');
+        $_estado            = $this->input->post('estado');
+        $_cidade            = $this->input->post('cidade');
+        $_estado            = $this->input->post('estado');
+        $_bairro            = $this->input->post('bairro');
+        $_rua               = $this->input->post('rua');
+        $_numero            = $this->input->post('numero');
+        $_cep               = $this->input->post('cep');
+        $_longitude         = $this->input->post('longitude');
+        $_latitude          = $this->input->post('latitude');
+        $_num_atendimento   = $this->input->post('num_atendimento');
+        $_num_entrega       = $this->input->post('num_entrega');
+        $_email             = $this->input->post('email');
+        $_site              = $this->input->post('site');
+        $_h_dom             = $this->input->post('h_dom');
+        $_h_seg             = $this->input->post('h_seg');
+        $_h_ter             = $this->input->post('h_ter');
+        $_h_qua             = $this->input->post('h_qua');
+        $_h_qui             = $this->input->post('h_qui');
+        $_h_sex             = $this->input->post('h_sex');
+        $_h_sab             = $this->input->post('h_sab');
+        $_slug              = gerar_slug($_nome);
+
+        // Verifica se está vazio / Se não, regulariza para ser gravado no banco
+        $_pagamento = $this->input->post('formaPagamento');
+        if (!empty($_pagamento)) : 
+            $_pagamento = implode(",", $_pagamento);
+        endif;
+
+        $_extras = $this->input->post('infoExtras');
+        if (!empty($_extras)) : 
+            $_extras = implode(",", $_extras);
+        endif;
+
+        $_tipo_cozinha = $this->input->post('tipoCozinha');
+        if (!empty($_tipo_cozinha)) : 
+            $_tipo_cozinha = implode(",", $_tipo_cozinha);
+        endif;
+
+        $_tipo_comida = $this->input->post('tipoComida');
+        if (!empty($_tipo_comida)) : 
+            $_tipo_comida = implode(",", $_tipo_comida);
+        endif;
+
+        $_tipo_servico = $this->input->post('tipoServico');
+        if (!empty($_tipo_servico)) : 
+            $_tipo_servico = implode(",", $_tipo_servico);
+        endif;
+
+        $_acessibilidade = $this->input->post('acessibilidade');
+        if (!empty($_acessibilidade)) : 
+            $_acessibilidade = implode(",", $_acessibilidade);
+        endif;
+
+        // Grava as informações em um array
+        $_dados = array(
+            "logo_restaurante"          => $_newLogo,
+            "nome_restaurante"          => $_nome,
+            "desc_restaurante"          => $_descricao,
+            "twitter_restaurante"       => $_twitter,
+            "facebook_restaurante"      => $_facebook,
+            "youtube_restaurante"       => $_youtube,
+            "insta_restaurante"         => $_instagram,
+            "flickr_restaurante"        => $_flickr,
+            "googleplus_restaurante"    => $_google,
+            "orkut_restaurante"         => $_orkut,
+            "bairro_restaurante"        => $_bairro,
+            "uf_restaurante"            => $_estado,
+            "cidade_restaurante"        => $_cidade,
+            "rua_restaurante"           => $_rua,
+            "num_restaurante"           => $_numero,
+            "cep_restaurante"           => $_cep,
+            "long_restaurante"          => $_longitude,
+            "lati_restaurante"          => $_latitude,
+            "fone_atend_restaurante"    => $_num_atendimento,
+            "fone_entrega_restaurante"  => $_num_entrega,
+            "email_restaurante"         => $_email,
+            "site_restaurante"          => $_site,
+            "h_dom"                     => $_h_dom,
+            "h_seg"                     => $_h_seg,
+            "h_ter"                     => $_h_ter,
+            "h_qua"                     => $_h_qua,
+            "h_qui"                     => $_h_qui,
+            "h_sex"                     => $_h_sex,
+            "h_sab"                     => $_h_sab,
+            "pag_restaurante"           => $_pagamento,
+            "extra_restaurante"         => $_extras,
+            "tipo_cozinha_restaurante"  => $_tipo_cozinha,
+            "tipo_comida_restaurante"   => $_tipo_comida,
+            "tipo_servico_restaurante"  => $_tipo_servico,
+            "adaptado_restaurante"      => $_acessibilidade,
+            "slug_restaurante"          => $_slug,
+            "status_restaurante"        => 1
+        );
+
+        $_update = $this->resmodel->update($_id, $_dados);
+
+        if ($_update)
+        {
+            $this->editar($_id, '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>Restaurante atualizado com sucesso!</div>');
+        }
+        else
+        {
+            $this->index('Erros ocorreram, por favor, contacte um administrador!');
+        }
+    }
+
     // Deleta o restaurante
     public function excluir($_id)
     {

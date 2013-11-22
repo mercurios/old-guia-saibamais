@@ -10,7 +10,7 @@ class Home extends CI_Controller {
 		// Verifica se o usuario esta logado
 		if (!$this->session->userdata('session_id') || !$this->session->userdata('logado'))
         {
-                redirect('users');
+            redirect('users/login');
         }
 	}
 

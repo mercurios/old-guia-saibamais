@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
+function image_thumb( $image_path, $width, $height, $titulo = NULL, $class = NULL, $id = NULL ) {
     // Get the CodeIgniter super object
     $CI =& get_instance();
 
@@ -10,13 +10,6 @@ function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
     // Pega o nome da foto
     $img_name   = $pathinfo['filename'];
 
-    // Url completa da img
-    $img_info = base_url($pathinfo['dirname']) . '/' . $img_name . '.' . $pathinfo['extension'];
-    $img_info = getimagesize($img_info);
-    
-    $img_w = $img_info[0];   // largura
-    $img_h = $img_info[1];   // altura
-
     // Path to image thumbnail
     $image_thumb = dirname( $image_path ) . '/thumb/' . $img_name . '_' . $height . '_' . $width . '.jpg';
 
@@ -24,25 +17,21 @@ function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
 
         // Carrega a biblioteca
         $CI->load->library( 'image_lib' );
-        $CI->image_lib->clear();
 
         // Configura a biblioteca images
-        $image_config['image_library']  = 'gd2';
-        $image_config['source_image']   = $image_path;
-        $image_config['new_image']      = $image_thumb;
-        $image_config['maintain_ratio'] = FALSE;
-        $image_config['width']          = $width;
-        $image_config['height']         = $height;
-        $image_config['x_axis']         = '0';
-        $image_config['y_axis']         = '0';
-        $dim                            = (intval($img_w) / intval($img_h)) - ($image_config['width'] / $image_config['height']);
-        $image_config['master_dim']     = ($dim > 0) ? "height" : "width";
-        
-        $CI->image_lib->initialize($image_config); 
+        $config['image_library']    = 'gd2';
+        $config['source_image']     = $image_path;
+        $config['new_image']        = $image_thumb;
+        $config['maintain_ratio']   = FALSE;
+        $config['height']           = $height;
+        $config['width']            = $width;
+
+        // Inicia a biblioteca
+        $CI->image_lib->initialize( $config );
         $CI->image_lib->resize();
-        $CI->image_lib->crop();
+        $CI->image_lib->clear();
     }
 
-    return '<img src="' . base_url() . $image_thumb . '"  alt="'.$titulo.'" />';
+    return '<img src="' . base_url() . $image_thumb . '"  alt="'.$titulo.'" class="'.$class.'" id="'.$id.'" />';
 }
 /* End of file Thumbimages.php */

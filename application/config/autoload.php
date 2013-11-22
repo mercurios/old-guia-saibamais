@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'googlemaps');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'html', 'text');
+$autoload['helper'] = array('url', 'html', 'text', 'thumb_images');
 
 
 /*

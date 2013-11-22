@@ -22,7 +22,7 @@ function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
         $config['image_library']    = 'gd2';
         $config['source_image']     = $image_path;
         $config['new_image']        = $image_thumb;
-        $config['maintain_ratio']   = TRUE;
+        $config['maintain_ratio']   = FALSE;
         $config['height']           = $height;
         $config['width']            = $width;
 

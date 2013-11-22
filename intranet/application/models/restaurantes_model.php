@@ -18,12 +18,11 @@ class Restaurantes_model extends CI_Model
         return $this->db->get()->result();
     }
 
-    // Deleta o restaurante
-    public function delete($_id)
+    // Pega o restaurante informado pela id
+    public function get_restaurante($_id)
     {
         $this->db->where('id_restaurante', $_id);
-        $this->db->delete('guia_restaurantes');
-        return true;
+        return $this->db->get('guia_restaurantes')->result();
     }
 
     // Salva as informações no banco de dados
@@ -31,5 +30,21 @@ class Restaurantes_model extends CI_Model
     {
         $this->db->insert('guia_restaurantes', $_dados);
         return $this->db->insert_id();
+    }
+
+    // Atualiza no banco de dados
+    public function update($id, $dados)
+    {
+        $this->db->where('id_restaurante', $id);
+        $this->db->update('guia_restaurantes', $dados);
+        return true;
+    }
+
+    // Deleta o restaurante
+    public function delete($_id)
+    {
+        $this->db->where('id_restaurante', $_id);
+        $this->db->delete('guia_restaurantes');
+        return true;
     }
 }

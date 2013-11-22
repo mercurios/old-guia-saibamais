@@ -57,6 +57,7 @@ $(document).ready( function () {
 
 		// Reseta o combo
 		resetaCombo('cidade');
+		resetaCombo('bairro');
 
 		// Pega as cidades para o combo
         $.getJSON( thePath + 'enderecoController/getCidades/' + estado, function (data){
