@@ -26,15 +26,15 @@
 	<div id="area_conteudo_esquerda_pesquisa" class="area_conteudo">
 	<!-- Listar all
 	================================================== -->
-		<?php 
+		<?php
 		if (count($lanchonetes) != 0) {
 			foreach ($lanchonetes as $lanchonete) {
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $lanchonete->logo_lanchonete; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
+			<?php echo image_thumb('uploads/logos/' . $lanchonete->logo_lanchonete, 240, 146, 'logo', 'logo_resultado_pesquisa', ''); ?>
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $lanchonete->nome_lanchonete; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $lanchonete->bairro_lanchonete; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $lanchonete->ds_bairro_nome; ?></p>
 	        <h4>Acessível para:</h4>
 	        <?php  
 	        $adaptado = $lanchonete->adaptado_lanchonete;

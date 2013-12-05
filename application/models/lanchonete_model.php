@@ -22,17 +22,25 @@ class Lanchonete_model extends CI_Model
     // Pega as informações vindas do DB
     public function get_lanchonetes()
     {
-        return $this->db->get($this->tabela)->result();
+        $this->db->select('*');
+        $this->db->from('guia_lanchonetes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_lanchonetes.bairro_lanchonete');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_lanchonetes.cidade_lanchonete');
+        return $this->db->get()->result();
     }
 
     // Lista os lanchonetes por categoria
     public function search_lanchonetes($categoria)
     {   
-        $this->db->like('tipo_lanchonete',$categoria);
-        $this->db->or_like('tipo_comida_lanchonete',$categoria);
-        $this->db->or_like('tipo_servico_lanchonete',$categoria);
-        $query = $this->db->get($this->tabela)->result();
-        return $query;
+        $this->db->select('*');
+        $this->db->from('guia_lanchonetes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_lanchonetes.bairro_lanchonete');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_lanchonetes.cidade_lanchonete');
+        $this->db->like('tipo_lanchonete', $categoria);
+        $this->db->or_like('tipo_comida_lanchonete', $categoria);
+        $this->db->or_like('tipo_servico_lanchonete', $categoria);
+
+        return $this->db->get()->result();
     }
 
     // Pega o lanchonete pelo id
@@ -47,6 +55,7 @@ class Lanchonete_model extends CI_Model
     {
         $this->db->where('id_cliente', $id);
         $this->db->where('categoria_foto', 'lanchonete');
+        $this->db->where('status_foto', 1);
         return $this->db->get('guia_fotos')->result();
     }
 

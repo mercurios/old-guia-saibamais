@@ -31,6 +31,7 @@
 		<script type="text/javascript" charset="utf-8" src="http://datatables.github.com/Plugins/integration/bootstrap/2/dataTables.bootstrap.js"></script>
 		<script type="text/javascript" charset="utf-8" src="http://markusslima.github.io/bootstrap-filestyle/js/bootstrap-filestyle.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/mask.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap-datepicker.js'); ?>"></script>
         <script type="text/javascript">
 		    var path      = "<?php echo site_url('assets/js/datatables/swf'); ?>";
             var thePath   = "<?php echo site_url(); ?>";

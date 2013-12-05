@@ -1,10 +1,10 @@
 <div id="publicidade_superior" class="publicidade">
- 	<div class="conteudo_publicidade">
+    <div class="conteudo_publicidade">
         <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
             <?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
                 <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                        <?php echo image_thumb( base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade, 914, 90 ); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -30,9 +30,7 @@
 
 					<div class="item-slider" data-title="<?php echo $lan_s->titulo_chamada; ?>">
                         <a href="<?php echo $lan_s->link_chamada; ?>" title="<?php echo $lan_s->titulo_chamada; ?>">
-                            <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_s->img_chamada .'&w=326&h=250'); ?>" 
-                                 alt="<?php echo $lan_s->titulo_chamada; ?>" 
-                                 class="" />
+                            <?php echo image_thumb( base_url('uploads/chamadas') . '/' . $lan_s->img_chamada, 326, 250, $lan_s->titulo_chamada); ?>
                         </a>
                     </div>
 

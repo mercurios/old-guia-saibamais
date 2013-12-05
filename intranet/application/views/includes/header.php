@@ -15,9 +15,8 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap-responsive.min.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/font-awesome.min.css" />
-        <style type="text/css">
-            @import "http://datatables.github.com/Plugins/integration/bootstrap/2/dataTables.bootstrap.css";
-        </style>
+        <link rel="stylesheet" href="http://datatables.github.com/Plugins/integration/bootstrap/2/dataTables.bootstrap.css" />
+        <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/datepicker.css" />
         <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/stylle.css" />
         <!--<link rel="shortcut icon" type="image/x-icon" href="" />-->
 
@@ -82,7 +81,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lanchonetes <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
                                     <li><a href="<?php echo base_url('lanchonetes/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('lanchonetes/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li><a href="<?php echo base_url('lanchonetes/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('chamadas/listar/lanchonete') ?>"><i class="icon-edit"></i> Chamadas</a></li>
                                 </ul>
@@ -94,7 +93,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bebidas <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
                                     <li><a href="<?php echo base_url('bebidas/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('bebidas/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li><a href="<?php echo base_url('bebidas/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('chamadas/listar/bebida') ?>"><i class="icon-edit"></i> Chamadas</a></li>
                                 </ul>
@@ -105,8 +104,17 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Passeio e lazer <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
-                                    <li><a href="<?php echo base_url('passeio-e-lazer/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('passeio-e-lazer/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li class="nav-header">Locais</li>
+                                    <li><a href="<?php echo base_url('locais/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
+                                    <li><a href="<?php echo base_url('locais/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Esportes</li>
+                                    <li><a href="<?php echo base_url('esportes/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
+                                    <li><a href="<?php echo base_url('esportes') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li class="divider"></li>
+                                    <li class="nav-header">Rotas para passeio</li>
+                                    <li><a href="<?php echo base_url('rotas/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
+                                    <li><a href="<?php echo base_url('rotas/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('chamadas/listar/lazer') ?>"><i class="icon-edit"></i> Chamadas</a></li>
                                 </ul>
@@ -118,7 +126,7 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Estadias <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
                                     <li><a href="<?php echo base_url('estadias/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('estadias/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li><a href="<?php echo base_url('estadias/') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
                                     <li class="divider"></li>
                                     <li><a href="<?php echo base_url('chamadas/listar/estadia') ?>"><i class="icon-edit"></i> Chamadas</a></li>
                                 </ul>

@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); 
 
-function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
+function image_thumb( $image_path, $width, $height, $titulo = NULL, $class = NULL, $id = NULL ) {
     // Get the CodeIgniter super object
     $CI =& get_instance();
 
@@ -32,6 +32,6 @@ function image_thumb( $image_path, $width, $height, $titulo = NULL ) {
         $CI->image_lib->clear();
     }
 
-    return '<img src="' . base_url() . $image_thumb . '"  alt="'.$titulo.'" />';
+    return '<img src="' . base_url() . $image_thumb . '"  alt="'.$titulo.'" class="'.$class.'" id="'.$id.'" />';
 }
 /* End of file Thumbimages.php */

@@ -422,7 +422,5 @@ class Restaurantes extends CI_Controller {
         {
             $this->index('<div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">×</button>Não foi possível deletar o restaurante, por favor, tente novamente!</div>');
         }
-    }
-
-    
+    }    
 }

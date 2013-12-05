@@ -78,7 +78,7 @@
 	                            </div>
 
 	                            <div class="span11">
-	                                <label class="titulo-separator">Localidade</label>
+	                                <label class="titulo-separator">Localização</label>
 	                            </div>
 
 	                            <div class="span5">
@@ -139,7 +139,7 @@
 	                            </div>
 
 	                            <div class="span11">
-	                                <label class="titulo-separator">Contato</label>
+	                                <label class="titulo-separator">Contatos</label>
 	                            </div>
 
 	                            <div class="span5">
@@ -283,7 +283,7 @@
 								</div>
 
 								<div class="span11">
-									<label class="titulo-separator">Informações Extras</label>
+									<label class="titulo-separator">Extras do local</label>
 								</div>
 
 								<div class="span11">
@@ -317,7 +317,7 @@
 								</div>
 
 								<div class="span11">
-	                                <label class="titulo-separator">Categoria</label>
+	                                <label class="titulo-separator">Sobre o cardápio</label>
 	                            </div>
 
 	                            <div class="span11">
@@ -415,7 +415,7 @@
 	                            </div>
 
 	                            <div class="span11">
-                                <label class="titulo-separator">Adaptado</label>
+                                <label class="titulo-separator">Acessível</label>
                             </div>
 
                             <div class="span11">
@@ -454,8 +454,8 @@
 					</div><!-- Padd -->
 
 					<div class="widget-foot">
-						<p class="pull-right">Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
-						<input type="submit" class="btn btn-success" name="cadastrar" value="Cadastrar restaurante" />
+						<input type="submit" class="btn btn-success pull-right" name="cadastrar" value="Cadastrar restaurante" />
+						<p>Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
 					</div>
 				</div>
 			</div>

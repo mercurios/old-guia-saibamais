@@ -19,7 +19,7 @@
 
 								<div class="span2">
 									<span class="thumbnail">
-										<?php echo image_thumb('../uploads/logos/' . $res->logo_restaurante, 250, 200 ); ?>
+										<?php echo $this->biblioteca->image_thumb('../uploads/logos/' . $res->logo_restaurante, 250, 200 ); ?>
 									</span>
 								</div>
 
@@ -474,8 +474,8 @@
 					<div class="widget-foot">
 						<input type="hidden" name="id" value="<?php echo $res->id_restaurante ?>">
 						<input type="hidden" name="imgAtual" value="<?php echo $res->logo_restaurante ?>">
-						<p class="pull-right">Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
-						<input type="submit" class="btn btn-success" name="atualizar" value="Atualizar restaurante" />
+						<input type="submit" class="btn btn-success pull-right" name="cadastrar" value="Atualizar restaurante" />
+						<p>Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
 					</div>
 					<?php endforeach; } else { echo 'Não existe restaurante com o ID informado.'; } ?>
 				</div>

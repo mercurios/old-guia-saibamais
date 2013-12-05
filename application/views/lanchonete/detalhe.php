@@ -34,9 +34,9 @@
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
             	<?php if (empty($lanchonete->logo_lanchonete)) { ?>
-            		<img src="<?php echo base_url(); ?>tim.php?src=uploads/logos/default.jpg&w=366&h=267" alt="Anunciante sem logo" />
+	            	<?php echo image_thumb('uploads/logos/default.jpg', 366, 267, 'Anunciante sem logo', 'logo_resultado_pesquisa', ''); ?>
             	<?php } else { ?>
-            		<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $lanchonete->logo_lanchonete; ?>&w=366&h=267" />
+            		<?php echo image_thumb('uploads/logos/' . $lanchonete->logo_lanchonete, 366, 267, 'logo', 'logo_resultado_pesquisa', ''); ?>
             	<?php } ?>
                 <h3><?php echo $lanchonete->nome_lanchonete; ?></h3>
             </div>
@@ -73,18 +73,11 @@
 				    data-cycle-pager="#adv-custom-pager"
 				    data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
 				    >
-				    <?php
-                	if (isset($fotos)) {
-                		foreach ($fotos as $foto) {
-                	?>
-                	<img src="<?php echo base_url(); ?>tim.php?src=uploads/fotos/<?php echo $foto->img_foto; ?>&w=666&h=400"/>
-                	<?php
-                		}
-                	}
-                	else {
-                		echo '<li><img src="'.base_url().'uploads/fotos/default.jpg"/></li>';
-                	}
-                	?>
+				    <?php if (isset($fotos)) { foreach ($fotos as $foto) { ?>
+                		<?php echo image_thumb('uploads/fotos/' . $foto->img_foto, 666, 400, 'logo', '', ''); ?>
+                	<?php } } else { ?>
+                		<?php echo image_thumb('uploads/fotos/default.jpg', 666, 400, 'Anunciante sem foto', '', ''); ?>
+                	<?php } ?>
 				</div>
 				<!-- empty element for pager links -->
 				<div id=adv-custom-pager class="center external"></div>
@@ -108,7 +101,7 @@
 					<div class="pratos_cardapio">
 						<div class="pratos_cardapio_esquerda">
 							<h4><?php echo $lanche->nome_prato; ?></h4>
-							<p>R$ <?php echo $lanche->desc_prato; ?></p>
+							<p><?php echo $lanche->desc_prato; ?></p>
 						</div>
 						<div class="pratos_cardapio_direita">
 							<div class="preco_cardapio">
