@@ -426,7 +426,7 @@
 	                                </label>
 	                            </div>
 
-	                            <div class="span11">
+	                        <div class="span11">
                                 <label class="titulo-separator">Acessível</label>
                             </div>
 

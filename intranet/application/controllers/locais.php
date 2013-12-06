@@ -7,7 +7,7 @@ class Locais extends CI_Controller {
     {
         parent::__construct();
 
-        // Carrega o model locals
+        // Carrega o model locais
         $this->load->model('Locais_model', 'localmodel');
 
         // Carrega o model enderecos
@@ -20,16 +20,16 @@ class Locais extends CI_Controller {
         }
     }
 
-	// Lista os locals
+	// Lista os locais
 	public function index($msg = NULL)
 	{
-        // Pega todos os locals cadastrados
-        $dados['locals']  = $this->localmodel->all_locals();
+        // Pega todos os locais cadastrados
+        $dados['locais']  = $this->localmodel->all_locais();
         $dados['msg']     = $msg;
 
         // Chama a view
         $this->load->view('includes/header');
-        $this->load->view('locals/listar', $dados);
+        $this->load->view('locais/listar', $dados);
         $this->load->view('includes/footer');
 	}
 
@@ -43,14 +43,35 @@ class Locais extends CI_Controller {
 
         // Chama as views
         $this->load->view('includes/header');
-        $this->load->view('locals/novo', $dados);
+        $this->load->view('locais/novo', $dados);
+        $this->load->view('includes/footer');
+    }
+
+    // exibe o formulário de edição
+    public function editar($_id)
+    {
+        // Pega o local informado pelo id
+        $dados['local'] = $this->localmodel->get_local($_id);
+
+        // Pega todos os estados
+        $dados['estados'] = $this->enderecosmodel->get_all_estados();
+
+        // Pega as cidades
+        $dados['cidades'] = $this->enderecosmodel->get_cidades($dados['local'][0]->uf_local);
+
+        // Pega os bairros
+        $dados['bairros'] = $this->enderecosmodel->get_bairros($dados['local'][0]->cidade_local);
+
+        // Chama as views
+        $this->load->view('includes/header');
+        $this->load->view('locais/editar', $dados);
         $this->load->view('includes/footer');
     }
 
     // Cadastra o local no db
     public function save()
     {
-        // Valida o formulário
+       // Valida o formulário
         $this->form_validation->set_rules('nome', 'Nome', 'required');
         $this->form_validation->set_rules('descricao', 'Drescrição', 'required');
         $this->form_validation->set_rules('estado', 'Estado', 'required');
@@ -68,17 +89,11 @@ class Locais extends CI_Controller {
         }
         else
         {
-            // Pega as informações vindas do formulário
+            // Pega as informações enviadas pelo formulário
             $_logo              = 'logo';
             $_nome              = $this->input->post('nome');
             $_descricao         = $this->input->post('descricao');
-            $_twitter           = $this->input->post('twitter');
-            $_facebook          = $this->input->post('facebook');
-            $_youtube           = $this->input->post('youtube');
-            $_instagram         = $this->input->post('instagram');
-            $_flickr            = $this->input->post('flickr');
-            $_google            = $this->input->post('google');
-            $_orkut             = $this->input->post('orkut');
+            $_dicas             = $this->input->post('dicas');
             $_estado            = $this->input->post('estado');
             $_cidade            = $this->input->post('cidade');
             $_estado            = $this->input->post('estado');
@@ -88,10 +103,6 @@ class Locais extends CI_Controller {
             $_cep               = $this->input->post('cep');
             $_longitude         = $this->input->post('longitude');
             $_latitude          = $this->input->post('latitude');
-            $_num_atendimento   = $this->input->post('num_atendimento');
-            $_num_entrega       = $this->input->post('num_entrega');
-            $_email             = $this->input->post('email');
-            $_site              = $this->input->post('site');
             $_h_dom             = $this->input->post('h_dom');
             $_h_seg             = $this->input->post('h_seg');
             $_h_ter             = $this->input->post('h_ter');
@@ -99,38 +110,36 @@ class Locais extends CI_Controller {
             $_h_qui             = $this->input->post('h_qui');
             $_h_sex             = $this->input->post('h_sex');
             $_h_sab             = $this->input->post('h_sab');
+            $_valorInteira      = $this->input->post('valorInteira');
+            $_valorMeia         = $this->input->post('valorMeia');
+            $_valorEspecial     = $this->input->post('valorEspecial');
+            $_censura           = $this->input->post('censura');
             $_slug              = $this->biblioteca->gerar_slug($_nome);
             $_status            = 1;
-
-            // Verifica se está vazio / Se não, regulariza para ser gravado no banco
-            $_pagamento = $this->input->post('formaPagamento');
-            if (!empty($_pagamento)) : 
-                $_pagamento = implode(",", $_pagamento);
-            endif;
-
-            $_extras = $this->input->post('infoExtras');
-            if (!empty($_extras)) : 
-                $_extras = implode(",", $_extras);
-            endif;
-
-            $_tipo_local = $this->input->post('tipolocal');
-            if (!empty($_tipo_local)) : 
-                $_tipo_local = implode(",", $_tipo_local);
-            endif;
-
-            $_tipo_comida = $this->input->post('tipoComida');
-            if (!empty($_tipo_comida)) : 
-                $_tipo_comida = implode(",", $_tipo_comida);
-            endif;
-
-            $_tipo_servico = $this->input->post('tipoServico');
-            if (!empty($_tipo_servico)) : 
-                $_tipo_servico = implode(",", $_tipo_servico);
-            endif;
 
             $_acessibilidade = $this->input->post('acessibilidade');
             if (!empty($_acessibilidade)) : 
                 $_acessibilidade = implode(",", $_acessibilidade);
+            endif;
+
+            $_categoria = $this->input->post('categoria');
+            if (!empty($_categoria)) : 
+                $_categoria = implode(",", $_categoria);
+            endif;
+
+            $_titulo_oqfazer = $this->input->post('tituloOqfazer');
+            if (!empty($_titulo_oqfazer)) : 
+                $_titulo_oqfazer = implode("_-_", $_titulo_oqfazer);
+            endif;
+
+            $_link_oqfazer = $this->input->post('linkOqfazer');
+            if (!empty($_link_oqfazer)) : 
+                $_link_oqfazer = implode("_-_", $_link_oqfazer);
+            endif;
+
+            $_desc_oqfazer = $this->input->post('descOqfazer');
+            if (!empty($_desc_oqfazer)) : 
+                $_desc_oqfazer = implode("_-_", $_desc_oqfazer);
             endif;
 
             // Seta as configurações de upload
@@ -155,52 +164,44 @@ class Locais extends CI_Controller {
                 $_newLogo   = $upload_data['file_name']; 
             }
 
-            // Grava as informações em um array
+            // salva os dados em um array
             $_dados = array(
-                "logo_local"          => $_newLogo,
-                "nome_local"          => $_nome,
-                "desc_local"          => $_descricao,
-                "twitter_local"       => $_twitter,
-                "facebook_local"      => $_facebook,
-                "youtube_local"       => $_youtube,
-                "insta_local"         => $_instagram,
-                "flickr_local"        => $_flickr,
-                "googleplus_local"    => $_google,
-                "orkut_local"         => $_orkut,
-                "bairro_local"        => $_bairro,
-                "uf_local"            => $_estado,
-                "cidade_local"        => $_cidade,
-                "rua_local"           => $_rua,
-                "num_local"           => $_numero,
-                "cep_local"           => $_cep,
-                "long_local"          => $_longitude,
-                "lati_local"          => $_latitude,
-                "fone_atend_local"    => $_num_atendimento,
-                "fone_entrega_local"  => $_num_entrega,
-                "email_local"         => $_email,
-                "site_local"          => $_site,
-                "h_dom"                     => $_h_dom,
-                "h_seg"                     => $_h_seg,
-                "h_ter"                     => $_h_ter,
-                "h_qua"                     => $_h_qua,
-                "h_qui"                     => $_h_qui,
-                "h_sex"                     => $_h_sex,
-                "h_sab"                     => $_h_sab,
-                "pag_local"           => $_pagamento,
-                "extra_local"         => $_extras,
-                "tipo_local"          => $_tipo_local,
-                "tipo_comida_local"   => $_tipo_comida,
-                "tipo_servico_local"  => $_tipo_servico,
-                "adaptado_local"      => $_acessibilidade,
-                "slug_local"          => $_slug,
-                "status_local"        => $_status
+                "logo_local"        => $_newLogo,
+                "nome_local"        => $_nome,
+                "desc_local"        => $_descricao,
+                "dicas_local"       => $_dicas,
+                "bairro_local"      => $_bairro,
+                "uf_local"          => $_estado,
+                "cidade_local"      => $_cidade,
+                "rua_local"         => $_rua,
+                "num_local"         => $_numero,
+                "cep_local"         => $_cep,
+                "long_local"        => $_longitude,
+                "lati_local"        => $_latitude,
+                "h_dom"             => $_h_dom,
+                "h_seg"             => $_h_seg,
+                "h_ter"             => $_h_ter,
+                "h_qua"             => $_h_qua,
+                "h_qui"             => $_h_qui,
+                "h_sex"             => $_h_sex,
+                "h_sab"             => $_h_sab,
+                "categoria_local"   => $_categoria,
+                "val_inteira_local" => $_valorInteira,
+                "val_meia_local"    => $_valorMeia,
+                "val_especial_local" => $_valorEspecial,
+                "censura_local"     => $_censura,
+                "fazer_titulo_local" => $_titulo_oqfazer,
+                "fazer_desc_local"  => $_desc_oqfazer,
+                "fazer_link_local"  => $_link_oqfazer,
+                "adaptado_local"    => $_acessibilidade,
+                "slug_local"        => $_slug
             );
 
             $_save = $this->localmodel->save($_dados);
     
             if ($_save)
             {
-                $this->index('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>local cadastrado com sucesso!</div>');
+                $this->index('<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>Local cadastrado com sucesso!</div>');
             }
             else
             {
@@ -209,40 +210,10 @@ class Locais extends CI_Controller {
         }
     }
 
-    // Exibe o formulário de edição
-    public function editar($_id = NULL, $_msg = NULL)
-    {
-        // Verifica se o id foi informado
-        if (empty($_id))
-        {
-            redirect('locals');
-        }
-
-        // Consulta o local
-        $dados['local'] = $this->localmodel->get_local($_id);
-
-        // Envia uma msg
-        $dados['msg'] = $_msg;
-
-        // Pega todos os estados
-        $dados['estados'] = $this->enderecosmodel->get_all_estados();
-
-        // Pega as cidades
-        $dados['cidades'] = $this->enderecosmodel->get_cidades($dados['local'][0]->uf_local);
-
-        // Pega os bairros
-        $dados['bairros'] = $this->enderecosmodel->get_bairros($dados['local'][0]->cidade_local);
-
-        // Chama as views
-        $this->load->view('includes/header');
-        $this->load->view('locals/editar', $dados);
-        $this->load->view('includes/footer');
-    }
-
-    // Atualiza as informações do local
+    // atualiza o local no db
     public function update()
-    {   
-        // Valida o formulário
+    {
+       // Valida o formulário
         $this->form_validation->set_rules('nome', 'Nome', 'required');
         $this->form_validation->set_rules('descricao', 'Drescrição', 'required');
         $this->form_validation->set_rules('estado', 'Estado', 'required');
@@ -262,12 +233,12 @@ class Locais extends CI_Controller {
         {
             // Pega o ID e a imagem atual
             $_id        = $this->input->post('id');
-            $_imgAtual  = $this->input->post('imgAtual'); 
+            $_imgAtual  = $this->input->post('imgAtual');
 
             // Verifica se o id foi informado
             if (empty($_id))
             {
-                redirect('locals');
+                redirect('lanchonetes');
             }
 
             // Verifica se o usuário selecionou outra logo
@@ -304,16 +275,10 @@ class Locais extends CI_Controller {
                 }
             }
 
-            // Pega as informações
+            // Pega as informações enviadas pelo formulário
             $_nome              = $this->input->post('nome');
             $_descricao         = $this->input->post('descricao');
-            $_twitter           = $this->input->post('twitter');
-            $_facebook          = $this->input->post('facebook');
-            $_youtube           = $this->input->post('youtube');
-            $_instagram         = $this->input->post('instagram');
-            $_flickr            = $this->input->post('flickr');
-            $_google            = $this->input->post('google');
-            $_orkut             = $this->input->post('orkut');
+            $_dicas             = $this->input->post('dicas');
             $_estado            = $this->input->post('estado');
             $_cidade            = $this->input->post('cidade');
             $_estado            = $this->input->post('estado');
@@ -323,10 +288,6 @@ class Locais extends CI_Controller {
             $_cep               = $this->input->post('cep');
             $_longitude         = $this->input->post('longitude');
             $_latitude          = $this->input->post('latitude');
-            $_num_atendimento   = $this->input->post('num_atendimento');
-            $_num_entrega       = $this->input->post('num_entrega');
-            $_email             = $this->input->post('email');
-            $_site              = $this->input->post('site');
             $_h_dom             = $this->input->post('h_dom');
             $_h_seg             = $this->input->post('h_seg');
             $_h_ter             = $this->input->post('h_ter');
@@ -334,91 +295,81 @@ class Locais extends CI_Controller {
             $_h_qui             = $this->input->post('h_qui');
             $_h_sex             = $this->input->post('h_sex');
             $_h_sab             = $this->input->post('h_sab');
+            $_valorInteira      = $this->input->post('valorInteira');
+            $_valorMeia         = $this->input->post('valorMeia');
+            $_valorEspecial     = $this->input->post('valorEspecial');
+            $_censura           = $this->input->post('censura');
             $_slug              = $this->biblioteca->gerar_slug($_nome);
-
-            // Verifica se está vazio / Se não, regulariza para ser gravado no banco
-            $_pagamento = $this->input->post('formaPagamento');
-            if (!empty($_pagamento)) : 
-                $_pagamento = implode(",", $_pagamento);
-            endif;
-
-            $_extras = $this->input->post('infoExtras');
-            if (!empty($_extras)) : 
-                $_extras = implode(",", $_extras);
-            endif;
-
-            $_tipo_local = $this->input->post('tipolocal');
-            if (!empty($_tipo_local)) : 
-                $_tipo_local = implode(",", $_tipo_local);
-            endif;
-
-            $_tipo_comida = $this->input->post('tipoComida');
-            if (!empty($_tipo_comida)) : 
-                $_tipo_comida = implode(",", $_tipo_comida);
-            endif;
-
-            $_tipo_servico = $this->input->post('tipoServico');
-            if (!empty($_tipo_servico)) : 
-                $_tipo_servico = implode(",", $_tipo_servico);
-            endif;
+            $_status            = 1;
 
             $_acessibilidade = $this->input->post('acessibilidade');
             if (!empty($_acessibilidade)) : 
                 $_acessibilidade = implode(",", $_acessibilidade);
             endif;
 
-            // Grava as informações em um array
+            $_categoria = $this->input->post('categoria');
+            if (!empty($_categoria)) : 
+                $_categoria = implode(",", $_categoria);
+            endif;
+
+            $_titulo_oqfazer = $this->input->post('tituloOqfazer');
+            if (!empty($_titulo_oqfazer)) : 
+                $_titulo_oqfazer = implode("_-_", $_titulo_oqfazer);
+            endif;
+
+            $_link_oqfazer = $this->input->post('linkOqfazer');
+            if (!empty($_link_oqfazer)) : 
+                $_link_oqfazer = implode("_-_", $_link_oqfazer);
+            endif;
+
+            $_desc_oqfazer = $this->input->post('descOqfazer');
+            if (!empty($_desc_oqfazer)) : 
+                $_desc_oqfazer = implode("_-_", $_desc_oqfazer);
+            endif;
+
+            // salva os dados em um array
             $_dados = array(
-                "logo_local"          => $_newLogo,
-                "nome_local"          => $_nome,
-                "desc_local"          => $_descricao,
-                "twitter_local"       => $_twitter,
-                "facebook_local"      => $_facebook,
-                "youtube_local"       => $_youtube,
-                "insta_local"         => $_instagram,
-                "flickr_local"        => $_flickr,
-                "googleplus_local"    => $_google,
-                "orkut_local"         => $_orkut,
-                "bairro_local"        => $_bairro,
-                "uf_local"            => $_estado,
-                "cidade_local"        => $_cidade,
-                "rua_local"           => $_rua,
-                "num_local"           => $_numero,
-                "cep_local"           => $_cep,
-                "long_local"          => $_longitude,
-                "lati_local"          => $_latitude,
-                "fone_atend_local"    => $_num_atendimento,
-                "fone_entrega_local"  => $_num_entrega,
-                "email_local"         => $_email,
-                "site_local"          => $_site,
-                "h_dom"                     => $_h_dom,
-                "h_seg"                     => $_h_seg,
-                "h_ter"                     => $_h_ter,
-                "h_qua"                     => $_h_qua,
-                "h_qui"                     => $_h_qui,
-                "h_sex"                     => $_h_sex,
-                "h_sab"                     => $_h_sab,
-                "pag_local"           => $_pagamento,
-                "extra_local"         => $_extras,
-                "tipo_local"          => $_tipo_local,
-                "tipo_comida_local"   => $_tipo_comida,
-                "tipo_servico_local"  => $_tipo_servico,
-                "adaptado_local"      => $_acessibilidade,
-                "slug_local"          => $_slug,
-                "status_local"        => 1
+                "logo_local"        => $_newLogo,
+                "nome_local"        => $_nome,
+                "desc_local"        => $_descricao,
+                "dicas_local"       => $_dicas,
+                "bairro_local"      => $_bairro,
+                "uf_local"          => $_estado,
+                "cidade_local"      => $_cidade,
+                "rua_local"         => $_rua,
+                "num_local"         => $_numero,
+                "cep_local"         => $_cep,
+                "long_local"        => $_longitude,
+                "lati_local"        => $_latitude,
+                "h_dom"             => $_h_dom,
+                "h_seg"             => $_h_seg,
+                "h_ter"             => $_h_ter,
+                "h_qua"             => $_h_qua,
+                "h_qui"             => $_h_qui,
+                "h_sex"             => $_h_sex,
+                "h_sab"             => $_h_sab,
+                "categoria_local"   => $_categoria,
+                "val_inteira_local" => $_valorInteira,
+                "val_meia_local"    => $_valorMeia,
+                "val_especial_local" => $_valorEspecial,
+                "censura_local"     => $_censura,
+                "fazer_titulo_local" => $_titulo_oqfazer,
+                "fazer_desc_local"  => $_desc_oqfazer,
+                "fazer_link_local"  => $_link_oqfazer,
+                "adaptado_local"    => $_acessibilidade,
+                "slug_local"        => $_slug
             );
 
             $_update = $this->localmodel->update($_id, $_dados);
 
             if ($_update)
             {
-                $this->editar($_id, '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>local atualizado com sucesso!</div>');
+                $this->editar($_id, '<div class="alert alert-success"><button type="button" class="close" data-dismiss="alert">×</button>Local atualizado com sucesso!</div>');
             }
             else
             {
                 $this->index('Erros ocorreram, por favor, contacte um administrador!');
             }
-
         }
     }
 
@@ -428,7 +379,7 @@ class Locais extends CI_Controller {
         // Verifica se o id do usuário foi informado
         if (empty($_id))
         {
-            redirect('locals');
+            redirect('locais');
         }
 
         // Verifica se deletou o usuário informado

@@ -1,5 +1,18 @@
 $(document).ready( function () {
 
+	// Validando o campo promoção
+	$('.addItem').click(function(){
+		$('.clonar:first').clone().insertAfter(".clonar:last")
+		.append('<div class="span10"><span href="#" class="removeItem btn btn-danger pull-right"><i class="icon-remove"></i> Deletar item</span></div>');
+	});
+
+	$(document).on('click', '.removeItem', function(evt){
+	    evt.preventDefault();
+	    $(this).parents('.clonar').remove();
+	});
+
+	$('.clonar:first').find('.removeItem').hide();
+
 	// Tabela
 	$('#tabelas').dataTable( {
 		"sDom": "<'row-fluid'<'span6'T><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
@@ -136,11 +149,4 @@ $(document).ready( function () {
 	}).on('changeDate', function(ev) {
 		checkout.hide();
 	}).data('datepicker');
-
-	// Validando o campo promoção
-	
-
-
-
-
 });
