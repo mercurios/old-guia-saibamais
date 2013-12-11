@@ -4,7 +4,7 @@ Source Host: localhost
 Source Database: guiasaibamais
 Target Host: localhost
 Target Database: guiasaibamais
-Date: 05/12/2013 17:17:07
+Date: 10/12/2013 16:14:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `guia_acomodacoes` (
   `id_cliente` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_acomodacao`),
   UNIQUE KEY `id_acomodacao` (`id_acomodacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for guia_bairros
@@ -150,43 +150,43 @@ CREATE TABLE `guia_cinemas` (
   `uf_cinema` varchar(255) DEFAULT NULL,
   `long_cinema` varchar(255) DEFAULT NULL,
   `lati_cinema` varchar(255) DEFAULT NULL,
-  `t_1_cinema` varchar(100) DEFAULT NULL,
-  `t_2_cinema` varchar(100) DEFAULT NULL,
-  `t_3_cinema` varchar(100) DEFAULT NULL,
-  `t_4_cinema` varchar(100) DEFAULT NULL,
-  `seg_1_cinema` varchar(100) DEFAULT NULL,
-  `seg_2_cinema` varchar(100) DEFAULT NULL,
-  `seg_3_cinema` varchar(100) DEFAULT NULL,
-  `seg_4_cinema` varchar(100) DEFAULT NULL,
-  `ter_1_cinema` varchar(100) DEFAULT NULL,
-  `ter_2_cinema` varchar(100) DEFAULT NULL,
-  `ter_3_cinema` varchar(100) DEFAULT NULL,
-  `ter_4_cinema` varchar(100) DEFAULT NULL,
-  `qua_1_cinema` varchar(100) DEFAULT NULL,
-  `qua_2_cinema` varchar(100) DEFAULT NULL,
-  `qua_3_cinema` varchar(100) DEFAULT NULL,
-  `qua_4_cinema` varchar(100) DEFAULT NULL,
-  `qui_1_cinema` varchar(100) DEFAULT NULL,
-  `qui_2_cinema` varchar(100) DEFAULT NULL,
-  `qui_3_cinema` varchar(100) DEFAULT NULL,
-  `qui_4_cinema` varchar(100) DEFAULT NULL,
-  `sex_1_cinema` varchar(100) DEFAULT NULL,
-  `sex_2_cinema` varchar(100) DEFAULT NULL,
-  `sex_3_cinema` varchar(100) DEFAULT NULL,
-  `sex_4_cinema` varchar(100) DEFAULT NULL,
-  `sab_1_cinema` varchar(100) DEFAULT NULL,
-  `sab_2_cinema` varchar(100) DEFAULT NULL,
-  `sab_3_cinema` varchar(100) DEFAULT NULL,
-  `sab_4_cinema` varchar(100) DEFAULT NULL,
-  `dom_1_cinema` varchar(100) DEFAULT NULL,
-  `dom_2_cinema` varchar(100) DEFAULT NULL,
-  `dom_3_cinema` varchar(100) DEFAULT NULL,
-  `dom_4_cinema` varchar(100) DEFAULT NULL,
-  `fer_1_cinema` varchar(100) DEFAULT NULL,
-  `fer_2_cinema` varchar(100) DEFAULT NULL,
-  `fer_3_cinema` varchar(100) DEFAULT NULL,
-  `fer_4_cinema` varchar(100) DEFAULT NULL,
-  `categoria_cinema` varchar(100) DEFAULT NULL,
+  `t_1_cinema` varchar(255) DEFAULT NULL,
+  `t_2_cinema` varchar(255) DEFAULT NULL,
+  `t_3_cinema` varchar(255) DEFAULT NULL,
+  `t_4_cinema` varchar(255) DEFAULT NULL,
+  `seg_1_cinema` varchar(255) DEFAULT NULL,
+  `seg_2_cinema` varchar(255) DEFAULT NULL,
+  `seg_3_cinema` varchar(255) DEFAULT NULL,
+  `seg_4_cinema` varchar(255) DEFAULT NULL,
+  `ter_1_cinema` varchar(255) DEFAULT NULL,
+  `ter_2_cinema` varchar(255) DEFAULT NULL,
+  `ter_3_cinema` varchar(255) DEFAULT NULL,
+  `ter_4_cinema` varchar(255) DEFAULT NULL,
+  `qua_1_cinema` varchar(255) DEFAULT NULL,
+  `qua_2_cinema` varchar(255) DEFAULT NULL,
+  `qua_3_cinema` varchar(255) DEFAULT NULL,
+  `qua_4_cinema` varchar(255) DEFAULT NULL,
+  `qui_1_cinema` varchar(255) DEFAULT NULL,
+  `qui_2_cinema` varchar(255) DEFAULT NULL,
+  `qui_3_cinema` varchar(255) DEFAULT NULL,
+  `qui_4_cinema` varchar(255) DEFAULT NULL,
+  `sex_1_cinema` varchar(255) DEFAULT NULL,
+  `sex_2_cinema` varchar(255) DEFAULT NULL,
+  `sex_3_cinema` varchar(255) DEFAULT NULL,
+  `sex_4_cinema` varchar(255) DEFAULT NULL,
+  `sab_1_cinema` varchar(255) DEFAULT NULL,
+  `sab_2_cinema` varchar(255) DEFAULT NULL,
+  `sab_3_cinema` varchar(255) DEFAULT NULL,
+  `sab_4_cinema` varchar(255) DEFAULT NULL,
+  `dom_1_cinema` varchar(255) DEFAULT NULL,
+  `dom_2_cinema` varchar(255) DEFAULT NULL,
+  `dom_3_cinema` varchar(255) DEFAULT NULL,
+  `dom_4_cinema` varchar(255) DEFAULT NULL,
+  `fer_1_cinema` varchar(255) DEFAULT NULL,
+  `fer_2_cinema` varchar(255) DEFAULT NULL,
+  `fer_3_cinema` varchar(255) DEFAULT NULL,
+  `fer_4_cinema` varchar(255) DEFAULT NULL,
+  `categoria_cinema` varchar(255) DEFAULT NULL,
   `slug_cinema` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_cinema`),
   UNIQUE KEY `id_cinema` (`id_cinema`)
@@ -200,7 +200,6 @@ CREATE TABLE `guia_esportes` (
   `logo_esporte` varchar(255) DEFAULT NULL,
   `nome_esporte` varchar(255) DEFAULT NULL,
   `desc_esporte` text,
-  `horario_esporte` varchar(100) DEFAULT NULL,
   `categoria_esporte` varchar(255) DEFAULT NULL,
   `slug_esporte` varchar(255) DEFAULT NULL,
   `val_titulo_um` varchar(255) DEFAULT NULL,
@@ -209,10 +208,7 @@ CREATE TABLE `guia_esportes` (
   `val_um` varchar(255) DEFAULT NULL,
   `val_dois` varchar(255) DEFAULT NULL,
   `val_tres` varchar(255) DEFAULT NULL,
-  `local_esporte` varchar(255) DEFAULT NULL,
   `idade_esporte` varchar(255) DEFAULT NULL,
-  `lati_esporte` varchar(255) DEFAULT NULL,
-  `long_esporte` varchar(255) DEFAULT NULL,
   `h_dom` varchar(31) DEFAULT NULL,
   `h_seg` varchar(31) DEFAULT NULL,
   `h_ter` varchar(31) DEFAULT NULL,
@@ -220,9 +216,17 @@ CREATE TABLE `guia_esportes` (
   `h_qui` varchar(31) DEFAULT NULL,
   `h_sex` varchar(31) DEFAULT NULL,
   `h_sab` varchar(31) DEFAULT NULL,
+  `uf_esporte` varchar(255) DEFAULT NULL,
+  `cidade_esporte` varchar(255) DEFAULT NULL,
+  `bairro_esporte` varchar(255) DEFAULT NULL,
+  `rua_esporte` varchar(255) DEFAULT NULL,
+  `num_esporte` varchar(255) DEFAULT NULL,
+  `cep_esporte` varchar(255) DEFAULT NULL,
+  `long_esporte` varchar(255) DEFAULT NULL,
+  `lati_esporte` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_esporte`),
   UNIQUE KEY `id_esporte` (`id_esporte`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Table structure for guia_estadias
@@ -468,7 +472,6 @@ CREATE TABLE `guia_locais` (
   `long_local` varchar(255) DEFAULT NULL,
   `lati_local` varchar(255) DEFAULT NULL,
   `horarios_local` varchar(255) DEFAULT NULL,
-  `valor_local` varchar(255) DEFAULT NULL,
   `slug_local` varchar(255) DEFAULT NULL,
   `categoria_local` varchar(255) DEFAULT NULL,
   `val_inteira_local` varchar(255) DEFAULT NULL,
@@ -39529,7 +39532,7 @@ INSERT INTO `guia_chamadas` VALUES ('2', 'Titulo da chamada', '#', '001.jpg', 'L
 INSERT INTO `guia_chamadas` VALUES ('3', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'passeio-lazer', 'media');
 INSERT INTO `guia_chamadas` VALUES ('4', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'passeio-lazer', 'media');
 INSERT INTO `guia_chamadas` VALUES ('5', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'passeio-lazer', 'media');
-INSERT INTO `guia_chamadas` VALUES ('6', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'restaurante', 'slider');
+INSERT INTO `guia_chamadas` VALUES ('6', 'Titulo da chamada2', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'restaurante', 'slider');
 INSERT INTO `guia_chamadas` VALUES ('7', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'restaurante', 'pequena');
 INSERT INTO `guia_chamadas` VALUES ('8', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'restaurante', 'pequena');
 INSERT INTO `guia_chamadas` VALUES ('9', 'Titulo da chamada', '#', '001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'restaurante', 'pequena');
@@ -49706,9 +49709,9 @@ INSERT INTO `guia_cidades` VALUES ('18', '11199', 'São Luiz do Oeste (Toledo)')
 INSERT INTO `guia_cidades` VALUES ('14', '11219', 'Vila Mandi (Santana do Araguaia)');
 INSERT INTO `guia_cidades` VALUES ('26', '11239', 'Conceição (Itapetininga)');
 INSERT INTO `guia_cidades` VALUES ('26', '11240', 'Lageado de Araçaíba (Apiaí)');
-INSERT INTO `guia_cinemas` VALUES ('1', '001.jpg', 'Cinema Recife', 'Desc cinema ', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,aura', 'Telefone', 'email', 'site', 'twitter', 'face', 'yout', 'insta', 'flickr', 'plus', 'orkut', 'rua', '35', '646513843', '7349', 'cidade', 'uf', '1516516', '651651', 'Inteira', 'Meia', 'Inteira 3D', 'Meia 3D', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', 'assistir', 'cinema-teste');
-INSERT INTO `guia_cinemas` VALUES ('2', '001.jpg', 'Cinema Boa Vista', 'Desc cinema ', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,aura', 'Telefone', 'email', 'site', 'twitter', 'face', 'yout', 'insta', 'flickr', 'plus', 'orkut', 'rua', '35', '646513843', '7349', 'cidade', 'uf', '1516516', '651651', 'Inteira', 'Meia', 'Inteira 3D', 'Meia 3D', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', 'assistir', 'cinema-teste');
-INSERT INTO `guia_esportes` VALUES ('1', '001.jpg', 'Futebol de Areia', 'Futebol de areia descrição', 'ijoijosaijoas', 'futebol-de-areia', 'futebol-de-areia', 'Gratis', '', null, '', null, null, '7303', '8 Anos', '-080314', '-345252', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00');
+INSERT INTO `guia_cinemas` VALUES ('1', '001.jpg', 'Cinema Recife', 'Desc cinema ', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,aura', 'Telefone', 'email', 'site', 'twitter', 'face', 'yout', 'insta', 'flickr', 'plus', 'orkut', 'rua', '35', '646513843', '7315', '5406', '16', '1516516', '651651', 'Inteira', 'Meia', 'Inteira 3D', 'Meia 3D', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', 'assistir', 'cinema-teste');
+INSERT INTO `guia_cinemas` VALUES ('2', '001.jpg', 'Cinema Boa Vista', 'Desc cinema ', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,aura', 'Telefone', 'email', 'site', 'twitter', 'face', 'yout', 'insta', 'flickr', 'plus', 'orkut', 'rua', '35', '646513843', '7315', '5406', '16', '1516516', '651651', 'Inteira', 'Meia', 'Inteira 3D', 'Meia 3D', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', '10,00', 'assistir', 'cinema-teste');
+INSERT INTO `guia_esportes` VALUES ('1', '001.jpg', 'Futebol de Areia', 'Futebol de areia descrição', 'futebol-de-areia', 'futebol-de-areia', 'Gratis', '', null, '', null, null, '8 Anos', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '16', '5406', '7315', null, null, null, '12987', '1');
 INSERT INTO `guia_estadias` VALUES ('1', 'c77301674997115c137185f0dcb5b1f1.jpg', 'Boa Viagem Praia', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\r\ntempor incididunt ut labor', 'wifi,piscina,cafe-da-manha,estacionamento,shows-ao-vivo,lutas-ao-vivo,jogos-ao-vivo', 'albergue,chale,hotel,pousada,prive,resort,outros', 'campo,cidade,mata,maritimo,praia,outros', 'tresestrelas,quatroestrelas,cincoestrelas,seisestrelas', 'Av. Boa Viagem', '088', '54221-157', '7315', '5406', '16', '-34.904483', '-8.119846', '(81) 0000.', 'boaviagem.com.br', 'contato@boaviagem.com.br', 'ijo', 'ijo', 'ijo', 'jio', 'ijo', 'ijo', '0', 'cego,surdo,deficientefisico,braile,obeso,idoso,gestante,bebe', 'boa-viagem-praia', '1');
 INSERT INTO `guia_estadias` VALUES ('2', '96c50d941001c8cf128eb79a1db1befb.jpg', 'Hyatt', 'Hotel Hyatt é um grande hotel de luxo no Recife.', 'wifi,estacionamento,lutas-ao-vivo,jogos-ao-vivo,shows-ao-vivo', 'albergue,chale,hotel,pousada,prive,resort,outros', 'campo,cidade,mata,maritimo,praia,outros', 'tresestrelas,quatroestrelas,cincoestrelas,seisestrelas', 'Av. Boa  viagem', '699', '98787-766', '7315', '5406', '16', '987987', '98798', '(00) 0000.0000', 'site.com.br', 'email@email.com', 'twitter', 'facebook', 'youtube', 'instagram', 'flickr', 'google', 'orkut', 'cego,surdo,deficientefisico,braile,obeso,idoso,gestante,bebe', 'hyatt', '1');
 INSERT INTO `guia_estados` VALUES ('1', 'AC', 'Acre');
@@ -49772,7 +49775,7 @@ INSERT INTO `guia_frases` VALUES ('4', 'Titulo quinta', '<p>Deus me enviou &agra
 INSERT INTO `guia_frases` VALUES ('5', 'Titulo sexta', 'Texto sex', 'Sexta-Feira', 'sexta');
 INSERT INTO `guia_frases` VALUES ('6', 'Titulo sabado', 'Texto sab', 'Sábado', 'sabado');
 INSERT INTO `guia_frases` VALUES ('7', 'Titulo domingo', 'Texto dom', 'Domingo', 'domingo');
-INSERT INTO `guia_locais` VALUES ('1', '001.jpg', 'Cachoeira do Urubu', 'Descrição do local', '<p>Dicas sobre boa viagem</p>', 'Av boa viagem', '', '642521145', '7303', 'cidade', 'uf', 'long', 'latitude', 'Dia todo', 'GrÃ¡tis', 'cachoeira', 'cachoeiras,matas', '5,00', '2,50', '15,00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '12 Anos', 'Jogar bola_-_Jogar Tenis', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n_-_\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n', '#_-_#', 'cego');
+INSERT INTO `guia_locais` VALUES ('1', '001.jpg', 'Cachoeira do Urubu', 'Descrição do local', '<p>Dicas sobre boa viagem</p>', 'Av boa viagem', '', '642521145', '7315', '5406', '16', 'long', 'latitude', 'Dia todo', 'cachoeira', 'cachoeiras,matas', '5,00', '2,50', '15,00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '8:00 às 13:00 e 16:00 às 22:00', '12 Anos', 'Jogar bola_-_Jogar Tenis', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n_-_\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n', '#_-_#', 'cego');
 INSERT INTO `guia_logs` VALUES ('1', 'Tassiano Alencar', '2013-08-06 00:05:07', '127.0.0.1', 'Recuperou a senha');
 INSERT INTO `guia_logs` VALUES ('2', 'Tassiano Alencar', '2013-08-06 00:05:11', '127.0.0.1', 'Recuperou a senha');
 INSERT INTO `guia_logs` VALUES ('3', 'Tassiano Alencar', '2013-08-26 11:15:19', '127.0.0.1', 'Listou');
@@ -49817,8 +49820,7 @@ INSERT INTO `guia_logs` VALUES ('41', 'Tassiano Alencar', '2013-09-06 18:25:04',
 INSERT INTO `guia_pecas` VALUES ('1', '001.jpg', 'As criadas mal criadas 1', 'Carne de sol assada na brasa, servida com arroz branco, batata fritas e salada Carne de sol assada na brasa, servida com arroz branco.', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '30,00', '15,00', '1h30min', 'Aventura', '12 anos', '1');
 INSERT INTO `guia_pecas` VALUES ('2', '001.jpg', 'As criadas mal criadas 1', 'Carne de sol assada na brasa, servida com arroz branco, batata fritas e salada Carne de sol assada na brasa, servida com arroz branco.', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '10:00, 10:00', '30,00', '15,00', '1h30min', 'Aventura', '12 anos', '1');
 INSERT INTO `guia_promocoes` VALUES ('14', 'Promoção Teste', 'Descrição da promoção.', 'restaurante', '1', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'Segunda,Terça', 'b42431e842775167ea9455eb0ca83ad1.jpg');
-INSERT INTO `guia_rotas` VALUES ('1', '001.jpg', 'Rota parque', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'titulo1##tirulo2', '001.jpg##001.jpg', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in##Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in', '5,00##10,00', '15,00', 'aventura', 'rota-parque');
-INSERT INTO `guia_sessions` VALUES ('71515c480599779f76173cf4b707a309', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.57 Safari/537.36', '1386270543', 'a:4:{s:9:\"user_data\";s:0:\"\";s:2:\"id\";s:1:\"1\";s:7:\"usuario\";s:16:\"Tassiano Alencar\";s:6:\"logado\";b:1;}');
+INSERT INTO `guia_sessions` VALUES ('86f29fb287f558ffddc3eb26b636d7e2', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36', '1386697894', 'a:4:{s:9:\"user_data\";s:0:\"\";s:2:\"id\";s:1:\"1\";s:7:\"usuario\";s:16:\"Tassiano Alencar\";s:6:\"logado\";b:1;}');
 INSERT INTO `guia_shows` VALUES ('1', '001.jpg', 'Show 1', 'Descrição do show.', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,vr,aura,toppremium,sodexo,sodexopass', '(81) 0000.0000', 'contato@feneart.com.br', 'feneart.com.br', 'feneart', 'feneart', 'feneart', 'feneart', 'feneart', 'feneart', 'feneart', 'Preço 1', 'Preço 2', 'Preço 3', '10,00', '15,00', '20,00', '30, 31 de novembro', '19:20 ás 21:00', '15 Anos', 'Rua', 'Num', '54250173', '7303', 'Cidade', 'PE', '68468', '684684', 'assistir', 'feneart');
 INSERT INTO `guia_teatros` VALUES ('1', '001.jpg', 'TEATRO', '#', '#', '#', '#', '#', '#', '#', '(81) 0000.0000', 'site.com.br', 'site@site.com.br', 'Desc	', 'dinheiro,visa,master,hiper,diners,elo,american,visaelectro,paggo,redeshop,vr,aura,toppremium,sodexo,sodexopass', null, null, null, '7349', null, null, '-15616', '151351', 'assistir', 'teatro-teste');
 INSERT INTO `guia_users` VALUES ('1', 'Tassiano Alencar', 'tassianomac@me.com', '21232f297a57a5a743894a0e4a801fc3', '2013-11-26 13:24:10', '1');
