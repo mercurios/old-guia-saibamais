@@ -1,16 +1,5 @@
 $(document).ready( function () {
 
-	// Validando o campo promoção
-	$('.addItem').click(function(){
-		$('.clonar:first').clone().insertAfter(".clonar:last")
-		.append('<div class="span10"><span href="#" class="removeItem btn btn-danger pull-right"><i class="icon-remove"></i> Deletar item</span></div>');
-	});
-
-	$(document).on('click', '.removeItem', function(evt){
-	    evt.preventDefault();
-	    $(this).parents('.clonar').remove();
-	});
-
 	$('.clonar:first').find('.removeItem').hide();
 
 	// Tabela
@@ -149,4 +138,27 @@ $(document).ready( function () {
 	}).on('changeDate', function(ev) {
 		checkout.hide();
 	}).data('datepicker');
+
+	// Validando o campo promoção
+	$('.addItem').click(function(){
+		$('.clonar:first').clone().insertAfter(".clonar:last")
+		.append('<div class="span10"><span href="#" class="removeItem btn btn-danger pull-right"><i class="icon-remove"></i> Deletar item</span></div>');
+	});
+
+	$(document).on('click', '.removeItem', function(evt){
+	    evt.preventDefault();
+	    $(this).parents('.clonar').remove();
+	});
+
+	// Datepicker
+	$(".data").datepicker({
+	    dateFormat: 'dd/mm/yy',
+	    dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'],
+	    dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+	    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+	    monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+	    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+	    nextText: 'Próximo',
+	    prevText: 'Anterior'
+	});
 });

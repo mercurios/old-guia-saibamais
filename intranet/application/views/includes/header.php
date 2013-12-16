@@ -137,10 +137,15 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entretenimentos <b class="caret"></b></a>
                                 <ul class="dropdown-menu btn-inverse color-white">
-                                    <li><a href="<?php echo base_url('entretenimentos/novo') ?>"><i class="icon-plus"></i> Adicionar</a></li>
-                                    <li><a href="<?php echo base_url('entretenimentos/listar') ?>"><i class="icon-pencil"></i> Gerenciar</a></li>
+                                    <li><a href="<?php echo base_url('cinemas/') ?>"><i class="icon-film"></i> Cinemas</a></li>
                                     <li class="divider"></li>
-                                    <li><a href="<?php echo base_url('chamadas/listar/entretenimento') ?>"><i class="icon-edit"></i> Chamadas</a></li>
+                                    <li><a href="<?php echo base_url('exposicoes/') ?>"><i class="icon-tags"></i> Exposições</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="<?php echo base_url('eventos/') ?>"><i class="icon-filter"></i> Feiras e Eventos</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="<?php echo base_url('shows/') ?>"><i class="icon-headphones"></i> Shows</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="<?php echo base_url('teatros/') ?>"><i class="icon-puzzle-piece"></i> Teatros</a></li>
                                 </ul>
                             </li>
 
