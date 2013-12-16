@@ -707,8 +707,18 @@ img{border:0px}
 
 
 /*Chamada Modal*/
-#chamada_modal{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
-#chamada_modal h1{position:relative; float:left; font-size:22px; font-weight:bold; color:#424242}
+
+#chamada_modal{width:640px; position:relative; margin:0 auto; padding:20px; color:#4d4d4d; border:10px solid red}
+#topo_modal, #conteudo_modal, #rodape_modal{position:relative; float:left; width:100%; margin-bottom:50px;}
+#topo_modal h1{position:relative; float:left; font-size:36px; font-weight:bold; width:69%; padding-left:6px;}
+#topo_modal img{position:relative; float:right; width:29%}
+#conteudo_modal img{position:relative; float:left; width:633px; height:356px}
+#conteudo_modal p{position:relative; float:left; font-size:14px; width:100%; padding-bottom:10px; border-bottom:1px solid #4d4d4d}
+#conteudo_modal h6{position:relative; float:left; font-size:14px; margin-right:4px; margin-top:5px; }
+.redes_sociais_chamada{position:relative; float:right; margin-top:5px;}
+#rodape_modal h5{position:relative; width:100%; text-align:center; font-size:18px; padding-bottom:10px; border-bottom: 2px solid #ff9600}
+#rodape_modal img{position:relative; float:left; height:161px; text-align:center}
+#rodape_modal h2{position:relative; float:left; width:100%; font-size:24px; font-weight:100; text-align:center; padding-top:25px; color:#fff; height:50px; background:#ff9600}
 
 }
 @media only screen and (min-width:200px) and (max-width: 1000px){

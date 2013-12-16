@@ -37,13 +37,12 @@ class Teste extends CI_Controller {
 			array('name' => 'og:image', 'content' => 'img', 'type' => 'property'),
 		);
 
-		// Carrega o header
-		$this->load->view('includes/header', $seo);
+		
 
 		// Carrega o conteudo
-		$this->load->view('teste/teste', $dados);
+		$this->load->view('includes/header', $seo);
+		$this->load->view('teste/teste2', $dados);
 
-		// Carrega o rodape
-		$this->load->view('includes/footer');
+
 	}
 }
