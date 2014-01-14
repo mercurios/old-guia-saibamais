@@ -71,9 +71,10 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .1coluna{width:68px} .2coluna{width:154px} .3coluna{width:240px} .4coluna{width:326px} .5coluna{width:412px} .6coluna{width:498px} .7coluna{width:584px}
 .8coluna{width:670px} .9coluna{width:756px} .10coluna{width:842px} .11coluna{width:928px} .12coluna{width:1014px}
 
+
 @media only screen and (min-width: 1024px){
-#container{width:1014px; position:relative; margin:0 auto; margin-top:15px; }
-#conteudo{position:relative; float:left; width:1014px; margin-top:-50px; }
+#container{width:100%; position:relative; margin:0; margin-top:0px; }
+#conteudo{position:relative; float:left; width:1014px; margin-top:-50px; border:1px solid red}
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
 #area_conteudo_esquerda{width:670px; position:relative; float:left; }
 #area_conteudo_esquerda_borda{width:674px; position:relative; float:left; padding-right:2px; border-right:2px solid red }
@@ -82,46 +83,47 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
 #area_conteudo_esquerda_pesquisa{width:756px; position:relative; float:left; }
 #area_conteudo_direita_pesquisa{width:240px; position:relative; float:right; margin-right:0px; }
-
+.conteudo {width:1014px; position:relative; left:50%; margin-left:-507px;}
 
 /*css do topo*/
 
 /*topo*/
 
-#topo{width:1014px; height:150px; position:relative; float:left;}
-#logo{position:relative; float:left; margin-left:10px;}
-#campo_estado{position:relative; float:right; width:248px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
-#campo_estado img{position:relative; float:right; margin-top:7px; margin-left:5px; border:1px solid #e0e0e0 }
-#titulo_estado{position:relative; float:right; font-size:16px; color:#727575;}
-#link_estado a{position:relative; float:right;font-size:12px; color:#ffc001; text-decoration:none}
+#topo{width:100%; height:446px; position:relative; float:left; background:url(../images/back_topo.png) no-repeat; background-position:center; margin-top:0px}
+#barra_topo{position:relative; float:left; width:100%; height:60px; }
+#logo{position:relative; float:left; width:100%; text-align:center; margin-top:50px}
+#mudar_estado{position:relative; float:left; width:254px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
+#mudar_estado img{position:relative; float:right; margin-top:7px; margin-left:5px; border:1px solid #e0e0e0 }
+#titulo_estado{position:relative; float:right; font-size:16px; color:#2a2a2a;}
+#link_estado a{position:relative; float:right;font-size:12px; color:#d81616; text-decoration:none}
 #link_estado a:hover{ text-decoration:underline}
 input.placeholder {text-align: center;}
-#campo_pesquisa{position:relative; float:right; top:32px}
-#busca{position:relative; float:right; width:527px; height:41px; border: 3px solid #5c5c5c; background: #FFF}
-#busca img{position:relative; float:left; margin-top:5px; margin-left:10px; margin-right:10px; }
+#pesquisa{position:relative; float:right; margin-top:9px}
+#busca{position:relative; float:right; width:313px; height:36px; border: 3px solid #5c5c5c; background: #FFF}
+#busca img{position:relative; float:left; margin-top:5px; margin-left:10px; background:#d2d2d2}
 #botao_busca{position:relative; float: right; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#fff; background-color:#5c5c5c; width:86px; height:100%; border:0; font-weight:bold;}
-#texto_busca{position:relative; float:left; width:385px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#5c5c5c; text-align: center}
+#texto_busca{position:relative; float:left; width:272px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#5c5c5c; text-align: center}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
 color: #adadad; 
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
 color: #adadad; 
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
 color: #adadad; 
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
 color: #adadad; 
 }
 
 
 /*menu*/
-#menu{position:relative; float:left; height:59px; z-index:100000;}
+#menu{width:100%; position:relative; float:left; height:59px; z-index:100000; margin-top:70px}
 #menu .link_menu:last-child{margin-right: 0px; border-right: 0px}
 .link_menu{position:relative; float:left;height:100%; background:#007bb8; border-right:1px solid white;}
 .link_menu img{position:relative; float:left; margin-top:14px; margin-left:9px; margin-right:10px}
@@ -170,7 +172,7 @@ color: #adadad;
 
 
 /*css do conteúdo*/
-#conteudo{position:relative; float:left; margin-top:30px}
+#conteudo{width:100%; position:relative; float:left; margin-top:30px}
 
 /*topo das páginas de anunciantes*/
 #topo_pagina_anunciante{background:url(../images/back_topo_pagina.png); position:relative; float:left; width:100%; height:339px;}
@@ -667,8 +669,9 @@ img{border:0px}
 
 /*Rodapé*/
 
-#rodape{position:relative; float:left; width:100%; margin-top:45px; margin-bottom:0px;}
+#rodape{position:relative; float:left; width:100%; margin-top:95px; margin-bottom:0px;}
 #rodape_1{position:relative; float:left; width:100%; height:24px; background:url(../images/back_rodape_1.jpg)}
+#rodape_1 .conteudo{height:89px; margin-top:-64px; background:url(../images/rodape_1.png)}
 #rodape_2{position:relative; float:left; width:100%; height:228px; color:#545454; background:#fafafa}
 #sac{width:255px; height:126px; background:#fff}
 #sac img{position:relative; float:left; margin-left:70px; margin-right:21px; margin-top:29px; margin-bottom:0px}
@@ -780,7 +783,7 @@ color: #adadad;
 .link_menu:hover .v{background:url(../images/icone_up.png); }
 .menus{position:absolute; left:-999em ; float:left; height:310px; background-color:#007bb8; margin-top:63px; display:block}
 .menus a{ text-decoration:none}
-.link_menu:hover {height:110%}
+.link_menu:hover {height:110%; background:red}
 .link_menu:hover .menus {left:0px; top:auto;}
 .conteudo_menu{position:relative; float:left; margin-left:10px; margin-right:10px}
 .ou{position:relative; float:left; color:#fff; font-size:16px; font-weight:bold; margin-top:5px}
