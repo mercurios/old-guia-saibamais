@@ -51,7 +51,7 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
-$db['default']['database'] = 'guiasaibamais';
+$db['default']['database'] = 'saibamais';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,22 +63,6 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
-
-$db['online']['hostname'] = 'localhost';
-$db['online']['username'] = 'sbmais_guia';
-$db['online']['password'] = ';5?V*iOuZEnN';
-$db['online']['database'] = 'sbmais_guia';
-$db['online']['dbdriver'] = 'mysql';
-$db['online']['dbprefix'] = '';
-$db['online']['pconnect'] = TRUE;
-$db['online']['db_debug'] = TRUE;
-$db['online']['cache_on'] = FALSE;
-$db['online']['cachedir'] = '';
-$db['online']['char_set'] = 'utf8';
-$db['online']['dbcollat'] = 'utf8_general_ci';
-$db['online']['swap_pre'] = '';
-$db['online']['autoinit'] = TRUE;
-$db['online']['stricton'] = FALSE;
 
 
 /* End of file database.php */

@@ -7,7 +7,7 @@
         	?>
     		<div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90 ); ?>
+                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
                     </a>
                 </div>
         	<?php } } ?>
@@ -28,9 +28,9 @@
 	================================================== -->
 		<?php if (count($bebidas) != 0) { foreach ($bebidas as $bebida) { ?>
 		<div class="resultado_pesquisa">
-	    	<?php echo image_thumb('uploads/logos/' . $bebida->logo_bebida, 240, 146, '', 'logo_resultado_pesquisa', ''); ?>
+	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $bebida->logo_bebida; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $bebida->nome_bebida; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $bebida->ds_bairro_nome; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $bebida->bairro_bebida; ?></p>
 	        <h4>Acessível para:</h4>
 	        <?php  
 	        $adaptado = $bebida->adaptado_bebida;
@@ -150,7 +150,7 @@
     	?>
 		<div class="item-slider">
             <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                <?php echo image_thumb('uploads/publicidades/' . $pubbottom->img_vd_publicidade, 980, 170, $pubbottom->titulo_publicidade, '', ''); ?>
+            	<img src="<?php echo base_url('tim.php?src=/uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
             </a>
         </div>
         <?php }} ?>
