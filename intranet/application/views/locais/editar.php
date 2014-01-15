@@ -342,7 +342,7 @@
                     <div class="widget-foot">
                         <input type="hidden" name="id" value="<?php echo $res->id_local ?>" />
                         <input type="hidden" name="imgAtual" value="<?php echo $res->logo_local ?>" />
-                        <input type="submit" class="btn btn-success pull-right" name="cadastrar" value="Cadastrar local" />
+                        <input type="submit" class="btn btn-success pull-right" name="cadastrar" value="Atualizar local" />
                         <p>Os campos marcados com <strong>(*)</strong>, são obrigatórios.</p>
                     </div>
                 </div>

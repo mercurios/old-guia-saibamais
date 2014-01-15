@@ -7,7 +7,7 @@
             ?>
             <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90, '', ''); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -24,14 +24,12 @@
             
             <div id="logo_topo_pagina_lazer" class="">
                 <?php if (empty($esporte->logo_esporte)) { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/publicidades/default.jpg&w=366&h=267'); ?>" alt="" />
+                    <?php echo image_thumb('uploads/logos/default.jpg', 366, 267, '', ''); ?>
                 <?php } else { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $esporte->logo_esporte .'&w=500&h=267'); ?>" alt="" />
+                    <?php echo image_thumb('uploads/logos/' . $esporte->logo_esporte, 366, 267, '', ''); ?>
                 <?php } ?>
                 <h3><?php echo $esporte->nome_esporte; ?></h3>
             </div>
-           
-           
         </div>
     </div><!-- /fim da area de conteudo superior -->
     <div id="area_conteudo_esquerda"><!-- /inicio da area de conteudo esquerda -->  
@@ -48,9 +46,9 @@
                     data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
                     >
                     <?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
-                        <img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/fotos/' . $foto->img_foto, 666, 400, '', ''); ?>
                     <?php } } else { ?>
-                        <img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/fotos/default.jpg', 666, 400, '', ''); ?>
                     <?php } ?>
                 </div>
                 <!-- empty element for pager links -->
@@ -205,7 +203,7 @@
         ?>
         <div class="item-slider">
             <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                <img src="<?php echo base_url('tim.php?src=/uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
+                <?php echo image_thumb('uploads/publicidades/' . $pubbottom->img_vd_publicidade, 980, 170, $pubbottom->titulo_publicidade, ''); ?>
             </a>
         </div>
         <?php }} ?>

@@ -99,7 +99,7 @@ class Restaurantes extends CI_Controller {
             $_h_qui             = $this->input->post('h_qui');
             $_h_sex             = $this->input->post('h_sex');
             $_h_sab             = $this->input->post('h_sab');
-            $_slug              = gerar_slug($_nome);
+            $_slug              = $this->biblioteca->gerar_slug($_nome);
 
             // Verifica se está vazio / Se não, regulariza para ser gravado no banco
             $_pagamento = $this->input->post('formaPagamento');
@@ -315,7 +315,7 @@ class Restaurantes extends CI_Controller {
         $_h_qui             = $this->input->post('h_qui');
         $_h_sex             = $this->input->post('h_sex');
         $_h_sab             = $this->input->post('h_sab');
-        $_slug              = gerar_slug($_nome);
+        $_slug              = $this->biblioteca->gerar_slug($_nome);
 
         // Verifica se está vazio / Se não, regulariza para ser gravado no banco
         $_pagamento = $this->input->post('formaPagamento');

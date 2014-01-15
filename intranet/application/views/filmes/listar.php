@@ -25,7 +25,7 @@
 				<td><?php echo $res->idade_filme ?></td>
 				<td>
 					<a href="<?php echo base_url('filmes/editar') . '/' . $res->id_filme ?>" class="btn btn-warning"><i class="icon-pencil"></i> Editar</a>
-					<a href="<?php echo base_url('filmes/excluir') . '/' . $res->id_filme ?>" class="btn btn-danger"><i class="icon-remove"></i> Exluir</a>
+					<a href="<?php echo base_url('filmes/excluir') . '/' . $res->id_filme . '/' . $this->uri->segment(3); ?>" class="btn btn-danger"><i class="icon-remove"></i> Exluir</a>
 				</td>
 			</tr>
 			<?php 				

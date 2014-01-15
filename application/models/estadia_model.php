@@ -28,10 +28,16 @@ class Estadia_model extends CI_Model
     // Lista os estadias por categoria
     public function search_estadias($categoria)
     {   
+        $this->db->select('*');
+        $this->db->from('guia_estadias');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_estadias.bairro_estadia');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_estadias.cidade_estadia');
         $this->db->like('tipo_estadia',$categoria);
         $this->db->or_like('localidade_estadia',$categoria);
         $this->db->or_like('class_estadia',$categoria);
-        $query = $this->db->get($this->tabela)->result();
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        $query = $this->db->get()->result();
         return $query;
     }
 
@@ -95,11 +101,16 @@ class Estadia_model extends CI_Model
     // Retorna os clientes seguindo os parametros
     public function filtrar_estadias($local, $deficiencia, $tipo, $ordem)
     {
-        //$this->db->where('bairro_lanchonete', $local);
+        $this->db->select('*');
+        $this->db->from('guia_estadias');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_estadias.bairro_estadia');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_estadias.cidade_estadia');
         $this->db->like('bairro_estadia', $local);
         $this->db->like('adaptado_estadia', $deficiencia);
         $this->db->like('tipo_estadia', $tipo);
         $this->db->order_by("nome_estadia", $ordem);
-        return $this->db->get($this->tabela)->result();
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        return $this->db->get()->result();
     }
 }

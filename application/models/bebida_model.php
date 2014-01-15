@@ -22,17 +22,26 @@ class bebida_model extends CI_Model
     // Pega as informações vindas do DB
     public function get_bebidas()
     {
-        return $this->db->get($this->tabela)->result();
+        $this->db->select('*');
+        $this->db->from('guia_bebidas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_bebidas.bairro_bebida');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_bebidas.cidade_bebida');
+        return $this->db->get()->result();
     }
 
     // Lista os bebidas por categoria
     public function search_bebidas($categoria)
     {   
+        $this->db->select('*');
+        $this->db->from('guia_bebidas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_bebidas.bairro_bebida');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_bebidas.cidade_bebida');
         $this->db->like('tipo_extra_bebida',$categoria);
         $this->db->or_like('local_bebida',$categoria);
         $this->db->or_like('tipo_bebida_bebida',$categoria);
-        $query = $this->db->get($this->tabela)->result();
-        return $query;
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        return $this->db->get()->result();
     }
 
     // Pega o bebida pelo id
@@ -106,11 +115,16 @@ class bebida_model extends CI_Model
     // Retorna os clientes seguindo os parametros
     public function filtrar_lanchonetes($local, $deficiencia, $comida, $ordem)
     {
-        //$this->db->where('bairro_lanchonete', $local);
+        $this->db->select('*');
+        $this->db->from('guia_bebidas');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_bebidas.bairro_bebida');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_bebidas.cidade_bebida');
         $this->db->like('bairro_bebida', $local);
         $this->db->like('adaptado_bebida', $deficiencia);
         $this->db->like('tipo_bebida_bebida', $comida);
         $this->db->order_by("nome_bebida", $ordem);
-        return $this->db->get($this->tabela)->result();
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        return $this->db->get()->result();
     }
 }

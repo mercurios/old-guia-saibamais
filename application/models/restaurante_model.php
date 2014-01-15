@@ -28,11 +28,16 @@ class Restaurante_model extends CI_Model
     // Lista os restaurantes por categoria
     public function search_restaurantes($categoria)
     {   
+        $this->db->select('*');
+        $this->db->from('guia_restaurantes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_restaurantes.bairro_restaurante');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_restaurantes.cidade_restaurante');
         $this->db->like('tipo_cozinha_restaurante',$categoria);
         $this->db->or_like('tipo_comida_restaurante',$categoria);
         $this->db->or_like('tipo_servico_restaurante',$categoria);
-        $query = $this->db->get($this->tabela)->result();
-        return $query;
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        return $this->db->get()->result();
     }
 
     // Pega o restaurante pelo id
@@ -122,9 +127,4 @@ class Restaurante_model extends CI_Model
         $this->db->order_by("nome_restaurante", $ordem);
         return $this->db->get($this->tabela)->result();
     }
-
-
-
-
-
 }

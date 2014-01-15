@@ -25,7 +25,7 @@
 					</div>
 				</td>
 				<td>
-					<a href="<?php echo base_url('locais/editar') . '/' . $res->id_local ?>" title="" class="btn btn-warning"><i class="icon-remove"></i> Editar</a>
+					<a href="<?php echo base_url('locais/editar') . '/' . $res->id_local ?>" title="" class="btn btn-warning"><i class="icon-pencil"></i> Editar</a>
 					<a href="<?php echo base_url('locais/excluir') . '/' . $res->id_local ?>" title="" class="btn btn-danger"><i class="icon-remove"></i> Excluir</a>
 				</td>
 			</tr>

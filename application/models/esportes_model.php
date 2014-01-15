@@ -27,8 +27,14 @@ class Esportes_model extends CI_Model
     // Lista os esportes por categoria
     public function search_esportes($categoria)
     {   
+        $this->db->select('*');
+        $this->db->from('guia_esportes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_esportes.bairro_esporte');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_esportes.cidade_esporte');
         $this->db->like('categoria_esporte',$categoria);
-        $query = $this->db->get($this->tabela)->result();
+
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        $query = $this->db->get()->result();
         return $query;
     }
 

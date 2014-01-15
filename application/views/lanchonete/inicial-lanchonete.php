@@ -4,7 +4,7 @@
             <?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
                 <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <?php echo image_thumb( base_url('uploads/publicidades') . '/' . $pubtop->img_vd_publicidade, 914, 90 ); ?>
+                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90 ); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -30,7 +30,7 @@
 
 					<div class="item-slider" data-title="<?php echo $lan_s->titulo_chamada; ?>">
                         <a href="<?php echo $lan_s->link_chamada; ?>" title="<?php echo $lan_s->titulo_chamada; ?>">
-                            <?php echo image_thumb( base_url('uploads/chamadas') . '/' . $lan_s->img_chamada, 326, 250, $lan_s->titulo_chamada); ?>
+                            <?php echo image_thumb('uploads/chamadas/' . $lan_s->img_chamada, 326, 250, $lan_s->titulo_chamada); ?>
                         </a>
                     </div>
 
@@ -52,9 +52,7 @@
 
 				<div class="chamada_pequena">
                     <a href="<?php echo $lan_p_top->link_chamada; ?>" title="<?php echo $lan_p_top->titulo_chamada; ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_p_top->img_chamada .'&w=99&h=77'); ?>" 
-                                 alt="<?php echo $lan_p_top->titulo_chamada; ?>" 
-                                 class="img_chamada_pequena" />
+                        <?php echo image_thumb('uploads/chamadas/' . $lan_p_top->img_chamada, 99, 77, $lan_p_top->titulo_chamada); ?>
                         <p><?php echo character_limiter($lan_p_top->desc_chamada, 120); ?></p>
                     </a>
                 </div>
@@ -73,9 +71,7 @@
 
 				<div class="chamada_media">
                     <a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m->img_chamada .'&w=154&h=102'); ?>" 
-                                 alt="<?php echo $lan_m->titulo_chamada; ?>" 
-                                 class="img_chamada_media" />
+                        <?php echo image_thumb('uploads/chamadas/' . $lan_m->img_chamada, 154, 102, $lan_m->titulo_chamada, 'img_chamada_media'); ?>
                         <h2><?php echo $lan_m->titulo_chamada; ?></h2>
                         <p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
                     </a>
@@ -96,7 +92,7 @@
 
 					<div class="item-slider" data-title="<?php echo $lan_s_f->titulo_chamada; ?>">
                         <a href="<?php echo $lan_s_f->link_chamada; ?>" title="<?php echo $lan_s_f->titulo_chamada; ?>">
-                            <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_s_f->img_chamada .'&w=670&h=200'); ?>" alt="" />
+                            <?php echo image_thumb('uploads/chamadas/' . $lan_s_f->img_chamada, 670, 200, $lan_s_f->titulo_chamada, '', ''); ?>
                         </a>
                     </div>
 
@@ -115,9 +111,7 @@
                 ?>
                 <div class="chamada_pequena">
                     <a href="<?php echo $lan_p_bot->link_chamada; ?>" title="<?php echo $lan_p_bot->titulo_chamada; ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_p_bot->img_chamada .'&w=99&h=77'); ?>" 
-                             alt="<?php echo $lan_p_bot->titulo_chamada; ?>" 
-                             class="img_chamada_pequena" />
+                        <?php echo image_thumb('uploads/chamadas/' . $lan_p_bot->img_chamada, 99, 77, $lan_p_bot->titulo_chamada, 'img_chamada_pequena', ''); ?>
                         <p><?php echo character_limiter($lan_p_bot->desc_chamada, 80); ?></p>
                     </a>
                 </div>
@@ -133,9 +127,8 @@
         	?>
 
         	<div class="chamada-captions">
-                <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m_p->img_chamada .'&w=154&h=168'); ?>" 
-                     alt="<?php echo $lan_m_p->titulo_chamada; ?>" 
-                     class="" />
+                <?php echo image_thumb('uploads/chamadas/' . $lan_m_p->img_chamada, 154, 168, $lan_m_p->titulo_chamada, '', ''); ?>
+
                 <span>
                     <a href="<?php echo $lan_m_p->link_chamada; ?>" title="<?php echo $lan_m_p->titulo_chamada; ?>"><?php echo $lan_m_p->titulo_chamada; ?></a>
                 </span>
@@ -152,9 +145,7 @@
 	        		foreach ($chamada_lan_m_f as $lan_m_f) {
 	        	?>
             	<div class="chamada-captions-grande">
-                    <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m_f->img_chamada .'&w=343&h=370'); ?>" 
-                         alt="<?php echo $lan_m_f->titulo_chamada; ?>" 
-                         class="" />
+                    <?php echo image_thumb('uploads/chamadas/' . $lan_m_f->img_chamada, 343, 370, $lan_m_f->titulo_chamada, '', ''); ?>
                     <span>
                         <a href="<?php echo $lan_m_f->link_chamada; ?>" title="<?php echo $lan_m_f->titulo_chamada; ?>"><?php echo $lan_m_f->titulo_chamada; ?></a>
                     </span>
@@ -175,9 +166,7 @@
 		        	?>
 	        		<div class="item-slider">
                         <a href="<?php echo $pubcontbottom->link_publicidade; ?>" title="" target="<?php echo ($pubcontbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                            <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubcontbottom->img_vd_publicidade .'&w=620&h=70'); ?>" 
-                                 alt="<?php echo $pubcontbottom->titulo_publicidade; ?>" 
-                                 class="" />
+                            <?php echo image_thumb('uploads/publicidades/' . $pubcontbottom->img_vd_publicidade, 620, 70, $pubcontbottom->titulo_publicidade, '', ''); ?>
                         </a>
                     </div>
 		        	<?php } } ?>
@@ -192,9 +181,7 @@
 				?>
 				<div class="chamada_media">
                     <a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m->img_chamada .'&w=154&h=102'); ?>" 
-                             alt="<?php echo $lan_m->titulo_chamada; ?>" 
-                             class="img_chamada_media" />
+                        <?php echo image_thumb('uploads/chamadas/' . $lan_m->img_chamada, 154, 102, $lan_m->titulo_chamada, 'img_chamada_media', ''); ?>
                         <h2><?php echo $lan_m->titulo_chamada; ?></h2>
                         <p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
                     </a>
@@ -256,9 +243,7 @@
                     ?>
                     <div class="item-slider">
                         <a href="<?php echo $pubsidebar->link_publicidade; ?>" title="<?php echo $pubsidebar->titulo_publicidade; ?>" target="<?php echo ($pubsidebar->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                            <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubsidebar->img_vd_publicidade .'&w=306&h=510'); ?>" 
-                                 alt="<?php echo $pubsidebar->titulo_publicidade; ?>" 
-                                 class="" />
+                            <?php echo image_thumb('uploads/publicidades/' . $pubsidebar->img_vd_publicidade, 306, 510, $pubsidebar->titulo_publicidade, '', ''); ?>
                         </a>
                     </div>
                     <?php }} ?>
@@ -332,9 +317,7 @@
     	?>
 		<div class="item-slider">
             <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubbottom->img_vd_publicidade .'&w=980&h=170'); ?>" 
-                     alt="<?php echo $pubbottom->titulo_publicidade; ?>" 
-                     class="" />
+                <?php echo image_thumb('uploads/publicidades/' . $pubbottom->img_vd_publicidade, 980, 170 ); ?>
             </a>
         </div>
         <?php }} ?>

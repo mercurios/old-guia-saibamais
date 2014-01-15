@@ -7,7 +7,7 @@
             ?>
             <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90, '', ''); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -34,10 +34,11 @@
             </div>
             <div id="logo_topo_pagina_anunciante" class="">
                 <?php if (empty($cinema->logo_cinema)) { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/logos/default.jpg&w=366&h=267'); ?>" alt="" />
+                    <?php echo image_thumb('uploads/logos/default.jpg', 366, 267, '', ''); ?>
                 <?php } else { ?>
-                    <img src="<?php echo base_url('tim.php?src=uploads/logos/'. $cinema->logo_cinema .'&w=366&h=267'); ?>" alt="" />
+                    <?php echo image_thumb('uploads/logos/' . $cinema->logo_cinema, 366, 267, '', ''); ?>
                 <?php } ?>
+
                 <h3><?php echo $cinema->nome_cinema ?></h3>
             </div>
             <div id="contatos_pagina">
@@ -70,9 +71,9 @@
                     data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
                     >
                     <?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
-                        <img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/fotos/' . $foto->img_foto, 666, 400, '', ''); ?>
                     <?php } } else { ?>
-                        <img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/fotos/default.jpg', 666, 400, '', ''); ?>
                     <?php } ?>
                 </div>
                 <!-- empty element for pager links -->
@@ -96,7 +97,7 @@
         <?php if (!empty($filmes)) { foreach ($filmes as $filme) { ?>
 
         <div class="cartaz">
-            <img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $filme->logo_filme .'&w=108&h=108'); ?>" alt="" />
+            <?php echo image_thumb('uploads/filmes/' . $filme->logo_filme, 108, 108, '', ''); ?>
             <h4><?php echo $filme->titulo_filme ?></h4>
             <p><?php echo $filme->sinopse_filme ?></p>
             <div class="classificacao_indicativa">
@@ -324,49 +325,49 @@
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>
         <div class="locais_proximos">
             <a href="" title="">
                 <img src="" alt="logo do local" />
-                <h3>Pizzaria e Restaurante Barretos</h3>
+                <h3>Pizzaria e cinema Barretos</h3>
                 <h5>Local: Graças - Recife</h5>
             </a>
         </div>

@@ -15,6 +15,7 @@ class Cinemas_model extends CI_Model
         $this->db->from('guia_cinemas');
         $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_cinemas.bairro_cinema');
         $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_cinemas.cidade_cinema');
+        $this->db->query('SET SQL_BIG_SELECTS=1');
         return $this->db->get()->result();
     }
 

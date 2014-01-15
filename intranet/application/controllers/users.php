@@ -206,7 +206,7 @@ class Users extends CI_Controller {
                 $dados['msg'] = '<p class="text-warning"> A senha esta incorreta. </p>';
                 $this->load->view('users/login', $dados);
             }
-            else if ($result[0]->status == 'bloqueado')
+            else if ($result[0]->status_user == 'bloqueado')
             {
                 $dados['msg'] = '<p class="text-warning"> Você está bloqueado, entre em contato com o administrador. </p>';
                 $this->load->view('users/login', $dados);

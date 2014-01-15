@@ -15,6 +15,7 @@ class Bebidas_model extends CI_Model
         $this->db->from('guia_bebidas');
         $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_bebidas.bairro_bebida');
         $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_bebidas.cidade_bebida');
+        $this->db->query('SET SQL_BIG_SELECTS=1');
         return $this->db->get()->result();
     }
 

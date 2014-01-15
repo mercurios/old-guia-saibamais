@@ -237,5 +237,25 @@ class Filmes extends CI_Controller {
         {
             redirect('filmes/listar/' . $_idCliente);
         };
-	}	
+	}
+
+    public function excluir($_id, $_idCinema)
+    {
+        // Verifica se foi informado os parametros
+        if (empty($_id) || empty($_idCinema))
+        {
+            redirect('cinemas');
+        }
+
+        $_delete = $this->filmemodel->delete($_id);
+
+        if ($_delete)
+        {
+            redirect('filmes/listar/' . $_idCinema);
+        }
+        else
+        {
+            redirect('filmes/listar/' . $_idCinema);
+        }
+    }	
 }

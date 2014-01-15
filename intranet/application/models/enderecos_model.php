@@ -33,11 +33,13 @@ class Enderecos_model extends CI_Model
     // Lista os bairros por cidade informada no parametro
     public function get_bairros($_cidade)
     {
-        return $this->db->select('guia_bairros.cd_bairro, guia_bairros.ds_bairro_nome')
-                ->from('guia_cidades')
-                ->join('guia_bairros', 'guia_bairros.cd_cidade = guia_cidades.cd_cidade')
-                ->where( array('guia_cidades.cd_cidade' => $_cidade) )
-                ->get()->result();
+        $this->db->select('guia_bairros.cd_bairro, guia_bairros.ds_bairro_nome');
+        $this->db->from('guia_cidades');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_cidade = guia_cidades.cd_cidade');
+        $this->db->where( array('guia_cidades.cd_cidade' => $_cidade) );
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+
+        return $this->db->get()->result();
     }
     
 }

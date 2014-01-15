@@ -15,6 +15,7 @@ class Locais_model extends CI_Model
         $this->db->from('guia_locais');
         $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_locais.bairro_local');
         $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_locais.cidade_local');
+        $this->db->query('SET SQL_BIG_SELECTS=1');
         return $this->db->get()->result();
     }
 

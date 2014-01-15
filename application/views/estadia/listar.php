@@ -4,7 +4,7 @@
             <?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
                 <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90, '', ''); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -29,9 +29,14 @@
 		?>
 
 		<div class="resultado_pesquisa">
-	    	<img src="<?php echo base_url() ?>tim.php?src=uploads/logos/<?php echo $estadia->logo_estadia; ?>&w=240&h=146" alt="logo" class="logo_resultado_pesquisa" />
+	    	<?php if (empty($estadia->logo_estadia)) { ?>
+        		<?php echo image_thumb('uploads/logos/default.jpg', 240, 146, '', 'logo_resultado_pesquisa'); ?>
+        	<?php } else { ?>
+        		<?php echo image_thumb('uploads/logos/' . $estadia->logo_estadia, 366, 267, '', 'logo_resultado_pesquisa'); ?>
+        	<?php } ?>
+
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $estadia->nome_estadia; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $estadia->bairro_estadia; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $estadia->ds_bairro_nome; ?></p>
 	        <h4>Acessível para:</h4>
 	        <?php  
 	        $adaptado = $estadia->adaptado_estadia;

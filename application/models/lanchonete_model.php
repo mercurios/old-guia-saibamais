@@ -39,6 +39,7 @@ class Lanchonete_model extends CI_Model
         $this->db->like('tipo_lanchonete', $categoria);
         $this->db->or_like('tipo_comida_lanchonete', $categoria);
         $this->db->or_like('tipo_servico_lanchonete', $categoria);
+        $this->db->query('SET SQL_BIG_SELECTS=1');
 
         return $this->db->get()->result();
     }
@@ -123,11 +124,15 @@ class Lanchonete_model extends CI_Model
     // Retorna os clientes seguindo os parametros
     public function filtrar_lanchonetes($local, $deficiencia, $comida, $ordem)
     {
-        //$this->db->where('bairro_lanchonete', $local);
+        $this->db->select('*');
+        $this->db->from('guia_lanchonetes');
+        $this->db->join('guia_bairros', 'guia_bairros.cd_bairro = guia_lanchonetes.bairro_lanchonete');
+        $this->db->join('guia_cidades', 'guia_cidades.cd_cidade = guia_lanchonetes.cidade_lanchonete');
         $this->db->like('bairro_lanchonete', $local);
         $this->db->like('adaptado_lanchonete', $deficiencia);
         $this->db->like('tipo_comida_lanchonete', $comida);
         $this->db->order_by("nome_lanchonete", $ordem);
-        return $this->db->get($this->tabela)->result();
+        $this->db->query('SET SQL_BIG_SELECTS=1');
+        return $this->db->get()->result();
     }
 }

@@ -71,10 +71,9 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .1coluna{width:68px} .2coluna{width:154px} .3coluna{width:240px} .4coluna{width:326px} .5coluna{width:412px} .6coluna{width:498px} .7coluna{width:584px}
 .8coluna{width:670px} .9coluna{width:756px} .10coluna{width:842px} .11coluna{width:928px} .12coluna{width:1014px}
 
-
 @media only screen and (min-width: 1024px){
-#container{width:100%; position:relative; margin:0; margin-top:0px; }
-#conteudo{position:relative; float:left; width:1014px; margin-top:-50px; border:1px solid red}
+#container{width:1014px; position:relative; margin:0 auto; margin-top:15px; }
+#conteudo{position:relative; float:left; width:1014px; margin-top:-50px; }
 #area_conteudo_superior{width:100%; position:relative; float:left; margin-bottom:80px}
 #area_conteudo_esquerda{width:670px; position:relative; float:left; }
 #area_conteudo_esquerda_borda{width:674px; position:relative; float:left; padding-right:2px; border-right:2px solid red }
@@ -83,47 +82,46 @@ body{font-family: "arial"; background:url(../images/back_pagina.png); border-top
 .area_conteudo_home{position:relative; float:left; margin-bottom:30px; }
 #area_conteudo_esquerda_pesquisa{width:756px; position:relative; float:left; }
 #area_conteudo_direita_pesquisa{width:240px; position:relative; float:right; margin-right:0px; }
-.conteudo {width:1014px; position:relative; left:50%; margin-left:-507px;}
+
 
 /*css do topo*/
 
 /*topo*/
 
-#topo{width:100%; height:446px; position:relative; float:left; background:url(../images/back_topo.png) no-repeat; background-position:center; margin-top:0px}
-#barra_topo{position:relative; float:left; width:100%; height:60px; }
-#logo{position:relative; float:left; width:100%; text-align:center; margin-top:50px}
-#mudar_estado{position:relative; float:left; width:254px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
-#mudar_estado img{position:relative; float:right; margin-top:7px; margin-left:5px; border:1px solid #e0e0e0 }
-#titulo_estado{position:relative; float:right; font-size:16px; color:#2a2a2a;}
-#link_estado a{position:relative; float:right;font-size:12px; color:#d81616; text-decoration:none}
+#topo{width:1014px; height:150px; position:relative; float:left;}
+#logo{position:relative; float:left; margin-left:10px;}
+#campo_estado{position:relative; float:right; width:248px; height:40px; margin-top:13px; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:bold;}
+#campo_estado img{position:relative; float:right; margin-top:7px; margin-left:5px; border:1px solid #e0e0e0 }
+#titulo_estado{position:relative; float:right; font-size:16px; color:#727575;}
+#link_estado a{position:relative; float:right;font-size:12px; color:#ffc001; text-decoration:none}
 #link_estado a:hover{ text-decoration:underline}
 input.placeholder {text-align: center;}
-#pesquisa{position:relative; float:right; margin-top:9px}
-#busca{position:relative; float:right; width:313px; height:36px; border: 3px solid #5c5c5c; background: #FFF}
-#busca img{position:relative; float:left; margin-top:5px; margin-left:10px; background:#d2d2d2}
+#campo_pesquisa{position:relative; float:right; top:32px}
+#busca{position:relative; float:right; width:527px; height:41px; border: 3px solid #5c5c5c; background: #FFF}
+#busca img{position:relative; float:left; margin-top:5px; margin-left:10px; margin-right:10px; }
 #botao_busca{position:relative; float: right; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#fff; background-color:#5c5c5c; width:86px; height:100%; border:0; font-weight:bold;}
-#texto_busca{position:relative; float:left; width:272px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; color:#5c5c5c; text-align: center}
+#texto_busca{position:relative; float:left; width:385px; height:95%; border:0; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px; color:#5c5c5c; text-align: center}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
 color: #adadad; 
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
 color: #adadad; 
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
 color: #adadad; 
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size:20px;
 color: #adadad; 
 }
 
 
 /*menu*/
-#menu{width:100%; position:relative; float:left; height:59px; z-index:100000; margin-top:70px}
+#menu{position:relative; float:left; height:59px; z-index:100000;}
 #menu .link_menu:last-child{margin-right: 0px; border-right: 0px}
 .link_menu{position:relative; float:left;height:100%; background:#007bb8; border-right:1px solid white;}
 .link_menu img{position:relative; float:left; margin-top:14px; margin-left:9px; margin-right:10px}
@@ -172,7 +170,7 @@ color: #adadad;
 
 
 /*css do conteúdo*/
-#conteudo{width:100%; position:relative; float:left; margin-top:30px}
+#conteudo{position:relative; float:left; margin-top:30px}
 
 /*topo das páginas de anunciantes*/
 #topo_pagina_anunciante{background:url(../images/back_topo_pagina.png); position:relative; float:left; width:100%; height:339px;}
@@ -669,9 +667,8 @@ img{border:0px}
 
 /*Rodapé*/
 
-#rodape{position:relative; float:left; width:100%; margin-top:95px; margin-bottom:0px;}
+#rodape{position:relative; float:left; width:100%; margin-top:45px; margin-bottom:0px;}
 #rodape_1{position:relative; float:left; width:100%; height:24px; background:url(../images/back_rodape_1.jpg)}
-#rodape_1 .conteudo{height:89px; margin-top:-64px; background:url(../images/rodape_1.png)}
 #rodape_2{position:relative; float:left; width:100%; height:228px; color:#545454; background:#fafafa}
 #sac{width:255px; height:126px; background:#fff}
 #sac img{position:relative; float:left; margin-left:70px; margin-right:21px; margin-top:29px; margin-bottom:0px}
@@ -710,18 +707,8 @@ img{border:0px}
 
 
 /*Chamada Modal*/
-
-#chamada_modal{width:640px; position:relative; margin:0 auto; padding:20px; color:#4d4d4d; border:10px solid red}
-#topo_modal, #conteudo_modal, #rodape_modal{position:relative; float:left; width:100%; margin-bottom:50px;}
-#topo_modal h1{position:relative; float:left; font-size:36px; font-weight:bold; width:69%; padding-left:6px;}
-#topo_modal img{position:relative; float:right; width:29%}
-#conteudo_modal img{position:relative; float:left; width:633px; height:356px}
-#conteudo_modal p{position:relative; float:left; font-size:14px; width:100%; padding-bottom:10px; border-bottom:1px solid #4d4d4d}
-#conteudo_modal h6{position:relative; float:left; font-size:14px; margin-right:4px; margin-top:5px; }
-.redes_sociais_chamada{position:relative; float:right; margin-top:5px;}
-#rodape_modal h5{position:relative; width:100%; text-align:center; font-size:18px; padding-bottom:10px; border-bottom: 2px solid #ff9600}
-#rodape_modal img{position:relative; float:left; height:161px; text-align:center}
-#rodape_modal h2{position:relative; float:left; width:100%; font-size:24px; font-weight:100; text-align:center; padding-top:25px; color:#fff; height:50px; background:#ff9600}
+#chamada_modal{width:1014px; position:relative; margin:0 auto; margin-top:15px;}
+#chamada_modal h1{position:relative; float:left; font-size:22px; font-weight:bold; color:#424242}
 
 }
 @media only screen and (min-width:200px) and (max-width: 1000px){
@@ -783,7 +770,7 @@ color: #adadad;
 .link_menu:hover .v{background:url(../images/icone_up.png); }
 .menus{position:absolute; left:-999em ; float:left; height:310px; background-color:#007bb8; margin-top:63px; display:block}
 .menus a{ text-decoration:none}
-.link_menu:hover {height:110%; background:red}
+.link_menu:hover {height:110%}
 .link_menu:hover .menus {left:0px; top:auto;}
 .conteudo_menu{position:relative; float:left; margin-left:10px; margin-right:10px}
 .ou{position:relative; float:left; color:#fff; font-size:16px; font-weight:bold; margin-top:5px}

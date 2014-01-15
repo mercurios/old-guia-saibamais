@@ -4,7 +4,7 @@
             <?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
                 <div class="item-slider">
                     <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
+                        <?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90, '', ''); ?>
                     </a>
                 </div>
             <?php } } ?>
@@ -29,8 +29,13 @@
 		?>
 
 		<div class="resultado_pesquisa">
-			<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $cinema->logo_cinema .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
-	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $cinema->nome_cinema; ?></h3>
+			<?php if (empty($cinema->logo_cinema)) { ?>
+        		<?php echo image_thumb('uploads/logos/default.jpg', 240, 146, '', 'logo_resultado_pesquisa'); ?>
+        	<?php } else { ?>
+        		<?php echo image_thumb('uploads/logos/' . $cinema->logo_cinema, 366, 267, '', 'logo_resultado_pesquisa'); ?>
+        	<?php } ?>
+        	
+			<h3 class="estabelecimento_resultado_pesquisa"><?php echo $cinema->nome_cinema; ?></h3>
 	        <p class="local_resultado_pesquisa">Local: <?php echo $cinema->ds_bairro_nome; ?></p>
 	        <div class="rodape_resultado_pesquisa">
 	        	<a href="<?php echo base_url('cinemas/detalhe') . '/' . $cinema->slug_cinema . '/' . $cinema->id_cinema; ?>" title="">
@@ -125,9 +130,7 @@
     	?>
 		<div class="item-slider">
             <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-            	<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubbottom->img_vd_publicidade .'&w=980&h=170'); ?>" 
-                     alt="<?php echo $pubbottom->titulo_publicidade; ?>" 
-                     class="" />
+            	<?php echo image_thumb('uploads/publicidades/' . $pubbottom->img_vd_publicidade, 980, 170, $pubbottom->titulo_publicidade, ''); ?>
             </a>
         </div>
         <?php }} ?>

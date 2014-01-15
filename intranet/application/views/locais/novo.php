@@ -105,6 +105,7 @@
 
                                 <label class="checkbox inline">
                                     <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="obeso"> Obeso
+                                </label>
 
                                 <label class="checkbox inline">
                                     <input type="checkbox" id="acessibilidade" name="acessibilidade[]" value="idoso"> Idoso
