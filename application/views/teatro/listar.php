@@ -1,24 +1,24 @@
-<div id="publicidade_superior" class="publicidade">
-    <div class="conteudo_publicidade">
-        <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
-            <?php
-            if (isset($pub_top)) {
-                foreach ($pub_top as $pubtop) {
-            ?>
-            <div class="item-slider">
-                    <a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                        <img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubtop->img_vd_publicidade .'&w=914&h=90'); ?>" alt="" />
-                    </a>
-                </div>
-            <?php } } ?>
-        </div>
-    </div>
-</div><!-- Publicidade -->
+<div class="conteudo">
+	<div id="publicidade_superior" class="publicidade">
+		<div class="conteudo_publicidade">
+			<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+				<?php if (isset($pub_top)) { foreach ($pub_top as $pubtop) { ?>
+					<div class="item-slider">
+						<a href="<?php echo $pubtop->link_publicidade; ?>" title="" target="<?php echo ($pubtop->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+							<?php echo image_thumb('uploads/publicidades/' . $pubtop->img_vd_publicidade, 914, 90 ); ?>
+						</a>
+					</div>
+				<?php } } ?>
+			</div>
+		</div>
+	</div><!-- Publicidade -->
+</div>
 
 <!-- Conteudo
 ================================================== -->
 <div id="conteudo" class="">
-	<div class="topo_area_categoria">
+	<div class="conteudo">
+		<div class="topo_area_categoria">
 		<img src="<?php echo base_url(); ?>/assets/images/icone_mascaras.png" class="icone_area_categoria" alt="icone" />
 		<h1 class="titulo_area_categoria">Entretenimento - teatros</h1>
 	</div>
@@ -115,22 +115,23 @@
             
             
 	</div><!--Fim da área de conteúdo direita-->
+	</div><!-- /fim da classe conteudo -->
+</div><!-- /conteudo -->
 
-	
-
-</div>
-
-<div id="publicidade_inferior" class="publicidade">
-    <div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
-        <?php
-        if (isset($pub_bottom)) {
-            foreach ($pub_bottom as $pubbottom) {
-        ?>
-        <div class="item-slider">
-            <a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-                <img src="<?php echo base_url('tim.php?src=/uploads/publicidades') . '/' . $pubbottom->img_vd_publicidade; ?>&w=980&h=170" alt="<?php echo $pubbottom->titulo_publicidade; ?>"/>
-            </a>
-        </div>
-        <?php }} ?>
-    </div>
+<div class="conteudo">
+	<div id="publicidade_inferior" class="publicidade">
+		<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider">
+			<?php
+			if (isset($pub_bottom)) {
+				foreach ($pub_bottom as $pubbottom) {
+			?>
+			<div class="item-slider">
+				<a href="<?php echo $pubbottom->link_publicidade; ?>" title="<?php echo $pubbottom->titulo_publicidade; ?>" target="<?php echo ($pubbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
+					<?php echo image_thumb('uploads/publicidades/' . $pubbottom->img_vd_publicidade, 980, 170, '', '', '' ); ?>
+				</a>
+			</div>
+			<?php }} ?>
+		</div>
+	</div>
 </div><!-- /publicidade -->
+</div>
