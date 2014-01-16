@@ -116,7 +116,8 @@
         <script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle2.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.jcarousel.min.js'); ?>"></script>
         <script type="text/javascript" src="<?php echo base_url('assets/js/cardapio.js'); ?>"></script>
-		<script type="text/javascript" src="<?php echo base_url('assets/js/colorboxs.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url('assets/js/fancy.js'); ?>"></script>
+
         <script type="text/javascript">
             var path        = '<?php echo site_url(); ?>';
         </script>

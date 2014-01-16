@@ -15,6 +15,7 @@
         <!-- Css
         ================================================== -->
         <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/reset.css'); ?>" />
+        <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/fancy.css'); ?>" />
 		<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/stylle.css'); ?>" />
 
         <?php if (isset($map['js'])) { echo $map['js']; }?>

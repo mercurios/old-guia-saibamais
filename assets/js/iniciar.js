@@ -1,6 +1,6 @@
 // JavaScript Document
 $(document).ready(function (){
-
+	
 	/*Inicialização do sllide de publicidade do meio*/
     $('.publicidade_simples').cycle({
 		fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
@@ -687,11 +687,13 @@ $(document).ready(function (){
 		$(window.document.location).attr('href',newUrl);
 	});
 
-	
-
-
-
-
+	$(".various").fancybox({
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
 
 
 

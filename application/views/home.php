@@ -32,7 +32,7 @@
 					<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 						<?php if (isset($lazer_slider)) { foreach ($lazer_slider as $slider_lazer) { ?>
 						<div class="item-slider" data-title="<?php echo $slider_lazer->titulo_chamada; ?>">
-							<a href="<?php echo $slider_lazer->link_chamada; ?>" title="<?php echo $slider_lazer->titulo_chamada; ?>">
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $slider_lazer->id_chamada) ?>">
 								<?php echo image_thumb('uploads/chamadas/' . $slider_lazer->img_chamada, 670, 200 ); ?>
 							</a>
 						</div>

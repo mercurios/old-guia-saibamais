@@ -823,3 +823,23 @@ color: #adadad;
 /* AJAX LOADER IMAGE */
 .ajax-loader { width: 220px; position: absolute; top: 150px; left: 220px; display: none; }
 .ajax-loader p {font: 14px Tahoma; text-align: center; margin: 0; color: grey;}
+
+/* PUBLICIDADE MODAL */
+.modal-full {
+    width: 640px;
+    float: left;
+}
+
+.publicidade_modal {
+    width: 630px;
+    height: 60px;
+    background: url(../images/back_detalhes.jpg);
+    float: left;
+    padding: 5px;
+    margin: 0 0 20px 0;
+}
+
+.content-modal {
+    width: 640px;
+    float: left;
+}
