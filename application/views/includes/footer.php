@@ -42,7 +42,12 @@
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Lanchonetes</li>
-							<li><a href=""></a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/doces'); ?>" title="Veja as lanchonetes que vendem lanches tipo Doces">Doces</a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/gelados'); ?>" title="Veja as lanchonetes que vendem lanches tipo Gelados">Gelados</a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/massas'); ?>" title="Veja as lanchonetes que vendem lanches tipo Massas">Massas</a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/especiais'); ?>" title="Veja as lanchonetes que vendem lanches Light / Especiais">Light/Especiais</a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/naturais'); ?>" title="Veja as lanchonetes que vendem lanches naturais">Naturais</a></li>
+							<li class="sub_menus"><a href="<?php echo base_url('lanchonetes/categoria/salgados'); ?>" title="Veja as lanchonetes que vendem lanches tipo salgados">Salgados</a></li>
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Bebidas</li>
