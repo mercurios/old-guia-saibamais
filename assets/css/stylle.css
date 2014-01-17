@@ -843,3 +843,7 @@ color: #adadad;
     width: 640px;
     float: left;
 }
+
+.img_cliente_modal {
+    margin: 0 0 0 180px;
+}

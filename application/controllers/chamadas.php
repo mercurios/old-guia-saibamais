@@ -36,12 +36,6 @@ class Chamadas extends CI_Controller {
 	{
 		$_dados['chamada'] = $this->chamada->get_chamada($_id);
 
-		$this->load->view('chamadas/detalhe');
-
-
-		/*
-		echo '<pre>';
-		print_r($_dados);
-		*/
+		$this->load->view('chamadas/detalhe', $_dados);
 	}
 }

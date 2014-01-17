@@ -50,7 +50,7 @@
 						foreach ($lazer_media as $media_lazer) {
 					?>
 					<div class="chamada_media">
-						<a href="<?php echo $media_lazer->link_chamada; ?>" title="<?php echo $media_lazer->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $media_lazer->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $media_lazer->img_chamada, 154, 102, '', 'img_chamada_media' ); ?>
 							<h2><?php echo $media_lazer->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($media_lazer->desc_chamada, 80); ?></p>
@@ -107,7 +107,7 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $res_s->titulo_chamada; ?>">
-							<a href="<?php echo $res_s->link_chamada; ?>" title="<?php echo $res_s->titulo_chamada; ?>">
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $res_s->id_chamada) ?>">
 								<?php echo image_thumb('uploads/chamadas/' . $res_s->img_chamada, 326, 250, '', '', '' ); ?>
 							</a>
 						</div>
@@ -130,7 +130,7 @@
 					?>
 
 					<div class="chamada_pequena">
-						<a href="<?php echo $res_p->link_chamada; ?>" title="<?php echo $res_p->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $res_p->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $res_p->img_chamada, 99, 77, '', 'img_chamada_pequena', '' ); ?>
 							<p><?php echo character_limiter($res_p->desc_chamada, 120); ?></p>
 						</a>
@@ -149,7 +149,7 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $res_m->link_chamada; ?>" title="<?php echo $res_m->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $res_m->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $res_m->img_chamada, 154, 102, '', 'img_chamada_media', '' ); ?>
 							<h2><?php echo $res_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($res_m->desc_chamada, 80); ?></p>
@@ -187,7 +187,7 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $lan_s->titulo_chamada; ?>">
-							<a href="<?php echo $lan_s->link_chamada; ?>" title="<?php echo $lan_s->titulo_chamada; ?>">
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_s->id_chamada) ?>">
 								<?php echo image_thumb('uploads/chamadas/' . $lan_s->img_chamada, 326, 250, '', '', '' ); ?>
 							</a>
 						</div>
@@ -208,7 +208,7 @@
 					?>
 
 					<div class="chamada_pequena">
-						<a href="<?php echo $lan_p->link_chamada; ?>" title="<?php echo $lan_p->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_p->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $lan_p->img_chamada, 99, 77, '', 'img_chamada_pequena', '' ); ?>
 							<p><?php echo character_limiter($lan_p->desc_chamada, 120); ?></p>
 						</a>
@@ -227,7 +227,7 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_m->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $lan_m->img_chamada, 154, 102, '', 'img_chamada_media', '' ); ?>
 							<h2><?php echo $lan_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
@@ -284,7 +284,7 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $beb_s->titulo_chamada; ?>">
-							<a href="<?php echo $beb_s->link_chamada; ?>" title="<?php echo $beb_s->titulo_chamada; ?>">
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_s->id_chamada) ?>">
 								<?php echo image_thumb('uploads/chamadas/' . $beb_s->img_chamada, 326, 250, '', '', '' ); ?>
 							</a>
 						</div>
@@ -306,7 +306,7 @@
 					?>
 
 					<div class="chamada_pequena">
-						<a href="<?php echo $beb_p->link_chamada; ?>" title="<?php echo $beb_p->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_p->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $beb_p->img_chamada, 99, 77, '', 'img_chamada_pequena', '' ); ?>
 							<p><?php echo character_limiter($beb_p->desc_chamada, 120); ?></p>
 						</a>
@@ -325,7 +325,7 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $beb_m->link_chamada; ?>" title="<?php echo $beb_m->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_m->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $beb_m->img_chamada, 154, 102, '', 'img_chamada_media', '' ); ?>
 							<h2><?php echo $beb_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($beb_m->desc_chamada, 80); ?></p>
@@ -387,7 +387,7 @@
 						<?php echo image_thumb('uploads/chamadas/' . $ent_m_p->img_chamada, 154, 168, '', '', '' ); ?>
 
 						<span>
-							<a href="<?php echo $ent_m_p->link_chamada; ?>" title="<?php echo $ent_m_p->titulo_chamada; ?>"><?php echo $ent_m_p->titulo_chamada; ?></a>
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $ent_m_p->id_chamada) ?>"><?php echo $ent_m_p->titulo_chamada; ?></a>
 						</span>
 					</div>
 
@@ -406,7 +406,7 @@
 					<?php echo image_thumb('uploads/chamadas/' . $ent_p->img_chamada, 99, 77, '', 'img_chamada_pequena', '' ); ?>
 
 					<p>
-						<a href="<?php echo $ent_p->link_chamada; ?>" title="<?php echo $ent_p->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $ent_p->id_chamada) ?>">
 							<?php echo character_limiter($ent_p->desc_chamada, 120); ?>
 						</a>
 					</p>
@@ -424,7 +424,7 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $ent_m->link_chamada; ?>" title="<?php echo $ent_m->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $ent_m->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $ent_m->img_chamada, 154, 102, '', 'img_chamada_media', '' ); ?>
 							<h2><?php echo $ent_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($ent_m->desc_chamada, 120); ?></p>
@@ -481,7 +481,7 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $est_s->titulo_chamada; ?>">
-							<a href="<?php echo $est_s->link_chamada; ?>" title="<?php echo $est_s->titulo_chamada; ?>">
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $est_s->id_chamada) ?>">
 								<?php echo image_thumb('uploads/chamadas/' . $est_s->img_chamada, 326, 250, '', '', '' ); ?>
 							</a>
 						</div>
@@ -503,7 +503,7 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $est_m->link_chamada; ?>" title="<?php echo $est_m->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $est_m->id_chamada) ?>">
 							<?php echo image_thumb('uploads/chamadas/' . $est_m->img_chamada, 154, 102, '', 'img_chamada_media', '' ); ?>
 							<h2><?php echo $est_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($est_m->desc_chamada, 80); ?></p>
@@ -523,7 +523,7 @@
 
 				<div class="chamada_pequena esquerda">
 					<?php echo image_thumb('uploads/chamadas/' . $est_p->img_chamada, 99, 77, '', 'img_chamada_pequena', '' ); ?>
-					<p><a href="<?php echo $est_p->link_chamada; ?>" title="<?php echo $est_p->titulo_chamada; ?>"><?php echo character_limiter($est_p->desc_chamada, 120); ?></a></p>
+					<p><a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $est_p->id_chamada) ?>"><?php echo character_limiter($est_p->desc_chamada, 120); ?></a></p>
 				</div>
 
 				<?php
