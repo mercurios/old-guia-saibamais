@@ -34,11 +34,11 @@
 						<h1 class="h1_rodape">O que se acha aqui?</h1>
 						<ul>
 							<li	class="titulo_li_rodape">Restaurantes</li>
-							<li><a href="">Churrascarias</a></li>
-							<li><a href="">Delivery</a></li>
-							<li><a href="">Drive-thrur</a></li>
-							<li><a href="">Rodízio</a></li>
-							<li><a href="">Self-service</a></li>
+							<li><a href="<?php echo base_url('restaurantes/categoria/churrascaria'); ?>">Churrascarias</a></li>
+							<li><a href="<?php echo base_url('restaurantes/categoria/delivery'); ?>">Delivery</a></li>
+							<li><a href="<?php echo base_url('restaurantes/categoria/drive-thrur'); ?>">Drive-thrur</a></li>
+							<li><a href="<?php echo base_url('restaurantes/categoria/rodizios'); ?>">Rodízio</a></li>
+							<li><a href="<?php echo base_url('restaurantes/categoria/self-service'); ?>">Self-service</a></li>
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Lanchonetes</li>
@@ -51,34 +51,34 @@
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Bebidas</li>
-							<li><a href="">Bares</a></li>
-							<li><a href="">Botecos</a></li>
-							<li><a href="">Cafeterias</a></li>
-							<li><a href="">Lanchonetes</a></li>
-							<li><a href="">Restaurantes</a></li>
+							<li><a href="<?php echo base_url('bebidas/categoria/bares'); ?>">Bares</a></li>
+							<li><a href="<?php echo base_url('bebidas/categoria/botecos'); ?>">Botecos</a></li>
+							<li><a href="<?php echo base_url('bebidas/categoria/cafeterias'); ?>">Cafeterias</a></li>
+							<li><a href="<?php echo base_url('bebidas/categoria/lanchonetes'); ?>">Lanchonetes</a></li>
+							<li><a href="<?php echo base_url('bebidas/categoria/restaurantes'); ?>">Restaurantes</a></li>
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Passeio e lazer</li>
-							<li><a href="">Praticar esportes</a></li>
-							<li><a href="">Rotas para passeio</a></li>
-							<li><a href="">Visitar locais</a></li>
+							<li><a href="<?php echo base_url('esportes'); ?>">Praticar esportes</a></li>
+							<li><a href="<?php echo base_url('rotas'); ?>">Rotas para passeio</a></li>
+							<li><a href="<?php echo base_url('locais'); ?>">Visitar locais</a></li>
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Estadias</li>
-							<li><a href="">Albergues</a></li>
-							<li><a href="">Chalés</a></li>
-							<li><a href="">Hoteis</a></li>
-							<li><a href="">Pousadas</a></li>
-							<li><a href="">Privês</a></li>
-							<li><a href="">Resortes</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/albergue'); ?>">Albergues</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/chale'); ?>">Chalés</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/hotel'); ?>">Hoteis</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/pousada'); ?>">Pousadas</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/prive'); ?>">Privês</a></li>
+							<li><a href="<?php echo base_url('estadias/categoria/resort'); ?>">Resortes</a></li>
 						</ul>
 						<ul>
 							<li	class="titulo_li_rodape">Entretenimento</li>
-							<li><a href="">Cinemas</a></li>
-							<li><a href="">Exposições</a></li>
-							<li><a href="">Feiras e eventos</a></li>
-							<li><a href="">Shows</a></li>
-							<li><a href="">Teatros</a></li>
+							<li><a href="<?php echo base_url('cinemas'); ?>">Cinemas</a></li>
+							<li><a href="<?php echo base_url('exposicoes'); ?>">Exposições</a></li>
+							<li><a href="<?php echo base_url('feira-e-eventos'); ?>">Feiras e eventos</a></li>
+							<li><a href="<?php echo base_url('shows'); ?>">Shows</a></li>
+							<li><a href="<?php echo base_url('teatros'); ?>">Teatros</a></li>
 						</ul>
 					</div>
                 </div>
