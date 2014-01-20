@@ -688,12 +688,14 @@ $(document).ready(function (){
 	});
 
 	$(".various").fancybox({
-		fitToView	: false,
-		width		: '70%',
-		height		: '70%',
+		fitToView	: true,
+		width		: '655',
+		height		: '90%',
 		openEffect	: 'none',
-		closeEffect	: 'none'
+		closeEffect	: 'none',
+		autoSize	: false,
 	});
+
 
 
 

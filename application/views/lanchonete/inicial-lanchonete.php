@@ -17,48 +17,25 @@
 <!-- Conteudo
 ================================================== -->
 <div id="conteudo" class="">
+
 	<div class="conteudo">
 		<div class="topo_area_categoria">
 			<img src="<?php echo base_url(); ?>/assets/images/icone_lanches_laranja2.png" class="icone_area_categoria" alt="icone" />
 			<h1 class="titulo_area_categoria">Lanchonetes</h1>
 		</div>
+
 		<!--Inicio da área de conteúdo esquerda-->
 		<div id="area_conteudo_esquerda" class="area_conteudo">
 			<div class="sliders-medium esquerda">
-					<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
-						<?php
-						if (isset($chamada_lan_s)) {
-							foreach ($chamada_lan_s as $lan_s) {
-						?>
-
-						<div class="item-slider" data-title="<?php echo $lan_s->titulo_chamada; ?>">
-							<a href="<?php echo $lan_s->link_chamada; ?>" title="<?php echo $lan_s->titulo_chamada; ?>">
-								<?php echo image_thumb( base_url('uploads/chamadas') . '/' . $lan_s->img_chamada, 326, 250, $lan_s->titulo_chamada); ?>
-							</a>
-						</div>
-
-						<?php
-							}
-						}
-						?>
-						<div class="cycle-overlay"></div>
-						<div class="cycle-pager"></div>
-					</div>
-				</div><!-- /sliders -->
-
-				<!-- chamadas -->
-				<div class="chamadas direita">
+				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
 					<?php
-					if (isset($chamada_p_top)) {
-						foreach ($chamada_p_top as $lan_p_top) {
+					if (isset($chamada_lan_s)) {
+						foreach ($chamada_lan_s as $lan_s) {
 					?>
 
-					<div class="chamada_pequena">
-						<a href="<?php echo $lan_p_top->link_chamada; ?>" title="<?php echo $lan_p_top->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_p_top->img_chamada .'&w=99&h=77'); ?>" 
-									 alt="<?php echo $lan_p_top->titulo_chamada; ?>" 
-									 class="img_chamada_pequena" />
-							<p><?php echo character_limiter($lan_p_top->desc_chamada, 120); ?></p>
+					<div class="item-slider" data-title="<?php echo $lan_s->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_s->id_chamada) ?>">
+							<?php echo image_thumb('uploads/chamadas/' . $lan_s->img_chamada, 326, 250, $lan_s->titulo_chamada, '', ''); ?>
 						</a>
 					</div>
 
@@ -66,81 +43,101 @@
 						}
 					}
 					?>
-				</div><!-- /chamadas -->
-
-				<div class="chamada-horizontal">
-					<?php
-					if (isset($chamada_lan_m)) {
-						foreach ($chamada_lan_m as $lan_m) {
-					?>
-
-					<div class="chamada_media">
-						<a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m->img_chamada .'&w=154&h=102'); ?>" 
-									 alt="<?php echo $lan_m->titulo_chamada; ?>" 
-									 class="img_chamada_media" />
-							<h2><?php echo $lan_m->titulo_chamada; ?></h2>
-							<p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
-						</a>
-					</div>
-
-					<?php
-						}
-					}
-					?>
+					<div class="cycle-overlay"></div>
+					<div class="cycle-pager"></div>
 				</div>
-				<!-- sliders -->
-				<div class="sliders-grande direita">
-					<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
-					<?php
-						if (isset($chamada_lan_s_f)) {
-							foreach ($chamada_lan_s_f as $lan_s_f) {
-						?>
+			</div><!-- /sliders -->
 
-						<div class="item-slider" data-title="<?php echo $lan_s_f->titulo_chamada; ?>">
-							<a href="<?php echo $lan_s_f->link_chamada; ?>" title="<?php echo $lan_s_f->titulo_chamada; ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_s_f->img_chamada .'&w=670&h=200'); ?>" alt="" />
-							</a>
-						</div>
+			<!-- chamadas -->
+			<div class="chamadas direita">
+				<?php
+				if (isset($chamada_p_top)) {
+					foreach ($chamada_p_top as $lan_p_top) {
+				?>
 
-						<?php
-							}
-						}
-						?>
-						<div class="cycle-overlay"></div>
-						<div class="cycle-pager"></div>
-					</div>
-				</div><!-- /sliders -->
-				<div class="chamada-horizontal">
-					<?php
-					if (isset($chamada_p_bot)) {
-						foreach ($chamada_p_bot as $lan_p_bot) {
+				<div class="chamada_pequena">
+					<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_p_top->id_chamada) ?>">
+						<?php echo image_thumb('uploads/chamadas/' . $lan_p_top->img_chamada, 99, 77, $lan_p_top->titulo_chamada, 'img_chamada_pequena', ''); ?>
+						<p><?php echo character_limiter($lan_p_top->desc_chamada, 120); ?></p>
+					</a>
+				</div>
+
+				<?php
+					}
+				}
+				?>
+			</div><!-- /chamadas -->
+
+			<div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_lan_m)) {
+					foreach ($chamada_lan_m as $lan_m) {
+				?>
+
+				<div class="chamada_media">
+					<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_m->id_chamada) ?>">
+						<?php echo image_thumb('uploads/chamadas/' . $lan_m->img_chamada, 154, 102, $lan_m->titulo_chamada, 'img_chamada_media', ''); ?>
+						<h2><?php echo $lan_m->titulo_chamada; ?></h2>
+						<p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
+					</a>
+				</div>
+
+				<?php
+					}
+				}
+				?>
+			</div>
+
+			<!-- sliders -->
+			<div class="sliders-grande direita">
+				<div class="cycle-slideshow" data-cycle-fx="fade" data-cycle-slides="div.item-slider" data-cycle-overlay-template="{{title}}">
+				<?php
+					if (isset($chamada_lan_s_f)) {
+						foreach ($chamada_lan_s_f as $lan_s_f) {
 					?>
-					<div class="chamada_pequena">
-						<a href="<?php echo $lan_p_bot->link_chamada; ?>" title="<?php echo $lan_p_bot->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_p_bot->img_chamada .'&w=99&h=77'); ?>" 
-								 alt="<?php echo $lan_p_bot->titulo_chamada; ?>" 
-								 class="img_chamada_pequena" />
-							<p><?php echo character_limiter($lan_p_bot->desc_chamada, 80); ?></p>
+
+					<div class="item-slider" data-title="<?php echo $lan_s_f->titulo_chamada; ?>">
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_s_f->id_chamada) ?>">
+							<?php echo image_thumb('uploads/chamadas/' . $lan_s_f->img_chamada, 670, 200, $lan_s_f->titulo_chamada, '', ''); ?>
 						</a>
 					</div>
+
 					<?php
 						}
 					}
 					?>
+					<div class="cycle-overlay"></div>
+					<div class="cycle-pager"></div>
 				</div>
-				<div class="chamadas_sidebar_esquerda">
+			</div><!-- /sliders -->
+
+			<div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_p_bot)) {
+					foreach ($chamada_p_bot as $lan_p_bot) {
+				?>
+				<div class="chamada_pequena">
+					<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_p_bot->id_chamada) ?>">
+						<?php echo image_thumb('uploads/chamadas/' . $lan_p_bot->img_chamada, 99, 77, $lan_p_bot->titulo_chamada, 'img_chamada_pequena', ''); ?>
+						<p><?php echo character_limiter($lan_p_bot->desc_chamada, 80); ?></p>
+					</a>
+				</div>
+				<?php
+					}
+				}
+				?>
+			</div>
+
+			<div class="chamadas_sidebar_esquerda">
 				<?php
 				if (isset($chamada_lan_m_p)) {
 					foreach ($chamada_lan_m_p as $lan_m_p) {
 				?>
 
 				<div class="chamada-captions">
-					<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m_p->img_chamada .'&w=154&h=168'); ?>" 
-						 alt="<?php echo $lan_m_p->titulo_chamada; ?>" 
-						 class="" />
+					<?php echo image_thumb('uploads/chamadas/' . $lan_m_p->img_chamada, 154, 168, $lan_m_p->titulo_chamada, '', ''); ?>
 					<span>
-						<a href="<?php echo $lan_m_p->link_chamada; ?>" title="<?php echo $lan_m_p->titulo_chamada; ?>"><?php echo $lan_m_p->titulo_chamada; ?></a>
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_m_p->id_chamada) ?>"><?php echo $lan_m_p->titulo_chamada; ?></a>
 					</span>
 				</div>
 
@@ -148,25 +145,25 @@
 					}
 				}
 				?>        
+			</div>
+
+			<div class="chamadas_sidebar_direita">
+				<?php
+				if (isset($chamada_lan_m_f)) {
+					foreach ($chamada_lan_m_f as $lan_m_f) {
+				?>
+				<div class="chamada-captions-grande">
+					<?php echo image_thumb('uploads/chamadas/' . $lan_m_f->img_chamada, 343, 370, $lan_m_f->titulo_chamada, '', ''); ?>
+
+					<span>
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_m_f->id_chamada) ?>"><?php echo $lan_m_f->titulo_chamada; ?></a>
+					</span>
 				</div>
-				<div class="chamadas_sidebar_direita">
-					<?php
-					if (isset($chamada_lan_m_f)) {
-						foreach ($chamada_lan_m_f as $lan_m_f) {
-					?>
-					<div class="chamada-captions-grande">
-						<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m_f->img_chamada .'&w=343&h=370'); ?>" 
-							 alt="<?php echo $lan_m_f->titulo_chamada; ?>" 
-							 class="" />
-						<span>
-							<a href="<?php echo $lan_m_f->link_chamada; ?>" title="<?php echo $lan_m_f->titulo_chamada; ?>"><?php echo $lan_m_f->titulo_chamada; ?></a>
-						</span>
-					</div>
-					<?php
-						}
+				<?php
 					}
-					?> 
-				</div>
+				}
+				?> 
+			</div>
 				
 				<!-- Publicidade -->
 			<div id="publicidade_meio_index" class="publicidade">
@@ -178,9 +175,7 @@
 						?>
 						<div class="item-slider">
 							<a href="<?php echo $pubcontbottom->link_publicidade; ?>" title="" target="<?php echo ($pubcontbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubcontbottom->img_vd_publicidade .'&w=620&h=70'); ?>" 
-									 alt="<?php echo $pubcontbottom->titulo_publicidade; ?>" 
-									 class="" />
+								<?php echo image_thumb('uploads/publicidades/' . $pubcontbottom->img_vd_publicidade, 620, 70, '', '', '' ); ?>
 							</a>
 						</div>
 						<?php } } ?>
@@ -188,27 +183,25 @@
 				</div>
 			</div><!-- Publicidade -->
 				
-				<div class="chamada-horizontal">
-					<?php
-					if (isset($chamada_lan_m_2)) {
-						foreach ($chamada_lan_m_2 as $lan_m) {
-					?>
-					<div class="chamada_media">
-						<a href="<?php echo $lan_m->link_chamada; ?>" title="<?php echo $lan_m->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $lan_m->img_chamada .'&w=154&h=102'); ?>" 
-								 alt="<?php echo $lan_m->titulo_chamada; ?>" 
-								 class="img_chamada_media" />
-							<h2><?php echo $lan_m->titulo_chamada; ?></h2>
-							<p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
-						</a>
-					</div>
-					<?php
-						}
-					}
-					?>
+			<div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_lan_m_2)) {
+					foreach ($chamada_lan_m_2 as $lan_m) {
+				?>
+				<div class="chamada_media">
+					<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $lan_m->id_chamada) ?>">
+						<?php echo image_thumb('uploads/chamadas/' . $lan_m->img_chamada, 154, 102, $lan_m->titulo_chamada, 'img_chamada_media', ''); ?>
+						<h2><?php echo $lan_m->titulo_chamada; ?></h2>
+						<p><?php echo character_limiter($lan_m->desc_chamada, 80); ?></p>
+					</a>
 				</div>
-				
+				<?php
+					}
+				}
+				?>
+			</div>
 		</div> <!--Fim da área de conteúdo esquerda-->
+
 		<!--Inicio da área de conteúdo direita-->
 		<div id="area_conteudo_direita" class="area_conteudo">
 			<!--Inicio do campo de filtragem-->
@@ -259,15 +252,14 @@
 						?>
 						<div class="item-slider">
 							<a href="<?php echo $pubsidebar->link_publicidade; ?>" title="<?php echo $pubsidebar->titulo_publicidade; ?>" target="<?php echo ($pubsidebar->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubsidebar->img_vd_publicidade .'&w=306&h=510'); ?>" 
-									 alt="<?php echo $pubsidebar->titulo_publicidade; ?>" 
-									 class="" />
+								<?php echo image_thumb('uploads/publicidades/' . $pubsidebar->img_vd_publicidade, 306, 510, '', '', '' ); ?>
 							</a>
 						</div>
 						<?php }} ?>
 					</div>
 				</div>
 			</div><!-- /publicidade -->
+
 			<div id="promocoes_semana">
 				<div id="topo_promocoes_semana"></div>
 				<div id="conteudo_promocoes_semana">
@@ -321,9 +313,7 @@
 						</a>
 					</div>            
 				</div>
-			</div>
-			
-			
+			</div>	
 		</div><!--Fim da área de conteúdo direita-->
 	</div><!-- /fim da classe conteudo -->
 </div><!-- /conteudo -->

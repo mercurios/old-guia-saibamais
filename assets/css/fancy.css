@@ -76,7 +76,7 @@
 }
 
 #fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
-	background-image: url(fancybox_sprite.png);
+	background-image: url('../images/fancy_sprite.png');
 }
 
 #fancybox-loading {
@@ -94,15 +94,15 @@
 #fancybox-loading div {
 	width: 44px;
 	height: 44px;
-	background: url(fancybox_loading.gif) center center no-repeat;
+	background: url('../images/fancy_loading.gif') center center no-repeat;
 }
 
 .fancybox-close {
 	position: absolute;
 	top: -18px;
 	right: -18px;
-	width: 36px;
-	height: 36px;
+	width: 36px !important;
+	height: 36px !important;
 	cursor: pointer;
 	z-index: 8040;
 }
