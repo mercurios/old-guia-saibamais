@@ -34,9 +34,9 @@
 				</div>
 				<div id="logo_topo_pagina_anunciante" class="">
 					<?php if (empty($restaurante->logo_restaurante)) { ?>
-						<img src="<?php echo base_url('tim.php?src=uploads/logos/default.jpg&w=366&h=267'); ?>" alt="" />
+						<?php echo image_thumb('uploads/logos/default.jpg', 366, 267, '', '', ''); ?>
 					<?php } else { ?>
-						<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $restaurante->logo_restaurante .'&w=366&h=267'); ?>" alt="" />
+						<?php echo image_thumb('uploads/logos/' . $restaurante->logo_restaurante , 366, 267, '', '', ''); ?>
 					<?php } ?>
 					<h3><?php echo $restaurante->nome_restaurante; ?></h3>
 				</div>
@@ -73,9 +73,9 @@
 						data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
 						>
 						<?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
-							<img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+							<?php echo image_thumb('uploads/fotos/' . $foto->img_foto, 666, 400, '', '', ''); ?>
 						<?php } } else { ?>
-							<img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+							<?php echo image_thumb('uploads/fotos/default.jpg', 666, 400, '', '', ''); ?>
 						<?php } ?>
 					</div>
 					<!-- empty element for pager links -->

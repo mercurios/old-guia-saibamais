@@ -31,38 +31,38 @@
 			foreach ($restaurantes as $restaurante) {
 		?>
 
-		<div class="resultado_pesquisa <?php echo $restaurante->bairro_restaurante; ?>">
-	    	<img src="<?php echo base_url('tim.php?src=uploads/logos/'. $restaurante->logo_restaurante .'&w=240&h=146'); ?>" alt="logo" class="logo_resultado_pesquisa" />
+		<div class="resultado_pesquisa <?php echo $restaurante->ds_bairro_nome; ?>">
+	    	<?php if (empty($restaurante->logo_restaurante)) { echo image_thumb('uploads/logos/default.jpg', 240, 146, '', 'logo_resultado_pesquisa', ''); } else { echo image_thumb('uploads/logos/' . $restaurante->logo_restaurante, 240, 146, '', 'logo_resultado_pesquisa', ''); } ?>
 	        <h3 class="estabelecimento_resultado_pesquisa"><?php echo $restaurante->nome_restaurante; ?></h3>
-	        <p class="local_resultado_pesquisa">Local: <?php echo $restaurante->bairro_restaurante; ?></p>
+	        <p class="local_resultado_pesquisa">Local: <?php echo $restaurante->ds_bairro_nome; ?></p>
 	        <h4>Acessível para:</h4>
 	        <?php  
 	        $adaptado = $restaurante->adaptado_restaurante;
 	        $adaptado = explode(',', $adaptado);
 
-	        if (in_array('cego', $adaptado)){ echo '<img src="'. base_url() .'assets/images/icone_cego_pequeno.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	        else { echo '<img src="'. base_url() .'assets/images/icone_cego_pequeno_claro.jpg" alt="Cego" title="Deficientes visuais e cegos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('cego', $adaptado)){ echo '<img src="'. base_url() .'assets/images/icone_cego_pequeno.jpg" title="Adaptado para deficientes visuais e cegos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_cego_pequeno_claro.jpg" title="Não adaptado para eficientes visuais e cegos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_surdo_pequeno.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	        else { echo '<img src="'. base_url() .'assets/images/icone_surdo_pequeno_claro.jpg" alt="Surdo" title="Deficientes auditivos e surdos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('surdo', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_surdo_pequeno.jpg" title="Adaptado para deficientes auditivos e surdos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_surdo_pequeno_claro.jpg" title="Não adaptado para deficientes auditivos e surdos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_deficiente_pequeno.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	        else { echo '<img src="'. base_url() .'assets/images/icone_deficiente_pequeno_claro.jpg" alt="Deficiente físico" title="Deficientes físicos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('deficientefisico', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_deficiente_pequeno.jpg" title="Adaptado para deficiente físico" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_deficiente_pequeno_claro.jpg" title="Não adaptado para deficientes físicos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('braile', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_braille_pequeno.jpg" alt="Braille" title="Braille" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	        else { echo '<img src="'. base_url() .'assets/images/icone_braille_pequeno_claro.jpg" alt="Braille" title="Braille" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('braile', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_braille_pequeno.jpg" title="Local com cardápios em braile" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_braille_pequeno_claro.jpg" title="O local não possue cardápios em braile" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_obeso_pequeno.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	        else { echo '<img src="'. base_url() .'assets/images/icone_obeso_pequeno_claro.jpg" alt="Obeso" title="Pessoas com obesidade" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('obeso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_obeso_pequeno.jpg" title="Local adaptado para obesos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        else { echo '<img src="'. base_url() .'assets/images/icone_obeso_pequeno_claro.jpg" title="Local não adaptado para obesos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_idoso_pequeno.jpg" alt="Idoso" title="Idosos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	    	else { echo '<img src="'. base_url() .'assets/images/icone_idoso_pequeno_claro.jpg" alt="Idoso" title="Idosos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('idoso', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_idoso_pequeno.jpg" title="Local adaptado para idosos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_idoso_pequeno_claro.jpg" title="Local não adaptado para idosos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_gestante_pequeno.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	    	else { echo '<img src="'. base_url() .'assets/images/icone_gestante_pequeno_claro.jpg" alt="Gestante" title="Gestantes" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('gestante', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_gestante_pequeno.jpg" title="Local adaptado para gestantes" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_gestante_pequeno_claro.jpg" title="Local não adaptado para gestantes" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 
-	        if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_bebe_pequeno.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
-	    	else { echo '<img src="'. base_url() .'assets/images/icone_bebe_pequeno_claro.jpg" alt="Bebe" title="Recém nascidos ou Crianças de colo" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	        if (in_array('bebe', $adaptado)) { echo '<img src="'. base_url() .'assets/images/icone_bebe_pequeno.jpg" title="Local adaptado para crianças e/ou recém nascidos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
+	    	else { echo '<img src="'. base_url() .'assets/images/icone_bebe_pequeno_claro.jpg" title="Local adaptado para crianças e/ou recém nascidos" class="icone_esquerda icone_resultado_da_pesquisa"/>'; }
 	        ?>
 
 	        <div class="rodape_resultado_pesquisa">
