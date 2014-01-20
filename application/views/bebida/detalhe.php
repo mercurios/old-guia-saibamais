@@ -33,14 +33,11 @@
 					</ul>
 				</div>
 				<div id="logo_topo_pagina_anunciante" class="">
-					<?php 
-					if (empty($bebida->logo_bebida)) {
-						echo '<img src="'.base_url().'tim.php?src=uploads/logos/default.jpg&w=366&h=267" alt="Logo do anunciante" />';
-					}
-					else {
-						echo '<img src="'.base_url().'tim.php?src=uploads/logos/'. $bebida->logo_bebida .'&w=366&h=267" alt="Logo do anunciante" />';
-					}
-					?>
+					<?php if (empty($bebida->logo_bebida)) { ?>
+						<?php echo image_thumb('uploads/logos/default.jpg', 366, 267, '', '', ''); ?>
+					<?php } else { ?>
+						<?php echo image_thumb('uploads/logos/' . $bebida->logo_bebida , 366, 267, '', '', ''); ?>
+					<?php } ?>
 					<h3><?php echo $bebida->nome_bebida; ?></h3>
 				</div>
 				<div id="contatos_pagina">
@@ -76,9 +73,9 @@
 						data-cycle-pager-template="<a href=#><img src='{{src}}' width=80 height=80></a>"
 						>
 						<?php if (!empty($fotos)) { foreach ($fotos as $foto) { ?>
-							<img src="<?php echo base_url('tim.php?src=uploads/fotos/'. $foto->img_foto .'&w=666&h=400'); ?>" alt="" />
+							<?php echo image_thumb('uploads/fotos/' . $foto->img_foto, 666, 400, '', '', ''); ?>
 						<?php } } else { ?>
-							<img src="<?php echo base_url('tim.php?src=uploads/fotos/default.jpg&w=666&h=400'); ?>" alt="" />
+							<?php echo image_thumb('uploads/fotos/default.jpg', 666, 400, '', '', ''); ?>
 						<?php } ?>
 					</div>
 					<!-- empty element for pager links -->
@@ -161,26 +158,26 @@
 					<img src="<?php echo base_url('assets'); ?>/images/icone_acessivel.png" class="icone_area_pagina" />
 					<h1 class="titulo_area_pagina">Extras do local</h1>
 				</div>
-				<?php $extras = explode(',', $bebida->extra_bebida);
-				if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi.jpg" alt="Wi-fi" title="Não possui Wi-fi" class="icone_esquerda"/>'; }
+				<?php $extras = explode(',', $bebida->tipo_extra_bebida);
+				if (in_array('wifi', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_wifi.jpg" alt="Wi-fi" title="Possui Wi-fi" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_wifi_claro.jpg" alt="Wi-fi" title="Não possui Wi-fi" class="icone_esquerda"/>'; }
 
-				if (in_array('piscina', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_piscina.jpg" alt="Estacionamento" title="Não possui estacionamento" class="icone_esquerda"/>'; }
+				if (in_array('piscina', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_piscina.jpg" alt="Estacionamento" title="Possui estacionamento" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_piscina_claro.jpg" alt="Estacionamento" title="Não possui estacionamento" class="icone_esquerda"/>'; }
 
-				if (in_array('cafe-da-manha', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pao.jpg" alt="Piscina" title="Não possui piscina" class="icone_esquerda"/>'; }
+				if (in_array('cafe-da-manha', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pao.jpg" alt="Piscina" title="Possui piscina" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_pao_claro.jpg" alt="Piscina" title="Não possui piscina" class="icone_esquerda"/>'; }
 
-				if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento.jpg" alt="Café da Manhã" title="Não possui café da manhã incluso" class="icone_esquerda"/>'; }
+				if (in_array('estacionamento', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento.jpg" alt="Café da Manhã" title="Possui café da manhã incluso" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_estacionamento_claro.jpg" alt="Café da Manhã" title="Não possui café da manhã incluso" class="icone_esquerda"/>'; }
 
-				if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica.jpg" alt="Musica" title="Não possui shows ao vivo" class="icone_esquerda"/>'; }
+				if (in_array('shows-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_musica.jpg" alt="Musica" title="Possui shows ao vivo" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_musica_claro.jpg" alt="Musica" title="Não possui shows ao vivo" class="icone_esquerda"/>'; }
 
-				if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc.jpg" alt="UFC" title="Não possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
+				if (in_array('lutas-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_ufc.jpg" alt="UFC" title="Possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_ufc_claro.jpg" alt="UFC" title="Não possui lutas transmitidas ao vivo" class="icone_esquerda"/>'; }
 
-				if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc.jpg" alt="PFC" title="Não possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
+				if (in_array('jogos-ao-vivo', $extras)) { echo '<img src="'. base_url('assets') .'/images/icone_pfc.jpg" alt="PFC" title="Possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
 				else { echo '<img src="'. base_url('assets') .'/images/icone_pfc_claro.jpg" alt="PFC" title="Não possui jogos transmitidos ao vivo" class="icone_esquerda"/>'; }
 				?>
 			</div><!-- /extras -->

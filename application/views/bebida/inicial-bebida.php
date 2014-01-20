@@ -32,10 +32,8 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $beb_s->titulo_chamada; ?>">
-							<a href="<?php echo $beb_s->link_chamada; ?>" title="<?php echo $beb_s->titulo_chamada; ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_s->img_chamada .'&w=326&h=250'); ?>" 
-									 alt="<?php echo $beb_s->titulo_chamada; ?>" 
-									 class="" />
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_s->id_chamada) ?>">
+								<?php echo image_thumb('uploads/chamadas/' . $beb_s->img_chamada, 326, 250, $beb_s->titulo_chamada, '', ''); ?>
 							</a>
 						</div>
 
@@ -56,10 +54,8 @@
 					?>
 
 					<div class="chamada_pequena">
-						<a href="<?php echo $beb_p_top->link_chamada; ?>" title="<?php echo $beb_p_top->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_p_top->img_chamada .'&w=99&h=77'); ?>" 
-									 alt="<?php echo $beb_p_top->titulo_chamada; ?>" 
-									 class="img_chamada_pequena" />
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_p_top->id_chamada) ?>">
+							<?php echo image_thumb('uploads/chamadas/' . $beb_p_top->img_chamada, 99, 77, $beb_p_top->titulo_chamada, 'img_chamada_pequena', ''); ?>
 							<p><?php echo character_limiter($beb_p_top->desc_chamada, 120); ?></p>
 						</a>
 					</div>
@@ -77,10 +73,8 @@
 					?>
 
 					<div class="chamada_media">
-						<a href="<?php echo $beb_m->link_chamada; ?>" title="<?php echo $beb_m->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_m->img_chamada .'&w=154&h=102'); ?>" 
-									 alt="<?php echo $beb_m->titulo_chamada; ?>" 
-									 class="img_chamada_media" />
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_m->id_chamada) ?>">
+							<?php echo image_thumb('uploads/chamadas/' . $beb_m->img_chamada, 154, 102, $beb_m->titulo_chamada, 'img_chamada_media', ''); ?>
 							<h2><?php echo $beb_m->titulo_chamada; ?></h2>
 							<p><?php echo character_limiter($beb_m->desc_chamada, 80); ?></p>
 						</a>
@@ -100,8 +94,8 @@
 						?>
 
 						<div class="item-slider" data-title="<?php echo $beb_s_f->titulo_chamada; ?>">
-							<a href="<?php echo $beb_s_f->link_chamada; ?>" title="<?php echo $beb_s_f->titulo_chamada; ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_s_f->img_chamada .'&w=670&h=200'); ?>" alt="" />
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_s_f->id_chamada) ?>">
+								<?php echo image_thumb('uploads/chamadas/' . $beb_s_f->img_chamada, 670, 200, $beb_s_f->titulo_chamada, '', ''); ?>
 							</a>
 						</div>
 
@@ -119,10 +113,8 @@
 						foreach ($chamada_p_bot as $beb_p_bot) {
 					?>
 					<div class="chamada_pequena">
-						<a href="<?php echo $beb_p_bot->link_chamada; ?>" title="<?php echo $beb_p_bot->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_p_bot->img_chamada .'&w=99&h=77'); ?>" 
-								 alt="<?php echo $beb_p_bot->titulo_chamada; ?>" 
-								 class="img_chamada_pequena" />
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_p_bot->id_chamada) ?>">
+							<?php echo image_thumb('uploads/chamadas/' . $beb_p_bot->img_chamada, 99, 77, $beb_p_bot->titulo_chamada, 'img_chamada_pequena', ''); ?>
 							<p><?php echo character_limiter($beb_p_bot->desc_chamada, 80); ?></p>
 						</a>
 					</div>
@@ -138,12 +130,10 @@
 				?>
 
 				<div class="chamada-captions">
-					<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_m_p->img_chamada .'&w=154&h=168'); ?>" 
-						 alt="<?php echo $beb_m_p->titulo_chamada; ?>" 
-						 class="" />
+					<?php echo image_thumb('uploads/chamadas/' . $beb_m_p->img_chamada, 154, 168, $beb_m_p->titulo_chamada, '', ''); ?>
 
 					<span>
-						<a href="<?php echo $beb_m_p->link_chamada; ?>" title="<?php echo $beb_m_p->titulo_chamada; ?>"><?php echo $beb_m_p->titulo_chamada; ?></a>
+						<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_m_p->id_chamada) ?>"><?php echo $beb_m_p->titulo_chamada; ?></a>
 					</span>
 				</div>
 
@@ -158,11 +148,10 @@
 						foreach ($chamada_beb_m_f as $beb_m_f) {
 					?>
 					<div class="chamada-captions-grande">
-						<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_m_f->img_chamada .'&w=343&h=370'); ?>" 
-							 alt="<?php echo $beb_m_f->titulo_chamada; ?>" 
-							 class="" />
+						<?php echo image_thumb('uploads/chamadas/' . $beb_m_f->img_chamada, 343, 370, $beb_m_f->titulo_chamada, '', ''); ?>
+
 						<span>
-							<a href="<?php echo $beb_m_f->link_chamada; ?>" title="<?php echo $beb_m_f->titulo_chamada; ?>"><?php echo $beb_m_f->titulo_chamada; ?></a>
+							<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_m_f->id_chamada) ?>"><?php echo $beb_m_f->titulo_chamada; ?></a>
 						</span>
 					</div>
 					<?php
@@ -181,9 +170,7 @@
 						?>
 						<div class="item-slider">
 							<a href="<?php echo $pubcontbottom->link_publicidade; ?>" title="" target="<?php echo ($pubcontbottom->newtab_publicidade == 0 ? '_self' : '_blank' ); ?>">
-								<img src="<?php echo base_url('tim.php?src=uploads/publicidades/'. $pubcontbottom->img_vd_publicidade .'&w=620&h=70'); ?>" 
-									 alt="<?php echo $pubcontbottom->titulo_publicidade; ?>" 
-									 class="" />
+								<?php echo image_thumb('uploads/publicidades/' . $pubcontbottom->img_vd_publicidade, 620, 70, '', '', '' ); ?>
 							</a>
 						</div>
 						<?php } } ?>
@@ -191,27 +178,25 @@
 				</div>
 			</div><!-- Publicidade -->
 				
-				<div class="chamada-horizontal">
-					<?php
-					if (isset($chamada_beb_m_2)) {
-						foreach ($chamada_beb_m_2 as $beb_m) {
-					?>
+			<div class="chamada-horizontal">
+				<?php
+				if (isset($chamada_beb_m_2)) {
+					foreach ($chamada_beb_m_2 as $beb_m) {
+				?>
 
-					<div class="chamada_media">
-						<a href="<?php echo $beb_m->link_chamada; ?>" title="<?php echo $beb_m->titulo_chamada; ?>">
-							<img src="<?php echo base_url('tim.php?src=uploads/chamadas/'. $beb_m->img_chamada .'&w=154&h=102'); ?>" 
-								 alt="<?php echo $beb_m->titulo_chamada; ?>" 
-								 class="img_chamada_media" />
-							<h2><?php echo $beb_m->titulo_chamada; ?></h2>
-							<p><?php echo character_limiter($beb_m->desc_chamada, 80); ?></p>
-						</a>
-					</div>
-
-					<?php
-						}
-					}
-					?>
+				<div class="chamada_media">
+					<a class="various fancybox.ajax" href="<?php echo base_url('chamadas/detalhe' . '/' . $beb_m->id_chamada) ?>">
+						<?php echo image_thumb('uploads/chamadas/' . $beb_m->img_chamada, 154, 102, $beb_m->titulo_chamada, 'img_chamada_media', ''); ?>
+						<h2><?php echo $beb_m->titulo_chamada; ?></h2>
+						<p><?php echo character_limiter($beb_m->desc_chamada, 80); ?></p>
+					</a>
 				</div>
+
+				<?php
+					}
+				}
+				?>
+			</div>
 				
 		</div> <!--Fim da área de conteúdo esquerda-->
 		<!--Inicio da área de conteúdo direita-->
