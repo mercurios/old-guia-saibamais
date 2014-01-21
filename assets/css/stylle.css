@@ -65,7 +65,7 @@
 
 
 /* CSS Document */
-body{font-family: "arial"; background:url(../images/back_pagina.png); margin-top:0px}
+body{font-family: "arial"; background:url(../images/back_pagina.png); margin:0px}
 
 /*Nosso grid*/
 .1coluna{width:68px} .2coluna{width:154px} .3coluna{width:240px} .4coluna{width:326px} .5coluna{width:412px} .6coluna{width:498px} .7coluna{width:584px}
